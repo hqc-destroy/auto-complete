@@ -2,10 +2,14 @@ var completionSpec = {
     name: "node",
     description: "Run the node interpretor",
     args: {
-        shellSuggestions: {
-            cmd: "ls -1 | grep '.js'",
+<<<<<<< HEAD
+        templateSuggestions: ["files", "folders"] 
+=======
+        generator: {
+            script: "ls -1 | grep '.js'",
             splitOn: "\n"
         }
+>>>>>>> ac4358a... adding v2 of spec format for autocomplete
     },
     options: [
         {

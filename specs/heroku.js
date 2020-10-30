@@ -13,19 +13,24 @@ var completionSpec = {
                     name: ["-a", "--app"],
                     description: "app to run command against",
                     args: {
-                        shellSuggestions: {
-                            cmd: "heroku apps --json",
+                        generator: {
+                            script: "heroku apps --json",
                             // splitOn: "\n",
                             postProcess: function (out) {
                                 try {
                                     return JSON.parse(out).map(app => {
                                         return app.name
+<<<<<<< HEAD
+=======
+                                        return { name: app.name, description: app.name, icon: "https://www.herokucdn.com/favicon.ico"}
+>>>>>>> ac4358a... adding v2 of spec format for autocomplete
                                     })
 
                                 } catch(e) {
                                     return []
                                 }
                             }
+
                         }
                     },
                 }
@@ -43,8 +48,8 @@ var completionSpec = {
                     name: ["-a", "--app"],
                     description: "app to run command against",
                     args: {
-                        shellSuggestions: {
-                            cmd: "heroku apps --json",
+                        generator: {
+                            script: "heroku apps --json",
                             // splitOn: "\n",
                             postProcess: function (out) {
                                 try {
@@ -52,8 +57,18 @@ var completionSpec = {
                                         let build = app.buildpack_provided_description ? `(${app.buildpack_provided_description})` : ""
                                         return { name: app.name, description: `heroku app ${build}`, icon: "https://www.herokucdn.com/favicon.ico"}
                                     })
+<<<<<<< HEAD
                                     
+=======
+                                        return app.name
+                                        return { name: app.name, description: app.name, icon: "https://www.herokucdn.com/favicon.ico"}
+                                    })
+
+>>>>>>> ac4358a... adding v2 of spec format for autocomplete
                                 } catch(e) {
+=======
+                                } catch (e) {
+>>>>>>> 95c3d67... Update heroku.js
                                     return []
                                 }
                             }
