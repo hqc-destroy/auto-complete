@@ -177,8 +177,12 @@ var completionSpec = {
 =======
                         var items = out.split('\n').map((file) => {
                             return { working: file.substring(1, 2), file: file.substring(3) }
+<<<<<<< HEAD
                         }).slice(0, -1)
 >>>>>>> 96624c4... added some common options/args and single line commit suggestions for commands that can use hashes for input
+=======
+                        })
+>>>>>>> 12faa70... Formatting
 
                         return items.map(item => {
                             let file = item.file
@@ -315,8 +319,12 @@ var completionSpec = {
 >>>>>>> 96624c4... added some common options/args and single line commit suggestions for commands that can use hashes for input
 =======
                                 return { name: remote, description: "remote" }
+<<<<<<< HEAD
 >>>>>>> 481d0c8... Merge changes to git
                             }).slice(0, -1)
+=======
+                            })
+>>>>>>> 12faa70... Formatting
                         }
 =======
                     generator: {
@@ -334,7 +342,7 @@ var completionSpec = {
                             }
                             return out.split('\n').map((elm) => {
                                 return { name: elm.replace("*", "").trim(), description: "branch" }
-                            }).slice(0, -1)
+                            })
                         }
                     }
                 }
@@ -633,7 +641,7 @@ var completionSpec = {
                             return []
                         }
 
-                        var items = out.split('\n').map((file) => { return { working: file.substring(1, 2), file: file.substring(3) } }).slice(0, -1)
+                        var items = out.split('\n').map((file) => { return { working: file.substring(1, 2), file: file.substring(3) } })
 
                         return items.map(item => {
                             let file = item.file
@@ -712,7 +720,7 @@ var completionSpec = {
                             }
                             return out.split('\n').map((elm) => {
                                 return { name: elm.replace("*", "").trim(), description: "branch" }
-                            }).slice(0, -1)
+                            })
                         }
                     }
                 }
