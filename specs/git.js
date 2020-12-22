@@ -79,8 +79,11 @@ var generators = {
                 return []
             }
 
+            // out = out + " "
             var items = out.split('\n').map((file) => {
-                return { working: file.substring(1, 2), file: file.substring(3) }
+                file = file.trim()
+                var arr = file.split(" ")
+                return { working: arr[0], file: arr[1] }
             })
 
             return items.map(item => {
@@ -106,30 +109,6 @@ var generators = {
     },
 
 
-    files_to_remove: {
-        script: "git status --short",
-        postProcess: function (out) {
-            if (out.startsWith("fatal:")) {
-                return []
-            }
-
-            var items = out.split('\n').map((file) => { return { working: file.substring(1, 2), file: file.substring(3) } })
-
-            return items.map(item => {
-                let file = item.file
-                var ext = ""
-                try {
-                    ext = file.split('.').slice(-1)[0]
-                } catch (e) { }
-
-                if (file.endsWith('/')) {
-                    ext = "folder"
-                }
-
-                return { name: file, icon: `fig://icon?type=${ext}&color=ff0000&badge=${item.working}`, description: "Changed file" }
-            })
-        }
-    }
 }
 
 
@@ -263,6 +242,7 @@ var completionSpec = {
             ],
             args: {
                 variadic: true,
+<<<<<<< HEAD
                 suggestions: [
                     {   
                         name:".",
@@ -337,6 +317,19 @@ var completionSpec = {
                 template: "filepaths"
 >>>>>>> ac4358a... adding v2 of spec format for autocomplete
 =======
+=======
+
+                // We have a special setting for dot in the vuejs app
+
+                // suggestions: [
+                //     {
+                //         name: ".",
+                //         description: "current directory",
+                //         insertValue: ".",
+                //         icon: "fig://icon?type=folder"
+                //     }
+                // ],
+>>>>>>> 90584ba... cleaning up git script
                 generators: generators.files_for_staging
 >>>>>>> 602e847... replaced arg with args and generator with generators
             },
@@ -721,7 +714,7 @@ var completionSpec = {
                         icon: "fig://icon?type=folder"
                     }
                 ],
-                generators: generators.files_to_remove
+                generators: generators.files_for_staging
             },
             options: [
                 { name: "--", description: "used to separate command-line options from the list of files" },
