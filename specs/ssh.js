@@ -24,6 +24,7 @@ var pastConnections = {
 var completionSpec = {
     name: "ssh",
     description: "Log into a remote machine",
+<<<<<<< HEAD
     args: [{
         name: "user@hostname",
         description: "address of remote machine to log into",
@@ -42,6 +43,14 @@ var completionSpec = {
             }
         }
     }],
+=======
+    args: [
+        {
+            name: "user@hostname",
+            description: "address of remote machine to log into"
+        }
+    ],
+>>>>>>> 12370d7... add json schemas for linting
     options: [
         {
             name: ["-1"],
