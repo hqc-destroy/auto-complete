@@ -862,7 +862,3 @@ var completionSpec = {
 >>>>>>> 481d0c8... Merge changes to git
     ]
 }
-
-module.exports = {
-    completionSpec
-}
