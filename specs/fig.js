@@ -9,6 +9,7 @@ var completionSpec = {
       description: "share Fig with a teammate ⭐",
       args: {
         name: "Email",
+<<<<<<< HEAD
         description: "Email address of the user you want to invite",
 <<<<<<< HEAD
         variadic: true,
@@ -23,6 +24,9 @@ var completionSpec = {
             description: "Email to invite"
           }
         ]
+=======
+        description: "Email address of the user you want to invite"
+>>>>>>> f281bf4... Update fig.js
       }
     },
 

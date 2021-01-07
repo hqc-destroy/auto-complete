@@ -84,7 +84,7 @@ var generators = {
                 file = file.trim()
                 var arr = file.split(" ")
 
-                return { working: arr[0],  file: arr.slice(1).join(" ")}
+                return { working: arr[0], file: arr.slice(1).join(" ") }
             })
 
             return items.map(item => {
@@ -101,7 +101,7 @@ var generators = {
                 }
 
                 var insert = file
-                if (file.includes(' ')){
+                if (file.includes(' ')) {
                     insert = `'${file}'`
                 }
 
@@ -427,6 +427,7 @@ var completionSpec = {
                 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     shellSuggestions: {
                         cmd: "git remote",
                         postProcess: function(out) {
@@ -453,6 +454,9 @@ var completionSpec = {
 >>>>>>> ac4358a... adding v2 of spec format for autocomplete
                     }
 =======
+=======
+                    isOptional: true,
+>>>>>>> b79f2bf... fixed git push and git pull
                     generators: generators.remotes
 >>>>>>> 602e847... replaced arg with args and generator with generators
                 },
@@ -466,6 +470,7 @@ var completionSpec = {
             description: "Integrate with another repository",
             args: [
                 {
+                    isOptional: true,
                     generators: generators.remotes
                 },
                 {
