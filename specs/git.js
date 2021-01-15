@@ -428,6 +428,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     shellSuggestions: {
                         cmd: "git remote",
                         postProcess: function(out) {
@@ -455,12 +456,17 @@ var completionSpec = {
                     }
 =======
 =======
+=======
+                    name: "remote",
+>>>>>>> cc03fa9... fixed up fig spec, templating in node, and added names and descriptions to git push and pull
                     isOptional: true,
 >>>>>>> b79f2bf... fixed git push and git pull
                     generators: generators.remotes
 >>>>>>> 602e847... replaced arg with args and generator with generators
                 },
                 {
+                    name: "branch",
+                    isOptional: true,
                     generators: generators.branches
                 }
             ]
@@ -470,10 +476,13 @@ var completionSpec = {
             description: "Integrate with another repository",
             args: [
                 {
+                    name: "remote",
                     isOptional: true,
                     generators: generators.remotes
                 },
                 {
+                    name: "branch",
+                    isOptional: true,
                     generators: generators.branches
                 }
             ]
