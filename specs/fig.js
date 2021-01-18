@@ -5,9 +5,9 @@ var completionSpec = {
 
 
     { name: "source", description: "(re)connect fig to the current shell session" },
-    { name: "update", description: "Update Fig's autocompletion specs" },
+    { name: "update", description: "update completion specs" },
     {
-      name: "uninstall", description: "Uninstall a completion spec",
+      name: "uninstall", description: "uninstall a completion spec",
       args: {
 <<<<<<< HEAD
         name: "Email",
@@ -38,6 +38,7 @@ var completionSpec = {
       }
     },
     { name: "invite", description: "share Fig with a teammate ⭐" },
+<<<<<<< HEAD
     {
       name: "report",
       displayName: "Report an Issue",
@@ -71,6 +72,13 @@ var completionSpec = {
     { name: "list", description: "List all available completion specs" },
     { name: "onboarding", description: "Re-run Fig's onboarding" }
 >>>>>>> cc03fa9... fixed up fig spec, templating in node, and added names and descriptions to git push and pull
+=======
+    { name: "report", description: "report an issue" },
+    { name: "tweet", description: "tweet about Fig", icon: "https://abs.twimg.com/responsive-web/client-web-legacy/icon-ios.b1fc7275.png" },
+    { name: "docs", description: "view docs in browser" },
+    { name: "list", description: "list all available completion specs" },
+    { name: "onboarding", description: "re-run Fig's onboarding" }
+>>>>>>> 01799b1... fig: update report subcommand
   ],
 
   options: [
