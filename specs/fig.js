@@ -31,8 +31,23 @@ var completionSpec = {
 >>>>>>> f281bf4... Update fig.js
 =======
         generators: {
-          script: "\ls -1ap ~/.fig/autocomplete",
-          splitOn: "\n"
+          script: "\ls -1Ap ~/.fig/autocomplete",
+          postProcess: (data) => {
+            console.log(data)
+            out = data.split("\n").reduce((acc, curr) => {
+              if ([".gitignore", "README.md", "package.json", "package-lock.json"].includes(curr)) return acc
+              else {
+                acc.push({
+                  name: curr.trim().split(".")[0],
+                  icon: "https://withfig.com/img/icon-tmp-small.png"
+                })
+                return acc
+              }
+            }, [])
+
+            console.log(out)
+            return out
+          }
         }
 >>>>>>> cc03fa9... fixed up fig spec, templating in node, and added names and descriptions to git push and pull
       }
