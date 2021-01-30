@@ -124,8 +124,12 @@ const brewCompletionSpec = {
             subcommands: [
                 {
                     name: "install",
+<<<<<<< HEAD:specs/brew.ts
                     insertValue: "install",
 >>>>>>> c3b1241... Fix completion specs for linter
+=======
+                    insertValue: "install ",
+>>>>>>> 572d212... Update brew.js:specs/brew.js
                     description: "Installs the given cask",
                     args: {
                         name: "cask",
