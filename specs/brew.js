@@ -46,23 +46,25 @@ var completionSpec = {
 >>>>>>> ac4358a... adding v2 of spec format for autocomplete
 =======
                 variadic: true,
+<<<<<<< HEAD
 >>>>>>> 9304f5c... Add generator for brew formula
                 name: "<formula>",
                 // insertValue: "",
                 description: "Formula to install",
+=======
+                name: "formula",
+                description: "Formula or cask to install",
+>>>>>>> cfb0de4... brew: add casks to generator
                 generators: {
-                    script: "find /usr/local/Homebrew/ -type d -name \"Formula\" -exec ls -1 {} \\;",
+                    script: "ls -1 /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask/Casks",
                     postProcess: function (out) {
-                        let unique = out.split('\n').reduce((acc, line) => {
-                            acc[line.split("@")[0].replace('.rb', '')] = true
-                            return acc
-                        }, {})
 
-                        return Object.keys(unique).map(formula => {
+                        return out.split('\n').map(formula => {
                             return {
-                                name: formula,
+                                name: formula.replace('.rb', ''),
                                 description: "formula",
-                                icon: "🍺"
+                                icon: "🍺",
+                                priority: (formula[0] >= '0' && formula[0] <= '9') || formula[0] == '/' ? 0 : 100
                             }
                         })
                     }
@@ -77,6 +79,7 @@ var completionSpec = {
                 variadic: true,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 shellSuggestions: {
                     cmd: "brew list -1 --formulae",
                     postProcess: function (out) {
@@ -85,6 +88,9 @@ var completionSpec = {
 =======
                 generator: {
 =======
+=======
+                name: "formula",
+>>>>>>> cfb0de4... brew: add casks to generator
                 generators: {
 >>>>>>> 602e847... replaced arg with args and generator with generators
                     script: "brew list -1 --formulae",
@@ -121,8 +127,7 @@ var completionSpec = {
 >>>>>>> c3b1241... Fix completion specs for linter
                     description: "Installs the given cask",
                     args: {
-                        name: "<cask>",
-                        insertValue: "",
+                        name: "cask",
                         description: "Cask to install"
                     }
                 },
