@@ -10,6 +10,7 @@ var completionSpec = {
       name: "uninstall", description: "uninstall a completion spec",
       args: {
 <<<<<<< HEAD
+<<<<<<< HEAD
         name: "Email",
 <<<<<<< HEAD
         description: "Email address of the user you want to invite",
@@ -34,6 +35,10 @@ var completionSpec = {
         description: "Email address of the user you want to invite"
 >>>>>>> f281bf4... Update fig.js
 =======
+=======
+        name: "spec",
+        description: "The CLI completion spec to remove",
+>>>>>>> f12c91c... fig: update completion spec with new commands and tweak icons"
         generators: {
           script: "\ls -1Ap ~/.fig/autocomplete",
           postProcess: (data) => {
@@ -43,7 +48,7 @@ var completionSpec = {
               else {
                 acc.push({
                   name: curr.trim().split(".")[0],
-                  icon: "https://withfig.com/img/icon-tmp-small.png"
+                  icon: "fig://icon?type=box"
                 })
                 return acc
               }
@@ -93,7 +98,7 @@ var completionSpec = {
 >>>>>>> cc03fa9... fixed up fig spec, templating in node, and added names and descriptions to git push and pull
 =======
     { name: "report", description: "report an issue" },
-    { name: "tweet", description: "tweet about Fig", icon: "https://abs.twimg.com/responsive-web/client-web-legacy/icon-ios.b1fc7275.png" },
+    { name: "tweet", description: "tweet about Fig", icon: "fig://icon?type=twitter" },
     { name: "docs", description: "view docs in browser" },
     { name: "list", description: "list all available completion specs" },
 <<<<<<< HEAD
@@ -108,8 +113,14 @@ var completionSpec = {
         template: "filepaths"
       }
     },
+<<<<<<< HEAD
     { name: "team:download", description: "download your team's spec" }
 >>>>>>> 3f87347... changes to fig and git -am
+=======
+    { name: "team:download", description: "download your team's spec" },
+    { name: "integration:iterm", description: "Install the iTerm tab integration" }
+
+>>>>>>> f12c91c... fig: update completion spec with new commands and tweak icons"
   ],
 
   options: [
