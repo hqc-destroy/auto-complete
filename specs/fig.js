@@ -15,11 +15,15 @@ var completionSpec = {
         description: "Email address of the user you want to invite",
 <<<<<<< HEAD
         variadic: true,
+<<<<<<< HEAD
         staticSuggestions: [
 =======
         variadic: true, // default is false
         suggestions: [
 >>>>>>> ac4358a... adding v2 of spec format for autocomplete
+=======
+        suggestions: [
+>>>>>>> c3b1241... Fix completion specs for linter
           {
             name: "<email>",
             insertValue: " ",

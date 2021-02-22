@@ -27,6 +27,7 @@ Completion specs are defined in a *declarative* JSON schema, that specifies `sub
 
 ## FAQ
 
+<<<<<<< HEAD
 #### What terminals does Fig work with?
 Fig works with iTerm and Terminal app.
 
@@ -45,4 +46,15 @@ Yes! Check out the [autocomplete for teams](https://withfig.com/docs/autocomplet
 
 #### Did we miss something?
 Get in touch at hello@withfig.com or chat with us on [Slack](https://withfig.com/community)
+=======
+### Linting Your Spec
+The autocomplete spec linter can be run to validate the format of completion specs. Run it to get syntax and type errors from your autocomplete spec.
+
+To use the linter, run the following command from the root folder.
+`node linter.js specs/[specName].js`
+
+### Questions and support
+<br />
+<p>Email us any time: <a href="mailto:hello@withfig.com">hello@withfig.com</a></p>
+>>>>>>> 3b53b63... Move linter to root
 

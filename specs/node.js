@@ -4,11 +4,21 @@ var completionSpec = {
     args: {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         templateSuggestions: ["files", "folders"] 
 =======
         generator: {
             script: "ls -1 | grep '.js'",
             splitOn: "\n"
+=======
+        template: "filepaths",
+        generators: {
+            postProcess: function (paths) {
+                return paths.filter(file => {
+                    return file.name.endsWith('.js') || file.name.endsWith('/')
+                })
+            }
+>>>>>>> c3b1241... Fix completion specs for linter
         }
 >>>>>>> ac4358a... adding v2 of spec format for autocomplete
 =======

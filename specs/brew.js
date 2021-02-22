@@ -13,8 +13,6 @@ var generators = {
     }
 }
 
-
-
 var completionSpec = {
     name: "brew",
     description: "Package manager for macOS",
@@ -102,6 +100,7 @@ var completionSpec = {
         {
             name: "cask",
             insertValue: "cask ",
+<<<<<<< HEAD
             description: "Homebrew  Cask provides a friendly CLI workflow for the administration of macOS applications distributed as binaries.",
 <<<<<<< HEAD
             subcommands:[
@@ -113,6 +112,13 @@ var completionSpec = {
                     name: "install",
 >>>>>>> ac4358a... adding v2 of spec format for autocomplete
                     insertValue: "install ",
+=======
+            description: "Homebrew Cask provides a friendly CLI workflow for the administration of macOS applications distributed as binaries.",
+            subcommands: [
+                {
+                    name: "install",
+                    insertValue: "install",
+>>>>>>> c3b1241... Fix completion specs for linter
                     description: "Installs the given cask",
                     args: {
                         name: "<cask>",
