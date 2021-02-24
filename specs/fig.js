@@ -106,6 +106,7 @@ var completionSpec = {
 >>>>>>> 01799b1... fig: update report subcommand
 =======
     { name: "onboarding", description: "re-run Fig's onboarding" },
+    { name: "diagnostic", description: "display diagnostic information" },
     {
       name: "team:upload", description: "share an completion spec with your team",
       args: {
