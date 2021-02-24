@@ -118,7 +118,7 @@ var completionSpec = {
 >>>>>>> 3f87347... changes to fig and git -am
 =======
     { name: "team:download", description: "download your team's spec" },
-    { name: "integration:iterm", description: "Install the iTerm tab integration" }
+    { name: "integrations:iterm", description: "Install the iTerm tab integration" }
 
 >>>>>>> f12c91c... fig: update completion spec with new commands and tweak icons"
   ],
