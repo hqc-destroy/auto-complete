@@ -118,7 +118,7 @@ const ssh: Fig.Spec = {
             args: {
                 name: "configfile",
                 description: "Path to alternative config file",
-                template: ["filepaths"]
+                template: "filepaths"
             }
         },
         {
@@ -142,7 +142,7 @@ const ssh: Fig.Spec = {
             args: {
                 name: "identity file",
                 description: "path to identity (private key)",
-                template: ["filepaths"]
+                template: "filepaths"
             }
         },
         {
@@ -301,7 +301,7 @@ const ssh: Fig.Spec = {
             args: {
                 name: "ctl_path",
                 description: "location of the control socket",
-                template: ["filepaths"]
+                template: "filepaths"
             }
         },
         {

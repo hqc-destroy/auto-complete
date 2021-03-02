@@ -4,7 +4,7 @@ const rm: Fig.Spec = {
     description: "remove directory entries",
     args: [
         {
-            template: ["filepaths"]
+            template: "filepaths"
         },
     ],
     subcommands: [],

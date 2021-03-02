@@ -66,7 +66,7 @@ const vercelCompletionSpec:Fig.Spec = {
     description: "CLI Interface for Vercel.com",
     args: {
         name: "path to project",
-        template: ["folders"]
+        template: "folders"
     },
     options: [
         {
@@ -86,7 +86,7 @@ const vercelCompletionSpec:Fig.Spec = {
             description: "Path to the local 'vercel.json' file",
             args: [
                 {
-                    template: ["filepaths"]
+                    template: "filepaths"
                 }
             ]
         },
@@ -95,7 +95,7 @@ const vercelCompletionSpec:Fig.Spec = {
             description: "Path to the global '.vercel' directory",
             args: [
                 {
-                    template: ["folders"]
+                    template: "folders"
                 }
             ]
         },
@@ -166,7 +166,7 @@ const vercelCompletionSpec:Fig.Spec = {
             name: "deploy",
             description: "Performs a deployment (default)",
             args: {
-                template: ["folders"]
+                template: "folders"
             }
         },
         {
@@ -251,7 +251,7 @@ const vercelCompletionSpec:Fig.Spec = {
                         {
                             name: "file",
                             description: "the file to write downloaded variables to",
-                            template: ["filepaths"]
+                            template: "filepaths"
                         }
                     ]
                 },
@@ -545,17 +545,17 @@ const vercelCompletionSpec:Fig.Spec = {
                 {
                     name: ["--crt"],
                     description: "Include path to .crt",
-                    args: [{ template: ["filepaths"] }]
+                    args: [{ template: "filepaths" }]
                 },
                 {
                     name: ["--key"],
                     description: "Include path to .key",
-                    args: [{ template: ["filepaths"] }]
+                    args: [{ template: "filepaths" }]
                 },
                 {
                     name: ["--ca"],
                     description: "Include path to .ca",
-                    args: [{ template: ["filepaths"] }]
+                    args: [{ template: "filepaths" }]
                 }
             ]
         },

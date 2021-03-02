@@ -3,7 +3,7 @@ const sublCompletionSpec:Fig.Spec = {
     description: "Sublime Text",
     args: {
         variadic: true,
-        template: ["filepaths"]
+        template: "filepaths"
     },
     subcommands: [],
 }

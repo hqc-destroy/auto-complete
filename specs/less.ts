@@ -3,6 +3,6 @@ const lessCompletionSpec:Fig.Spec = {
     description: "opposite of more",
     args: {
     	variadic: true,
-        template: ["filepaths"]
+        template: "filepaths"
     }
 }

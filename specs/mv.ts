@@ -4,10 +4,10 @@ const mv: Fig.Spec = {
     description: "move & rename files and folders",
     args: [
         {   
-            template: ["filepaths"]
+            template: "filepaths"
         },
         {
-            template: ["folders"]
+            template: "folders"
         }
     ],
     options: [

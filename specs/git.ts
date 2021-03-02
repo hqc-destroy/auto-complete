@@ -698,7 +698,7 @@ const gitCompletionSpec:Fig.Spec = {
                     description: "Show history of given file",
                     args: {
                         name: "file",
-                        template: ["filepaths"]
+                        template: "filepaths"
                     }
                 },
                 {
@@ -804,7 +804,7 @@ const gitCompletionSpec:Fig.Spec = {
         { name: "reflog", description: "Show history of events with hashes" },
         {
             name: "clone", description: "Clone a repository into a new directory",
-            args: [{ name: "repository" }, { name: "directory", template: ["filepaths"] }]
+            args: [{ name: "repository" }, { name: "directory", template: "filepaths" }]
         },
         { name: "init", description: "Create an empty Git repository or reinitialize an existing one" },
         { name: "mv", description: "Move or rename a file, a directory, or a symlink" },

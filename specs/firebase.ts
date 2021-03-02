@@ -113,7 +113,7 @@ const firebaseCompletionSpec:Fig.Spec = {
       description: "print the Google Services config",
       args: {
         variadic: true,
-        template: ["filepaths"],
+        template: "filepaths",
       },
       options: [
         {
@@ -134,7 +134,7 @@ const firebaseCompletionSpec:Fig.Spec = {
       description: "print the Google Services config",
       args: {
         variadic: true,
-        template: ["filepaths"],
+        template: "filepaths",
       },
       options: [
         {
@@ -207,7 +207,7 @@ const firebaseCompletionSpec:Fig.Spec = {
         },
       ],
       args: {
-        template: ["filepaths"],
+        template: "filepaths",
       },
     },
     {
@@ -273,7 +273,7 @@ const firebaseCompletionSpec:Fig.Spec = {
           name: ["--params"],
           description: "path of params file with .env format",
           args: {
-            template: ["filepaths"],
+            template: "filepaths",
           },
         },
       ],
@@ -339,7 +339,7 @@ const firebaseCompletionSpec:Fig.Spec = {
           name: ["--params"],
           description: "path of params file with .env format",
           args: {
-            template: ["filepaths"],
+            template: "filepaths",
           },
         },
       ],

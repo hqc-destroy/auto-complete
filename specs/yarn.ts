@@ -30,7 +30,7 @@ const yarnCompletionSpec:Fig.Spec = {
             name: "--cache-folder",
             description: "specify a custom folder that must be used to store the yarn cache",
             args: {
-                template: ["folders"]
+                template: "folders"
             }
         },
         {
@@ -41,7 +41,7 @@ const yarnCompletionSpec:Fig.Spec = {
             name: "--cwd",
             description: "working directory to use (default: .)",
             args: {
-                template: ["folders"]
+                template: "folders"
             }
         },
         {
@@ -80,7 +80,7 @@ const yarnCompletionSpec:Fig.Spec = {
             name: "--global-folder",
             description: "specify a custom folder to store global packages",
             args: {
-                template: ["folders"]
+                template: "folders"
             }
         },
         {
@@ -125,14 +125,14 @@ const yarnCompletionSpec:Fig.Spec = {
             name: "--link-folder",
             description: "specify a custom folder to store global links",
             args: {
-                template: ["folders"]
+                template: "folders"
             }
         },
         {
             name: "--modules-folder",
             description: "rather than installing modules into the node_modules folder relative to the cwd, output them here",
             args: {
-                template: ["folders"]
+                template: "folders"
             }
         },
         {
@@ -216,7 +216,7 @@ const yarnCompletionSpec:Fig.Spec = {
             name: "--preferred-cache-folder",
             description: "specify a custom folder to store the yarn cache if possible",
             args: {
-                template: ["folders"]
+                template: "folders"
             }
         },
         {
@@ -273,7 +273,7 @@ const yarnCompletionSpec:Fig.Spec = {
             name: "--use-yarnrc",
             description: "specifies a yarnrc file that Yarn should use (.yarnrc only, not .npmrc)",
             args: {
-                template: ["filepaths"]
+                template: "filepaths"
             }
         },
         {
@@ -435,14 +435,14 @@ const yarnCompletionSpec:Fig.Spec = {
                     name: "--use-manifest",
                     description: "Specify which manifest file to use for generating lock entry",
                     args: {
-                        template: ["filepaths"]
+                        template: "filepaths"
                     }
                 },
                 {
                     name: "--resolved",
                     description: "Generate from <*.tgz>#<hash>",
                     args: {
-                        template: ["filepaths"]
+                        template: "filepaths"
                     }
                 },
                 {

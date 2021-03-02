@@ -2,7 +2,11 @@ const mkdir: Fig.Spec = {
   name: 'mkdir',
   description: 'make directories',
   args: {
+<<<<<<< HEAD:specs/mkdir.ts
     name: 'directory name'
+=======
+    name: "folder name"
+>>>>>>> 43da703... Update mkdir.js:specs/mkdir.js
   },
   options: [
     {

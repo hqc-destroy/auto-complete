@@ -40,7 +40,7 @@ const chmod: Fig.Spec = {
         },
         {
             // Modifying
-            template: ["filepaths"]
+            template: "filepaths"
         }
     ],
     subcommands: [],

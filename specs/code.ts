@@ -2,7 +2,7 @@ const codeCompletionSpec:Fig.Spec = {
 	name: "code",
 	description: "Visual Studio Code",
 	args: {
-		template: ["filepaths"]
+		template: "filepaths"
 	},
 	options: [
 		{
@@ -10,10 +10,10 @@ const codeCompletionSpec:Fig.Spec = {
 			description: "Compare two files with each other.",
 			args: [
 				{
-					template: ["filepaths"]
+					template: "filepaths"
 				},
 				{
-					template: ["filepaths"]
+					template: "filepaths"
 				}
 			],
 		},
@@ -21,7 +21,7 @@ const codeCompletionSpec:Fig.Spec = {
 			name: ["-a", "--add"],
 			description: "Add folder(s) to the last active window",
 			args: {
-				template: ["folders"]
+				template: "folders"
 			}
 		},
 		{
@@ -29,10 +29,10 @@ const codeCompletionSpec:Fig.Spec = {
 			description: "Force to open a new window.",
 			args: [
 				{
-					template: ["filepaths"]
+					template: "filepaths"
 				},
 				{
-					template: ["filepaths"]
+					template: "filepaths"
 				}
 			],
 		},

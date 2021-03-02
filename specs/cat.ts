@@ -4,6 +4,6 @@ const cat: Fig.Spec = {
     description: "concatenate and print files",
     args: {
         variadic: true,
-        template: ["filepaths"]
+        template: "filepaths"
     }
 }
