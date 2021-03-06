@@ -29,7 +29,7 @@ Completion specs are defined in a *declarative* JSON schema, that specifies `sub
 
 <<<<<<< HEAD
 #### What terminals does Fig work with?
-Fig works with iTerm and Terminal app.
+Fig works with iTerm, the native MacOS Terminal app, Hyperand the integrated terminal inVSCode.
 
 #### How does Fig work?
 Fig uses the Accessibility API on Mac to insert text on your behalf and read the current keybuffer.
