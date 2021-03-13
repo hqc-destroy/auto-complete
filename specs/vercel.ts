@@ -1,4 +1,4 @@
-var envVarList = {
+const envVarList:Fig.Generator = {
     script: "vercel env ls",
     postProcess: function(out) {
         var lines = out.split('\n');
@@ -14,7 +14,7 @@ var envVarList = {
 }
 
 //Unfinished
-var deploymentList = {
+const deploymentList:Fig.Generator = {
     //Grabs all the deployments for
     script: "vercel list [project name]",
     postProcess: function(out) {
@@ -31,7 +31,7 @@ var deploymentList = {
     }
 }
 
-var domainList = {
+const domainList:Fig.Generator = {
     script: "vercel domains",
     postProcess: function(out) {
         var lines = out.split('\n');
@@ -46,7 +46,7 @@ var domainList = {
     }
 }
 
-var teamList = {
+const teamList:Fig.Generator = {
     script: "vercel teams list",
     postProcess: function(out) {
         var lines = out.split('\n');
@@ -61,12 +61,12 @@ var teamList = {
     }
 }
 
-var completionSpec = {
+const vercelCompletionSpec:Fig.Spec = {
     name: "vercel",
     description: "CLI Interface for Vercel.com",
     args: {
         name: "path to project",
-        template: "folders"
+        template: ["folders"]
     },
     options: [
         {
@@ -86,7 +86,7 @@ var completionSpec = {
             description: "Path to the local 'vercel.json' file",
             args: [
                 {
-                    template: "filepaths"
+                    template: ["filepaths"]
                 }
             ]
         },
@@ -95,7 +95,7 @@ var completionSpec = {
             description: "Path to the global '.vercel' directory",
             args: [
                 {
-                    template: "folders"
+                    template: ["folders"]
                 }
             ]
         },
@@ -166,7 +166,7 @@ var completionSpec = {
             name: "deploy",
             description: "Performs a deployment (default)",
             args: {
-                template: "folders"
+                template: ["folders"]
             }
         },
         {
@@ -251,7 +251,7 @@ var completionSpec = {
                         {
                             name: "file",
                             description: "the file to write downloaded variables to",
-                            template: "filepaths"
+                            template: ["filepaths"]
                         }
                     ]
                 },
@@ -425,7 +425,7 @@ var completionSpec = {
                         {
                             name: "domain",
                             description: "domain to move",
-                            generator: domainList
+                            generators: domainList
                         },
                         {
                             name: "account name",
@@ -545,17 +545,17 @@ var completionSpec = {
                 {
                     name: ["--crt"],
                     description: "Include path to .crt",
-                    args: [{ template: "filepaths" }]
+                    args: [{ template: ["filepaths"] }]
                 },
                 {
                     name: ["--key"],
                     description: "Include path to .key",
-                    args: [{ template: "filepaths" }]
+                    args: [{ template: ["filepaths"] }]
                 },
                 {
                     name: ["--ca"],
                     description: "Include path to .ca",
-                    args: [{ template: "filepaths" }]
+                    args: [{ template: ["filepaths"] }]
                 }
             ]
         },

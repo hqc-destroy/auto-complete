@@ -4,7 +4,7 @@ const tar: Fig.Spec = {
     description: "Manipulating archive files",
     args: {
     	variadic: true,
-        template: "folders" 
+        template: ["folders"]
     },
     options: [
  		{
@@ -12,7 +12,7 @@ const tar: Fig.Spec = {
             description: "Create a new archive",
             args: {
     	        variadic: true,
-                template: "folders" 
+                template: ["folders"]
             }
         },
  		{

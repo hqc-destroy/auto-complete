@@ -4,10 +4,10 @@ const cp: Fig.Spec = {
     description: "copy files and directories",
     args: [
         {
-            template: "filepaths"
+            template: ["filepaths"]
         },
         {
-            template: "filepaths"
+            template: ["filepaths"]
         }
     ],
     options: [

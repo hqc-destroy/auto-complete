@@ -1,5 +1,4 @@
-var generators = {
-
+const generators:Record<string, Fig.Generator> = {
     // Commit history
     commits: {
         script: "git log --oneline",
@@ -119,8 +118,7 @@ let head = {
     description: "Reset multiple commits",
 }
 
-var completionSpec = {
-
+const gitCompletionSpec:Fig.Spec = {
     name: "git",
     description: "the stupid content tracker",
     options: [
@@ -700,7 +698,7 @@ var completionSpec = {
                     description: "Show history of given file",
                     args: {
                         name: "file",
-                        template: "filepaths"
+                        template: ["filepaths"]
                     }
                 },
                 {
@@ -806,7 +804,7 @@ var completionSpec = {
         { name: "reflog", description: "Show history of events with hashes" },
         {
             name: "clone", description: "Clone a repository into a new directory",
-            args: [{ name: "repository" }, { name: "directory", template: "filepaths" }]
+            args: [{ name: "repository" }, { name: "directory", template: ["filepaths"] }]
         },
         { name: "init", description: "Create an empty Git repository or reinitialize an existing one" },
         { name: "mv", description: "Move or rename a file, a directory, or a symlink" },
