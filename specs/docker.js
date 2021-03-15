@@ -2943,8 +2943,9 @@ var completionSpec = {
 		{ 
 			name: "update",      
 			description: "Update configuration of one or more containers",
-			// TODO: Pull in containers
-			args: {},
+			// INFO: You can do this on any container, even if it's not running - Is that useful though?
+			// INFO: For now, only displaying running containers
+			args: containersArg,
 			options: [
 				{
 					"args": {
