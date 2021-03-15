@@ -94,16 +94,23 @@ var generators = {
 // 	}
 // ],
 
-var containerArg = {
+var containersArg = {
 	name: 'container',
 	generators: [
 		generators.runningDockerContainers,
+	]
+};
+
+var imagesArg = {
+	name: 'image',
+	generators: [
+		generators.allLocalImages,
 	]
 }
 
 
 const containerAndCommandArgs = [
-	containerArg,
+	containersArg,
 	{
 		name: 'command',
 		isCommand: true
@@ -1844,7 +1851,7 @@ var completionSpec = {
 		{ 
 			name: "export",      
 			description: "Export a container's filesystem as a tar archive", 
-			args: containerArg,
+			args: containersArg,
 			options: [
 				{
 					"description": "Write to a file, instead of STDOUT",
@@ -1862,8 +1869,7 @@ var completionSpec = {
 		{ 
 			name: "history",     
 			description: "Show the history of an image", 
-			// LS images
-			args: {},
+			args: imagesArg,
 			options: [
 				{
 					"description": "Pretty-print images using a Go template",
