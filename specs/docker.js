@@ -3103,13 +3103,6 @@ var completionSpec = {
 					}
 				},
 				{
-					"description": "Help for version",
-					"name": [
-						"-h",
-						"--help"
-					]
-				},
-				{
 					"description": "Kubernetes config file",
 					"name": [
 						"--kubeconfig"
