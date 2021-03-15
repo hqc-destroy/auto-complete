@@ -2757,7 +2757,10 @@ var completionSpec = {
 		{ 
 			name: "search",      
 			description: "Search the Docker Hub for images",
-			args: {},
+			args: {
+				name: 'TERM',
+				displayName: 'Search term'
+			},
 			options: [
 				{
 					"args": {
