@@ -15,6 +15,7 @@ const Arg = Joi.object({
     generator: Joi.alternatives().try(Generator),
     variadic: Joi.boolean(),
 <<<<<<< HEAD
+<<<<<<< HEAD
     isOptional: Joi.boolean()
 =======
     template: Joi.string().valid("filepaths", "folders"),
@@ -27,6 +28,13 @@ const Arg = Joi.object({
     isOptional: Joi.boolean(),
     isCommand: Joi.boolean()
 >>>>>>> 013e760... feat: isCommand field for Arg
+=======
+    isVariadic: Joi.boolean(),
+    isCommand: Joi.boolean(),
+    isScript: Joi.boolean(),
+    isOptional: Joi.boolean(),
+    isDangerous: Joi.boolean()
+>>>>>>> 18b507a... fix arg linter
 })
 
 module.exports = { Arg };
