@@ -2376,8 +2376,7 @@ var completionSpec = {
 		{ 
 			name: "restart",     
 			description: "Restart one or more containers", 
-			// TODO: Running containers
-			args: {},
+			args: containersArg,
 			options: [
 				{
 					"description": "Seconds to wait for stop before killing the container (default 10)",
