@@ -1985,7 +1985,18 @@ var completionSpec = {
 			name: "info",        
 			description: "Display system-wide information", 
 			args: {},
-			options: [],
+			options: [
+				{
+					"args": {
+						"name": "string"
+					},
+					"description": "Format the output using the given Go template",
+					"name": [
+						"-f",
+						"--format"
+					]
+				}
+			],
 			subcommands: []
 		},
         {
