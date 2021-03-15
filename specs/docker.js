@@ -2211,8 +2211,12 @@ var completionSpec = {
 		{ 
 			name: "port",        
 			description: "List port mappings or a specific mapping for the container", 
-			// TODO: Running containers
-			args: {},
+			args: [
+				containersArg,
+				{
+					name: '[PRIVATE_PORT[/PROTO]]'
+				}
+			],
 			options: [],
 			subcommands: []
 		},
