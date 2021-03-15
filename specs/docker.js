@@ -2905,8 +2905,8 @@ var completionSpec = {
 		{ 
 			name: "top",         
 			description: "Display the running processes of a container",
-			// TODO: Running contains and display ps OPtion?
-			args: {},
+			// TODO: You can pass in psOptions?
+			args: containersArg,
 			options: [],
 			subcommands: [] 
 		},
