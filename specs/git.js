@@ -1,10 +1,17 @@
 var generators = {
     // Commit history
     commits: {
+<<<<<<< HEAD
         script: 'git log --oneline',
         postProcess: function (out) {
             if (out.startsWith('fatal:')) {
                 return [];
+=======
+        script: "git log --oneline",
+        postProcess: function(out) {
+            if (out.startsWith("fatal:")) {
+                return []
+>>>>>>> 9136b0f... implement stash generator
             }
             return out.split('\n').map(function (line) {
                 return {
@@ -15,16 +22,47 @@ var generators = {
             });
         },
     },
+<<<<<<< HEAD
+=======
+
+    // Saved stashes
+    // TODO: maybe only print names of stashes
+    stashes: {
+        script: "git stash list",
+        postProcess: function(out) {
+            if (out.startsWith("fatal:")) {
+                return []
+            }
+
+            return out.split('\n').map((file) => {
+                return {
+                    name: file,
+                    insertValue: file,
+                    icon: `fig://icon?type=node`,
+                }
+            })
+        }
+    },
+
+
+>>>>>>> 9136b0f... implement stash generator
     // Tree-ish
     // This needs to be fleshed out properly....
     // e.g. what is difference to commit-ish?
     // Refer to this:https://stackoverflow.com/questions/23303549/what-are-commit-ish-and-tree-ish-in-git/40910185
     // https://mirrors.edge.kernel.org/pub/software/scm/git/docs/#_identifier_terminology
     treeish: {
+<<<<<<< HEAD
         script: 'git diff --cached --name-only',
         postProcess: function (out) {
             if (out.startsWith('fatal:')) {
                 return [];
+=======
+        script: "git diff --cached --name-only",
+        postProcess: function(out) {
+            if (out.startsWith("fatal:")) {
+                return []
+>>>>>>> 9136b0f... implement stash generator
             }
             return out.split('\n').map(function (file) {
                 return {
@@ -38,10 +76,17 @@ var generators = {
     },
     // All branches
     branches: {
+<<<<<<< HEAD
         script: 'git branch --no-color',
         postProcess: function (out) {
             if (out.startsWith('fatal:')) {
                 return [];
+=======
+        script: "git branch --no-color",
+        postProcess: function(out) {
+            if (out.startsWith("fatal:")) {
+                return []
+>>>>>>> 9136b0f... implement stash generator
             }
             return out.split('\n').map(function (elm) {
                 return { name: elm.replace('*', '').trim(), description: 'branch', icon: 'fig://icon?type=git' };
@@ -49,12 +94,21 @@ var generators = {
         },
     },
     remotes: {
+<<<<<<< HEAD
         script: 'git remote',
         postProcess: function (out) {
             return out.split('\n').map(function (remote) {
                 return { name: remote, description: 'remote' };
             });
         },
+=======
+        script: "git remote",
+        postProcess: function(out) {
+            return out.split('\n').map(remote => {
+                return { name: remote, description: "remote" }
+            })
+        }
+>>>>>>> 9136b0f... implement stash generator
     },
     tags: {
         script: 'git tag --list',
@@ -62,10 +116,17 @@ var generators = {
     },
     // Files for staging
     files_for_staging: {
+<<<<<<< HEAD
         script: 'git status --short',
         postProcess: function (out) {
             if (out.startsWith('fatal:')) {
                 return [];
+=======
+        script: "git status --short",
+        postProcess: function(out) {
+            if (out.startsWith("fatal:")) {
+                return []
+>>>>>>> 9136b0f... implement stash generator
             }
             // out = out + " "
             var items = out.split('\n').map(function (file) {
@@ -77,9 +138,15 @@ var generators = {
                 var file = item.file;
                 var ext = '';
                 try {
+<<<<<<< HEAD
                     ext = file.split('.').slice(-1)[0];
                 }
                 catch (e) { }
+=======
+                    ext = file.split('.').slice(-1)[0]
+                } catch (e) {}
+
+>>>>>>> 9136b0f... implement stash generator
                 if (file.endsWith('/')) {
                     ext = 'folder';
                 }
@@ -100,12 +167,21 @@ var head = {
     description: 'Reset multiple commits',
 };
 var completionSpec = {
+<<<<<<< HEAD
     name: 'git',
     description: 'the stupid content tracker',
     options: [
         {
             name: '--version',
             description: 'Output version',
+=======
+
+    name: "git",
+    description: "the stupid content tracker",
+    options: [{
+            name: "--version",
+            description: "Output version"
+>>>>>>> 9136b0f... implement stash generator
         },
         {
             name: '--help',
@@ -190,6 +266,7 @@ var completionSpec = {
             description: 'Set the Git namespace',
         },
     ],
+<<<<<<< HEAD
     subcommands: [
         {
             name: 'commit',
@@ -198,6 +275,14 @@ var completionSpec = {
             options: [
                 {
                     name: ['-m', '--message'],
+=======
+    subcommands: [{
+            name: "commit",
+            description: "Record changes to the repository",
+            insertValue: "commit",
+            options: [{
+                    name: ["-m", "--message"],
+>>>>>>> 9136b0f... implement stash generator
                     insertValue: "-m '{cursor}'",
                     description: 'use the given message as the commit message',
                     args: {
@@ -223,6 +308,7 @@ var completionSpec = {
             ],
         },
         {
+<<<<<<< HEAD
             name: 'config',
             description: 'set author',
             options: [
@@ -235,6 +321,18 @@ var completionSpec = {
                             {
                                 name: 'user.name',
                                 description: 'set config for username',
+=======
+            name: "config",
+            description: "set author",
+            options: [{
+                    name: "--local",
+                    description: "Default: write to the repository .git/config file",
+                    args: {
+                        variadic: true,
+                        suggestions: [{
+                                name: "user.name",
+                                description: "set config for username",
+>>>>>>> 9136b0f... implement stash generator
                                 insertValue: "user.name '{cursor}'",
                             },
                             {
@@ -251,10 +349,16 @@ var completionSpec = {
                     description: 'For writing options: write to global ~/.gitconfig file rather than the repository .git/config',
                     args: {
                         variadic: true,
+<<<<<<< HEAD
                         suggestions: [
                             {
                                 name: 'user.name',
                                 description: 'set config for username',
+=======
+                        suggestions: [{
+                                name: "user.name",
+                                description: "set config for username",
+>>>>>>> 9136b0f... implement stash generator
                                 insertValue: "user.name '{cursor}'",
                             },
                             {
@@ -286,12 +390,20 @@ var completionSpec = {
             },
         },
         {
+<<<<<<< HEAD
             name: 'add',
             description: 'Add file contents to the index',
             options: [
                 {
                     name: ['-A', '--all', '--no-ignore-removal'],
                     description: 'Add, modify, and remove index entries to match the working tree',
+=======
+            name: "add",
+            description: "Add file contents to the index",
+            options: [{
+                    name: ["-A", "--all", "--no-ignore-removal"],
+                    description: "Add, modify, and remove index entries to match the working tree"
+>>>>>>> 9136b0f... implement stash generator
                 },
                 {
                     name: ['-f', '--force'],
@@ -325,12 +437,20 @@ var completionSpec = {
             },
         },
         {
+<<<<<<< HEAD
             name: 'status',
             description: 'Show the working tree status',
             options: [
                 {
                     name: ['-v', '--verbose'],
                     description: 'be verbose',
+=======
+            name: "status",
+            description: "Show the working tree status",
+            options: [{
+                    name: ["-v", "--verbose"],
+                    description: "be verbose"
+>>>>>>> 9136b0f... implement stash generator
                 },
                 {
                     name: ['-b', '--branch'],
@@ -356,10 +476,16 @@ var completionSpec = {
                     name: ['-u', '--untracked-files'],
                     description: 'show untracked files',
                     args: {
+<<<<<<< HEAD
                         suggestions: [
                             {
                                 name: 'all',
                                 description: '(Default)',
+=======
+                        suggestions: [{
+                                name: "all",
+                                description: "(Default)"
+>>>>>>> 9136b0f... implement stash generator
                             },
                             {
                                 name: 'normal',
@@ -374,10 +500,16 @@ var completionSpec = {
                     name: '--ignored',
                     description: 'show ignored files',
                     args: {
+<<<<<<< HEAD
                         suggestions: [
                             {
                                 name: 'traditional',
                                 description: '(Default)',
+=======
+                        suggestions: [{
+                                name: "traditional",
+                                description: "(Default)"
+>>>>>>> 9136b0f... implement stash generator
                             },
                             {
                                 name: 'matching',
@@ -395,12 +527,20 @@ var completionSpec = {
             ],
         },
         {
+<<<<<<< HEAD
             name: 'push',
             description: 'Update remote refs',
             options: [
                 {
                     name: '-all',
                     description: 'Push all branches to remote',
+=======
+            name: "push",
+            description: "Update remote refs",
+            options: [{
+                    name: "-all",
+                    description: "Push all branches to remote"
+>>>>>>> 9136b0f... implement stash generator
                 },
                 // { name: "--repo", description: "repository" },
                 // { name: "--all", description: "push all refs" },
@@ -409,9 +549,14 @@ var completionSpec = {
                 { name: '--tags', description: "push tags (can't be used with --all or --mirror)" },
                 // { name: ["-n", "--dry-run"], description: "dry run" },
             ],
+<<<<<<< HEAD
             args: [
                 {
                     name: 'remote',
+=======
+            args: [{
+                    name: "remote",
+>>>>>>> 9136b0f... implement stash generator
                     isOptional: true,
                     generators: generators.remotes,
                 },
@@ -423,11 +568,18 @@ var completionSpec = {
             ],
         },
         {
+<<<<<<< HEAD
             name: 'pull',
             description: 'Integrate with another repository',
             args: [
                 {
                     name: 'remote',
+=======
+            name: "pull",
+            description: "Integrate with another repository",
+            args: [{
+                    name: "remote",
+>>>>>>> 9136b0f... implement stash generator
                     isOptional: true,
                     generators: generators.remotes,
                 },
@@ -439,6 +591,7 @@ var completionSpec = {
             ],
         },
         {
+<<<<<<< HEAD
             name: 'diff',
             description: 'Show changes between commits, commit and working tree, etc',
             options: [
@@ -457,6 +610,23 @@ var completionSpec = {
                     name: '--keep',
                     insertValue: '--keep {cursor}',
                     description: 'Safe: files which are different between the current HEAD and the given commit. Will abort if there are uncommitted changes',
+=======
+            name: "diff",
+            description: "Show changes between commits, commit and working tree, etc",
+            options: [{
+                name: "--staged",
+                insertValue: "--staged",
+                description: "Show difference between the files in the staging area and the latest version",
+            }]
+        },
+        {
+            name: "reset",
+            description: "Reset current HEAD to the specified state",
+            options: [{
+                    name: "--keep",
+                    insertValue: "--keep {cursor}",
+                    description: "Safe: files which are different between the current HEAD and the given commit. Will abort if there are uncommitted changes",
+>>>>>>> 9136b0f... implement stash generator
                     args: {
                         variadic: true,
                         suggestions: [head],
@@ -478,6 +648,7 @@ var completionSpec = {
                     description: '⚠️WARNING: you will lose all uncommitted changes in addition to the changes introduced in the last commit',
                     args: {
                         variadic: true,
+<<<<<<< HEAD
                         suggestions: [
                             {
                                 name: 'HEAD~<N>',
@@ -485,6 +656,13 @@ var completionSpec = {
                                 insertValue: 'HEAD~',
                             },
                         ],
+=======
+                        suggestions: [{
+                            name: "HEAD~<N>",
+                            description: "Reset back to any number of commits",
+                            insertValue: "HEAD~",
+                        }],
+>>>>>>> 9136b0f... implement stash generator
                         generators: generators.commits,
                     },
                 },
@@ -494,6 +672,7 @@ var completionSpec = {
                     description: 'keep the changes in your working tree but not on the index',
                     args: {
                         variadic: true,
+<<<<<<< HEAD
                         suggestions: [
                             {
                                 name: 'HEAD~[insert # of commits]',
@@ -501,6 +680,13 @@ var completionSpec = {
                                 insertValue: 'HEAD~',
                             },
                         ],
+=======
+                        suggestions: [{
+                            name: "HEAD~[insert # of commits]",
+                            description: "Reset back any number of commits",
+                            insertValue: "HEAD~",
+                        }],
+>>>>>>> 9136b0f... implement stash generator
                         generators: generators.commits,
                     },
                 },
@@ -524,6 +710,7 @@ var completionSpec = {
             },
         },
         {
+<<<<<<< HEAD
             name: 'log',
             description: 'Show commit logs',
             insertValue: 'log',
@@ -531,6 +718,14 @@ var completionSpec = {
                 {
                     name: '--follow',
                     description: 'Show history of given file',
+=======
+            name: "log",
+            description: "Show commit logs",
+            insertValue: "log",
+            options: [{
+                    name: "--follow",
+                    description: "Show history of given file",
+>>>>>>> 9136b0f... implement stash generator
                     args: {
                         name: 'file',
                         template: 'filepaths',
@@ -551,6 +746,7 @@ var completionSpec = {
             ],
         },
         {
+<<<<<<< HEAD
             name: 'remote',
             description: 'Manage remote repository',
             insertValue: 'remote {cursor}',
@@ -559,6 +755,15 @@ var completionSpec = {
                     name: 'add',
                     insertValue: 'add {cursor}',
                     description: 'add repo ',
+=======
+            name: "remote",
+            description: "Manage remote repository",
+            insertValue: "remote {cursor}",
+            subcommands: [{
+                    name: "add",
+                    insertValue: "add {cursor}",
+                    description: "add repo ",
+>>>>>>> 9136b0f... implement stash generator
                 },
                 {
                     name: 'set-head',
@@ -581,6 +786,7 @@ var completionSpec = {
                     description: 'Changes the URLs for the remote',
                 },
                 {
+<<<<<<< HEAD
                     name: 'show',
                     description: 'Gives some information about the remote [name]',
                 },
@@ -594,6 +800,20 @@ var completionSpec = {
                     name: '-f',
                     insertValue: '-f',
                     description: 'Fetch after remote info is added',
+=======
+                    name: "show",
+                    description: "Gives some information about the remote [name]"
+                },
+                {
+                    name: "prune",
+                    description: "Equivalent to git fetch --prune [name], except that no new references will be fetched"
+                }
+            ],
+            options: [{
+                    name: "-f",
+                    insertValue: "-f",
+                    description: "Fetch after remote info is added",
+>>>>>>> 9136b0f... implement stash generator
                 },
                 {
                     name: '--tags',
@@ -603,6 +823,7 @@ var completionSpec = {
             ],
         },
         {
+<<<<<<< HEAD
             name: 'fetch',
             description: 'Download objects and refs from another repository',
             args: [
@@ -879,6 +1100,48 @@ var completionSpec = {
 			{}
 		    ]
 		},
+=======
+            name: "fetch",
+            description: "Download objects and refs from another repository",
+            options: [{
+                name: "origin",
+                description: "copies all branches from the remote"
+            }]
+        },
+        {
+            name: "stash",
+            description: "temporarily stores all the modified tracked files",
+            subcommands: [{
+                    name: "push",
+                    description: "",
+                    insertValue: "push {cursor}",
+                    options: [
+                        { name: ["-p", "--patch"], description: "" },
+                        { name: ["-k", "--keep-index"], description: "All changed already added to the index are left intact." },
+                        { name: ["-p", "--includepatch-untracked"], description: "" },
+                        { name: ["-a", "--all"], description: "All ignored and untracked files are also stashed." },
+                        { name: ["-q", "--quiet"], description: "" },
+                        { name: ["-m", "--message"], description: "" },
+                        { name: "--pathspec-from-file=", description: "" }, // TODO: pathspec file nul
+                        { name: "--" },
+                        // TODO: pathspec
+                    ]
+                },
+                {
+                    name: "show",
+                    description: "",
+                    insertValue: "show {cursor}",
+                    options: [
+                        // TODO: log options
+                        {}
+                    ],
+                    args: [{
+                        name: "stash",
+                        isOptional: true,
+                        generators: generators.stash
+                    }]
+                },
+>>>>>>> 9136b0f... implement stash generator
                 {
 <<<<<<< HEAD
                     name: 'save',
@@ -903,99 +1166,131 @@ var completionSpec = {
             ],
 =======
                     name: "save",
-                    description: "Temporarily stores all the modified tracked files"
-		    insertValue: "save {cursor}"
-		    options:
-		    [
-			{name: ["-p", "--patch"], description: ""},
-			{name: ["-k", "--keep-index"], description: ""},
-			{name: ["-u", "--include-untracked"], description: ""},
-			{name: ["-a", "--all"], description: ""},
-			{name: ["-q", "--quiet"], description: ""},
-	
-		    ]
+                    description: "Temporarily stores all the modified tracked files",
+                    insertValue: "save {cursor}",
+                    options: [
+                        { name: ["-p", "--patch"], description: "" },
+                        { name: ["-k", "--keep-index"], description: "All changed already added to the index are left intact." },
+                        { name: ["-u", "--include-untracked"], description: "" },
+                        { name: ["-a", "--all"], description: "All ignored and untracked files are also stashed." },
+                        { name: ["-q", "--quiet"], description: "" },
+
+                    ]
                 },
                 {
                     name: "pop",
-                    description: "Restores the most recently stashed files"
-		    insertValue: "pop {cursor}"
-		    options:
-		    [
-			{name: "--index", description: ""},
-			{name: ["-q", "--quiet"], description: ""}
-		    ]
-		    // TODO: need generator for stashed
+                    description: "Restores the most recently stashed files",
+                    insertValue: "pop {cursor}",
+                    options: [
+                        { name: "--index", description: "" },
+                        { name: ["-q", "--quiet"], description: "" }
+                    ],
+                    args: [{
+                        name: "stash",
+                        isOptional: true,
+                        generators: generators.stash
+                    }]
+
                 },
                 {
                     name: "list",
                     description: "Lists all stashed changesets",
                     insertValue: "list {cursor}",
+                    options: [
+                        // TODO: log options
+                    ]
                 },
                 {
                     name: "drop",
-                    description: "Discards the most recently stashed changeset"
-		    insertValue: "drop {cursor}",
-		    options:
-		    [
-			{name: ["-q", "--quiet"]}
-		    ]
-		    // TODO: need generator for stash
+                    description: "Discards the most recently stashed changeset",
+                    insertValue: "drop {cursor}",
+                    options: [
+                        { name: ["-q", "--quiet"] }
+                    ],
+                    args: [{
+                        name: "stash",
+                        isOptional: true,
+                        generators: generators.stash
+                    }]
+
                 },
                 {
                     name: "clear",
-                    description: " Remove all the stash entries."
-		    insertValue: "clear"
+                    description: " Remove all the stash entries.",
+                    insertValue: "clear"
                 },
-		{
-		    name: "apply",
-		    description: ""
-		    insertValue: "apply {cursor}",
-		    options:
-		    [
-			{name: "--index", description: ""},
-			{name: ["-q", "--quiet"], description: ""}
-		    ]
-		    // TODO: need generator for stashed
-		},
-		{
-		    name: "branch",
-		    description: ""
-		    insertValue: "branch {cursor}",
-                    generators: generators.branches,
-		    options:
-		    [
-			//TODO: stash generator
-		    ]
-		},
-		{
-		    name: "create",
-		    description: ""
-		    insertValue: "create {cursor}"
-		},
-		{
-		    name: "store",
-		    description: ""
-		    insertValue: "store",
-		    options:
-		    [
-			{
-			    name: ["-m", "--message"],
-			    description: ""
-			},
-			{
-			    name: ["-q", "--quiet"],
-			    description: ""
-			}
-		    ]
-		},
+                {
+                    name: "apply",
+                    description: "",
+                    insertValue: "apply {cursor}",
+                    options: [
+                        { name: "--index", description: "" },
+                        { name: ["-q", "--quiet"], description: "" }
+                    ],
+                    args: [{
+                            name: "stash",
+                            isOptional: true,
+                            generators: generators.stash
+                        }]
+                        // TODO: need generator for stashed
+                },
+                {
+                    name: "branch",
+                    description: "",
+                    insertValue: "branch {cursor}",
+                    args: {
+                        generators: generators.branches,
+                    },
+                    //TODO: stash generator
+                    args: [{
+                        name: "stash",
+                        isOptional: true,
+                        generators: generators.stash
+                    }]
+                },
+                {
+                    name: "create",
+                    description: "",
+                    insertValue: "create {cursor}",
+                    args: {
+                        name: "message"
+                    },
+                },
+                {
+                    name: "store",
+                    description: "",
+                    insertValue: "store",
+                    args: {
+                        name: "message"
+                    },
+                    options: [{
+                            name: ["-m", "--message"],
+                            description: ""
+                        },
+                        {
+                            name: ["-q", "--quiet"],
+                            description: ""
+                        }
+                    ],
+                    args: [{
+                        name: "commit",
+                        generators: generators.commits
+                    }]
+                },
             ]
 >>>>>>> ff9586a... Implement first options for stash.
         },
         { name: 'reflog', description: 'Show history of events with hashes' },
         {
+<<<<<<< HEAD
             name: 'clone',
             description: 'Clone a repository into a new directory',
             args: [{ name: 'repository' }, { name: 'directory', template: 'filepaths' }],
+=======
+            name: "clone",
+            description: "Clone a repository into a new directory",
+            args: [{ name: "repository" }, { name: "directory", template: "filepaths" }]
+>>>>>>> 9136b0f... implement stash generator
         },
         { name: 'init', description: 'Create an empty Git repository or reinitialize an existing one' },
         { name: 'mv', description: 'Move or rename a file, a directory, or a symlink' },
@@ -1004,6 +1299,7 @@ var completionSpec = {
             description: 'Remove files from the working tree and from the index',
             args: {
                 variadic: true,
+<<<<<<< HEAD
                 suggestions: [
                     {
                         name: '.',
@@ -1013,6 +1309,15 @@ var completionSpec = {
                     },
                 ],
                 generators: generators.files_for_staging,
+=======
+                suggestions: [{
+                    name: ".",
+                    description: "current directory",
+                    insertValue: ".",
+                    icon: "fig://icon?type=folder"
+                }],
+                generators: generators.files_for_staging
+>>>>>>> 9136b0f... implement stash generator
             },
             options: [
                 { name: '--', description: 'used to separate command-line options from the list of files' },
@@ -1030,29 +1335,46 @@ var completionSpec = {
             options: [
                 { name: ['-a', '--all'], description: 'list both remote-tracking and local branches' },
                 {
+<<<<<<< HEAD
                     name: ['-d', '--delete'],
                     description: 'delete fully merged branch',
+=======
+                    name: ["-d", "--delete"],
+                    description: "delete fully merged branch",
+>>>>>>> 9136b0f... implement stash generator
                     args: {
                         generators: generators.branches,
                     },
                 },
                 {
+<<<<<<< HEAD
                     name: '-D',
                     description: 'delete branch (even if not merged)',
+=======
+                    name: "-D",
+                    description: "delete branch (even if not merged)",
+>>>>>>> 9136b0f... implement stash generator
                     args: {
                         generators: generators.branches,
                     },
                 },
                 {
+<<<<<<< HEAD
                     name: ['-m', '--move'],
                     description: 'move/rename a branch and its reflog',
                     args: [
                         {
+=======
+                    name: ["-m", "--move"],
+                    description: "move/rename a branch and its reflog",
+                    args: [{
+>>>>>>> 9136b0f... implement stash generator
                             generators: generators.branches,
                         },
                         {
                             generators: generators.branches,
                         },
+<<<<<<< HEAD
                     ],
                 },
                 {
@@ -1060,20 +1382,37 @@ var completionSpec = {
                     description: 'move/rename a branch, even if target exists',
                     args: [
                         {
+=======
+                    ]
+                },
+                {
+                    name: "-M",
+                    description: "move/rename a branch, even if target exists",
+                    args: [{
+>>>>>>> 9136b0f... implement stash generator
                             generators: generators.branches,
                         },
                         {
                             generators: generators.branches,
                         },
+<<<<<<< HEAD
                     ],
+=======
+                    ]
+>>>>>>> 9136b0f... implement stash generator
                 },
                 { name: ['-c', '--copy'], description: 'copy a branch and its reflog' },
                 { name: '-C', description: 'copy a branch, even if target exists' },
                 { name: ['-l', '--list'], description: 'list branch names' },
                 { name: ['--create-reflog'], description: "create the branch's reflog" },
                 {
+<<<<<<< HEAD
                     name: ['--edit-description'],
                     description: 'edit the description for the branch',
+=======
+                    name: ["--edit-description"],
+                    description: "edit the description for the branch",
+>>>>>>> 9136b0f... implement stash generator
                     args: {
                         generators: generators.branches,
                     },
@@ -1149,6 +1488,11 @@ var completionSpec = {
                 isOptional: true,
             },
         },
+<<<<<<< HEAD
     ],
 };
 
+=======
+    ]
+}
+>>>>>>> 9136b0f... implement stash generator
