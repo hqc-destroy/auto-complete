@@ -1,30 +1,30 @@
 var generators = {
     runningDockerContainers: {
-        script: `docker ps --format '{{ json . }}'`,
+        script: "docker ps --format '{{ json . }}'",
         postProcess: function (out) {
-            let allLines = out.split('\n').map(JSON.parse);
-            return allLines.map(i => ({
+            var allLines = out.split('\n').map(function (line) { return JSON.parse(line); });
+            return allLines.map(function (i) { return ({
                 name: i.ID,
-                displayName: `${i.ID} (${i.Image})`,
-            }));
+                displayName: i.ID + " (" + i.Image + ")",
+            }); });
         }
     },
     allDockerContainers: {
-        script: `docker ps -a --format '{{ json . }}'`,
+        script: "docker ps -a --format '{{ json . }}'",
         postProcess: function (out) {
-            let allLines = out.split('\n').map(JSON.parse);
-            return allLines.map(i => ({
+            var allLines = out.split('\n').map(function (line) { return JSON.parse(line); });
+            return allLines.map(function (i) { return ({
                 name: i.ID,
-                displayName: `${i.ID} (${i.Image})`,
-            }));
+                displayName: i.ID + " (" + i.Image + ")",
+            }); });
         }
     }
 };
-
 var completionSpec = {
     name: "docker",
     description: "A self-sufficient runtime for containers",
     subcommands: [
+<<<<<<< HEAD
 <<<<<<< HEAD
         { name: "attach", description: "Attach local standard input, output, and error streams to a running container" },
         { name: "build", description: "Build an image from a Dockerfile" },
@@ -58,6 +58,9 @@ var completionSpec = {
 =======
 
         {name: "attach", description: "Attach local standard input, output, and error streams to a running container"},
+=======
+        { name: "attach", description: "Attach local standard input, output, and error streams to a running container" },
+>>>>>>> 3c23470... feat: move js specs to ts
         {
             name: "build",
             description: "Build an image from a Dockerfile",
@@ -101,8 +104,8 @@ var completionSpec = {
                     args: {
                         name: 'string',
                         generators: [{
-                            template: 'filepaths'
-                        }]
+                                template: 'filepaths'
+                            }]
                     }
                 },
                 {
@@ -156,7 +159,7 @@ var completionSpec = {
                     description: 'Set type of progress output (auto, plain, tty). Use plain to show container output',
                     args: {
                         name: 'string',
-                        suggestions: ['auto', 'plain', 'tty'].map(i => ({name: i}))
+                        suggestions: ['auto', 'plain', 'tty'].map(function (i) { return ({ name: i }); })
                     }
                 },
                 {
@@ -169,7 +172,7 @@ var completionSpec = {
                 },
                 {
                     name: '--secret',
-                    description: `Secret file to expose to the build (only if BuildKit enabled): id=mysecret,src=/local/secret`,
+                    description: "Secret file to expose to the build (only if BuildKit enabled): id=mysecret,src=/local/secret",
                     args: {
                         name: 'stringArray'
                     }
@@ -180,7 +183,7 @@ var completionSpec = {
                 },
                 {
                     name: '--ssh',
-                    description: `SSH agent socket or keys to expose to the build (only if BuildKit enabled) (format: default|<id>[=<socket>|<key>[,<key>]])`,
+                    description: "SSH agent socket or keys to expose to the build (only if BuildKit enabled) (format: default|<id>[=<socket>|<key>[,<key>]])",
                     args: {
                         name: 'stringArray'
                     }
@@ -195,51 +198,54 @@ var completionSpec = {
                     args: {
                         name: 'target build stage',
                         generators: [{
-                            trigger: function () {
-                                return true;
-                            },
-                            script: function (context) {
-                                let fileFlagIndex, dockerfilePath;
-                                if (context.includes('-f')) {
-                                    fileFlagIndex = context.indexOf('-f');
-                                    dockerfilePath = context[fileFlagIndex + 1];
-                                } else if (context.includes('--file')) {
-                                    fileFlagIndex = context.indexOf('--file');
-                                    dockerfilePath = context[fileFlagIndex + 1];
-                                } else {
-                                    dockerfilePath = '$PWD/Dockerfile';
-                                }
-
-                                return `grep -iE 'FROM.*AS' "${dockerfilePath}"`;
-                            },
-                            postProcess: function (out) {
-                                // This just searches the Dockerfile for the alias name after AS,
-                                // and due to the grep above, will only match lines where FROM and AS
-                                // are on the same line. This could certainly be made more robust
-                                // down the line.
-                                let imageNameRegexp = /(?:[aA][sS]\s+)([\w:.-]+)/;
-                                return out.split('\n').map(i => {
-                                    let result = imageNameRegexp.exec(i);
-                                    if (result) {
-                                        return {
-                                            name: result[1]
-                                        };
+                                trigger: function () {
+                                    return true;
+                                },
+                                script: function (context) {
+                                    var fileFlagIndex;
+                                    var dockerfilePath;
+                                    if (context.includes('-f')) {
+                                        fileFlagIndex = context.indexOf('-f');
+                                        dockerfilePath = context[fileFlagIndex + 1];
                                     }
-                                }).filter(i => i !== undefined);
-                            }
-                        }]
+                                    else if (context.includes('--file')) {
+                                        fileFlagIndex = context.indexOf('--file');
+                                        dockerfilePath = context[fileFlagIndex + 1];
+                                    }
+                                    else {
+                                        dockerfilePath = '$PWD/Dockerfile';
+                                    }
+                                    // TODO: Get the correct return type
+                                    return "grep -iE 'FROM.*AS' \"" + dockerfilePath + "\"";
+                                },
+                                postProcess: function (out) {
+                                    // This just searches the Dockerfile for the alias name after AS,
+                                    // and due to the grep above, will only match lines where FROM and AS
+                                    // are on the same line. This could certainly be made more robust
+                                    // down the line.
+                                    var imageNameRegexp = /(?:[aA][sS]\s+)([\w:.-]+)/;
+                                    return out.split('\n').map(function (i) {
+                                        var result = imageNameRegexp.exec(i);
+                                        if (result) {
+                                            return {
+                                                name: result[1]
+                                            };
+                                        }
+                                    }).filter(function (i) { return i !== undefined; });
+                                }
+                            }]
                     }
                 }
             ]
         },
-        {name: "commit", description: "Create a new image from a container's changes"},
-        {name: "cp", description: "Copy files/folders between a container and the local filesystem"},
-        {name: "create", description: "Create a new container"},
-        {name: "diff", description: "Inspect changes to files or directories on a container's filesystem"},
-        {name: "events", description: "Get real time events from the server"},
-        {name: "exec", description: "Run a command in a running container"},
-        {name: "export", description: "Export a container's filesystem as a tar archive"},
-        {name: "history", description: "Show the history of an image"},
+        { name: "commit", description: "Create a new image from a container's changes" },
+        { name: "cp", description: "Copy files/folders between a container and the local filesystem" },
+        { name: "create", description: "Create a new container" },
+        { name: "diff", description: "Inspect changes to files or directories on a container's filesystem" },
+        { name: "events", description: "Get real time events from the server" },
+        { name: "exec", description: "Run a command in a running container" },
+        { name: "export", description: "Export a container's filesystem as a tar archive" },
+        { name: "history", description: "Show the history of an image" },
         {
             name: "images",
             description: "List images",
@@ -279,8 +285,8 @@ var completionSpec = {
                 }
             ]
         },
-        {name: "import", description: "Import the contents from a tarball to create a filesystem image"},
-        {name: "info", description: "Display system-wide information"},
+        { name: "import", description: "Import the contents from a tarball to create a filesystem image" },
+        { name: "info", description: "Display system-wide information" },
         {
             name: "inspect",
             description: "Return low-level information on Docker objects",
@@ -290,45 +296,45 @@ var completionSpec = {
                 name: "Name or ID",
                 generators: [
                     {
-                        script: `docker ps -a --format '{{ json . }}'`,
+                        script: "docker ps -a --format '{{ json . }}'",
                         postProcess: function (out) {
-                            let allLines = out.split('\n').map(JSON.parse);
-                            return allLines.map(i => ({
+                            var allLines = out.split('\n').map(function (line) { return JSON.parse(line); });
+                            return allLines.map(function (i) { return ({
                                 name: i.ID,
-                                displayName: `[con] ${i.ID} (${i.Image})`,
-                            }));
+                                displayName: "[con] " + i.ID + " (" + i.Image + ")",
+                            }); });
                         }
                     },
                     {
-                        script: `docker images -a --format '{{ json . }}'`,
+                        script: "docker images -a --format '{{ json . }}'",
                         postProcess: function (out) {
-                            let allLines = out.split('\n').map(JSON.parse);
-                            return allLines.map(i => {
-                                let displayName;
+                            var allLines = out.split('\n').map(function (line) { return JSON.parse(line); });
+                            return allLines.map(function (i) {
+                                var displayName;
                                 if (i.Repository === "\u003cnone\u003e") {
                                     displayName = i.ID;
-                                } else {
+                                }
+                                else {
                                     displayName = i.Repository;
                                     if (i.Tag !== "\u003cnone\u003e") {
-                                        displayName += `:${i.Tag}`;
+                                        displayName += ":" + i.Tag;
                                     }
                                 }
-
                                 return {
                                     name: i.ID,
-                                    displayName: `[img] ${displayName}`
+                                    displayName: "[img] " + displayName
                                 };
                             });
                         }
                     },
                     {
-                        script: `docker volume ls --format '{{ json . }}'`,
+                        script: "docker volume ls --format '{{ json . }}'",
                         postProcess: function (out) {
-                            let allLines = out.split('\n').map(JSON.parse);
-                            return allLines.map(i => ({
+                            var allLines = out.split('\n').map(function (line) { return JSON.parse(line); });
+                            return allLines.map(function (i) { return ({
                                 name: i.Name,
-                                displayName: `[vol] ${i.Name}`,
-                            }));
+                                displayName: "[vol] " + i.Name,
+                            }); });
                         }
                     }
                 ]
@@ -354,18 +360,18 @@ var completionSpec = {
                 }
             ]
         },
-        {name: "kill", description: "Kill one or more running containers"},
-        {name: "load", description: "Load an image from a tar archive or STDIN"},
-        {name: "login", description: "Log in to a Docker registry"},
-        {name: "logout", description: "Log out from a Docker registry"},
-        {name: "logs", description: "Fetch the logs of a container"},
-        {name: "pause", description: "Pause all processes within one or more containers"},
-        {name: "port", description: "List port mappings or a specific mapping for the container"},
-        {name: "ps", description: "List containers"},
-        {name: "pull", description: "Pull an image or a repository from a registry"},
-        {name: "push", description: "Push an image or a repository to a registry"},
-        {name: "rename", description: "Rename a container"},
-        {name: "restart", description: "Restart one or more containers"},
+        { name: "kill", description: "Kill one or more running containers" },
+        { name: "load", description: "Load an image from a tar archive or STDIN" },
+        { name: "login", description: "Log in to a Docker registry" },
+        { name: "logout", description: "Log out from a Docker registry" },
+        { name: "logs", description: "Fetch the logs of a container" },
+        { name: "pause", description: "Pause all processes within one or more containers" },
+        { name: "port", description: "List port mappings or a specific mapping for the container" },
+        { name: "ps", description: "List containers" },
+        { name: "pull", description: "Pull an image or a repository from a registry" },
+        { name: "push", description: "Push an image or a repository to a registry" },
+        { name: "rename", description: "Rename a container" },
+        { name: "restart", description: "Restart one or more containers" },
         {
             name: "rm",
             description: "Remove one or more containers",
@@ -423,23 +429,23 @@ var completionSpec = {
                 ],
                 generators: [
                     {
-                        script: `docker images -aq --format '{{ json . }}'`,
+                        script: "docker images -aq --format '{{ json . }}'",
                         postProcess: function (out) {
-                            let allLines = out.split('\n').map(JSON.parse);
-                            return allLines.map(i => {
-                                let displayName;
+                            var allLines = out.split('\n').map(function (line) { return JSON.parse(line); });
+                            return allLines.map(function (i) {
+                                var displayName;
                                 if (i.Repository === "\u003cnone\u003e") {
                                     displayName = i.ID;
-                                } else {
+                                }
+                                else {
                                     displayName = i.Repository;
                                     if (i.Tag !== "\u003cnone\u003e") {
-                                        displayName += `:${i.Tag}`;
+                                        displayName += ":" + i.Tag;
                                     }
                                 }
-
                                 return {
                                     name: i.ID,
-                                    displayName: `${displayName} (${i.Size})`
+                                    displayName: displayName + " (" + i.Size + ")"
                                 };
                             });
                         }
@@ -466,8 +472,8 @@ var completionSpec = {
             name: "run",
             description: "Run a command in a new container",
             options: [
-                {name: ["-i", "--interactive"], description: "Keep STDIN open even if not attached"},
-                {name: ["-t", "--tty"], description: "Allocate a pseudo-TTY"},
+                { name: ["-i", "--interactive"], description: "Keep STDIN open even if not attached" },
+                { name: ["-t", "--tty"], description: "Allocate a pseudo-TTY" },
                 {
                     name: ["-it"],
                     insertValue: "-it ",
@@ -483,16 +489,22 @@ var completionSpec = {
                         script: "docker images --format '{{.Repository}} {{.Size}} {{.Tag}} {{.ID}}'",
                         postProcess: function (out) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                             return out.split('\n').map(function (image) {
                                 var _a = image.split(' '), repo = _a[0], size = _a[1], tag = _a[2], id = _a[3];
 =======
                             return out.split('\n').map(image => {
                                 let [repo, size, tag, id] = image.split(' ')
 >>>>>>> 0d33bd1... Autoformat
+=======
+                            return out.split('\n').map(function (image) {
+                                var _a = image.split(' '), repo = _a[0], size = _a[1], tag = _a[2], id = _a[3];
+>>>>>>> 3c23470... feat: move js specs to ts
                                 return {
                                     name: repo,
                                     description: id + "@" + tag + " - " + size,
                                     icon: "fig://icon?type=docker"
+<<<<<<< HEAD
 <<<<<<< HEAD
                                 };
                             });
@@ -500,6 +512,10 @@ var completionSpec = {
                                 }
                             })
 >>>>>>> 07aca48... Build out docker CLI commands more, autosuggesting image, container, multi-stage build names, and more
+=======
+                                };
+                            });
+>>>>>>> 3c23470... feat: move js specs to ts
                         }
                     }
                 },
@@ -547,10 +563,10 @@ var completionSpec = {
     	    name: "stop",
 =======
         },
-        {name: "save", description: "Save one or more images to a tar archive (streamed to STDOUT by default)"},
-        {name: "search", description: "Search the Docker Hub for images"},
-        {name: "start", description: "Start one or more stopped containers"},
-        {name: "stats", description: "Display a live stream of container(s) resource usage statistics"},
+        { name: "save", description: "Save one or more images to a tar archive (streamed to STDOUT by default)" },
+        { name: "search", description: "Search the Docker Hub for images" },
+        { name: "start", description: "Start one or more stopped containers" },
+        { name: "stats", description: "Display a live stream of container(s) resource usage statistics" },
         {
             name: "stop",
 >>>>>>> 0d33bd1... Autoformat
@@ -572,24 +588,24 @@ var completionSpec = {
                 }
             ]
         },
-        {name: "tag", description: "Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE"},
-        {name: "top", description: "Display the running processes of a container"},
-        {name: "unpause", description: "Unpause all processes within one or more containers"},
-        {name: "update", description: "Update configuration of one or more containers"},
-        {name: "version", description: "Show the Docker version information"},
-        {name: "wait", description: "Block until one or more containers stop, then print their exit codes"},
-        {name: "builder", description: "Manage builds"},
-        {name: "config", description: "Manage Docker configs"},
-        {name: "container", description: "Manage containers"},
-        {name: "context", description: "Manage contexts"},
-        {name: "image", description: "Manage images"},
-        {name: "network", description: "Manage networks"},
-        {name: "node", description: "Manage Swarm nodes"},
-        {name: "plugin", description: "Manage plugins"},
-        {name: "secret", description: "Manage Docker secrets"},
-        {name: "service", description: "Manage services"},
-        {name: "stack", description: "Manage Docker stacks"},
-        {name: "swarm", description: "Manage Swarm"},
+        { name: "tag", description: "Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE" },
+        { name: "top", description: "Display the running processes of a container" },
+        { name: "unpause", description: "Unpause all processes within one or more containers" },
+        { name: "update", description: "Update configuration of one or more containers" },
+        { name: "version", description: "Show the Docker version information" },
+        { name: "wait", description: "Block until one or more containers stop, then print their exit codes" },
+        { name: "builder", description: "Manage builds" },
+        { name: "config", description: "Manage Docker configs" },
+        { name: "container", description: "Manage containers" },
+        { name: "context", description: "Manage contexts" },
+        { name: "image", description: "Manage images" },
+        { name: "network", description: "Manage networks" },
+        { name: "node", description: "Manage Swarm nodes" },
+        { name: "plugin", description: "Manage plugins" },
+        { name: "secret", description: "Manage Docker secrets" },
+        { name: "service", description: "Manage services" },
+        { name: "stack", description: "Manage Docker stacks" },
+        { name: "swarm", description: "Manage Swarm" },
         {
             name: "system",
             description: "Manage Docker",
@@ -604,7 +620,7 @@ var completionSpec = {
                         },
                         {
                             name: '--filter',
-                            description: `Provide filter values (e.g. 'label=<key>=<value')`,
+                            description: "Provide filter values (e.g. 'label=<key>=<value')",
                             args: {
                                 name: 'filter'
                             }
@@ -622,6 +638,7 @@ var completionSpec = {
             ]
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
     	{ name: "trust",       description: "Manage trust on Docker images" },
     	{ name: "volume",      description: "Manage volumes" },
         { name: "version",     description: "Show the Docker version information" },
@@ -631,6 +648,11 @@ var completionSpec = {
         {name: "volume", description: "Manage volumes"},
         {name: "version", description: "Show the Docker version information"},
 >>>>>>> 0d33bd1... Autoformat
+=======
+        { name: "trust", description: "Manage trust on Docker images" },
+        { name: "volume", description: "Manage volumes" },
+        { name: "version", description: "Show the Docker version information" },
+>>>>>>> 3c23470... feat: move js specs to ts
     ]
 };
 
