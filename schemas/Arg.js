@@ -8,8 +8,12 @@ const Arg = Joi.object({
     insertValue: Joi.string().allow(''),
     description: Joi.string().optional().allow(''),
     icon: Joi.string(),
+<<<<<<< HEAD
     suggestions: Joi.array().items(Suggestion),
 <<<<<<< HEAD
+=======
+    suggestions: Joi.alternatives().try(Joi.array().items(Joi.string()), Joi.array().items(Suggestion)),
+>>>>>>> a24fbef... fix arg linter
     template: Joi.alternatives().try(Joi.string().valid("filepaths", "folders"), Joi.array().items(Joi.string().valid("filepaths", "folders"))),
     generators: Joi.alternatives().try(Generator, Joi.array().items(Generator)),
     generator: Joi.alternatives().try(Generator),
