@@ -2619,8 +2619,20 @@ var completionSpec = {
             subcommands: [],
         },
         {
+<<<<<<< HEAD
             name: 'get',
             description: 'Display one or many resources',
+=======
+            name: "get",
+            description: "Display one or many resources",
+            args: {
+                name: 'Resource',
+                generator: {
+                    script: "kubectl api-resources -o name",
+                    splitOn: "\n"
+                }
+            },
+>>>>>>> cb23189... feat(kubectl): get generator for resources
             options: [
                 {
                     name: ['-A', '--all-namespaces'],
