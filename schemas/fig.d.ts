@@ -28,7 +28,15 @@ declare namespace Fig {
          *
          * @remarks
          * Fig uses the name prop for parsing purposes. It is important that the name
+<<<<<<< HEAD
+<<<<<<< HEAD
          * prop exactly matches the CLI tool. If you want to customise what is
+=======
+         * prop exactly matches the CLI tool. If you want to customise it what is
+>>>>>>> 74907eb... Update schemas/fig.d.ts
+=======
+         * prop exactly matches the CLI tool. If you want to customise what is
+>>>>>>> 26c85e0... Update schemas/fig.d.ts
          * says in the dropdown, please use `displayName`.
          */
         name?: SingleOrArray<string>;
@@ -92,7 +100,15 @@ declare namespace Fig {
          * The text that is rendered in each row of the dropdown.
          *
          * @remarks
+<<<<<<< HEAD
+<<<<<<< HEAD
          * Fig uses the name prop for parsing purposes. It is important the name 
+=======
+         * Fig uses the name prop for parsing purposes. It is important the name pro
+>>>>>>> b2f4303... Update schemas/fig.d.ts
+=======
+         * Fig uses the name prop for parsing purposes. It is important the name 
+>>>>>>> c726209... Update schemas/fig.d.ts
          * exactly matches the CLI tool. If you want to customise what it says in the
          * dropdown, please use `displayName`.
          */
@@ -112,7 +128,15 @@ declare namespace Fig {
          *
          * @remarks
          * Fig uses the name prop for parsing purposes. It is important the name
+<<<<<<< HEAD
+<<<<<<< HEAD
          * exactly matches the CLI tool. If you want to customise what it says in the
+=======
+         * exactly matches the CLI tool. If you want to customise it what is says in the
+>>>>>>> ba17752... Update schemas/fig.d.ts
+=======
+         * exactly matches the CLI tool. If you want to customise what it says in the
+>>>>>>> 03d1f88... Update schemas/fig.d.ts
          * dropdown, please use `displayName`.
          */
         name: string;
