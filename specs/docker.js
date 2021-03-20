@@ -2396,7 +2396,7 @@ var completionSpec = {
             name: "rm",
             description: "Remove one or more containers",
             args: {
-                variadic: true,
+                isVariadic: true,
                 name: 'containers',
                 suggestions: [
                     {
@@ -2433,7 +2433,7 @@ var completionSpec = {
             name: "rmi",
             description: "Remove one or more images",
             args: {
-                variadic: true,
+                isVariadic: true,
                 name: 'image',
                 suggestions: [
                     {
@@ -2599,7 +2599,30 @@ var completionSpec = {
         { name: "search", description: "Search the Docker Hub for images" },
         { name: "start", description: "Start one or more stopped containers" },
         { name: "stats", description: "Display a live stream of container(s) resource usage statistics" },
+<<<<<<< HEAD
         { name: "stop", description: "Stop one or more running containers" },
+=======
+        {
+            name: "stop",
+            description: "Stop one or more running containers",
+            args: {
+                isVariadic: true,
+                name: 'container',
+                generators: [
+                    generators.runningDockerContainers,
+                ]
+            },
+            options: [
+                {
+                    name: ['-t', '--t'],
+                    description: 'Seconds to wait for stop before killing it (default 10)',
+                    args: {
+                        name: 'int'
+                    }
+                }
+            ]
+        },
+>>>>>>> 7980ce4... refactor: Fix broken specs
         { name: "tag", description: "Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE" },
         { name: "top", description: "Display the running processes of a container" },
         { name: "unpause", description: "Unpause all processes within one or more containers" },

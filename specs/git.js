@@ -521,7 +521,7 @@ var completionSpec = {
                     name: '--local',
                     description: 'Default: write to the repository .git/config file',
                     args: {
-                        variadic: true,
+                        isVariadic: true,
                         suggestions: [
                             {
                                 name: 'user.name',
@@ -553,8 +553,12 @@ var completionSpec = {
                     insertValue: '--global {cursor}',
                     description: 'For writing options: write to global ~/.gitconfig file rather than the repository .git/config',
                     args: {
+<<<<<<< HEAD
                         variadic: true,
 <<<<<<< HEAD
+=======
+                        isVariadic: true,
+>>>>>>> 7980ce4... refactor: Fix broken specs
                         suggestions: [
                             {
                                 name: 'user.name',
@@ -780,7 +784,7 @@ var completionSpec = {
                 },
             ],
             args: {
-                variadic: true,
+                isVariadic: true,
                 // We have a special setting for dot in the vuejs app
                 // suggestions: [
                 //     {
@@ -985,10 +989,19 @@ var completionSpec = {
                     description: "Safe: files which are different between the current HEAD and the given commit. Will abort if there are uncommitted changes",
 >>>>>>> 9136b0f... implement stash generator
                     args: {
+<<<<<<< HEAD
                         variadic: true,
                         suggestions: [head],
                         generators: generators.commits,
                     },
+=======
+                        isVariadic: true,
+                        suggestions: [
+                            head
+                        ],
+                        generators: generators.commits
+                    }
+>>>>>>> 7980ce4... refactor: Fix broken specs
                 },
                 {
                     name: '--soft',
@@ -1004,8 +1017,12 @@ var completionSpec = {
                     insertValue: '--hard {cursor}',
                     description: '⚠️WARNING: you will lose all uncommitted changes in addition to the changes introduced in the last commit',
                     args: {
+<<<<<<< HEAD
                         variadic: true,
 <<<<<<< HEAD
+=======
+                        isVariadic: true,
+>>>>>>> 7980ce4... refactor: Fix broken specs
                         suggestions: [
                             {
                                 name: 'HEAD~<N>',
@@ -1028,8 +1045,12 @@ var completionSpec = {
                     insertValue: '--mixed {cursor}',
                     description: 'keep the changes in your working tree but not on the index',
                     args: {
+<<<<<<< HEAD
                         variadic: true,
 <<<<<<< HEAD
+=======
+                        isVariadic: true,
+>>>>>>> 7980ce4... refactor: Fix broken specs
                         suggestions: [
                             {
                                 name: 'HEAD~[insert # of commits]',
@@ -1053,15 +1074,22 @@ var completionSpec = {
                     description: 'Resets the index and updates the files in the working tree that are different' +
                         " between 'commit' and HEAD",
                     args: {
+<<<<<<< HEAD
                         variadic: true,
                         suggestions: [head],
+=======
+                        isVariadic: true,
+                        suggestions: [
+                            head
+                        ],
+>>>>>>> 7980ce4... refactor: Fix broken specs
                         generators: generators.commits,
                     },
                 },
             ],
             args: {
                 isOptional: true,
-                variadic: true,
+                isVariadic: true,
                 suggestions: [],
                 generators: generators.treeish,
             },
@@ -1670,8 +1698,12 @@ var completionSpec = {
             name: 'rm',
             description: 'Remove files from the working tree and from the index',
             args: {
+<<<<<<< HEAD
                 variadic: true,
 <<<<<<< HEAD
+=======
+                isVariadic: true,
+>>>>>>> 7980ce4... refactor: Fix broken specs
                 suggestions: [
                     {
                         name: '.',

@@ -62,9 +62,15 @@ const condaCompletionSpec: Fig.Spec = {
                     description:
                         'Remove temporary files that could not be deleted earlier due to being in-use. Argument is path(s) to prefix(es) where files should be found and removed.',
                     args: {
+<<<<<<< HEAD
                         template: 'filepaths',
                         variadic: true,
                     },
+=======
+                        template: "filepaths",
+                        isVariadic: true
+                    }
+>>>>>>> 7980ce4... refactor: Fix broken specs
                 },
                 {
                     name: ['-d', '--dry-run'],
@@ -368,10 +374,17 @@ const condaCompletionSpec: Fig.Spec = {
             name: 'install',
             description: 'Installs a list of packages into a specified conda environment.',
             args: {
+<<<<<<< HEAD
                 name: 'package spec',
                 description: 'Packages to install or update in the conda environment.',
                 variadic: true,
                 generators: getAllCondaPackages,
+=======
+                name: "package spec",
+                description: "Packages to install or update in the conda environment.",
+                isVariadic: true,
+                generators: getAllCondaPackages
+>>>>>>> 7980ce4... refactor: Fix broken specs
             },
             options: [
                 { name: ['--revision'], description: 'Revert to the specified REVISION.' },
@@ -542,9 +555,15 @@ const condaCompletionSpec: Fig.Spec = {
             name: 'remove',
             description: 'Remove a list of packages from a specified conda environment.',
             args: {
+<<<<<<< HEAD
                 name: 'package name',
                 variadic: true,
                 generators: getInstalledPackages,
+=======
+                name: "package name",
+                isVariadic: true,
+                generators: getInstalledPackages
+>>>>>>> 7980ce4... refactor: Fix broken specs
             },
             options: [
                 {
@@ -604,9 +623,15 @@ const condaCompletionSpec: Fig.Spec = {
             name: 'uninstall',
             description: 'Alias for conda remove.',
             args: {
+<<<<<<< HEAD
                 name: 'package name',
                 variadic: true,
                 generators: getInstalledPackages,
+=======
+                name: "package name",
+                isVariadic: true,
+                generators: getInstalledPackages
+>>>>>>> 7980ce4... refactor: Fix broken specs
             },
             options: [
                 {
@@ -726,9 +751,15 @@ const condaCompletionSpec: Fig.Spec = {
             name: 'update',
             description: 'Updates conda packages to the latest compatible version.',
             args: {
+<<<<<<< HEAD
                 name: 'package',
                 variadic: true,
                 generators: getInstalledPackages,
+=======
+                name: "package",
+                isVariadic: true,
+                generators: getInstalledPackages
+>>>>>>> 7980ce4... refactor: Fix broken specs
             },
             options: [
                 {
@@ -833,8 +864,13 @@ const condaCompletionSpec: Fig.Spec = {
             name: 'upgrade',
             description: 'Alias for conda update.',
             args: {
+<<<<<<< HEAD
                 name: 'package',
                 variadic: true,
+=======
+                name: "package",
+                isVariadic: true
+>>>>>>> 7980ce4... refactor: Fix broken specs
             },
             options: [
                 {

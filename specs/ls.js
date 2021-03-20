@@ -2,8 +2,13 @@ var completionSpec = {
     name: 'ls',
     description: 'list directory contents',
     args: {
+<<<<<<< HEAD
         variadic: true,
         template: 'folders',
+=======
+        isVariadic: true,
+        template: "folders"
+>>>>>>> 7980ce4... refactor: Fix broken specs
     },
     options: [
         {

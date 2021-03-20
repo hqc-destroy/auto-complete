@@ -7,6 +7,7 @@ var completionSpec = {
             suggestions: [
                 // Some of the most common chmod's (non-exhaustive)
                 {
+<<<<<<< HEAD
                     name: ['u+x'],
                     type: 'argument',
                     description: 'give execute permission for the user',
@@ -35,6 +36,36 @@ var completionSpec = {
                     type: 'argument',
                     description: '⚠️ allows all actions for all users',
                     icon: '🔐',
+=======
+                    name: ["u+x"],
+                    type: "subcommand",
+                    description: "give execute permission for the user",
+                    icon: "🔐",
+                },
+                {
+                    name: ["a+rx"],
+                    type: "subcommand",
+                    description: "adds read and execute permissions for all classes",
+                    icon: "🔐",
+                },
+                {
+                    name: ["744"],
+                    type: "subcommand",
+                    description: "sets read, write, and execute permissions for user, and sets read permission for Group and Others",
+                    icon: "🔐",
+                },
+                {
+                    name: ["664"],
+                    type: "subcommand",
+                    description: "sets read and write permissions for user and Group, and provides read to Others.",
+                    icon: "🔐",
+                },
+                {
+                    name: ["777"],
+                    type: "subcommand",
+                    description: "⚠️ allows all actions for all users",
+                    icon: "🔐",
+>>>>>>> 7980ce4... refactor: Fix broken specs
                 },
             ],
         },

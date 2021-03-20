@@ -1,9 +1,23 @@
 export const lsCompletionSpec: Fig.Spec = {
+<<<<<<< HEAD
     name: 'ls',
     description: 'list directory contents',
     args: {
         variadic: true,
         template: 'folders',
+=======
+
+  name: "ls",
+  description: "list directory contents",
+  args: {
+    isVariadic: true,
+    template: "folders"
+  },
+  options: [
+    {
+      name: "-l",
+      description: "list in long format"
+>>>>>>> 7980ce4... refactor: Fix broken specs
     },
     options: [
         {

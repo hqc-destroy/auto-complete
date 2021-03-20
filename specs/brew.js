@@ -40,9 +40,15 @@ var completionSpec = {
             description: 'Install <formula>',
             insertValue: 'install ',
             args: {
+<<<<<<< HEAD
                 variadic: true,
                 name: 'formula',
                 description: 'Formula or cask to install',
+=======
+                isVariadic: true,
+                name: "formula",
+                description: "Formula or cask to install",
+>>>>>>> 7980ce4... refactor: Fix broken specs
                 generators: {
                     script: 'ls -1 /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask/Casks',
                     postProcess: function (out) {
@@ -62,8 +68,13 @@ var completionSpec = {
             name: 'uninstall',
             description: 'Uninstall <formula>',
             args: {
+<<<<<<< HEAD
                 variadic: true,
                 name: 'formula',
+=======
+                isVariadic: true,
+                name: "formula",
+>>>>>>> 7980ce4... refactor: Fix broken specs
                 generators: {
                     script: 'brew list -1 --formulae',
                     postProcess: function (out) {
@@ -97,7 +108,7 @@ var completionSpec = {
                     insertValue: 'uninstall ',
                     description: 'Uninstalls the given cask',
                     args: {
-                        variadic: true,
+                        isVariadic: true,
                         generators: {
                             script: 'brew list -1 --cask',
                             postProcess: function (out) {
@@ -155,7 +166,7 @@ var completionSpec = {
                         },
                     ],
                     args: {
-                        variadic: true,
+                        isVariadic: true,
                         generators: servicesGenerator,
                     },
                 },
@@ -171,7 +182,7 @@ var completionSpec = {
                         },
                     ],
                     args: {
-                        variadic: true,
+                        isVariadic: true,
                         generators: servicesGenerator,
                     },
                 },
@@ -187,7 +198,7 @@ var completionSpec = {
                         },
                     ],
                     args: {
-                        variadic: true,
+                        isVariadic: true,
                         generators: servicesGenerator,
                     },
                 },
@@ -203,7 +214,7 @@ var completionSpec = {
                         },
                     ],
                     args: {
-                        variadic: true,
+                        isVariadic: true,
                         generators: servicesGenerator,
                     },
                 },

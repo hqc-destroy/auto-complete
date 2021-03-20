@@ -144,6 +144,87 @@ export const firebaseCompletionSpec: Fig.Spec = {
                 },
             ],
         },
+<<<<<<< HEAD
+=======
+        {
+          name: ["-p", "--public"],
+          description:
+            "override the Hosting public directory specified in firebase.json",
+          args: {},
+        },
+        {
+          name: ["-m", "--message"],
+          description: "use the message",
+          args: {},
+        },
+        {
+          name: ["-f", "--force"],
+          description:
+            "delete Cloud Functions missing from the current working directory without confirmation",
+          args: {},
+        },
+        {
+          name: ["--only"],
+          description:
+            "only serve specified targets (valid targets are: hosting, functions)",
+          args: {},
+        },
+        {
+          name: ["--except"],
+          description:
+            "serve all except specified targets (valid targets are: hosting, functions)",
+          args: {},
+        },
+      ],
+    },
+    {
+      name: "appdistribution:distribute",
+      description: "upload a distribution",
+    },
+    { name: "apps:sdkconfig", description: "print the Google Services config" },
+    {
+      name: "auth:export",
+      description: "print the Google Services config",
+      args: {
+        isVariadic: true,
+        template: "filepaths",
+      },
+      options: [
+        {
+          name: ["-h", "--help"],
+          description: "Overview of Firebase CLI",
+        },
+        {
+          name: ["--format"],
+          description: "Format of exported data (csv, json).",
+          args: {
+            suggestions: [{ name: "json" }, { name: "csv" }],
+          },
+        },
+      ],
+    },
+    {
+      name: "auth:import",
+      description: "print the Google Services config",
+      args: {
+        isVariadic: true,
+        template: "filepaths",
+      },
+      options: [
+        {
+          name: ["-h", "--help"],
+          description: "Overview of Firebase CLI",
+        },
+        {
+          name: ["--format"],
+          description: "Format of exported data (csv, json).",
+          args: {
+            suggestions: [{ name: "json" }, { name: "csv" }],
+          },
+        },
+      ],
+    },
+>>>>>>> 7980ce4... refactor: Fix broken specs
 
         {
             name: 'apps:create',

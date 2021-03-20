@@ -105,8 +105,13 @@ var completionSpec = {
             name: 'auth:export',
             description: 'print the Google Services config',
             args: {
+<<<<<<< HEAD
                 variadic: true,
                 template: 'filepaths',
+=======
+                isVariadic: true,
+                template: "filepaths",
+>>>>>>> 7980ce4... refactor: Fix broken specs
             },
             options: [
                 {
@@ -126,8 +131,13 @@ var completionSpec = {
             name: 'auth:import',
             description: 'print the Google Services config',
             args: {
+<<<<<<< HEAD
                 variadic: true,
                 template: 'filepaths',
+=======
+                isVariadic: true,
+                template: "filepaths",
+>>>>>>> 7980ce4... refactor: Fix broken specs
             },
             options: [
                 {

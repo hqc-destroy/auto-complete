@@ -83,18 +83,32 @@ const valueArgs = [
     {
         name: '-array',
         args: {
+<<<<<<< HEAD
             variadic: true,
             name: 'array_item',
         },
+=======
+            isVariadic: true,
+            name: "array_item"
+        }
+>>>>>>> 7980ce4... refactor: Fix broken specs
     },
     {
         name: '-array-add',
         args: {
+<<<<<<< HEAD
             variadic: true,
             name: 'array_item',
         },
     },
 ];
+=======
+            isVariadic: true,
+            name: "array_item"
+        }
+    }
+]
+>>>>>>> 7980ce4... refactor: Fix broken specs
 
 const defaultsCompletionSpec: Fig.Spec = {
     name: 'defaults',
