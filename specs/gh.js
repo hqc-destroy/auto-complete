@@ -1,3 +1,20 @@
+var generators = {
+    listPR: {
+        script: "gh pr list",
+        postProcess: out => out
+            .split('\n')
+            .map(line => {
+                const { id, name, branch, status } = line.match(/^(?<id>[\d]+)\t(?<name>.+)\t(?<branch>.*)\t(?<status>OPEN|DRAFT)$/).groups
+                return {
+                    name: id,
+                    displayName: name,
+                    description: `#${id} | ${branch}`,
+                    icon: status === 'OPEN' ? '✅' : '☑️'
+                }
+            })
+    }
+}
+
 var completionSpec = {
     name: 'gh',
     description: "Github's CLI tool",
@@ -39,7 +56,12 @@ var completionSpec = {
                     name: 'checkout',
                     description: 'Check out a pull request in git',
                     args: {
+<<<<<<< HEAD
                         name: 'number> | <url> | <branch',
+=======
+                        name: "number> | <url> | <branch",
+                        generators: generators.listPR
+>>>>>>> 659c940... Add PR suggestions in gh specs
                     },
                     options: [
                         {
@@ -52,7 +74,12 @@ var completionSpec = {
                     name: 'checks',
                     description: 'Show CI status for a single pull request',
                     args: {
+<<<<<<< HEAD
                         name: 'number> | <url> | <branch',
+=======
+                        name: "number> | <url> | <branch",
+                        generators: generators.listPR
+>>>>>>> 659c940... Add PR suggestions in gh specs
                     },
                     options: [
                         {
@@ -65,7 +92,12 @@ var completionSpec = {
                     name: 'close',
                     description: 'Close a pull request',
                     args: {
+<<<<<<< HEAD
                         name: 'number> | <url> | <branch',
+=======
+                        name: "number> | <url> | <branch",
+                        generators: generators.listPR
+>>>>>>> 659c940... Add PR suggestions in gh specs
                     },
                     options: [
                         {
@@ -78,7 +110,12 @@ var completionSpec = {
                     name: 'comment',
                     description: 'Create a new pr comment',
                     args: {
+<<<<<<< HEAD
                         name: 'number> | <url> | <branch',
+=======
+                        name: "number> | <url> | <branch",
+                        generators: generators.listPR
+>>>>>>> 659c940... Add PR suggestions in gh specs
                     },
                     options: [
                         {
@@ -190,7 +227,12 @@ var completionSpec = {
                     name: 'diff',
                     description: 'View changes in a pull request',
                     args: {
+<<<<<<< HEAD
                         name: 'number> | <url> | <branch',
+=======
+                        name: "number> | <url> | <branch",
+                        generators: generators.listPR
+>>>>>>> 659c940... Add PR suggestions in gh specs
                     },
                     options: [
                         {
@@ -307,7 +349,12 @@ var completionSpec = {
                     name: 'view',
                     description: 'View a pull request',
                     args: {
+<<<<<<< HEAD
                         name: 'number> | <url> | <branch',
+=======
+                        name: "number> | <url> | <branch",
+                        generators: generators.listPR
+>>>>>>> 659c940... Add PR suggestions in gh specs
                     },
                     options: [
                         { name: ['-c', '--comments'], description: 'View pull request comments' },
@@ -342,7 +389,12 @@ var completionSpec = {
                     name: "create",
                     description: "Create a new GitHub repository",
                     args: {
+<<<<<<< HEAD
                         name: "string",
+=======
+                        name: "number> | <url> | <branch",
+                        generators: generators.listPR
+>>>>>>> 659c940... Add PR suggestions in gh specs
                     },
                     options: [
                         { name: ["-h", "--help"], description: "Show help for command" },
@@ -384,6 +436,7 @@ var completionSpec = {
                     name: "fork",
                     description: "Create a fork of a repository",
                     args: {
+<<<<<<< HEAD
                         name: "string",
                     },
                     options: [
@@ -402,12 +455,22 @@ var completionSpec = {
                             },
                         },
                     ],
+=======
+                        name: "number> | <url> | <branch",
+                        generators: generators.listPR
+                    }, 
+>>>>>>> 659c940... Add PR suggestions in gh specs
                 },
                 {
                     name: "list",
                     description: "List repositories owned by user or organization",
                     args: {
+<<<<<<< HEAD
                         name: "string",
+=======
+                        name: "number> | <url> | <branch",
+                        generators: generators.listPR
+>>>>>>> 659c940... Add PR suggestions in gh specs
                     },
                     options: [
                         { name: ["-h", "--help"], description: "Show help for command" },
@@ -431,7 +494,12 @@ var completionSpec = {
                     name: "view",
                     description: "View a repository",
                     args: {
+<<<<<<< HEAD
                         name: "string",
+=======
+                        name: "number> | <url> | <branch",
+                        generators: generators.listPR
+>>>>>>> 659c940... Add PR suggestions in gh specs
                     },
                     options: [
                         { name: ["-h", "--help"], description: "Show help for command" },
