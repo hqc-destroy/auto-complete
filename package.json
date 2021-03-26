@@ -4,6 +4,7 @@
     "version": "1.0.0",
     "description": "Fig Autocomplete Spec Linter",
     "scripts": {
+<<<<<<< HEAD
         "test": "tsc --noEmit",
         "build": "ts-node-script compiler/compiler.ts",
 <<<<<<< HEAD
@@ -11,9 +12,17 @@
 =======
         "copy": "func() { cp ./specs/${1}.js ~/.fig/autocomplete/; }; func",
         "copy:all": "cp ./specs/*.js ~/.fig/autocomplete/",
-        "watch": "fig settings autocomplete.developerMode true && fig settings autocomplete.devCompletionsFolder $(pwd)/specs && ts-node-dev --respawn -s --watch ./dev/ compiler/compiler.ts 'INVALIDATE_CACHE' && echo 'Dev mode disabled'; fig settings autocomplete.developerMode false",
+        "watch": "fig settings autocomplete.developerMode true && fig settings autocomplete.devCompletionsFolder $(pwd)/specs && ts-node-dev --respawn -s --exit-child --watch ./dev/ compiler/compiler.ts 'INVALIDATE_CACHE' && echo 'Dev mode disabled'; fig settings autocomplete.developerMode false",
         "create-boilerplate": "ts-node-script compiler/cli.ts",
 >>>>>>> b12eaeb... updated npm watch but we are loading completion spec every single time
+=======
+        "dev": "source scripts/dev.sh",
+        "test": "tsc --noEmit && echo 'All specs passed validation. You are ready to push!'",
+        "copy": "func() { cp $INIT_CWD/specs/${1}.js ~/.fig/autocomplete/; }; func",
+        "copy:all": "cp $INIT_CWD/specs/*.js ~/.fig/autocomplete/",
+        "create-boilerplate": "ts-node-script scripts/cli.ts",
+        "build": "ts-node-script scripts/compiler.ts",
+>>>>>>> 60387c2... new dev mode all working
         "lint": "eslint './dev/*.ts'",
         "lint:fix": "npm run lint -- --fix"
     },
@@ -46,6 +55,7 @@
         "typescript": "^4.2.3"
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   "name": "linter",
   "version": "1.0.0",
@@ -76,3 +86,6 @@
 =======
 }
 >>>>>>> b12eaeb... updated npm watch but we are loading completion spec every single time
+=======
+}
+>>>>>>> c18bea5... fix: prettier fix files

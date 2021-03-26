@@ -3,9 +3,9 @@ export const cdCompletionSpec: Fig.Spec = {
     description: 'Change the shell working directory',
     args: {
         template: 'folders',
-    }
+    },
+    subcommands: [{ name: 'cat' }],
 };
-
 
 // var completionSpec = {
 //     name: "cd",
