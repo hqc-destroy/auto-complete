@@ -102,6 +102,7 @@ declare namespace Fig {
          * @remarks
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          * Fig uses the name prop for parsing purposes. It is important the name 
 =======
          * Fig uses the name prop for parsing purposes. It is important the name pro
@@ -109,6 +110,9 @@ declare namespace Fig {
 =======
          * Fig uses the name prop for parsing purposes. It is important the name 
 >>>>>>> c726209... Update schemas/fig.d.ts
+=======
+         * Fig uses the name prop for parsing purposes. It is important the name
+>>>>>>> 09336dc... fix: Specs exports and script type
          * exactly matches the CLI tool. If you want to customise what it says in the
          * dropdown, please use `displayName`.
          */
@@ -320,7 +324,7 @@ declare namespace Fig {
          * is a string. It is then converted into an array of Suggestion objects using
          * `splitOn` or `postProcess`.
          */
-        script?: StringOrFunction<string[], Suggestion[]>;
+        script?: StringOrFunction<string[], string>;
         /**
          * As splitting the output of script is such a common use case for `postProcess`, we
          * build the `splitOn` property. Simply define a string to split the output of script on.

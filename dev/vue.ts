@@ -1,4 +1,4 @@
-var completionSpec = {
+export const vueCompletionSpec: Fig.Spec = {
     name: 'vue',
     description: 'vue cli tools',
     subcommands: [
@@ -427,20 +427,8 @@ var completionSpec = {
             description: 'output the version number',
         },
         {
-<<<<<<< HEAD
-            name: ["-h", "--help"],
-            description: "output usage information"
-        }
-    ]
-<<<<<<< HEAD
-}
-=======
-=======
             name: ['-h', '--help'],
             description: 'output usage information',
         },
     ],
->>>>>>> 09336dc... fix: Specs exports and script type
 };
-
->>>>>>> 4082cac... feat: Add removed specs
