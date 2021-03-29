@@ -1046,6 +1046,57 @@ export const completion: Fig.Spec = {
             description: 'temporarily stores all the modified tracked files',
             subcommands: [
                 {
+<<<<<<< HEAD
+=======
+                    name: 'push', // TODO: support for no subcommand is missing
+                    description: 'Save your local modifications to a new stash entry and roll them back to HEAD.',
+                    insertValue: 'push {cursor}',
+                    options: [
+                        {
+                            name: ['-p', '--patch'],
+                            description:
+                                'Interactively select hunks from the diff between HEAD and the working tree to be stashed.',
+                        },
+                        {
+                            name: ['-k', '--keep-index'],
+                            description: 'All changed already added to the index are left intact.',
+                        },
+                        {
+                            name: ['-u', '--include-untracked'],
+                            description: 'All untracked files are also stashed and then cleaned up.',
+                        },
+                        { name: ['-a', '--all'], description: 'All ignored and untracked files are also stashed.' },
+                        { name: ['-q', '--quiet'], description: 'Quiet, suppress feedback messages.' },
+                        {
+                            name: ['-m', '--message'],
+                            insertValue: '-m {cursor}',
+                            description: 'Use the given <msg> as the stash message.',
+                            args: {
+                                name: 'message',
+                            },
+                        },
+                        { name: '--pathspec-from-file', description: '' }, // TODO: pathspec file nul and add description
+                        { name: '--', description: 'Separates pathsec from options for disambiguation purposes.' },
+                        // TODO: pathspec
+                    ],
+                },
+                {
+                    name: 'show',
+                    description: 'Show the changes recorded in the stash entry as a diff.',
+                    insertValue: 'show {cursor}',
+                    options: [
+                        // TODO: All log options can be options from list. Needs to be added.
+                    ],
+                    args: [
+                        {
+                            name: 'stash',
+                            isOptional: true,
+                            generators: generators.stashes,
+                        },
+                    ],
+                },
+                {
+>>>>>>> 0e1d417... fix: fig git script
                     name: 'save',
                     description: 'Temporarily stores all the modified tracked files',
                 },
