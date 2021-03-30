@@ -23,11 +23,15 @@
         "copy:all": "cp $INIT_CWD/specs/*.js ~/.fig/autocomplete/",
         "create-boilerplate": "ts-node-script scripts/cli.ts",
         "build": "ts-node-script scripts/compiler.ts",
+<<<<<<< HEAD
 >>>>>>> 60387c2... new dev mode all working
         "lint": "eslint './dev/*.ts'",
 =======
         "lint": "eslint '**/*.ts'",
 >>>>>>> 586bbe2... feat: also lint & prettier compiler stuff
+=======
+        "lint": "eslint '*/*.{ts,js}'",
+>>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
         "lint:fix": "npm run lint -- --fix"
     },
     "husky": {
@@ -36,7 +40,7 @@
         }
     },
     "lint-staged": {
-        "*.{ts}": [
+        "*.{ts,js}": [
             "eslint --fix"
         ]
     },

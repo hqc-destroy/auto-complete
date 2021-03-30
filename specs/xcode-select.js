@@ -1,8 +1,12 @@
 var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 09336dc... fix: Specs exports and script type
+=======
+>>>>>>> e321ca1... feat: update all scripts and  move to ts
     name: 'xcode-select',
     description: 'Active developer directory for Xcode tools',
     options: [
@@ -19,6 +23,9 @@ var completionSpec = {
             description: 'Set path to active developer directory',
             insertValue: '-s ',
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e321ca1... feat: update all scripts and  move to ts
             args: {
                 name: 'path',
                 template: 'folders',
@@ -37,6 +44,7 @@ var completionSpec = {
             description: 'Reset to the default CLT path',
         },
     ],
+<<<<<<< HEAD
 =======
     name: "xcode-select",
     description: "Active developer directory for Xcode tools",
@@ -85,5 +93,41 @@ var completionSpec = {
         },
     ],
 >>>>>>> 09336dc... fix: Specs exports and script type
+=======
+>>>>>>> e321ca1... feat: update all scripts and  move to ts
+=======
+  name: "xcode-select",
+  description: "Active developer directory for Xcode tools",
+  options: [
+    {
+      name: ["-h", "--help"],
+      description: "Help message",
+    },
+    {
+      name: ["-p", "--print-path"],
+      description: "Display path to active developer directory",
+    },
+    {
+      name: ["-s", "--switch"],
+      description: "Set path to active developer directory",
+      insertValue: "-s ",
+      args: {
+        name: "path",
+        template: "folders",
+      },
+    },
+    {
+      name: ["--install"],
+      description: "Install Xcode command line tools",
+    },
+    {
+      name: ["-v", "--version"],
+      description: "Display version",
+    },
+    {
+      name: ["-r", "--reset"],
+      description: "Reset to the default CLT path",
+    },
+  ],
+>>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 };
-
