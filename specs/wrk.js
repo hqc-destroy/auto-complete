@@ -1,6 +1,7 @@
 var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: "wrk",
     description: "wrk - a HTTP benchmarking tool",
     args: {
@@ -128,54 +129,72 @@ var completionSpec = {
       args: {
         name: "Number",
       },
+=======
+    name: "wrk",
+    description: "wrk - a HTTP benchmarking tool",
+    args: {
+        name: "Url",
+>>>>>>> a09fa69... removed linting from all js specs in specs folder
     },
-    {
-      name: ["-d", "--duration"],
-      description: "Duration of test",
-      args: {
-        name: "Time",
-      },
-    },
-    {
-      name: ["-t", "--threads"],
-      description: "Number of threads",
-      args: {
-        name: "Number",
-      },
-    },
-    {
-      name: ["-s", "--script"],
-      description: "Load Lua script file",
-      args: {
-        name: "Script",
-      },
-    },
-    {
-      name: ["-H", "--header"],
-      description: "Add header to request",
-      args: {
-        name: "Header",
-      },
-    },
-    {
-      name: "--latency",
-      description: "Print latency statistics",
-    },
-    {
-      name: "--timeout",
-      description: "Socket/request timeout",
-      args: {
-        name: "Time",
-      },
-    },
-    {
-      name: ["-v", "--version"],
-      description: "Print version details",
-    },
-    {
-      name: ["-h", "--help"],
-      description: "output usage information",
-    },
-  ],
+    options: [
+        {
+            name: ["-c", "--c"],
+            description: "Connections to keep open",
+            args: {
+                name: "Number",
+            },
+        },
+        {
+            name: ["-d", "--duration"],
+            description: "Duration of test",
+            args: {
+                name: "Time",
+            },
+        },
+        {
+            name: ["-t", "--threads"],
+            description: "Number of threads",
+            args: {
+                name: "Number",
+            },
+        },
+        {
+            name: ["-s", "--script"],
+            description: "Load Lua script file",
+            args: {
+                name: "Script",
+            },
+        },
+        {
+            name: ["-H", "--header"],
+            description: "Add header to request",
+            args: {
+                name: "Header",
+            },
+        },
+        {
+            name: "--latency",
+            description: "Print latency statistics",
+        },
+        {
+            name: "--timeout",
+            description: "Socket/request timeout",
+            args: {
+                name: "Time",
+            },
+        },
+        {
+            name: ["-v", "--version"],
+            description: "Print version details",
+        },
+        {
+            name: ["-h", "--help"],
+            description: "output usage information",
+        },
+    ],
 };
+<<<<<<< HEAD
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
+=======
+
+>>>>>>> a09fa69... removed linting from all js specs in specs folder

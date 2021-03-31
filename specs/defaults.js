@@ -1,5 +1,6 @@
 var domain = {
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: 'domain',
     generators: {
         script: 'defaults domains',
@@ -36,124 +37,87 @@ var domain = {
       name: "-app",
       insertValue: "-app '{cursor}'",
       description: "Application name",
+=======
+    name: "domain",
+    generators: {
+        script: "defaults domains",
+        postProcess: function (out) {
+            return out.split(",").map(function (domain) {
+                return {
+                    name: domain.trim(),
+                };
+            });
+        },
+>>>>>>> a09fa69... removed linting from all js specs in specs folder
     },
-  ],
+    suggestions: [
+        {
+            name: "-globalDomain",
+            description: "Global domain",
+        },
+        {
+            name: "-app",
+            insertValue: "-app '{cursor}'",
+            description: "Application name",
+        },
+    ],
 };
 var key = {
-  name: "key",
+    name: "key",
 };
 var value = {
-  name: "value",
+    name: "value",
 };
 <<<<<<< HEAD
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 =======
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
 var valueArgs = [
-  {
-    name: "-string",
-    args: {
-      name: "string_value",
-    },
-  },
-  {
-    name: "-data",
-    args: {
-      name: "hex_digits",
-    },
-  },
-  {
-    name: ["-int", "-integer"],
-    args: {
-      name: "integer_value",
-    },
-  },
-  {
-    name: "-float",
-    args: {
-      name: "floating-point_value",
-    },
-  },
-  {
-    name: ["-bool", "-boolean"],
-    args: {
-      suggestions: [
-        {
-          name: "true",
-        },
-        {
-          name: "false",
-        },
-        {
-          name: "yes",
-        },
-        {
-          name: "no",
-        },
-      ],
-    },
-  },
-  {
-    name: "-date",
-    args: {
-      name: "date_rep",
-    },
-  },
-  {
-    name: "-array",
-    args: {
-      variadic: true,
-      name: "array_item",
-    },
-  },
-  {
-    name: "-array-add",
-    args: {
-      variadic: true,
-      name: "array_item",
-    },
-  },
-];
-var completionSpec = {
-  name: "defaults",
-  description: "Command line interface to a user's defaults.",
-  options: [],
-  subcommands: [
     {
-      name: "read",
-      description: "shows defaults",
-      args: [domain, key],
+        name: "-string",
+        args: {
+            name: "string_value",
+        },
     },
     {
-      name: "write",
-      insertValue: "write ",
-      description: "writes key for domain",
-      args: [domain, key, value],
-    },
-    {
-      name: "delete",
-      description: "deletes domain or key in domain",
-      args: [domain, key],
-    },
-    {
-      name: "rename",
-      description: "renames old_key to new_key",
-      args: [
-        domain,
-        {
-          name: "old_key",
+        name: "-data",
+        args: {
+            name: "hex_digits",
         },
-        {
-          name: "new_key",
+    },
+    {
+        name: ["-int", "-integer"],
+        args: {
+            name: "integer_value",
         },
-      ],
     },
     {
-      name: "domains",
-      description: "lists all domains",
-      args: [],
+        name: "-float",
+        args: {
+            name: "floating-point_value",
+        },
     },
     {
+        name: ["-bool", "-boolean"],
+        args: {
+            suggestions: [
+                {
+                    name: "true",
+                },
+                {
+                    name: "false",
+                },
+                {
+                    name: "yes",
+                },
+                {
+                    name: "no",
+                },
+            ],
+        },
+    },
+    {
+<<<<<<< HEAD
 <<<<<<< HEAD
         name: '-array',
         args: {
@@ -258,18 +222,90 @@ var completionSpec = {
         name: "word",
         description: "The word to search for...",
       },
+=======
+        name: "-date",
+        args: {
+            name: "date_rep",
+        },
+>>>>>>> a09fa69... removed linting from all js specs in specs folder
     },
     {
-      name: "help",
-      description: "show help text",
+        name: "-array",
+        args: {
+            variadic: true,
+            name: "array_item",
+        },
     },
     {
-      name: "read-type",
-      description: "shows the type for the given domain, key",
-      args: [domain, key],
+        name: "-array-add",
+        args: {
+            variadic: true,
+            name: "array_item",
+        },
     },
+<<<<<<< HEAD
   ],
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
+=======
+];
+var completionSpec = {
+    name: "defaults",
+    description: "Command line interface to a user's defaults.",
+    options: [],
+    subcommands: [
+        {
+            name: "read",
+            description: "shows defaults",
+            args: [domain, key],
+        },
+        {
+            name: "write",
+            insertValue: "write ",
+            description: "writes key for domain",
+            args: [domain, key, value],
+        },
+        {
+            name: "delete",
+            description: "deletes domain or key in domain",
+            args: [domain, key],
+        },
+        {
+            name: "rename",
+            description: "renames old_key to new_key",
+            args: [
+                domain,
+                {
+                    name: "old_key",
+                },
+                {
+                    name: "new_key",
+                },
+            ],
+        },
+        {
+            name: "domains",
+            description: "lists all domains",
+            args: [],
+        },
+        {
+            name: "find",
+            description: "lists all entries containing word",
+            args: {
+                name: "word",
+                description: "The word to search for...",
+            },
+        },
+        {
+            name: "help",
+            description: "show help text",
+        },
+        {
+            name: "read-type",
+            description: "shows the type for the given domain, key",
+            args: [domain, key],
+        },
+    ],
+>>>>>>> a09fa69... removed linting from all js specs in specs folder
 };
 
 // Command line interface to a user's defaults.

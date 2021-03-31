@@ -1,6 +1,7 @@
 var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: "open",
     description: "open files using default application",
     args: {
@@ -24,3 +25,12 @@ var completionSpec = {
   },
 };
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
+=======
+    name: "open",
+    description: "open files using default application",
+    args: {
+        template: "filepaths",
+    },
+};
+
+>>>>>>> a09fa69... removed linting from all js specs in specs folder

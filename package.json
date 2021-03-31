@@ -24,6 +24,7 @@
         "create-boilerplate": "ts-node-script scripts/cli.ts",
         "build": "ts-node-script scripts/compiler.ts",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 60387c2... new dev mode all working
         "lint": "eslint './dev/*.ts'",
 =======
@@ -40,6 +41,9 @@
             "pre-commit": "lint-staged"
         }
 =======
+=======
+        "lint": "eslint '*/*.ts'",
+>>>>>>> 4b2d2b1... changed lint from ** to *, renamed fig linter plugin for eslint
         "lint:fix": "npm run lint -- --fix",
         "prepare": "husky install"
 >>>>>>> e0d36d3... feat: add husky
@@ -63,7 +67,7 @@
         "chalk": "^4.1.0",
         "eslint": "^7.22.0",
         "eslint-config-prettier": "^8.1.0",
-        "eslint-plugin-fig": "file:scripts/eslint-plugin-fig",
+        "eslint-plugin-fig-linter": "file:scripts/eslint-plugin-fig-linter",
         "eslint-plugin-prettier": "^3.3.1",
 <<<<<<< HEAD
         "husky": "^4.3.8",

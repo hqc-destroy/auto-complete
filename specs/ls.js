@@ -1,5 +1,6 @@
 var completionSpec = {
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: 'ls',
     description: 'list directory contents',
     args: {
@@ -27,31 +28,43 @@ var completionSpec = {
       name: "-l",
       description: "list in long format",
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
+=======
+    name: "ls",
+    description: "list directory contents",
+    args: {
+        variadic: true,
+        template: "folders",
+>>>>>>> a09fa69... removed linting from all js specs in specs folder
     },
-    {
-      name: ["-1"],
-      description: "one entry per line",
-    },
-    {
-      name: ["-A"],
-      description: "list all entries except for . and ..",
-    },
-    {
-      name: ["-a"],
-      description: "include directory that begin with a dot",
-    },
-    {
-      name: ["-F"],
-      description: "Add special character for different types of files",
-    },
-    {
-      name: ["-p"],
-      description:
-        "Write a slash after each filename if that file is a directory.",
-    },
-    {
-      name: ["-R"],
-      description: "Recursively list subdirectories encountered.",
-    },
-  ],
+    options: [
+        {
+            name: "-l",
+            description: "list in long format",
+        },
+        {
+            name: ["-1"],
+            description: "one entry per line",
+        },
+        {
+            name: ["-A"],
+            description: "list all entries except for . and ..",
+        },
+        {
+            name: ["-a"],
+            description: "include directory that begin with a dot",
+        },
+        {
+            name: ["-F"],
+            description: "Add special character for different types of files",
+        },
+        {
+            name: ["-p"],
+            description: "Write a slash after each filename if that file is a directory.",
+        },
+        {
+            name: ["-R"],
+            description: "Recursively list subdirectories encountered.",
+        },
+    ],
 };
+

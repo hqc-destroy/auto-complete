@@ -34,7 +34,13 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "prettier",
     "plugin:prettier/recommended",
+<<<<<<< HEAD
   ],
+=======
+    "plugin:fig-linter/recommended",
+  ],
+  plugins: ["fig-linter"],
+>>>>>>> 4b2d2b1... changed lint from ** to *, renamed fig linter plugin for eslint
   rules: {
     "@typescript-eslint/explicit-module-boundary-types": 0,
     "prettier/prettier": [

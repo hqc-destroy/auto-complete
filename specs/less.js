@@ -1,5 +1,6 @@
 var completionSpec = {
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: 'less',
     description: 'opposite of more',
     args: {
@@ -26,4 +27,13 @@ var completionSpec = {
     template: "filepaths",
   },
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
+=======
+    name: "less",
+    description: "opposite of more",
+    args: {
+        variadic: true,
+        template: "filepaths",
+    },
+>>>>>>> a09fa69... removed linting from all js specs in specs folder
 };
+

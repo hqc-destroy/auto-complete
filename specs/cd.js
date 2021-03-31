@@ -1,5 +1,6 @@
 var completionSpec = {
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: 'cd',
     description: 'Change the shell working directory',
     args: {
@@ -36,3 +37,13 @@ var completionSpec = {
   },
 };
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
+=======
+    name: "cd",
+    description: "Change the shell working directory.",
+    args: {
+        template: "folders",
+    },
+    subcommands: [{ name: "test" }],
+};
+
+>>>>>>> a09fa69... removed linting from all js specs in specs folder
