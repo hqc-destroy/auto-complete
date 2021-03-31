@@ -6,7 +6,6 @@ export const completionSpec: Fig.Spec = {
   args: {
     template: "folders",
   },
-  subcommands: [{ name: "test" }],
 };
 =======
 export const cd:Fig.Spec = {
