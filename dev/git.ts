@@ -2449,7 +2449,7 @@ export const completionSpec: Fig.Spec = {
                 name: "message",
               },
             },
-            { name: "--pathspec-from-file=", description: "" }, // TODO: pathspec file nul and add description
+            { name: "--pathspec-from-file", description: "" }, // TODO: pathspec file nul and add description
             {
               name: "--",
               description:
