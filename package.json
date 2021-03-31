@@ -28,6 +28,7 @@
         "lint": "eslint './dev/*.ts'",
 =======
         "lint": "eslint '**/*.ts'",
+<<<<<<< HEAD
 >>>>>>> 586bbe2... feat: also lint & prettier compiler stuff
 =======
         "lint": "eslint '*/*.{ts,js}'",
@@ -38,9 +39,17 @@
         "hooks": {
             "pre-commit": "lint-staged"
         }
+=======
+        "lint:fix": "npm run lint -- --fix",
+        "prepare": "husky install"
+>>>>>>> e0d36d3... feat: add husky
     },
     "lint-staged": {
+<<<<<<< HEAD
         "*.{ts,js}": [
+=======
+        "*.ts": [
+>>>>>>> 6e8f5f9... test again
             "eslint --fix"
         ]
     },
@@ -56,7 +65,12 @@
         "eslint-config-prettier": "^8.1.0",
         "eslint-plugin-fig": "file:scripts/eslint-plugin-fig",
         "eslint-plugin-prettier": "^3.3.1",
+<<<<<<< HEAD
         "husky": "^4.3.8",
+=======
+        "husky": "^6.0.0",
+        "inquirer": "^8.0.0",
+>>>>>>> e0d36d3... feat: add husky
         "lint-staged": "^10.5.4",
         "prettier": "^2.2.1",
         "progress": "^2.0.3",

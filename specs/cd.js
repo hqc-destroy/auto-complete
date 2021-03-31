@@ -30,7 +30,7 @@ var completionSpec = {
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
 =======
   name: "cd",
-  description: "Change the shell working directory",
+  description: "Change the shell working directory.",
   args: {
     template: "folders",
   },

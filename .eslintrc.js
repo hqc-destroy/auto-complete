@@ -1,6 +1,9 @@
 module.exports = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d3b8e57... feat: update git hooks
     parser: '@typescript-eslint/parser', // Specifies the ESLint parser
     parserOptions: {
         ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
@@ -10,6 +13,7 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         'prettier',
         'plugin:prettier/recommended',
+<<<<<<< HEAD
         'plugin:fig/recommended',
     ],
     plugins: ['fig'],
@@ -45,4 +49,20 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": ["off"],
   },
 >>>>>>> 65036d2... fixed linting and prettier
+=======
+    ],
+    rules: {
+        '@typescript-eslint/explicit-module-boundary-types': 0,
+        'prettier/prettier': [
+            'error',
+            {
+                // Optional Prettier config changes
+                trailingComma: 'es5',
+                printWidth: 80,
+            },
+        ],
+        'no-unused-vars': ['off'],
+        '@typescript-eslint/no-unused-vars': ['off'],
+    },
+>>>>>>> d3b8e57... feat: update git hooks
 };
