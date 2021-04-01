@@ -43,7 +43,6 @@ var completionSpec = {
     args: {
         template: "folders",
     },
-    subcommands: [{ name: "test" }, { name: "test" }],
 };
 
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
