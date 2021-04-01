@@ -5,8 +5,8 @@ export const completionSpec: Fig.Spec = {
   description: "Change the shell working directory.",
   args: {
     template: "folders",
+    suggestions: [{ name: "-", description: "switch to the last used folder" }],
   },
-  subcommands: [{ name: "-", description: "switch to the last used folder" }],
 };
 =======
 export const cd:Fig.Spec = {

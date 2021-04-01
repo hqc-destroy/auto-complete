@@ -42,8 +42,8 @@ var completionSpec = {
     description: "Change the shell working directory.",
     args: {
         template: "folders",
+        suggestions: [{ name: "-", description: "switch to the last used folder" }],
     },
-    subcommands: [{ name: "-", description: "switch to the last used folder" }],
 };
 
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
