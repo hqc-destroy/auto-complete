@@ -2079,8 +2079,12 @@ export const completionSpec: Fig.Spec = {
       description: "Pull an image or a repository from a registry",
       args: {
         name: "NAME[:TAG|@DIGEST]",
+<<<<<<< HEAD
         generators: [dockerGenerators.dockerHubSearch],
         debounce: true,
+=======
+        generators: dockerGenerators.dockerHubSearch,
+>>>>>>> b6c265f... Update docker.ts
       },
       options: [
         {

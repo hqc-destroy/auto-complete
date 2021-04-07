@@ -122,6 +122,7 @@ var dockerGenerators = {
             }); });
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
     },
 };
@@ -240,10 +241,13 @@ const containerAndCommandArgs = [
 >>>>>>> 633fa38... feat(docker): :construction: exec args
 =======
 =======
+=======
+>>>>>>> 899237b... Update docker.js
     },
     dockerHubSearch: {
         script: function (context) {
             if (context[context.length - 1] === "")
+<<<<<<< HEAD
                 return [];
             var searchTerm = context[context.length - 1];
             return "docker search " + searchTerm + " --format '{{ json . }}'";
@@ -3064,6 +3068,11 @@ var completionSpec = {
                     description: 'Do not delete untagged parents',
                 },
             ],
+=======
+                return "";
+            var searchTerm = context[context.length - 1];
+            return "docker search " + searchTerm + " --format '{{ json . }}'";
+>>>>>>> 899237b... Update docker.js
         },
         {
             name: 'run',
@@ -4927,7 +4936,7 @@ var completionSpec = {
             description: "Pull an image or a repository from a registry",
             args: {
                 name: "NAME[:TAG|@DIGEST]",
-                generator: dockerGenerators.dockerHubSearch
+                generators: dockerGenerators.dockerHubSearch
             },
             options: [
                 {
