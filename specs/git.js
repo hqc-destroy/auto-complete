@@ -1061,6 +1061,7 @@ var completionSpec = {
                     name: ['--'],
                     description: 'Do not interpret any more arguments as options.',
                 },
+<<<<<<< HEAD
 =======
         {
             name: "--no-pager",
@@ -1082,6 +1083,19 @@ var completionSpec = {
                 template: "folders",
             },
             description: "Set the path to the repository dir (`.git`)",
+=======
+            ],
+            args: [
+                {
+                    name: "base",
+                    generators: gitGenerators.branches,
+                },
+                {
+                    name: "new base",
+                    generators: gitGenerators.branches,
+                },
+            ],
+>>>>>>> cee8840... update fig and git
         },
         {
             name: "--work-tree=<path>",
@@ -3921,6 +3935,7 @@ var completionSpec = {
         { name: 'reflog', description: 'Show history of events with hashes' },
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             name: 'clone',
             description: 'Clone a repository into a new directory',
             args: [{ name: 'repository' }, { name: 'directory', template: 'filepaths' }],
@@ -3932,6 +3947,37 @@ var completionSpec = {
 =======
                     insertValue: 'clear',
                 },
+=======
+            name: "clean",
+            description: "Shows which files would be removed from working directory",
+            options: [
+                {
+                    name: "-n",
+                    description: "Don’t actually remove anything, just show what would be done.",
+                },
+                {
+                    name: ["-f", "--force"],
+                    description: "If the Git configuration variable clean.requireForce is not set to false, git clean will refuse to delete files or directories unless given -f or -i.",
+                },
+            ],
+            args: {
+                name: "path",
+                template: "filepaths",
+            },
+        },
+        {
+            name: "revert",
+            description: "Create new commit that undoes all of the changes made in <commit>, then apply it to the current branch.",
+            args: {
+                name: "commit",
+                generators: gitGenerators.commits,
+            },
+        },
+        {
+            name: "push",
+            description: "Update remote refs",
+            options: [
+>>>>>>> cee8840... update fig and git
                 {
                     name: 'apply',
                     description: 'Like pop, but do not remove the state from the stash list.',
@@ -3967,6 +4013,29 @@ var completionSpec = {
                         },
                     ],
                 },
+<<<<<<< HEAD
+=======
+                {
+                    name: "-u",
+                    args: [
+                        {
+                            name: "remote",
+                            generators: gitGenerators.remotes,
+                        },
+                        {
+                            name: "branch",
+                            generators: gitGenerators.branches,
+                        },
+                    ],
+                },
+                {
+                    name: "--force",
+                    description: "Forces the git push even if it results in a non-fast-forward merge. Do not use the --force flag unless you’re absolutely sure you know what you’re doing",
+                },
+                // { name: ["-n", "--dry-run"], description: "dry run" },
+            ],
+            args: [
+>>>>>>> cee8840... update fig and git
                 {
                     name: 'create',
                     description: 'Creates a stash with the message <msg>',
@@ -4007,10 +4076,37 @@ var completionSpec = {
         },
         { name: 'reflog', description: 'Show history of events with hashes' },
         {
+<<<<<<< HEAD
             name: 'clone',
             description: 'Clone a repository into a new directory',
             args: [{ name: 'repository' }, { name: 'directory', template: 'filepaths' }],
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
+=======
+            name: "pull",
+            description: "Integrate with another repository",
+            options: [
+                {
+                    name: "--rebase",
+                    description: "Fetch the remote’s copy of current branch and rebases it into the local copy.",
+                    args: {
+                        name: "remote",
+                        generators: gitGenerators.remotes,
+                    },
+                },
+            ],
+            args: [
+                {
+                    name: "remote",
+                    isOptional: true,
+                    generators: gitGenerators.remotes,
+                },
+                {
+                    name: "branch",
+                    isOptional: true,
+                    generators: gitGenerators.branches,
+                },
+            ],
+>>>>>>> cee8840... update fig and git
         },
         { name: 'init', description: 'Create an empty Git repository or reinitialize an existing one' },
         { name: 'mv', description: 'Move or rename a file, a directory, or a symlink' },
@@ -4074,8 +4170,20 @@ var completionSpec = {
                     insertValue: "--staged",
                     description: "Show difference between the files in the staging area and the latest version",
                 },
+                {
+                    name: "--cached",
+                    description: "Show difference between staged changes and last commit",
+                },
             ],
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+            args: {
+                name: "commit",
+                suggestions: [{ name: "HEAD" }],
+                generators: gitGenerators.commits,
+            },
+>>>>>>> cee8840... update fig and git
         },
         {
             name: "reset",
@@ -4174,7 +4282,53 @@ var completionSpec = {
                 },
                 {
                     name: "--oneline",
-                    description: "show each commit as a single line ",
+                    description: "show each commit as a single line",
+                },
+                {
+                    name: "--p",
+                    description: "display the full diff of each commit",
+                },
+                {
+                    name: "--stat",
+                    description: "Include which files were altered and the relative number of lines that were added or deleted from each of them.",
+                },
+                {
+                    name: "--grep",
+                    description: "Search for commits with a commit message that matches <pattern>",
+                    insertValue: "--grep=",
+                    args: {
+                        name: "pattern",
+                    },
+                },
+                {
+                    name: "--author",
+                    description: "Search for commits by a particular author.",
+                    insertValue: "--author=",
+                    args: {
+                        name: "pattern",
+                    },
+                },
+                {
+                    name: "--source",
+                    description: "show source",
+                },
+                {
+                    name: "--oneline",
+                    description: "show each commit as a single line",
+                },
+            ],
+            args: [
+                {
+                    name: "since",
+                    description: "commit ID, branch name, HEAD, or revision reference",
+                    generators: gitGenerators.commits,
+                    suggestions: [{ name: "HEAD" }],
+                },
+                {
+                    name: "until",
+                    description: "commit ID, branch name, HEAD, or revision reference",
+                    generators: gitGenerators.commits,
+                    suggestions: [{ name: "HEAD" }],
                 },
             ],
         },
@@ -4197,6 +4351,10 @@ var completionSpec = {
                     name: "rm",
                     insertValue: "rm",
                     description: "Removes given remote [name]",
+                    args: {
+                        name: "remote",
+                        generators: gitGenerators.remotes,
+                    },
                 },
                 {
                     name: "get-url",
@@ -4895,7 +5053,20 @@ var completionSpec = {
                 },
             ],
         },
-        { name: "reflog", description: "Show history of events with hashes" },
+        {
+            name: "reflog",
+            description: "Show history of events with hashes",
+            options: [
+                {
+                    name: "--relative-date",
+                    description: "show date info",
+                },
+                {
+                    name: "--all",
+                    description: "show all refs",
+                },
+            ],
+        },
         {
 <<<<<<< HEAD
           name: "apply",
@@ -5142,8 +5313,14 @@ var completionSpec = {
             name: "init",
             description: "Create an empty Git repository or reinitialize an existing one",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
+=======
+            args: {
+                name: "directory",
+            },
+>>>>>>> cee8840... update fig and git
             options: [
                 {
                     name: ["-q", "--quiet"],
@@ -5211,6 +5388,18 @@ var completionSpec = {
         {
             name: "mv",
             description: "Move or rename a file, a directory, or a symlink",
+            args: [
+                {
+                    name: "source",
+                    description: "file to move",
+                    template: "filepaths",
+                },
+                {
+                    name: "destination",
+                    description: "location to move to",
+                    template: "folders",
+                },
+            ],
             options: [
                 {
                     name: ["-f", "--force"],
@@ -5439,6 +5628,16 @@ var completionSpec = {
                 name: "branch",
                 generators: gitGenerators.branches,
             },
+            options: [
+                {
+                    name: "--no-ff",
+                    description: "Merge with a nicer branch history",
+                },
+            ],
+        },
+        {
+            name: "mergetool",
+            description: "Open the git tool to fix conflicts",
         },
         {
             name: "tag",

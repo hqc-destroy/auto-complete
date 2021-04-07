@@ -262,7 +262,6 @@ export const completionSpec: Fig.Spec = {
       description: "update preferences",
       subcommands: [
         {
-          displayName: "developerMode",
           name: "autocomplete.developerMode",
           icon: "fig://icon?type=commandkey",
           insertValue: "autocomplete.developerMode ",
@@ -283,6 +282,7 @@ export const completionSpec: Fig.Spec = {
           },
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
@@ -319,6 +319,8 @@ export const completionSpec: Fig.Spec = {
           insertValue: 'autocomplete.devCompletionsFolder ',
 =======
           displayName: "devCompletionsFolder",
+=======
+>>>>>>> cee8840... update fig and git
           name: "autocomplete.devCompletionsFolder",
           icon: "fig://icon?type=commandkey",
           insertValue: "autocomplete.devCompletionsFolder ",
@@ -361,7 +363,6 @@ export const completionSpec: Fig.Spec = {
 =======
 >>>>>>> 65036d2... fixed linting and prettier
         {
-          displayName: "scrollWrapAround",
           name: "autocomplete.scrollWrapAround",
           icon: "fig://icon?type=commandkey",
           insertValue: "autocomplete.scrollWrapAround ",
@@ -376,7 +377,6 @@ export const completionSpec: Fig.Spec = {
           },
         },
         {
-          displayName: "insertSpaceAutomatically",
           name: "autocomplete.insertSpaceAutomatically",
           icon: "fig://icon?type=commandkey",
           insertValue: "autocomplete.insertSpaceAutomatically ",
@@ -391,7 +391,6 @@ export const completionSpec: Fig.Spec = {
           },
         },
         {
-          displayName: "immediatelyRunDangerousCommands",
           name: "autocomplete.immediatelyRunDangerousCommands",
           icon: "fig://icon?type=commandkey",
           insertValue: "autocomplete.immediatelyRunDangerousCommands ",
@@ -406,7 +405,6 @@ export const completionSpec: Fig.Spec = {
           },
         },
         {
-          displayName: "immediatelyRunGitAliases",
           name: "autocomplete.immediatelyRunGitAliases",
           icon: "fig://icon?type=commandkey",
           insertValue: "autocomplete.immediatelyRunGitAliases ",
@@ -421,7 +419,6 @@ export const completionSpec: Fig.Spec = {
           },
         },
         {
-          displayName: "enter",
           name: "autocomplete.enter",
           icon: "fig://icon?type=commandkey",
           insertValue: "autocomplete.enter ",
@@ -445,7 +442,6 @@ export const completionSpec: Fig.Spec = {
           },
         },
         {
-          displayName: "tab",
           name: "autocomplete.tab",
           icon: "fig://icon?type=commandkey",
           insertValue: "autocomplete.tab ",
@@ -547,7 +543,41 @@ export const completionSpec: Fig.Spec = {
           },
         },
         {
-          displayName: "width",
+          name: "pty.rc",
+          icon: "fig://icon?type=commandkey",
+          description:
+            "A file that will be sourced when Fig creates a pseudoterminal",
+          args: {
+            name: "filepath",
+            template: "filepaths",
+          },
+        },
+        {
+          name: "app.launchOnStartup",
+          icon: "fig://icon?type=commandkey",
+          description:
+            "A flag that determines whether the Fig app is added to Login Items. If true, Fig will launch automatically whenever you restart your computer.",
+          args: {
+            name: "bool",
+            suggestions: [
+              { name: "true", icon: "fig://icon?type=string" },
+              { name: "false", icon: "fig://icon?type=string" },
+            ],
+          },
+        },
+        {
+          name: "app.disableTelemetry",
+          icon: "fig://icon?type=commandkey",
+          description: "Opt-out of all telemetry collection",
+          args: {
+            name: "bool",
+            suggestions: [
+              { name: "true", icon: "fig://icon?type=string" },
+              { name: "false", icon: "fig://icon?type=string" },
+            ],
+          },
+        },
+        {
           name: "autocomplete.width",
           icon: "fig://icon?type=commandkey",
           insertValue: "autocomplete.width ",
@@ -557,7 +587,6 @@ export const completionSpec: Fig.Spec = {
           },
         },
         {
-          displayName: "height",
           name: "autocomplete.height",
           icon: "fig://icon?type=commandkey",
           insertValue: "autocomplete.height ",
