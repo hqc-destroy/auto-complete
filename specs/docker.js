@@ -121,6 +121,7 @@ var dockerGenerators = {
                 name: "" + i.Repository,
             }); });
         },
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
     },
 };
@@ -238,6 +239,30 @@ const containerAndCommandArgs = [
 
 >>>>>>> 633fa38... feat(docker): :construction: exec args
 =======
+=======
+    },
+    dockerHubSearch: {
+        script: function (context) {
+            if (context[context.length - 1] === "")
+                return [];
+            var searchTerm = context[context.length - 1];
+            return "docker search " + searchTerm + " --format '{{ json . }}'";
+        },
+        postProcess: function (out) {
+            var allLines = out
+                .split("\n")
+                .map(function (line) { return JSON.parse(line); });
+            return allLines.map(function (i) { return ({
+                name: "" + i.Name,
+            }); });
+        },
+        trigger: function () {
+            return true;
+        },
+        debounce: true
+    }
+};
+>>>>>>> ee31762... feat: docker pull searches dockerhub
 var containersArg = {
     name: "container",
     generators: [dockerGenerators.runningDockerContainers],
@@ -247,6 +272,7 @@ var imagesArg = {
     generators: [dockerGenerators.allLocalImages],
 };
 var containerAndCommandArgs = [
+<<<<<<< HEAD
 <<<<<<< HEAD
   containersArg,
   {
@@ -3348,6 +3374,8 @@ var completionSpec = {
                 },
               },
 =======
+=======
+>>>>>>> ee31762... feat: docker pull searches dockerhub
     containersArg,
     {
         name: "command",
@@ -4899,6 +4927,7 @@ var completionSpec = {
             description: "Pull an image or a repository from a registry",
             args: {
                 name: "NAME[:TAG|@DIGEST]",
+                generator: dockerGenerators.dockerHubSearch
             },
             options: [
                 {
