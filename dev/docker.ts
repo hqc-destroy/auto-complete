@@ -103,7 +103,6 @@ const dockerGenerators: Record<string, Fig.Generator> = {
     trigger: function () {
       return true;
     },
-    debounce: true,
   },
 };
 
@@ -2081,6 +2080,7 @@ export const completionSpec: Fig.Spec = {
       args: {
         name: "NAME[:TAG|@DIGEST]",
         generator: dockerGenerators.dockerHubSearch,
+        debounce: true,
       },
       options: [
         {
