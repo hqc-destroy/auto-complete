@@ -444,8 +444,6 @@ const generators: Record<string, Fig.Generator> = {
   },
 };
 
-// fake-change file
-
 export const completionSpec: Fig.Spec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
