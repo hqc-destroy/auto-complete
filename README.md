@@ -1,4 +1,7 @@
 <p align="center">
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
     <img width="300" src="https://github.com/withfig/fig/blob/main/static/FigBanner.png?raw=true"/>
 </p>
 
@@ -107,6 +110,7 @@ Yes! Check out our guide on how to [get started building autocomplete specs](htt
 
 #### Did we miss something?
 Get in touch at hello@withfig.com or chat with us on [Slack](https://withfig.com/community)
+<<<<<<< HEAD
 =======
 ### Linting Your Spec
 The autocomplete spec linter can be run to validate the format of completion specs. Run it to get syntax and type errors from your autocomplete spec.
@@ -122,3 +126,25 @@ To run the linter on ALL specs in the /specs folder, run
 <p>Email us any time: <a href="mailto:hello@withfig.com">hello@withfig.com</a></p>
 >>>>>>> 3b53b63... Move linter to root
 
+=======
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/falky97"><img src="https://avatars.githubusercontent.com/u/4949076?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Brendan Falk</b></sub></a><br /><a href="https://github.com/withfig/autocomplete/commits?author=falky97" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+>>>>>>> d671881... :busts_in_silhouette: Add @falky97 as a contributor
