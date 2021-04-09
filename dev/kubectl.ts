@@ -1,6 +1,21 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 export const kubectlCompletionSpec: Fig.Spec = {
 =======
+=======
+=======
+// TODO: Handle if not connected to a k8s cluster
+>>>>>>> 98e4fbf... feat: (kubectl) Explain args + generator
+const resourcesArg = {
+  name: "Resource",
+  generators: {
+    script: "kubectl api-resources -o name",
+    splitOn: "\n",
+  },
+};
+
+>>>>>>> 53d0d24... feat: (kubectl) Extract resources generator to const
 export const completionSpec: Fig.Spec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -473,7 +488,9 @@ export const completionSpec: Fig.Spec = {
         {
           name: ["-f", "--filename"],
           description: "that contains the configuration to apply",
-          args: {},
+          args: {
+            template: "filepaths",
+          },
         },
         {
           name: ["--force"],
@@ -497,7 +514,9 @@ export const completionSpec: Fig.Spec = {
           name: ["-k", "--kustomize"],
           description:
             "Process a kustomization directory. This flag can't be used together with -f or -R.",
-          args: {},
+          args: {
+            template: "folders",
+          },
         },
         {
           name: ["--openapi-patch"],
@@ -3080,6 +3099,7 @@ export const completionSpec: Fig.Spec = {
     {
       name: "explain",
       description: "List the fields for supported resources",
+      args: resourcesArg,
       options: [
         {
           name: ["--api-version"],
@@ -3235,13 +3255,7 @@ export const completionSpec: Fig.Spec = {
     {
       name: "get",
       description: "Display one or many resources",
-      args: {
-        name: "Resource",
-        generators: {
-          script: "kubectl api-resources -o name",
-          splitOn: "\n",
-        },
-      },
+      args: resourcesArg,
       options: [
         {
           name: ["-A", "--all-namespaces"],
@@ -4898,7 +4912,7 @@ export const completionSpec: Fig.Spec = {
               args: {},
             },
             {
-              name: ["--template"],
+              name: ["--wanker"],
               description:
                 "Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].",
               args: {},
