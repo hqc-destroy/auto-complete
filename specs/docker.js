@@ -3074,6 +3074,7 @@ var completionSpec = {
             return "docker search " + searchTerm + " --format '{{ json . }}'";
 >>>>>>> 899237b... Update docker.js
         },
+<<<<<<< HEAD
         {
             name: 'run',
             description: 'Run a command in a new container',
@@ -3200,6 +3201,16 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+        postProcess: function (out) {
+            var allLines = out
+                .split("\n")
+                .map(function (line) { return JSON.parse(line); });
+            return allLines.map(function (i) { return ({
+                name: "" + i.Name,
+                icon: "fig://icon?type=docker",
+            }); });
+>>>>>>> d8e6cde...  added docker icon
         },
         { name: "save", description: "Save one or more images to a tar archive (streamed to STDOUT by default)" },
         { name: "search", description: "Search the Docker Hub for images" },
