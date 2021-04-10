@@ -3228,6 +3228,7 @@ var completionSpec = {
                 }
             ]
         },
+<<<<<<< HEAD
 >>>>>>> 7980ce4... refactor: Fix broken specs
         { name: "tag", description: "Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE" },
         { name: "top", description: "Display the running processes of a container" },
@@ -3385,6 +3386,19 @@ var completionSpec = {
 =======
 =======
 >>>>>>> ee31762... feat: docker pull searches dockerhub
+=======
+    },
+};
+var containersArg = {
+    name: "container",
+    generators: [dockerGenerators.runningDockerContainers],
+};
+var imagesArg = {
+    name: "image",
+    generators: [dockerGenerators.allLocalImages],
+};
+var containerAndCommandArgs = [
+>>>>>>> 59955ff... feat: add missing transpiled files
     containersArg,
     {
         name: "command",
@@ -4936,7 +4950,8 @@ var completionSpec = {
             description: "Pull an image or a repository from a registry",
             args: {
                 name: "NAME[:TAG|@DIGEST]",
-                generators: dockerGenerators.dockerHubSearch
+                generators: dockerGenerators.dockerHubSearch,
+                debounce: true,
             },
             options: [
                 {
