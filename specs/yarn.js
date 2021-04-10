@@ -38,13 +38,15 @@ var yarnGenerators = {
 var packageList = {
     script: "cat package.json",
     postProcess: function (out) {
+        console.log("THIS IS A TEST");
+        console.log(out);
         if (out.trim() == "") {
             return [];
         }
         try {
             var packageContent = JSON.parse(out);
-            var dependencyScripts = packageContent["dependencies"];
-            var devDependencyScripts = packageContent["devDependencies"];
+            var dependencyScripts = packageContent["dependencies"] || {};
+            var devDependencyScripts = packageContent["devDependencies"] || {};
             if (dependencyScripts || devDependencyScripts) {
                 return __spreadArray(__spreadArray([], Object.keys(dependencyScripts)), Object.keys(devDependencyScripts)).map(function (dependencyName) { return ({
                     name: dependencyName,
@@ -52,7 +54,9 @@ var packageList = {
                 }); });
             }
         }
-        catch (e) { }
+        catch (e) {
+            console.log(e);
+        }
         return [];
     },
 };
