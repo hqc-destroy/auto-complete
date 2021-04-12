@@ -8,7 +8,7 @@ export const kubectlCompletionSpec: Fig.Spec = {
 // TODO: Handle if not connected to a k8s cluster
 >>>>>>> 98e4fbf... feat: (kubectl) Explain args + generator
 const resourcesArg = {
-  name: "Resource",
+  name: "Resource Type",
   generators: {
     script: "kubectl api-resources -o name",
     splitOn: "\n",
@@ -26,7 +26,21 @@ const runningPodsArg = {
   },
 };
 
+<<<<<<< HEAD
 >>>>>>> 6e88c3c... feat: (kubectl) Running Pods generator
+=======
+const resourceSuggestionsFromResourceType = {
+  name: "Resource",
+  generators: {
+    script: function (context) {
+      const resourceType = context[context.length - 2];
+      return `kubectl get ${resourceType} -o custom-columns=:.metadata.name`;
+    },
+    splitOn: "\n",
+  },
+};
+
+>>>>>>> 1b9faf5... feat: (kubectl) resourceSuggestionsFromResourceType
 export const completionSpec: Fig.Spec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2863,6 +2877,7 @@ export const completionSpec: Fig.Spec = {
     {
       name: "describe",
       description: "Show details of a specific resource or group of resources",
+      args: [resourcesArg, resourceSuggestionsFromResourceType],
       options: [
         {
           name: ["-A", "--all-namespaces"],
