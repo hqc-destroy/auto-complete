@@ -15,7 +15,18 @@ const resourcesArg = {
   },
 };
 
+<<<<<<< HEAD
 >>>>>>> 53d0d24... feat: (kubectl) Extract resources generator to const
+=======
+const runningPodsArg = {
+  name: "Running Pods",
+  generators: {
+    script: "kubectl get pods --field-selector=status.phase=Running -o name",
+    splitOn: "\n",
+  },
+};
+
+>>>>>>> 6e88c3c... feat: (kubectl) Running Pods generator
 export const completionSpec: Fig.Spec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -169,6 +180,13 @@ export const completionSpec: Fig.Spec = {
     {
       name: "annotate",
       description: "Update the annotations on one or more resources",
+      args: [
+        resourcesArg,
+        {
+          name: "KEY=VAL",
+          variadic: true,
+        },
+      ],
       options: [
         {
           name: ["--all"],
@@ -704,6 +722,7 @@ export const completionSpec: Fig.Spec = {
       name: "attach",
       description:
         "Attach to a process that is already running inside an existing container.",
+      args: runningPodsArg,
       options: [
         {
           name: ["-c", "--container"],
