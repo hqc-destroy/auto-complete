@@ -360,12 +360,15 @@ var gitGenerators = {
                     icon: "fig://icon?type=" + icon,
                     description: "remote",
                 };
+<<<<<<< HEAD
 =======
         script: "git remote",
         postProcess: function (out) {
             return out.split("\n").map(function (remote) {
                 return { name: remote, description: "remote" };
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> f4ad795... remove firebase-new
             });
         },
     },
