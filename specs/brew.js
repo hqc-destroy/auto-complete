@@ -233,7 +233,7 @@ var completionSpec = {
                                 icon: "🍺",
                                 priority: (formula[0] >= "0" && formula[0] <= "9") || formula[0] == "/"
                                     ? 0
-                                    : 100,
+                                    : 51,
                             };
                         });
                     },

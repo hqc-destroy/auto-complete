@@ -217,7 +217,7 @@ const gitGenerators: Record<string, Fig.Generator> = {
             name: elm.replace("*", "").trim(),
             description: "current branch",
             icon: "⭐️",
-            priority: 100,
+            // priority: 100,
           };
         }
 
