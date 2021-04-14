@@ -3240,6 +3240,7 @@ var completionSpec = {
             ]
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 7980ce4... refactor: Fix broken specs
         { name: "tag", description: "Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE" },
         { name: "top", description: "Display the running processes of a container" },
@@ -3398,6 +3399,8 @@ var completionSpec = {
 =======
 >>>>>>> ee31762... feat: docker pull searches dockerhub
 =======
+=======
+>>>>>>> 73a70d9... npm run build
     },
 };
 var containersArg = {

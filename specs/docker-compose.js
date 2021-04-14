@@ -1,6 +1,7 @@
 var getServices = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     script: "docker-compose config --services",
     splitOn: "\n",
 };
@@ -10,10 +11,13 @@ var getServices = {
             let index = context.indexOf('-f');
             return `docker-compose -f ${context[index + 1]} config --services`
 =======
+=======
+>>>>>>> 73a70d9... npm run build
     script: function (context) {
         if (context.includes("-f")) {
             var index = context.indexOf("-f");
             return "docker-compose -f " + context[index + 1] + " config --services";
+<<<<<<< HEAD
 >>>>>>> 59955ff... feat: add missing transpiled files
         }
         return "docker-compose config --services";
@@ -27,6 +31,13 @@ var getServices = {
     splitOn: "\n",
 };
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+        }
+        return "docker-compose config --services";
+    },
+    splitOn: "\n",
+};
+>>>>>>> 73a70d9... npm run build
 var completionSpec = {
     name: "docker-compose",
     description: "",
@@ -37,6 +48,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["--build-arg"],
@@ -95,6 +107,9 @@ var completionSpec = {
 =======
                     name: ["--build-arg"],
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["--build-arg"],
+>>>>>>> 73a70d9... npm run build
                     description: "Set build-time variables for services.",
                     args: {},
                 },
@@ -142,6 +157,7 @@ var completionSpec = {
                     name: ["-q", "--quiet"],
                     description: "Don't print anything to STDOUT",
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -149,6 +165,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -157,6 +177,7 @@ var completionSpec = {
             description: "Validate and view the Compose file.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["--resolve-image-digests"],
@@ -195,6 +216,9 @@ var completionSpec = {
 =======
                     name: ["--resolve-image-digests"],
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["--resolve-image-digests"],
+>>>>>>> 73a70d9... npm run build
                     description: "Pin image tags to digests.",
                     args: {},
                 },
@@ -220,6 +244,7 @@ var completionSpec = {
                 },
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     name: [
                         "--hash"
                     ],
@@ -228,11 +253,16 @@ var completionSpec = {
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
 =======
+=======
+>>>>>>> 73a70d9... npm run build
                     name: ["--hash"],
                     description: 'Print the service config hash, one per line. Set "service1,service2" for a list of specified services or use the wildcard symbol to display all services.',
                     args: {},
                 },
+<<<<<<< HEAD
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -242,6 +272,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["--force-recreate"],
@@ -270,6 +301,9 @@ var completionSpec = {
 =======
                     name: ["--force-recreate"],
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["--force-recreate"],
+>>>>>>> 73a70d9... npm run build
                     description: "Recreate containers even if their configuration and image haven't changed. Incompatible with --no-recreate.",
                     args: {},
                 },
@@ -287,6 +321,7 @@ var completionSpec = {
                     name: ["--build"],
                     description: "Build images before creating containers.",
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -294,6 +329,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -302,6 +341,7 @@ var completionSpec = {
             description: "Stops containers and removes containers, networks, volumes, and images",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["--rmi"],
@@ -330,6 +370,9 @@ var completionSpec = {
 =======
                     name: ["--rmi"],
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["--rmi"],
+>>>>>>> 73a70d9... npm run build
                     description: "Remove images. Type must be one of: 'all': Remove all images used by any service. 'local': Remove only images that don't have a custom tag set by the `image` field.",
                     args: {},
                 },
@@ -347,6 +390,7 @@ var completionSpec = {
                     name: ["-t", "--timeout"],
                     description: "Specify a shutdown timeout in seconds. (default: 10)",
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -354,6 +398,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -363,6 +411,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["--json"],
@@ -383,6 +432,12 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["--json"],
+                    description: "Output events as a stream of json objects",
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -392,6 +447,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["-d", "--detach"],
@@ -436,6 +492,9 @@ var completionSpec = {
 =======
                     name: ["-d", "--detach"],
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["-d", "--detach"],
+>>>>>>> 73a70d9... npm run build
                     description: "Detached mode: Run command in the background.",
                     args: {},
                 },
@@ -468,6 +527,7 @@ var completionSpec = {
                     name: ["-w", "--workdir"],
                     description: "DIR Path to workdir directory for this command.",
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -475,6 +535,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -490,6 +554,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["-q", "--quiet"],
@@ -511,6 +576,12 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["-q", "--quiet"],
+                    description: "Only display IDs",
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -520,6 +591,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["-s"],
@@ -540,6 +612,12 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["-s"],
+                    description: "SIGNAL to send to the container. Default signal is SIGKILL.",
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -549,6 +627,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["--no-color"],
@@ -577,6 +656,9 @@ var completionSpec = {
 =======
                     name: ["--no-color"],
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["--no-color"],
+>>>>>>> 73a70d9... npm run build
                     description: "Produce monochrome output.",
                     args: {},
                 },
@@ -594,6 +676,7 @@ var completionSpec = {
                     name: ["--tail"],
                     description: "Number of lines to show from the end of the logs for each container.",
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -601,6 +684,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -616,6 +703,7 @@ var completionSpec = {
             description: "Print the public port for a port binding.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["--protocol"],
@@ -634,12 +722,16 @@ var completionSpec = {
 =======
                     name: ["--protocol"],
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["--protocol"],
+>>>>>>> 73a70d9... npm run build
                     description: "tcp or udp [default: tcp]",
                     args: {},
                 },
                 {
                     name: ["--index"],
                     description: "index of the container if there are multiple instances of a service [default: 1]",
+<<<<<<< HEAD
 <<<<<<< HEAD
                     args: {}
                 }
@@ -648,6 +740,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -657,6 +753,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["-q", "--quiet"],
@@ -686,6 +783,9 @@ var completionSpec = {
 =======
                     name: ["-q", "--quiet"],
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["-q", "--quiet"],
+>>>>>>> 73a70d9... npm run build
                     description: "Only display IDs",
                     args: {},
                 },
@@ -703,6 +803,7 @@ var completionSpec = {
                     name: ["-a", "--all"],
                     description: "Show all stopped containers (including those created by the run command)",
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -710,6 +811,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -718,6 +823,7 @@ var completionSpec = {
             description: "Pulls images for services defined in a Compose file, but does not start the containers.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["--ignore-pull-failures"],
@@ -751,6 +857,9 @@ var completionSpec = {
 =======
                     name: ["--ignore-pull-failures"],
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["--ignore-pull-failures"],
+>>>>>>> 73a70d9... npm run build
                     description: "Pull what it can and ignores images with pull failures.",
                     args: {},
                 },
@@ -773,6 +882,7 @@ var completionSpec = {
                     name: ["--include-deps"],
                     description: "Also pull services declared as dependencies",
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -780,6 +890,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -788,6 +902,7 @@ var completionSpec = {
             description: "Pushes images for services.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["--ignore-push-failures"],
@@ -808,6 +923,12 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["--ignore-push-failures"],
+                    description: "Push what it can and ignores images with push failures.",
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -817,6 +938,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["-t", "--timeout"],
@@ -838,6 +960,12 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["-t", "--timeout"],
+                    description: "Specify a shutdown timeout in seconds. (default: 10)",
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -847,6 +975,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["-f", "--force"],
@@ -876,6 +1005,9 @@ var completionSpec = {
 =======
                     name: ["-f", "--force"],
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["-f", "--force"],
+>>>>>>> 73a70d9... npm run build
                     description: "Don't ask to confirm removal",
                     args: {},
                 },
@@ -890,6 +1022,7 @@ var completionSpec = {
                     args: {},
                 },
 <<<<<<< HEAD
+<<<<<<< HEAD
                 {
                     name: [
                         "-a",
@@ -901,6 +1034,8 @@ var completionSpec = {
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
 =======
 >>>>>>> 26969c2... feat(docker-compose): --env-file filepaths generator
+=======
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -910,6 +1045,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["-d", "--detach"],
@@ -989,6 +1125,9 @@ var completionSpec = {
 =======
                     name: ["-d", "--detach"],
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["-d", "--detach"],
+>>>>>>> 73a70d9... npm run build
                     description: "Detached mode: Run container in the background, print new container name.",
                     args: {},
                 },
@@ -1056,6 +1195,7 @@ var completionSpec = {
                     name: ["-w", "--workdir"],
                     description: "Working directory inside the container",
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -1063,6 +1203,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -1071,6 +1215,7 @@ var completionSpec = {
             description: "Set number of containers to run for a service.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["-t", "--timeout"],
@@ -1092,6 +1237,12 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["-t", "--timeout"],
+                    description: "Specify a shutdown timeout in seconds. (default: 10)",
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -1110,6 +1261,7 @@ var completionSpec = {
                 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     name: ["-t", "--timeout"],
                     description: "Specify a shutdown timeout in seconds.\n                             (default: 10)\n",
                     args: {},
@@ -1129,6 +1281,12 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["-t", "--timeout"],
+                    description: "Specify a shutdown timeout in seconds. (default: 10)",
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -1150,6 +1308,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["-d", "--detach"],
@@ -1244,6 +1403,9 @@ var completionSpec = {
 =======
                     name: ["-d", "--detach"],
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["-d", "--detach"],
+>>>>>>> 73a70d9... npm run build
                     description: "Detached mode: Run containers in the background, print new container names. Incompatible with",
                     args: {},
                 },
@@ -1326,6 +1488,7 @@ var completionSpec = {
                     name: ["--scale"],
                     description: "Scale SERVICE to NUM instances. Overrides the `scale` setting in the Compose file if present.",
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -1333,6 +1496,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    args: {},
+                },
+>>>>>>> 73a70d9... npm run build
             ],
             subcommands: [],
         },
@@ -1341,6 +1508,7 @@ var completionSpec = {
             description: "Show version information and quit.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: ["--short"],
@@ -1374,6 +1542,15 @@ var completionSpec = {
             subcommands: [],
         },
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+                    name: ["--short"],
+                    description: "Shows only Compose's version number.",
+                    args: {},
+                },
+            ],
+            subcommands: [],
+        },
+>>>>>>> 73a70d9... npm run build
     ],
     options: [
         {
@@ -1497,6 +1674,7 @@ var completionSpec = {
                 template: "filepaths",
             },
 <<<<<<< HEAD
+<<<<<<< HEAD
             "description": "Specify an alternate environment file",
             "name": [
                 "--env-file"
@@ -1506,10 +1684,15 @@ var completionSpec = {
 }
 >>>>>>> 9a66d66... feat(docker-compose): global options
 =======
+=======
+>>>>>>> 73a70d9... npm run build
             description: "Specify an alternate environment file",
             name: ["--env-file"],
         },
     ],
 };
 
+<<<<<<< HEAD
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+>>>>>>> 73a70d9... npm run build
