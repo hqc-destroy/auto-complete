@@ -4189,6 +4189,7 @@ var completionSpec = {
 =======
             args: {
                 name: "commit",
+                isOptional: true,
                 suggestions: [{ name: "HEAD" }],
                 generators: gitGenerators.commits,
             },
