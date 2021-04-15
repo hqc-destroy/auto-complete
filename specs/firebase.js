@@ -1,6 +1,7 @@
 var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: 'firebase',
     description: 'CLI Interface for Google Firebase',
 <<<<<<< HEAD
@@ -24,6 +25,8 @@ var completionSpec = {
                     name: ['--no-localhost'],
                     description: 'copy and paste a code instead of starting a local server for authentication',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     name: "firebase",
     description: "CLI Interface for Google Firebase",
     subcommands: [
@@ -42,11 +45,15 @@ var completionSpec = {
                 {
                     name: ["--no-localhost"],
                     description: "copy and paste a code instead of starting a local server for authentication",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'init',
             description: 'initialize firebase project',
@@ -55,17 +62,23 @@ var completionSpec = {
                     name: ['-h', '--help'],
                     description: 'output usage info',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "init",
             description: "initialize firebase project",
             options: [
                 {
                     name: ["-h", "--help"],
                     description: "output usage info",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'serve',
             description: 'test project on local http',
@@ -93,6 +106,8 @@ var completionSpec = {
                     name: ['--except'],
                     description: 'serve all except specified targets (valid targets are: hosting, functions)',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "serve",
             description: "test project on local http",
             options: [
@@ -118,12 +133,16 @@ var completionSpec = {
                 {
                     name: ["--except"],
                     description: "serve all except specified targets (valid targets are: hosting, functions)",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     args: {},
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'deploy',
             description: 'deploy project to firebase server',
@@ -156,6 +175,8 @@ var completionSpec = {
                     name: ['--except'],
                     description: 'serve all except specified targets (valid targets are: hosting, functions)',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "deploy",
             description: "deploy project to firebase server",
             options: [
@@ -186,12 +207,16 @@ var completionSpec = {
                 {
                     name: ["--except"],
                     description: "serve all except specified targets (valid targets are: hosting, functions)",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     args: {},
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'appdistribution:distribute',
             description: 'upload a distribution',
@@ -225,6 +250,8 @@ var completionSpec = {
                     args: {
                         suggestions: [{ name: 'json' }, { name: 'csv' }],
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "appdistribution:distribute",
             description: "upload a distribution",
         },
@@ -246,12 +273,16 @@ var completionSpec = {
                     description: "Format of exported data (csv, json).",
                     args: {
                         suggestions: [{ name: "json" }, { name: "csv" }],
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     },
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'auth:import',
             description: 'print the Google Services config',
@@ -280,6 +311,8 @@ var completionSpec = {
                     args: {
                         suggestions: [{ name: 'json' }, { name: 'csv' }],
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "auth:import",
             description: "print the Google Services config",
             args: {
@@ -296,12 +329,16 @@ var completionSpec = {
                     description: "Format of exported data (csv, json).",
                     args: {
                         suggestions: [{ name: "json" }, { name: "csv" }],
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     },
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'apps:create',
             description: 'create a new Firebase app',
@@ -322,6 +359,8 @@ var completionSpec = {
                     name: ['-s', '--app-store-id'],
                     description: 'optional package name for the iOS app',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "apps:create",
             description: "create a new Firebase app",
             options: [
@@ -340,12 +379,16 @@ var completionSpec = {
                 {
                     name: ["-s", "--app-store-id"],
                     description: "optional package name for the iOS app",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
             args: {
                 suggestions: [
                     {
+<<<<<<< HEAD
 <<<<<<< HEAD
                         name: 'IOS',
                         description: 'iOS',
@@ -358,6 +401,8 @@ var completionSpec = {
                         name: 'WEB',
                         description: 'Web',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                         name: "IOS",
                         description: "iOS",
                     },
@@ -368,12 +413,16 @@ var completionSpec = {
                     {
                         name: "WEB",
                         description: "Web",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     },
                 ],
             },
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'apps:list',
             description: 'list the registered apps of a Firebase project. Optionally',
@@ -458,6 +507,8 @@ var completionSpec = {
                     args: {
                         template: 'filepaths',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "apps:list",
             description: "list the registered apps of a Firebase project. Optionally",
         },
@@ -540,12 +591,16 @@ var completionSpec = {
                     description: "path of params file with .env format",
                     args: {
                         template: "filepaths",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     },
                 },
             ],
             args: {
                 generators: {
+<<<<<<< HEAD
 <<<<<<< HEAD
                     script: 'firebase ext:list',
                     postProcess: function (out) {
@@ -558,6 +613,8 @@ var completionSpec = {
                                     name: ext,
                                     icon: '🛠',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     script: "firebase ext:list",
                     postProcess: function (out) {
                         if (out.trim() == "") {
@@ -568,7 +625,10 @@ var completionSpec = {
                                 return {
                                     name: ext,
                                     icon: "🛠",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                                 };
                             });
                         }
@@ -579,6 +639,7 @@ var completionSpec = {
             },
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'ext:info',
             description: 'display information about an extension by name',
@@ -591,6 +652,8 @@ var completionSpec = {
                     name: ['--markdown'],
                     description: 'output info in Markdown suitable for constructing a README file',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "ext:info",
             description: "display information about an extension by name",
             options: [
@@ -601,11 +664,15 @@ var completionSpec = {
                 {
                     name: ["--markdown"],
                     description: "output info in Markdown suitable for constructing a README file",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'ext:install',
             description: 'install extension',
@@ -618,6 +685,8 @@ var completionSpec = {
                     name: ['--params'],
                     description: 'path of params file with .env format',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "ext:install",
             description: "install extension",
             options: [
@@ -628,11 +697,15 @@ var completionSpec = {
                 {
                     name: ["--params"],
                     description: "path of params file with .env format",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'ext:uninstall',
             description: 'uninstall an extension that is installed in your Firebase project',
@@ -647,6 +720,8 @@ var completionSpec = {
                     args: {
                         template: 'filepaths',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "ext:uninstall",
             description: "uninstall an extension that is installed in your Firebase project",
             options: [
@@ -659,12 +734,16 @@ var completionSpec = {
                     description: "path of params file with .env format",
                     args: {
                         template: "filepaths",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     },
                 },
             ],
             args: {
                 generators: {
+<<<<<<< HEAD
 <<<<<<< HEAD
                     script: 'firebase ext:list',
                     postProcess: function (out) {
@@ -677,6 +756,8 @@ var completionSpec = {
                                     name: ext,
                                     icon: '🛠',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     script: "firebase ext:list",
                     postProcess: function (out) {
                         if (out.trim() == "") {
@@ -687,7 +768,10 @@ var completionSpec = {
                                 return {
                                     name: ext,
                                     icon: "🛠",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                                 };
                             });
                         }
@@ -698,6 +782,7 @@ var completionSpec = {
             },
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'projects:addfirebase',
             description: 'add Firebase resources to a Google Cloud Platform project',
@@ -715,6 +800,8 @@ var completionSpec = {
                                         name: proj.substring(0, proj.indexOf(' ')),
                                         icon: '🔹',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "projects:addfirebase",
             description: "add Firebase resources to a Google Cloud Platform project",
             args: {
@@ -730,7 +817,10 @@ var completionSpec = {
                                     return {
                                         name: proj.substring(0, proj.indexOf(" ")),
                                         icon: "🔹",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                                     };
                                 }
                             });
@@ -744,6 +834,7 @@ var completionSpec = {
     ],
     options: [
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: ['-h', '--help'],
             description: 'Overview of Firebase CLI',
@@ -1196,6 +1287,8 @@ var completionSpec = {
   ],
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: ["-h", "--help"],
             description: "Overview of Firebase CLI",
         },
@@ -1224,6 +1317,9 @@ var completionSpec = {
             description: "the Firebase project to use for this command",
         },
     ],
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 };
 

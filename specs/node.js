@@ -2,8 +2,11 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     name: "node",
     description: "Run the node interpretor",
     args: {
@@ -12,6 +15,7 @@ var completionSpec = {
         generators: {
             template: "filepaths",
             filterTemplateSuggestions: function (paths) {
+<<<<<<< HEAD
 <<<<<<< HEAD
                 return paths.filter(file => {
                     return file.name.endsWith('.js') || file.name.endsWith('/')
@@ -60,11 +64,17 @@ var completionSpec = {
                     if (typeof file.name === "string") {
                         return file.name.endsWith(".js") || file.name.endsWith("/");
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+                return paths.filter(function (file) {
+                    if (typeof file.name === "string") {
+                        return file.name.endsWith(".js") || file.name.endsWith("/");
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     }
                     return false;
                 });
             },
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   name: "node",
@@ -83,6 +93,8 @@ var completionSpec = {
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     },
     options: [
         {
@@ -111,6 +123,7 @@ var completionSpec = {
 };
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
 =======
@@ -118,3 +131,6 @@ var completionSpec = {
 =======
 
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+
+>>>>>>> 3879070... feat: re-add built specs and update gitignore

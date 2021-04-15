@@ -4,6 +4,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
     name: 'jest',
@@ -172,6 +173,8 @@ var completionSpec = {
 =======
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     name: "jest",
     description: "A delightful JavaScript Testing Framework with a focus on simplicity",
     args: {},
@@ -248,12 +251,16 @@ var completionSpec = {
                     },
                     {
                         name: "false",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     },
                 ],
             },
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -532,10 +539,13 @@ var completionSpec = {
 =======
 =======
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: ["--coverageProvider"],
             displayName: "--coverageProvider=<provider>",
             insertValue: "--coverageProvider=",
             description: "Indicates which provider should be used to instrument code for coverage",
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> 09336dc... fix: Specs exports and script type
@@ -1198,6 +1208,8 @@ var completionSpec = {
   ],
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             args: {
                 name: "babel|v8",
                 suggestions: [{ name: "babel" }, { name: "v8" }],
@@ -1461,6 +1473,9 @@ var completionSpec = {
             description: "Whether to use watchman for file crawling",
         },
     ],
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 };
 

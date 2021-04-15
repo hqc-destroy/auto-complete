@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 var generators = {
     emulators: {
@@ -17,10 +18,33 @@ var generators = {
                     insertValue: device[0]
                 }))
         }
+=======
+var __spreadArray = (this && this.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
+var flutterGenerators = {
+    emulators: {
+        script: "flutter emulators",
+        postProcess: function (out) {
+            return out
+                .match(/.*•.*/gi)
+                .map(function (info) { return info.split("•"); })
+                .map(function (deviceInfo) { return deviceInfo.map(function (info) { return info.trim(); }); })
+                .map(function (device) { return ({
+                name: device[1] + " \u2022 " + device[2] + " \u2022 " + device[3],
+                icon: "📱",
+                description: "Available emulators",
+                insertValue: device[0],
+            }); });
+        },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     },
     dartFiles: {
         template: "filepaths",
         filterTemplateSuggestions: function (suggestions) {
+<<<<<<< HEAD
             return suggestions
                 .filter(suggestion => suggestion.type === "folder" || suggestion.name.endsWith('.dart'));
         }
@@ -37,6 +61,24 @@ var verbose = {
     description: "Noisy logging, including all shell commands executed. If used with --help, shows hidden options."
 }
 
+=======
+            return suggestions.filter(function (suggestion) {
+                return suggestion.type === "folder" ||
+                    (typeof suggestion.name === "string" &&
+                        suggestion.name.endsWith(".dart"));
+            });
+        },
+    },
+};
+var help = {
+    name: ["-h", "--help"],
+    description: "Print this usage information.",
+};
+var verbose = {
+    name: ["-v", "--verbose"],
+    description: "Noisy logging, including all shell commands executed. If used with --help, shows hidden options.",
+};
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var deviceId = {
     name: ["-d", "--device-id"],
     insertValue: "--device-id '{cursor}'",
@@ -44,6 +86,7 @@ var deviceId = {
     args: {
         name: "device id",
         description: "Target device id or name (prefixes allowed)",
+<<<<<<< HEAD
         generators: generators.emulators,
     }
 }
@@ -65,6 +108,20 @@ var globalOpts = [
     suppressAnalytics
 ]
 
+=======
+        generators: flutterGenerators.emulators,
+    },
+};
+var version = {
+    name: "--version",
+    description: "Reports the version of this tool.",
+};
+var suppressAnalytics = {
+    name: "--suppress-analytics",
+    description: "Suppress analytics reporting when this command runs.",
+};
+var globalOpts = [help, verbose, deviceId, suppressAnalytics];
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 // yes no options
 var pub = [
     {
@@ -75,8 +132,12 @@ var pub = [
         name: "--no-pub",
         description: "Don't run 'flutter pub get' before executing this command.",
     },
+<<<<<<< HEAD
 ]
 
+=======
+];
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var currentPackage = [
     {
         name: "--current-package",
@@ -86,8 +147,12 @@ var currentPackage = [
         name: "--no-current-package",
         description: "Don't analyze the current project, if applicable.",
     },
+<<<<<<< HEAD
 ]
 
+=======
+];
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var congratulate = [
     {
         name: "--congratulate",
@@ -97,8 +162,12 @@ var congratulate = [
         name: "--no-congratulate",
         description: "Hide output even when there are no errors, warnings, hints, or lints. Ignored if --watch is specified.",
     },
+<<<<<<< HEAD
 ]
 
+=======
+];
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var preamble = [
     {
         name: "--preamble",
@@ -108,8 +177,12 @@ var preamble = [
         name: "--no-preamble",
         description: "When analyzing the flutter repository, don't display the number of files that will be analyzed. Ignored if --watch is specified.",
     },
+<<<<<<< HEAD
 ]
 
+=======
+];
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var fatalInfos = [
     {
         name: "--fatal-infos",
@@ -119,8 +192,12 @@ var fatalInfos = [
         name: "--no-fatal-infos",
         description: "Don't treat info level issues as fatal.",
     },
+<<<<<<< HEAD
 ]
 
+=======
+];
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var fatalWarnings = [
     {
         name: "--fatal-warnings",
@@ -129,6 +206,7 @@ var fatalWarnings = [
     {
         name: "--no-fatal-warnings",
         description: "Don't treat warning level issues as fatal.",
+<<<<<<< HEAD
     }
 ]
 
@@ -170,10 +248,49 @@ var uninstallOnly = [
     {
         name: "--uninstall-only",
         description: "Uninstall the app if already on the device. Skip install."
+=======
+    },
+];
+var nullAssertions = [
+    {
+        name: "--null-assertions",
+        description: "Perform additional null assertions on the boundaries of migrated and un-migrated code. This setting is not currently supported on desktop devices.",
+    },
+    {
+        name: "--no-null-assertions",
+        description: "Not performing additional null assertions on the boundaries of migrated and un-migrated code. This setting is not currently supported on desktop devices.",
+    },
+];
+var trackWidgetCreation = [
+    {
+        name: "--track-widget-creation",
+        description: "Track widget creation locations. This enables features such as the widget inspector. This parameter is only functional in debug mode (i.e. when compiling JIT, not AOT).",
+    },
+    {
+        name: "--no-track-widget-creation",
+        description: "No tracking widget creation locations. This disables features such as the widget inspector. This parameter is only functional in debug mode (i.e. when compiling JIT, not AOT).",
+    },
+];
+var testAssets = [
+    {
+        name: "--test-assets",
+        description: "Build the assets bundle for testing. Consider using --no-test-assets if assets are not required.",
+    },
+    {
+        name: "--no-test-assets",
+        description: "Exclude the assets bundle for build testing.",
+    },
+];
+var uninstallOnly = [
+    {
+        name: "--uninstall-only",
+        description: "Uninstall the app if already on the device. Skip install.",
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     },
     {
         name: "--no-uninstall-only",
     },
+<<<<<<< HEAD
 ]
 
 var useDefferedLoading = [
@@ -338,6 +455,155 @@ var analytics = [
     }
 ]
 
+=======
+];
+var useDefferedLoading = [
+    {
+        name: "--use-deferred-loading",
+        description: "Generate the Dart localization file with locales imported as deferred, allowing for lazy loading of each locale in Flutter web. \n\nThis can reduce a web app’s initial startup time by decreasing the size of the JavaScript bundle. When this flag is set to true, the messages for a particular locale are only downloaded and loaded by the Flutter app as they are needed. For projects with a lot of different locales and many localization strings, it can be an performance improvement to have deferred loading. For projects with a small number of locales, the difference is negligible, and might slow down the start up compared to bundling the localizations with the rest of the application. \n\nNote that this flag does not affect other platforms such as mobile or desktop.",
+    },
+    {
+        name: "--no-use-deferred-loading",
+        description: "Don't generate the Dart localization file with locales imported as deferred",
+    },
+];
+var syntheticPackage = [
+    {
+        name: "--synthetic-package",
+        description: "Determines that the generated output files will be generated as a synthetic package or at a specified directory in the Flutter project. \n\nThis flag is set to true by default. \n\nWhen synthetic-package is set to false, it will generate the localizations files in the directory specified by arb-dir by default. \n\nIf output-dir is specified, files will be generated there.",
+    },
+    {
+        name: "--no-synthetic-package",
+    },
+];
+var requiredResourceAttributes = [
+    {
+        name: "--required-resource-attributes",
+        description: "Requires all resource ids to contain a corresponding resource attribute. \n\nBy default, simple messages will not require metadata, but it is highly recommended as this provides context for the meaning of a message to readers. \n\nResource attributes are still required for plural messages.",
+    },
+    {
+        name: "--no-required-resource-attributes",
+    },
+];
+var startPaused = [
+    {
+        name: "--start-paused",
+        description: "Start in a paused mode and wait for a debugger to connect.",
+    },
+    {
+        name: "--no-start-paused",
+    },
+];
+var keepAppRunning = [
+    {
+        name: "--keep-app-running",
+        description: 'Will keep the Flutter application running when done testing. By default, "flutter drive" stops the application after tests are finished, and --keep-app-running overrides this. On the other hand, if --use-existing-app is specified, then "flutter drive" instead defaults to leaving the application running, and --no-keep-app-running overrides it.',
+    },
+    {
+        name: "--no-keep-app-running",
+    },
+];
+var build = [
+    {
+        name: "--build",
+        description: "(Deprecated) Build the app before running. To use an existing app, pass the --use-application-binary flag with an existing APK (defaults to on)",
+    },
+    {
+        name: "--no-build",
+    },
+];
+var headless = [
+    {
+        name: "--headless",
+        description: "Whether the driver browser is going to be launched in headless mode. Defaults to true.",
+    },
+    {
+        name: "--no-headless",
+    },
+];
+var androidEmulator = [
+    {
+        name: "--android-emulator",
+        description: "Whether to perform Flutter Driver testing on Android Emulator.Works only if 'browser-name' is set to 'android-chrome'",
+    },
+    {
+        name: "--no-android-emulator",
+    },
+];
+var awaitFirstFrameWhenTracing = [
+    {
+        name: "--await-first-frame-when-tracing",
+        description: 'Whether to wait for the first frame when tracing startup ("--trace-startup"), or just dump the trace as soon as the application is running. The first frame is detected by looking for a Timeline event with the name "Rasterized first useful frame". By default, the widgets library\'s binding takes care of sending this event.',
+    },
+    {
+        name: "--no-await-first-frame-when-tracing",
+    },
+];
+var useTestFonts = [
+    {
+        name: "--use-test-fonts",
+        description: 'Enable (and default to) the "Ahem" font. This is a special font used in tests to remove any dependencies on the font metrics. It is enabled when you use "flutter test". Set this flag when running a test using "flutter run" for debugging purposes. This flag is only available when running in debug mode.',
+    },
+    {
+        name: "--no-use-test-fonts",
+    },
+];
+var hot = [
+    {
+        name: "--hot",
+        description: 'Run with support for hot reloading. Only available for debug mode. Not available with "--trace-startup".',
+    },
+    {
+        name: "--no-hot",
+    },
+];
+var fastStart = [
+    {
+        name: "--fast-start",
+        description: "Whether to quickly bootstrap applications with a minimal app. Currently this is only supported on Android devices. This option cannot be paired with --use-application-binary.",
+    },
+    {
+        name: "--no-fast-start",
+    },
+];
+var offline = [
+    {
+        name: "--offline",
+        description: 'When "flutter pub get" is run by the create command, this indicates whether to run it in offline mode or not. In offline mode, it will need to have all dependencies already available in the pub cache to succeed.',
+    },
+    {
+        name: "--no-offline",
+    },
+];
+var withDriverTest = [
+    {
+        name: "--with-driver-test",
+        description: "(Deprecated) Also add a flutter_driver dependency and generate a sample 'flutter drive' test. This flag has been deprecated, instead see package:integration_test at https://pub.dev/packages/integration_test .",
+    },
+    {
+        name: "--no-with-driver-test",
+    },
+];
+var overwrite = [
+    {
+        name: "--overwrite",
+        description: "When performing operations, overwrite existing files.",
+    },
+    {
+        name: "--no-overwrite",
+    },
+];
+var analytics = [
+    {
+        name: "--analytics",
+        description: "Enable reporting anonymously tool usage statistics and crash reports.",
+    },
+    {
+        name: "--no-analytics",
+        description: "Disable reporting anonymously tool usage statistics and crash reports.",
+    },
+];
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var enableWeb = [
     {
         name: "--enable-web",
@@ -347,6 +613,7 @@ var enableWeb = [
         name: "--no-enable-web",
         description: "Disable Flutter for web. This setting will take effect on the master, dev, beta, and stable channels.",
     },
+<<<<<<< HEAD
 ]
 
 var enableLinuxDesktop = [
@@ -360,6 +627,9 @@ var enableLinuxDesktop = [
     },
 ]
 
+=======
+];
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var enableLinuxDesktop = [
     {
         name: "--enable-linux-desktop",
@@ -369,8 +639,12 @@ var enableLinuxDesktop = [
         name: "--no-enable-linux-desktop",
         description: "Disable beta-quality support for desktop on Linux. This setting will take effect on the master, dev, beta, and stable channels. Newer beta versions are available on the beta channel.",
     },
+<<<<<<< HEAD
 ]
 
+=======
+];
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var enableMacosDekstop = [
     {
         name: "--enable-macos-desktop",
@@ -380,8 +654,12 @@ var enableMacosDekstop = [
         name: "--no-enable-macos-desktop",
         description: "Disable beta-quality support for desktop on macOS. This setting will take effect on the master, dev, beta, and stable channels. Newer beta versions are available on the beta channel.",
     },
+<<<<<<< HEAD
 ]
 
+=======
+];
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var enableWidowsDesktop = [
     {
         name: "--enable-windows-desktop",
@@ -391,8 +669,12 @@ var enableWidowsDesktop = [
         name: "--no-enable-windows-desktop",
         description: "Disable beta-quality support for desktop on Windows. This setting will take effect on the master, dev, beta, and stable channels. Newer beta versions are available on the beta channel.",
     },
+<<<<<<< HEAD
 ]
 
+=======
+];
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var singleWidgetReloadOptimization = [
     {
         name: "--single-widget-reload-optimization",
@@ -402,8 +684,12 @@ var singleWidgetReloadOptimization = [
         name: "--no-single-widget-reload-optimization",
         description: "Disable Hot reload optimization for changes to class body of a single widget. This setting will take effect on the master, dev, and beta channels.",
     },
+<<<<<<< HEAD
 ]
 
+=======
+];
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var enableAndroid = [
     {
         name: "--enable-android",
@@ -413,8 +699,12 @@ var enableAndroid = [
         name: "--no-enable-android",
         description: "Disable Flutter for Android. This setting will take effect on the master, dev, beta, and stable channels.",
     },
+<<<<<<< HEAD
 ]
 
+=======
+];
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var enableIos = [
     {
         name: "--enable-ios",
@@ -424,8 +714,12 @@ var enableIos = [
         name: "--no-enable-ios",
         description: "Disable Flutter for iOS. This setting will take effect on the master, dev, beta, and stable channels.",
     },
+<<<<<<< HEAD
 ]
 
+=======
+];
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var enabledFuchsia = [
     {
         name: "--enable-fuchsia",
@@ -435,8 +729,12 @@ var enabledFuchsia = [
         name: "--no-enable-fuchsia",
         description: "Disable Flutter for Fuchsia. This setting will take effect on the master channel.",
     },
+<<<<<<< HEAD
 ]
 
+=======
+];
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var experimentalInvalidationStrategy = [
     {
         name: "--experimental-invalidation-strategy",
@@ -446,6 +744,7 @@ var experimentalInvalidationStrategy = [
         name: "--no-experimental-invalidation-strategy",
         description: "Disable Hot reload optimization that reduces incremental artifact size. This setting will take effect on the master, dev, and beta channels.",
     },
+<<<<<<< HEAD
 ]
 
 
@@ -460,12 +759,25 @@ var deviceUser = {
     }
 };
 
+=======
+];
+// opts
+var deviceUser = {
+    name: "--device-user",
+    insertValue: "--device-user ",
+    description: 'Identifier number for a user or work profile on Android only. Run "adb shell pm list users" for available identifiers.',
+    args: {
+        name: "seconds",
+    },
+};
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var deviceTimeout = {
     name: "--device-timeout",
     insertValue: "--device-timeout ",
     description: "Time in seconds to wait for devices to attach. Longer timeouts may be necessary for networked devices.",
     args: {
         name: "seconds",
+<<<<<<< HEAD
     }
 }
 
@@ -504,27 +816,72 @@ var hostVmServicePort = {
     description: "When a device-side vmservice port is forwarded to a host-side port, use this value as the host port. Specifying port 0 (the default) will find a random free host port."
 }
 
+=======
+    },
+};
+var debug = {
+    name: "--debug",
+    description: "Build a debug version of your app (default mode).",
+};
+var profile = {
+    name: "--profile",
+    description: "Build a version of your app specialized for performance profiling.",
+};
+var target = {
+    name: ["-t", "--target"],
+    insertValue: "--target ",
+    description: 'The main entry-point file of the application, as run on the device. If the --target option is omitted, but a file name is provided on the command line, then that is used instead. (defaults to "lib/main.dart")',
+    args: {
+        name: ".dart file path",
+        template: "filepaths",
+    },
+};
+var observatoryPort = {
+    name: "--observatory-port",
+    description: "(deprecated use host-vmservice-port instead) Listen to the given port for an observatory debugger connection. Specifying port 0 (the default) will find a random free port.",
+};
+var deviceVmservicePort = {
+    name: "--device-vmservice-port",
+    description: "Look for vmservice connections only from the specified port. Specifying port 0 (the default) will accept the first vmservice discovered.",
+};
+var hostVmServicePort = {
+    name: "--host-vmservice-port",
+    description: "When a device-side vmservice port is forwarded to a host-side port, use this value as the host port. Specifying port 0 (the default) will find a random free host port.",
+};
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var dartDefine = {
     name: "--dart-define",
     insertValue: "--dart-define ",
     description: "Additional key-value pairs that will be available as constants from the String.fromEnvironment, bool.fromEnvironment, int.fromEnvironment, and double.fromEnvironment constructors.",
     args: {
         name: "foo=bar",
+<<<<<<< HEAD
     }
 }
 
 // run and drive
 
 var run = [
+=======
+    },
+};
+// run and drive
+var run = __spreadArray(__spreadArray(__spreadArray(__spreadArray([
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     debug,
     profile,
     {
         name: "--release",
+<<<<<<< HEAD
         description: "Build a release version of your app."
+=======
+        description: "Build a release version of your app.",
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     },
     dartDefine,
     {
         name: "--flavor",
+<<<<<<< HEAD
         description: "Build a custom app flavor as defined by platform-specific build setup. Supports the use of product flavors in Android Gradle scripts, and the use of custom Xcode schemes."
     },
     {
@@ -554,6 +911,37 @@ var run = [
     {
         name: "--route",
         description: "Which route to load when running the app."
+=======
+        description: "Build a custom app flavor as defined by platform-specific build setup. Supports the use of product flavors in Android Gradle scripts, and the use of custom Xcode schemes.",
+    },
+    {
+        name: "--web-renderer",
+        description: "The renderer implementation to use when building for the web. Possible values are: html - always use the HTML renderer. This renderer uses a combination of HTML, CSS, SVG, 2D Canvas, and WebGL. This is the default. canvaskit - always use the CanvasKit renderer. This renderer uses WebGL and WebAssembly to render graphics. auto - use the HTML renderer on mobile devices, and CanvasKit on desktop devices. [auto (default), canvaskit, html]",
+    },
+    {
+        name: "--trace-startup",
+        description: "Trace application startup, then exit, saving the trace to a file.",
+    },
+    {
+        name: "--verbose-system-logs",
+        description: "Include verbose logging from the flutter engine.",
+    },
+    {
+        name: "--cache-sksl",
+        description: "Only cache the shader in SkSL instead of binary or GLSL.",
+    },
+    {
+        name: "--dump-skp-on-shader-compilation",
+        description: "Automatically dump the skp that triggers new shader compilations. This is useful for writing custom ShaderWarmUp to reduce jank. By default, this is not enabled to reduce the overhead. This is only available in profile or debug build.",
+    },
+    {
+        name: "--purge-persistent-cache",
+        description: "Removes all existing persistent caches. This allows reproducing shader compilation jank that normally only happens the first time an app is run, or for reliable testing of compilation jank fixes (e.g. shader warm-up).",
+    },
+    {
+        name: "--route",
+        description: "Which route to load when running the app.",
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     },
     {
         name: "--vmservice-out-file",
@@ -561,8 +949,13 @@ var run = [
         description: "A file to write the attached vmservice uri to after an application is started. e.g. project/example/out.txt",
         args: {
             name: ".txt output file path",
+<<<<<<< HEAD
             template: "filepaths"
         }
+=======
+            template: "filepaths",
+        },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     },
     {
         name: "--use-application-binary",
@@ -570,6 +963,7 @@ var run = [
         description: "Specify a pre-built application binary to use when running. For android applications, this must be the path to an APK. For iOS applications, the path to an IPA. Other device types do not yet support prebuilt application binaries. e.g. path/to/app.apk",
         args: {
             name: "file path to .apk",
+<<<<<<< HEAD
             template: "filepaths"
         }
     },
@@ -584,10 +978,27 @@ var run = [
     {
         name: "--trace-skia",
         description: "Enable tracing of Skia code. This is useful when debugging the raster thread (formerly known as the GPU thread). By default, Flutter will not log skia code."
+=======
+            template: "filepaths",
+        },
+    },
+    {
+        name: "--endless-trace-buffer",
+        description: ' Enable tracing to the endless tracer. This is useful when recording huge amounts of traces. If we need to use endless buffer to record startup traces, we can combine the ("--trace-startup"). For example, flutter run --trace-startup --endless-trace-buffer.',
+    },
+    {
+        name: "--trace-systrace",
+        description: "Enable tracing to the system tracer. This is only useful on platforms where such a tracer is available (Android and Fuchsia).",
+    },
+    {
+        name: "--trace-skia",
+        description: "Enable tracing of Skia code. This is useful when debugging the raster thread (formerly known as the GPU thread). By default, Flutter will not log skia code.",
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     },
     {
         name: ["-a", "--dart-entrypoint-args"],
         insertValue: "--dart-entrypoint-args",
+<<<<<<< HEAD
         description: "Pass a list of arguments to the Dart entrypoint at application startup. By default this is main(List<String> args). Specify this option multiple times each with one argument to pass multiple arguments to the Dart entrypoint. Currently this is only supported on desktop platforms."
 =======
 var __spreadArray = (this && this.__spreadArray) || function (to, from) {
@@ -2780,6 +3191,94 @@ var completionSpec = {
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+        description: "Pass a list of arguments to the Dart entrypoint at application startup. By default this is main(List<String> args). Specify this option multiple times each with one argument to pass multiple arguments to the Dart entrypoint. Currently this is only supported on desktop platforms.",
+    },
+    target,
+    observatoryPort,
+    deviceVmservicePort,
+    hostVmServicePort
+], pub), trackWidgetCreation), nullAssertions), [
+    deviceUser,
+    deviceTimeout,
+    {
+        name: "--dds-port",
+        description: "When this value is provided, the Dart Development Service (DDS) will be bound to the provided port. Specifying port 0 (the default) will find a random free port.",
+    },
+    {
+        name: "--devtools-server-address",
+        description: "When this value is provided, the Flutter tool will not spin up a new DevTools server instance, but instead will use the one provided at this address.",
+    },
+]);
+// spec
+var completionSpec = {
+    name: "flutter",
+    description: "Run flutter command.",
+    subcommands: [
+        {
+            name: "analyze",
+            description: "Analyze the project's Dart code.",
+            options: __spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray([], globalOpts), currentPackage), [
+                {
+                    name: "--watch",
+                    description: "Run analysis continuously, watching the filesystem for changes.",
+                },
+                {
+                    name: "--write",
+                    insertValue: "--write ",
+                    description: "Also output the results to a file. This is useful with --watch if you want a file to always contain the latest results.",
+                    args: {
+                        name: "file path",
+                        template: "filepaths",
+                    },
+                }
+            ]), pub), congratulate), preamble), fatalInfos), fatalWarnings),
+        },
+        {
+            name: "assemble",
+            description: "Assemble and build Flutter resources.",
+            options: __spreadArray(__spreadArray([], globalOpts), [
+                {
+                    name: ["-d", "--define"],
+                    description: "Allows passing configuration to a target with --define=target=key=value.",
+                    insertValue: "--define",
+                },
+                {
+                    name: "--performance-measurement-file",
+                    description: "Output individual target performance to a JSON file.",
+                },
+                {
+                    name: ["-i", "--input"],
+                    description: "Treat warning level issues as fatal.",
+                    insertValue: "--input",
+                },
+                {
+                    name: "--depfile",
+                    description: " A file path where a depfile will be written. This contains all build inputs and outputs in a make style syntax",
+                },
+                {
+                    name: "--build-inputs",
+                    description: "A file path where a newline separated file containing all inputs used will be written after a build. This file is not included as a build input or output. This file is not written if the build fails for any reason.",
+                },
+                {
+                    name: "--build-outputs",
+                    description: "A file path where a newline separated file containing all outputs used will be written after a build. This file is not included as a build input or output. This file is not written if the build fails for any reason.",
+                },
+                {
+                    name: ["-o", "--output"],
+                    description: "A directory where output files will be written. Must be either absolute or relative from the root of the current Flutter project.",
+                    insertValue: "--output",
+                },
+                {
+                    name: "--ExtraGenSnapshotOptions",
+                },
+                {
+                    name: "--ExtraFrontEndOptions",
+                },
+                {
+                    name: "--DartDefines",
+                },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 {
                     name: "--resource-pool-size",
                     description: "The maximum number of concurrent tasks the build system will run.",
@@ -3623,4 +4122,7 @@ var completionSpec = {
     ],
     options: globalOpts,
 };
+<<<<<<< HEAD
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore

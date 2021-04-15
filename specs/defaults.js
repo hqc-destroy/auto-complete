@@ -1,6 +1,7 @@
 var domain = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: 'domain',
     generators: {
         script: 'defaults domains',
@@ -38,6 +39,8 @@ var domain = {
       insertValue: "-app '{cursor}'",
       description: "Application name",
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     name: "domain",
     generators: {
         script: "defaults domains",
@@ -48,7 +51,10 @@ var domain = {
                 };
             });
         },
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     },
     suggestions: [
         {
@@ -69,9 +75,12 @@ var value = {
     name: "value",
 };
 <<<<<<< HEAD
+<<<<<<< HEAD
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 =======
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var valueArgs = [
     {
         name: "-string",
@@ -117,6 +126,7 @@ var valueArgs = [
         },
     },
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         name: '-array',
@@ -223,11 +233,16 @@ var completionSpec = {
         description: "The word to search for...",
       },
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         name: "-date",
         args: {
             name: "date_rep",
         },
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     },
     {
         name: "-array",
@@ -244,9 +259,12 @@ var completionSpec = {
         },
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
   ],
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 ];
 var completionSpec = {
     name: "defaults",
@@ -305,7 +323,10 @@ var completionSpec = {
             args: [domain, key],
         },
     ],
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 };
 
 // Command line interface to a user's defaults.

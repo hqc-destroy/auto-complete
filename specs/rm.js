@@ -3,7 +3,10 @@ var completionSpec = {
     description: "remove directory entries",
     args: [
         {
+<<<<<<< HEAD
             variadic: true,
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             template: "filepaths",
         },
     ],

@@ -4,6 +4,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 09336dc... fix: Specs exports and script type
 =======
@@ -57,6 +58,8 @@ var completionSpec = {
             description: "Display path to active developer directory"
         }, {
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     name: "xcode-select",
     description: "Active developer directory for Xcode tools",
     options: [
@@ -69,12 +72,16 @@ var completionSpec = {
             description: "Display path to active developer directory",
         },
         {
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: ["-s", "--switch"],
             description: "Set path to active developer directory",
             insertValue: "-s ",
             args: {
                 name: "path",
+<<<<<<< HEAD
 <<<<<<< HEAD
                 template: "folders"
             }
@@ -147,6 +154,8 @@ var completionSpec = {
   ],
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 template: "folders",
             },
         },
@@ -163,6 +172,9 @@ var completionSpec = {
             description: "Reset to the default CLT path",
         },
     ],
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 };
 

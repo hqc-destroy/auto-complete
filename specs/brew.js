@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 var servicesGenerator = {
     script: "brew services list | sed -e 's/ .*//' | tail -n +2",
     postProcess: function (output) {
@@ -17,10 +18,14 @@ var generators = {
 <<<<<<< HEAD
 =======
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+var generators = {
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     servicesgenerators: {
         script: "brew services list | sed -e 's/ .*//' | tail -n +2",
         postProcess: function (out) {
             return out
+<<<<<<< HEAD
 <<<<<<< HEAD
                 .split('\n')
                 .filter(function (line) { return !line.includes('unbound'); })
@@ -47,6 +52,8 @@ var generators = {
         });
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 .split("\n")
                 .filter(function (line) { return !line.includes("unbound"); })
                 .map(function (line) { return ({
@@ -54,10 +61,15 @@ var generators = {
                 type: "option",
             }); });
         },
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
     },
 };
 // fake-change file
+=======
+    },
+};
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var completionSpec = {
     name: "brew",
     description: "Package manager for macOS",
@@ -67,6 +79,7 @@ var completionSpec = {
             name: "leaves",
             description: "List installed formulae that are not dependencies of another installed formula",
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
         { name: 'doctor', description: 'Check your system for potential problems' },
 <<<<<<< HEAD
@@ -160,12 +173,18 @@ var completionSpec = {
             name: "doctor",
             description: "Check your system for potential problems",
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+        {
+            name: "doctor",
+            description: "Check your system for potential problems",
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         {
             name: "info",
             description: "Display brief statistics for your Homebrew installation",
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             name: 'uninstall',
@@ -206,6 +225,10 @@ var completionSpec = {
             name: "update",
             description: "Fetch the newest version of Homebrew and all formulae",
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+            name: "update",
+            description: "Fetch the newest version of Homebrew and all formulae",
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         { name: "upgrade", description: "Upgrade outdated casks and outdated" },
         {
@@ -243,6 +266,7 @@ var completionSpec = {
         },
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
           name: "run",
           insertValue: "run ",
           description:
@@ -254,6 +278,8 @@ var completionSpec = {
               description: "Start all services",
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "uninstall",
             description: "Uninstall <formula>",
             args: {
@@ -271,6 +297,7 @@ var completionSpec = {
                         });
                     },
                 },
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
             },
         },
@@ -314,6 +341,11 @@ var completionSpec = {
                                     return { name: formula, icon: '🍺', description: 'Installed formula' };
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
 =======
+=======
+            },
+        },
+        {
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "cask",
             insertValue: "cask ",
             description: "Homebrew Cask provides a friendly CLI workflow for the administration of macOS applications distributed as binaries.",
@@ -342,13 +374,17 @@ var completionSpec = {
                                         icon: "🍺",
                                         description: "Installed formula",
                                     };
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                                 });
                             },
                         },
                     },
                 },
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
         },
         {
@@ -507,6 +543,8 @@ var completionSpec = {
           },
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         {
             name: "services",
@@ -605,7 +643,10 @@ var completionSpec = {
                     },
                 },
             ],
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
     ],
     options: [

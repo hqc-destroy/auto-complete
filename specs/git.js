@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 var generators = {
     // Commit history
     commits: {
@@ -244,6 +245,9 @@ var gitGenerators = {
         };
       });
 =======
+=======
+var gitGenerators = {
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     // Commit history
     commits: {
         script: "git log --oneline",
@@ -259,7 +263,10 @@ var gitGenerators = {
                 };
             });
         },
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     },
     // Saved stashes
     // TODO: maybe only print names of stashes
@@ -325,6 +332,7 @@ var gitGenerators = {
         },
     },
     remotes: {
+<<<<<<< HEAD
         script: "git remote -v",
         postProcess: function (out) {
             var remoteURLs = out.split("\n").reduce(function (dict, line) {
@@ -352,6 +360,12 @@ var gitGenerators = {
                     icon: "fig://icon?type=" + icon,
                     description: "remote",
                 };
+=======
+        script: "git remote",
+        postProcess: function (out) {
+            return out.split("\n").map(function (remote) {
+                return { name: remote, description: "remote" };
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             });
         },
     },
@@ -359,6 +373,7 @@ var gitGenerators = {
         script: "git tag --list",
         splitOn: "\n",
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
   },
   tags: {
@@ -398,6 +413,8 @@ var gitGenerators = {
       });
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     // Files for staging
     files_for_staging: {
         script: "git status --short",
@@ -430,7 +447,10 @@ var gitGenerators = {
                 };
             });
         },
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     },
 };
 var head = {
@@ -439,6 +459,7 @@ var head = {
     description: "Reset multiple commits",
 };
 var completionSpec = {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -580,6 +601,11 @@ var completionSpec = {
     description: "the stupid content tracker",
     options: [
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+    name: "git",
+    description: "the stupid content tracker",
+    options: [
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         {
             name: "--version",
             description: "Output version",
@@ -629,6 +655,7 @@ var completionSpec = {
             description: "Pipe output into `less` or custom $PAGER",
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
     ],
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -645,12 +672,56 @@ var completionSpec = {
                     name: ['-m', '--message'],
 =======
     subcommands: [{
+=======
+        {
+            name: "--no-pager",
+            description: "Do not pipe Git output into a pager",
+        },
+        {
+            name: "--no-replace-objects",
+            description: "Do not use replacement refs",
+        },
+        {
+            name: "--bare",
+            description: "Treat the repository as a bare repository",
+        },
+        {
+            name: "--git-dir=<path>",
+            insertValue: "--git-dir=",
+            args: {
+                name: "path",
+                template: "folders",
+            },
+            description: "Set the path to the repository dir (`.git`)",
+        },
+        {
+            name: "--work-tree=<path>",
+            insertValue: "--work-tree=",
+            args: {
+                name: "path",
+                template: "folders",
+            },
+            description: "Set working tree path",
+        },
+        {
+            name: "--namespace=<name>",
+            insertValue: "--namespace=",
+            args: {
+                name: "name",
+            },
+            description: "Set the Git namespace",
+        },
+    ],
+    subcommands: [
+        {
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "commit",
             description: "Record changes to the repository",
             insertValue: "commit",
             args: {
                 name: "pathspec",
             },
+<<<<<<< HEAD
             options: [{
                     name: ["-m", "--message"],
 >>>>>>> 9136b0f... implement stash generator
@@ -688,6 +759,33 @@ var completionSpec = {
 <<<<<<< HEAD
             ],
 =======
+=======
+            options: [
+                {
+                    name: ["-m", "--message"],
+                    insertValue: "-m '{cursor}'",
+                    description: "use the given message as the commit message",
+                    args: {
+                        name: "message",
+                    },
+                },
+                {
+                    name: ["-a", "--all"],
+                    description: "stage all modified and deleted paths",
+                },
+                {
+                    name: "-am",
+                    insertValue: "-am '{cursor}'",
+                    description: "stage all and use given text as commit message",
+                    args: {
+                        name: "message",
+                    },
+                },
+                {
+                    name: ["-v", "--verbose"],
+                    description: "show unified diff of all file changes",
+                },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 {
                     name: ["-p", "--patch"],
                     description: "Use the interactive patch selection interface to chose which changes to commi...",
@@ -695,34 +793,70 @@ var completionSpec = {
                 {
                     name: ["-C", "--reuse-message"],
                     description: "Take an existing commit object, and reuse the log message and the authorship ...",
+<<<<<<< HEAD
                     args: {
                         name: "commit",
                         generator: generators.commits,
                     },
+=======
+                    args: [
+                        {
+                            name: "commit",
+                            generators: gitGenerators.commits,
+                        },
+                    ],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
                 {
                     name: ["-c", "--reedit-message"],
                     description: "Like -C, but with -c the editor is invoked, so that the user can further edit...",
+<<<<<<< HEAD
                     args: {
                         name: "commit",
                         generator: generators.commits,
                     },
+=======
+                    args: [
+                        {
+                            name: "commit",
+                            generators: gitGenerators.commits,
+                        },
+                    ],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
                 {
                     name: ["--fixup"],
                     description: "Construct a commit message for use with rebase --autosquash. The commit messa...",
+<<<<<<< HEAD
                     args: {
                         name: "commit",
                         generator: generators.commits,
                     },
+=======
+                    args: [
+                        {
+                            name: "commit",
+                            generators: gitGenerators.commits,
+                        },
+                    ],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
                 {
                     name: ["--squash"],
                     description: "Construct a commit message for use with rebase --autosquash. The commit messa...",
+<<<<<<< HEAD
                     args: {
                         name: "commit",
                         generator: generators.commits,
                     },
+=======
+                    args: [
+                        {
+                            name: "commit",
+                            generators: gitGenerators.commits,
+                        },
+                    ],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
                 {
                     name: ["--reset-author"],
@@ -804,7 +938,15 @@ var completionSpec = {
                     args: {
                         name: "mode",
                         suggestions: [
+<<<<<<< HEAD
                             'strip', 'whitespace', 'verbatim', 'scissors', 'default',
+=======
+                            "strip",
+                            "whitespace",
+                            "verbatim",
+                            "scissors",
+                            "default",
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                         ],
                     },
                 },
@@ -849,9 +991,13 @@ var completionSpec = {
                     description: "Show untracked files. The mode parameter is optional (defaults to all), and i...",
                     args: {
                         name: "mode",
+<<<<<<< HEAD
                         suggestions: [
                             'no', 'normal', 'all',
                         ],
+=======
+                        suggestions: ["no", "normal", "all"],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     },
                 },
                 {
@@ -875,6 +1021,7 @@ var completionSpec = {
                     description: "GPG-sign commits. The keyid argument is optional and defaults to the committe...",
                     args: {
                         name: "keyid",
+<<<<<<< HEAD
 =======
                 {
                     name: ['-p', '--patch'],
@@ -1116,6 +1263,235 @@ var completionSpec = {
             },
             description: "Set the path to the repository dir (`.git`)",
 =======
+=======
+                        isOptional: true,
+                    },
+                },
+                {
+                    name: ["--no-gpg-sign"],
+                    description: "Dont GPG-sign commits.",
+                },
+                {
+                    name: ["--"],
+                    description: "Do not interpret any more arguments as options.",
+                },
+            ],
+        },
+        {
+            name: "config",
+            description: "set author",
+            options: [
+                {
+                    name: "--local",
+                    description: "Default: write to the repository .git/config file",
+                    args: {
+                        variadic: true,
+                        suggestions: [
+                            {
+                                name: "user.name",
+                                description: "set config for username",
+                                insertValue: "user.name '{cursor}'",
+                            },
+                            {
+                                name: "user.email",
+                                description: "set config for email",
+                                insertValue: "user.email '{cursor}'",
+                            },
+                        ],
+                    },
+                },
+                {
+                    name: "--global",
+                    insertValue: "--global {cursor}",
+                    description: "For writing options: write to global ~/.gitconfig file rather than the repository .git/config",
+                    args: {
+                        variadic: true,
+                        suggestions: [
+                            {
+                                name: "user.name",
+                                description: "set config for username",
+                                insertValue: "user.name '{cursor}'",
+                            },
+                            {
+                                name: "user.email",
+                                description: "set config for email",
+                                insertValue: "user.email '{cursor}'",
+                            },
+                        ],
+                    },
+                },
+                {
+                    name: ["--replace-all"],
+                    description: "Default behavior is to replace at most one line. This replaces all lines matc...",
+                },
+                {
+                    name: ["--add"],
+                    description: "Adds a new line to the option without altering any existing values. This is t...",
+                },
+                {
+                    name: ["--get"],
+                    description: "Get the value for a given key (optionally filtered by a regex matching the va...",
+                },
+                {
+                    name: ["--get-all"],
+                    description: "Like get, but returns all values for a multi-valued key.",
+                },
+                {
+                    name: ["--get-regexp"],
+                    description: "Like --get-all, but interprets the name as a regular expression and writes ou...",
+                },
+                {
+                    name: ["--get-urlmatch"],
+                    description: "When given a two-part name section.key, the value for section..key whose part...",
+                    args: [
+                        {
+                            name: "name",
+                        },
+                        {
+                            name: "url",
+                        },
+                    ],
+                },
+                {
+                    name: ["--system"],
+                    description: "For writing options: write to system-wide $(prefix)/etc/gitconfig rather than...",
+                },
+                {
+                    name: ["--worktree"],
+                    description: "Similar to --local except that.git/config.worktree is read from or written to...",
+                },
+                {
+                    name: ["-f", "--file"],
+                    description: "Use the given config file instead of the one specified by GIT_CONFIG.",
+                    args: {
+                        name: "config-file",
+                        template: "filepaths",
+                    },
+                },
+                {
+                    name: ["--blob"],
+                    description: "Similar to --file but use the given blob instead of a file. E.g. you can use ...",
+                    args: {
+                        name: "blob",
+                    },
+                },
+                {
+                    name: ["--remove-section"],
+                    description: "Remove the given section from the configuration file.",
+                },
+                {
+                    name: ["--rename-section"],
+                    description: "Rename the given section to a new name.",
+                },
+                {
+                    name: ["--unset"],
+                    description: "Remove the line matching the key from config file.",
+                },
+                {
+                    name: ["--unset-all"],
+                    description: "Remove all lines matching the key from config file.",
+                },
+                {
+                    name: ["-l", "--list"],
+                    description: "List all variables set in config file, along with their values.",
+                },
+                {
+                    name: ["--fixed-value"],
+                    description: "When used with the value-pattern argument, treat value-pattern as an exact st...",
+                },
+                {
+                    name: ["--type"],
+                    description: "git config will ensure that any input or output is valid under the given type...",
+                    args: {
+                        name: "type",
+                        suggestions: [
+                            "bool",
+                            "int",
+                            "bool-or-int",
+                            "path",
+                            "expiry-date",
+                            "color",
+                        ],
+                    },
+                },
+                {
+                    name: ["--no-type"],
+                    description: "Un-sets the previously set type specifier (if one was previously set). This o...",
+                },
+                {
+                    name: ["-z", "--null"],
+                    description: "For all options that output values and/or keys, always end values with the nu...",
+                },
+                {
+                    name: ["--name-only"],
+                    description: "Output only the names of config variables for --list or --get-regexp.",
+                },
+                {
+                    name: ["--show-origin"],
+                    description: "Augment the output of all queried config options with the origin type (file, ...",
+                },
+                {
+                    name: ["--show-scope"],
+                    description: "Similar to --show-origin in that it augments the output of all queried config...",
+                },
+                {
+                    name: ["--get-colorbool"],
+                    description: 'Find the color setting for name (e.g. color.diff) and output "true" or "false...',
+                    args: {
+                        name: "name",
+                    },
+                },
+                {
+                    name: ["--get-color"],
+                    description: "Find the color configured for name (e.g. color.diff.new) and output it as the...",
+                    args: [
+                        {
+                            name: "name",
+                        },
+                        {
+                            name: "default",
+                            isOptional: true,
+                        },
+                    ],
+                },
+                {
+                    name: ["-e", "--edit"],
+                    description: "Opens an editor to modify the specified config file; either --system, --globa...",
+                },
+                {
+                    name: ["--includes"],
+                    description: "Respect include.* directives in config files when looking up values. Defaults...",
+                },
+                {
+                    name: ["--no-includes"],
+                    description: "Respect include.* directives in config files when looking up values. Defaults...",
+                },
+                {
+                    name: ["--default"],
+                    description: "When using --get, and the requested variable is not found, behave as if were ...",
+                    args: {
+                        name: "value",
+                        isOptional: true,
+                    },
+                },
+            ],
+        },
+        {
+            name: "rebase",
+            description: "Reapply commits on top of another base tip",
+            insertValue: "rebase",
+            options: [
+                {
+                    name: ["--continue"],
+                    description: "continue the rebasing after conflict resolution",
+                },
+                { name: ["--abort"], description: "stop rebase" },
+                { name: ["--skip"], description: "skips a commit" },
+                {
+                    name: ["-i"],
+                    description: "interactive",
+                },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             args: [
                 {
@@ -1127,6 +1503,7 @@ var completionSpec = {
                     generators: gitGenerators.branches,
                 },
             ],
+<<<<<<< HEAD
 >>>>>>> cee8840... update fig and git
         },
         {
@@ -3980,6 +4357,119 @@ var completionSpec = {
                     insertValue: 'clear',
                 },
 =======
+=======
+        },
+        {
+            name: "add",
+            description: "Add file contents to the index",
+            options: [
+                {
+                    name: ["-A", "--all", "--no-ignore-removal"],
+                    description: "Add, modify, and remove index entries to match the working tree",
+                },
+                {
+                    name: ["-f", "--force"],
+                    description: "Allow adding otherwise ignored files",
+                },
+                {
+                    name: ["-i", "--interactive"],
+                    description: "Add modified contents in the working tree interactively to the index",
+                },
+                {
+                    name: ["-n", "--dry-run"],
+                    description: "Don't actually add the files(s), just show if they exist and/or will be ignored",
+                },
+                {
+                    name: ["-p", "--patch"],
+                    description: "Interactively choose hunks of patch between the index and the work tree and add them to the index",
+                },
+            ],
+            args: {
+                variadic: true,
+                // We have a special setting for dot in the vuejs app
+                // suggestions: [
+                //     {
+                //         name: ".",
+                //         description: "current directory",
+                //         insertValue: ".",
+                //         icon: "fig://icon?type=folder"
+                //     }
+                // ],
+                generators: gitGenerators.files_for_staging,
+            },
+        },
+        {
+            name: "status",
+            description: "Show the working tree status",
+            options: [
+                {
+                    name: ["-v", "--verbose"],
+                    description: "be verbose",
+                },
+                {
+                    name: ["-b", "--branch"],
+                    description: "show branch information",
+                },
+                {
+                    name: "--show-stash",
+                    description: "show stash information",
+                },
+                {
+                    name: "--ahead-behind",
+                    description: "compute full ahead/behind values",
+                },
+                {
+                    name: "--long",
+                    description: "show status in long format (default)",
+                },
+                {
+                    name: ["-z", "--null"],
+                    description: "terminate entries with NUL",
+                },
+                {
+                    name: ["-u", "--untracked-files"],
+                    description: "show untracked files",
+                    args: {
+                        suggestions: [
+                            {
+                                name: "all",
+                                description: "(Default)",
+                            },
+                            {
+                                name: "normal",
+                            },
+                            {
+                                name: "no",
+                            },
+                        ],
+                    },
+                },
+                {
+                    name: "--ignored",
+                    description: "show ignored files",
+                    args: {
+                        suggestions: [
+                            {
+                                name: "traditional",
+                                description: "(Default)",
+                            },
+                            {
+                                name: "matching",
+                            },
+                            {
+                                name: "no",
+                            },
+                        ],
+                    },
+                },
+                {
+                    name: "--no-renames",
+                    description: "do not detect renames",
+                },
+            ],
+        },
+        {
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "clean",
             description: "Shows which files would be removed from working directory",
             options: [
@@ -4009,6 +4499,7 @@ var completionSpec = {
             name: "push",
             description: "Update remote refs",
             options: [
+<<<<<<< HEAD
 >>>>>>> cee8840... update fig and git
                 {
                     name: 'apply',
@@ -4047,6 +4538,20 @@ var completionSpec = {
                 },
 <<<<<<< HEAD
 =======
+=======
+                {
+                    name: "-all",
+                    description: "Push all branches to remote",
+                },
+                // { name: "--repo", description: "repository" },
+                // { name: "--all", description: "push all refs" },
+                // { name: "--mirror", description: "mirror all refs" },
+                { name: ["-d", "--delete"], description: "delete refs" },
+                {
+                    name: "--tags",
+                    description: "push tags (can't be used with --all or --mirror)",
+                },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 {
                     name: "-u",
                     args: [
@@ -4067,6 +4572,7 @@ var completionSpec = {
                 // { name: ["-n", "--dry-run"], description: "dry run" },
             ],
             args: [
+<<<<<<< HEAD
 >>>>>>> cee8840... update fig and git
                 {
                     name: 'create',
@@ -4114,6 +4620,21 @@ var completionSpec = {
             args: [{ name: 'repository' }, { name: 'directory', template: 'filepaths' }],
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
 =======
+=======
+                {
+                    name: "remote",
+                    isOptional: true,
+                    generators: gitGenerators.remotes,
+                },
+                {
+                    name: "branch",
+                    isOptional: true,
+                    generators: gitGenerators.branches,
+                },
+            ],
+        },
+        {
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "pull",
             description: "Integrate with another repository",
             options: [
@@ -4138,6 +4659,7 @@ var completionSpec = {
                     generators: gitGenerators.branches,
                 },
             ],
+<<<<<<< HEAD
 >>>>>>> cee8840... update fig and git
         },
         { name: 'init', description: 'Create an empty Git repository or reinitialize an existing one' },
@@ -4194,6 +4716,10 @@ var completionSpec = {
             },
           ],
 =======
+=======
+        },
+        {
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "diff",
             description: "Show changes between commits, commit and working tree, etc",
             options: [
@@ -4208,15 +4734,21 @@ var completionSpec = {
                 },
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             args: {
                 name: "commit",
                 isOptional: true,
                 suggestions: [{ name: "HEAD" }],
                 generators: gitGenerators.commits,
             },
+<<<<<<< HEAD
 >>>>>>> cee8840... update fig and git
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         {
             name: "reset",
@@ -4423,6 +4955,7 @@ var completionSpec = {
         },
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
           name: "drop",
           description: "Discards the most recently stashed changeset",
           insertValue: "drop {cursor}",
@@ -4441,6 +4974,8 @@ var completionSpec = {
             },
           ],
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "fetch",
             description: "Download objects and refs from another repository",
             args: [
@@ -4685,6 +5220,7 @@ var completionSpec = {
                     description: 'Read refspecs, one per line, from stdin in addition to those provided as arguments. The "tag <name>" format is not supported',
                 },
             ],
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
         },
 <<<<<<< HEAD
@@ -4867,6 +5403,10 @@ var completionSpec = {
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
 =======
         {
+=======
+        },
+        {
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "stash",
             description: "temporarily stores all the modified tracked files",
             subcommands: [
@@ -5102,6 +5642,7 @@ var completionSpec = {
         },
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
           name: "apply",
           description:
             "Like pop, but do not remove the state from the stash list.",
@@ -5126,12 +5667,15 @@ var completionSpec = {
             },
           ],
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "clone",
             description: "Clone a repository into a new directory",
             args: [
                 { name: "repository" },
                 { name: "directory", template: "filepaths" },
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
         },
@@ -5165,6 +5709,8 @@ var completionSpec = {
                 isOptional: true,
             },
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             options: [
                 {
                     name: ["-l", "--local"],
@@ -5308,6 +5854,7 @@ var completionSpec = {
                     },
                 },
             ],
+<<<<<<< HEAD
 >>>>>>> d9b1b26... add to git and fig specs
         },
 <<<<<<< HEAD
@@ -5354,6 +5901,15 @@ var completionSpec = {
                 name: "directory",
             },
 >>>>>>> cee8840... update fig and git
+=======
+        },
+        {
+            name: "init",
+            description: "Create an empty Git repository or reinitialize an existing one",
+            args: {
+                name: "directory",
+            },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             options: [
                 {
                     name: ["-q", "--quiet"],
@@ -5416,7 +5972,10 @@ var completionSpec = {
                     },
                 },
             ],
+<<<<<<< HEAD
 >>>>>>> d9b1b26... add to git and fig specs
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         {
             name: "mv",
@@ -5709,6 +6268,7 @@ var completionSpec = {
 };
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
 =======
@@ -5716,3 +6276,6 @@ var completionSpec = {
 =======
 
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+
+>>>>>>> 3879070... feat: re-add built specs and update gitignore

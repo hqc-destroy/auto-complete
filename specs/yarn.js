@@ -1,12 +1,18 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var __spreadArray = (this && this.__spreadArray) || function (to, from) {
     for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
         to[j] = from[i];
     return to;
 };
+<<<<<<< HEAD
 >>>>>>> 99e7ece... feat: migrate to typescript
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var yarnGenerators = {
     getScripts: {
         script: "cat package.json",
@@ -23,9 +29,12 @@ var yarnGenerators = {
                         icon: "https://yarnpkg.com/favicon-32x32.png",
                     }); });
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 }
             }
             catch (e) { }
@@ -33,7 +42,10 @@ var yarnGenerators = {
         },
     },
 };
+<<<<<<< HEAD
 >>>>>>> 99e7ece... feat: migrate to typescript
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 // generate package list from package.json file
 var packageList = {
     script: "cat package.json",
@@ -91,6 +103,7 @@ var completionSpec = {
     args: [
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             generators: {
                 script: "cat package.json",
                 postProcess: function (out) {
@@ -115,6 +128,9 @@ var completionSpec = {
 =======
             generators: yarnGenerators.getScripts,
 >>>>>>> 99e7ece... feat: migrate to typescript
+=======
+            generators: yarnGenerators.getScripts,
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
     ],
     options: [
@@ -459,8 +475,11 @@ var completionSpec = {
                     description: "output usage information",
                 },
 <<<<<<< HEAD
+<<<<<<< HEAD
             ],
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 {
                     name: ["-i", "--init"],
                     description: "Creates the .yarnclean file if it does not exist, and adds the default entries",
@@ -470,11 +489,15 @@ var completionSpec = {
                     description: "if a .yarnclean file exists, run the clean process",
                 },
 <<<<<<< HEAD
+<<<<<<< HEAD
             ]
 >>>>>>> 7245588... Updates Yarn specs
 =======
             ],
 >>>>>>> 99e7ece... feat: migrate to typescript
+=======
+            ],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         {
             name: "bin",
@@ -492,6 +515,7 @@ var completionSpec = {
             options: [
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     name: "--pattern",
                     description: "filter cached packages by pattern",
                     args: [
@@ -503,12 +527,17 @@ var completionSpec = {
                 {
 =======
 >>>>>>> 7245588... Updates Yarn specs
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     name: ["-h", "--help"],
                     description: "output usage information",
                 },
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             subcommands: [
                 {
                     name: "clean",
@@ -534,11 +563,15 @@ var completionSpec = {
                     ],
                 },
 <<<<<<< HEAD
+<<<<<<< HEAD
             ]
 >>>>>>> 7245588... Updates Yarn specs
 =======
             ],
 >>>>>>> 99e7ece... feat: migrate to typescript
+=======
+            ],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         {
             name: "config",
@@ -550,7 +583,10 @@ var completionSpec = {
                 },
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             subcommands: [
                 {
                     name: "set",
@@ -585,7 +621,10 @@ var completionSpec = {
                     description: "Displays the current configuration",
                 },
             ],
+<<<<<<< HEAD
 >>>>>>> 7245588... Updates Yarn specs
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         {
             name: "create",
@@ -660,6 +699,7 @@ var completionSpec = {
         {
             name: "import",
 <<<<<<< HEAD
+<<<<<<< HEAD
             description: "",
             options: [],
         },
@@ -668,6 +708,8 @@ var completionSpec = {
             description: "",
             options: [],
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             description: "Generates yarn.lock from an npm package-lock.json file",
             options: [],
         },
@@ -675,12 +717,16 @@ var completionSpec = {
             name: "info",
             description: "Show information about a package",
 <<<<<<< HEAD
+<<<<<<< HEAD
             options: [
             ]
 >>>>>>> 7245588... Updates Yarn specs
 =======
             options: [],
 >>>>>>> 99e7ece... feat: migrate to typescript
+=======
+            options: [],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         {
             name: "init",
@@ -716,9 +762,12 @@ var completionSpec = {
         {
             name: "install",
 <<<<<<< HEAD
+<<<<<<< HEAD
             description: "",
             options: [],
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             description: "Install all the dependencies listed within package.json",
             options: [
                 {
@@ -794,11 +843,15 @@ var completionSpec = {
                     description: "output verbose messages on internal operations",
                 },
             ],
+<<<<<<< HEAD
 >>>>>>> 7245588... Updates Yarn specs
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         {
             name: "licenses",
             description: "",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             options: [],
@@ -828,6 +881,9 @@ var completionSpec = {
 =======
             options: [],
 >>>>>>> 99e7ece... feat: migrate to typescript
+=======
+            options: [],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             subcommands: [
                 {
                     name: "list",
@@ -870,12 +926,16 @@ var completionSpec = {
             name: "logout",
             description: "Clear registry username and email",
 <<<<<<< HEAD
+<<<<<<< HEAD
             options: [
             ]
 >>>>>>> 7245588... Updates Yarn specs
 =======
             options: [],
 >>>>>>> 99e7ece... feat: migrate to typescript
+=======
+            options: [],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         {
             name: "node",
@@ -884,6 +944,7 @@ var completionSpec = {
         },
         {
             name: "outdated",
+<<<<<<< HEAD
 <<<<<<< HEAD
             description: "",
             options: [],
@@ -913,6 +974,8 @@ var completionSpec = {
             description: "",
             options: [],
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             description: "Checks for outdated package dependencies",
             options: [],
         },
@@ -964,7 +1027,10 @@ var completionSpec = {
                     generators: packageList,
                 },
             ],
+<<<<<<< HEAD
 >>>>>>> 7245588... Updates Yarn specs
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         {
             name: "run",
@@ -994,6 +1060,7 @@ var completionSpec = {
         {
             name: "tag",
 <<<<<<< HEAD
+<<<<<<< HEAD
             description: "",
             options: [],
         },
@@ -1007,6 +1074,8 @@ var completionSpec = {
             description: "",
             options: [],
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             description: "Add, remove, or list tags on a package",
             options: [],
         },
@@ -1019,12 +1088,16 @@ var completionSpec = {
             name: "unlink",
             description: "Unlink a previously created symlink for a package",
 <<<<<<< HEAD
+<<<<<<< HEAD
             options: [
             ]
 >>>>>>> 7245588... Updates Yarn specs
 =======
             options: [],
 >>>>>>> 99e7ece... feat: migrate to typescript
+=======
+            options: [],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         {
             name: "unplug",
@@ -1033,6 +1106,7 @@ var completionSpec = {
         },
         {
             name: "upgrade",
+<<<<<<< HEAD
 <<<<<<< HEAD
             description: "",
             options: [],
@@ -1067,6 +1141,8 @@ var completionSpec = {
             description: "",
             options: [],
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             description: "Upgrades packages to their latest version based on the specified range",
             options: [],
         },
@@ -1107,12 +1183,16 @@ var completionSpec = {
             name: "workspace",
             description: "Manage workspace",
 <<<<<<< HEAD
+<<<<<<< HEAD
             options: [
             ],
 >>>>>>> 7245588... Updates Yarn specs
 =======
             options: [],
 >>>>>>> 99e7ece... feat: migrate to typescript
+=======
+            options: [],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             args: [
                 {
                     name: "name",

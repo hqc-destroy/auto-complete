@@ -1,6 +1,7 @@
 var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: 'ls',
     description: 'list directory contents',
     args: {
@@ -29,12 +30,17 @@ var completionSpec = {
       description: "list in long format",
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     name: "ls",
     description: "list directory contents",
     args: {
         variadic: true,
         template: "folders",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     },
     options: [
         {

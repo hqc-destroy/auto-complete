@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var generators = {
     runningDockerContainers: {
         script: "docker ps --format '{{ json . }}'",
@@ -3202,6 +3203,65 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+=======
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var postProcessDockerPs = function (out) {
+    var allLines = out.split("\n");
+    return allLines.map(function (i) {
+        try {
+            var parsedJSON = JSON.parse(i);
+            return {
+                name: parsedJSON.ID,
+                displayName: parsedJSON.ID + " (" + parsedJSON.Image + ")",
+            };
+        }
+        catch (error) {
+            console.error(error);
+        }
+    });
+};
+var dockerGenerators = {
+    runningDockerContainers: {
+        script: "docker ps --format '{{ json . }}'",
+        postProcess: postProcessDockerPs,
+    },
+    allDockerContainers: {
+        script: "docker ps -a --format '{{ json . }}'",
+        postProcess: postProcessDockerPs,
+    },
+    pausedDockerContainers: {
+        script: "docker ps --filter status=paused --format '{{ json . }}'",
+        postProcess: postProcessDockerPs,
+    },
+    allLocalImages: {
+        script: "docker image ls --format '{{ json . }}'",
+        postProcess: function (out) {
+            var allLines = out
+                .split("\n")
+                .map(function (line) { return JSON.parse(line); });
+            return allLines.map(function (i) { return ({
+                name: "" + i.Repository,
+            }); });
+        },
+    },
+    dockerHubSearch: {
+        script: function (context) {
+            if (context[context.length - 1] === "")
+                return "";
+            var searchTerm = context[context.length - 1];
+            return "docker search " + searchTerm + " --format '{{ json . }}'";
+        },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         postProcess: function (out) {
             var allLines = out
                 .split("\n")
@@ -3210,6 +3270,7 @@ var completionSpec = {
                 name: "" + i.Name,
                 icon: "fig://icon?type=docker",
             }); });
+<<<<<<< HEAD
 >>>>>>> d8e6cde...  added docker icon
         },
         { name: "save", description: "Save one or more images to a tar archive (streamed to STDOUT by default)" },
@@ -3401,6 +3462,12 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 73a70d9... npm run build
+=======
+        },
+        trigger: function () {
+            return true;
+        },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     },
 };
 var containersArg = {
@@ -3412,7 +3479,10 @@ var imagesArg = {
     generators: [dockerGenerators.allLocalImages],
 };
 var containerAndCommandArgs = [
+<<<<<<< HEAD
 >>>>>>> 59955ff... feat: add missing transpiled files
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     containersArg,
     {
         name: "command",
@@ -3628,7 +3698,10 @@ var completionSpec = {
                         ],
                     },
                 },
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
         },
         {
@@ -4518,6 +4591,7 @@ var completionSpec = {
                 name: "file|URL|- [REPOSITORY[:TAG]]",
             },
 <<<<<<< HEAD
+<<<<<<< HEAD
           },
         },
         {
@@ -4677,6 +4751,8 @@ var completionSpec = {
           description: "Filter output based on conditions provided",
           name: ["-f", "--filter"],
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             options: [
                 {
                     args: {
@@ -4789,7 +4865,10 @@ var completionSpec = {
                     },
                 },
             ],
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         {
             name: "kill",
@@ -5499,6 +5578,7 @@ var completionSpec = {
         },
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
           description:
             "Format the output. Values: [pretty | json]. (Default: pretty)",
           name: ["-f", "--format"],
@@ -5976,6 +6056,8 @@ var completionSpec = {
 			subcommands: [] 
 		},
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "network",
             description: "Manage networks",
             args: {},
@@ -6024,12 +6106,16 @@ var completionSpec = {
             options: [],
             subcommands: [],
         },
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         {
             name: "system",
             description: "Manage Docker",
             subcommands: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
                     name: 'prune',
                     description: 'Remove unused data',
@@ -6081,6 +6167,8 @@ var completionSpec = {
 >>>>>>> b5d9641... fix: also fix compiled specs
 =======
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     name: "prune",
                     description: "Remove unused data",
                     options: [
@@ -6107,7 +6195,10 @@ var completionSpec = {
                 },
             ],
         },
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         {
             name: "trust",
             description: "Manage trust on Docker images",
@@ -6122,6 +6213,7 @@ var completionSpec = {
             options: [],
             subcommands: [],
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     ],
@@ -6148,5 +6240,8 @@ var completionSpec = {
 =======
     ],
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+    ],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 };
 

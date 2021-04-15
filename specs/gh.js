@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 var generators = {
     listPR: {
         script: "gh pr list",
@@ -17,6 +18,8 @@ var generators = {
 }
 
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var ghGenerators = {
     listPR: {
         script: "gh pr list",
@@ -33,6 +36,7 @@ var ghGenerators = {
         },
     },
 };
+<<<<<<< HEAD
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
 var completionSpec = {
 <<<<<<< HEAD
@@ -902,12 +906,18 @@ var completionSpec = {
           ],
         },
 =======
+=======
+var completionSpec = {
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     name: "gh",
     description: "Github's CLI tool",
     subcommands: [
         { name: "alias", description: "create command shortcuts" },
         { name: "api", description: "Make an authenticated GitHub API request" },
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         {
             name: "auth",
             description: "Login, logout, and refresh your authentication",
@@ -1404,7 +1414,11 @@ var completionSpec = {
     ],
 };
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
 
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+
+>>>>>>> 3879070... feat: re-add built specs and update gitignore

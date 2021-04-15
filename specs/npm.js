@@ -66,7 +66,11 @@ var completionSpec = {
         },
         {
             name: "run",
+<<<<<<< HEAD
             description: "run arbitrary package scripts",
+=======
+            description: "",
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             args: [
                 {
                     generators: {
@@ -79,18 +83,31 @@ var completionSpec = {
                             try {
                                 var packageContent = JSON.parse(out);
                                 var scripts = packageContent["scripts"];
+<<<<<<< HEAD
                                 var figCompletions = packageContent["fig"];
                                 if (scripts) {
                                     var keys = Object.keys(scripts).map(function (key) {
                                         return Object.assign({}, { icon: "fig://icon?type=npm" }, (figCompletions || {})[key], // need the || {} otherwise it errors
                                         { name: key, insertValue: key }); // ensure that name and insertValue are defined by "scripts" dict
+=======
+                                if (scripts) {
+                                    var keys = Object.keys(scripts).map(function (key) {
+                                        return {
+                                            name: key,
+                                            icon: "fig://icon?type=npm",
+                                        };
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                                     });
                                     return keys;
                                 }
                             }
+<<<<<<< HEAD
                             catch (e) {
                                 console.error(e);
                             }
+=======
+                            catch (e) { }
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                             return [];
                         },
                     },

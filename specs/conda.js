@@ -29,6 +29,7 @@ var getAllCondaPackages = {
 var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: 'conda',
     description: 'Conda package manager',
     subcommands: [
@@ -547,6 +548,8 @@ var completionSpec = {
             {
               name: "key",
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     name: "conda",
     description: "Conda package manager",
     subcommands: [
@@ -611,7 +614,10 @@ var completionSpec = {
             args: {
                 name: "file",
                 template: "filepaths",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             },
             options: [
                 {
@@ -773,10 +779,13 @@ var completionSpec = {
                 description: "Packages to install or update in the conda environment.",
             },
 <<<<<<< HEAD
+<<<<<<< HEAD
             {
               name: "value",
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             options: [
                 {
                     name: ["--clone"],
@@ -917,7 +926,10 @@ var completionSpec = {
                 description: "Packages to install or update in the conda environment.",
                 variadic: true,
                 generators: getAllCondaPackages,
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             },
             options: [
                 {
@@ -1046,6 +1058,7 @@ var completionSpec = {
                 name: "regex",
                 description: "List only packages matching this regular expression.",
             },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             options: [
@@ -1200,6 +1213,8 @@ var completionSpec = {
               name: "key",
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             options: [
                 {
                     name: ["--show-channel-urls"],
@@ -1368,7 +1383,10 @@ var completionSpec = {
                 name: "package name",
                 variadic: true,
                 generators: getInstalledPackages,
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             },
             options: [
                 {
@@ -1448,6 +1466,7 @@ var completionSpec = {
             },
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             name: 'search',
@@ -1601,6 +1620,8 @@ var completionSpec = {
                     name: ['--show-channel-urls'],
                     description: 'Show channel urls. Overrides the value given by conda config --show show_channel_urls.',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "search",
             description: "Search for packages and display associated information. The input is a MatchSpec, a query language for conda packages. See examples below.",
             args: { name: "query" },
@@ -1656,11 +1677,15 @@ var completionSpec = {
                 {
                     name: ["-q", "--quiet"],
                     description: "Do not display progress bar.",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'upgrade',
             description: 'Alias for conda update.',
@@ -1689,6 +1714,8 @@ var completionSpec = {
               name: "value",
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "update",
             description: "Updates conda packages to the latest compatible version.",
             args: {
@@ -1810,7 +1837,10 @@ var completionSpec = {
             args: {
                 name: "package",
                 variadic: true,
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             },
             options: [
                 {

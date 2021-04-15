@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 var generators = {
   listVideos: {
     script: (context) => {
@@ -195,6 +196,8 @@ var completionSpec = {
   ],
 };
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var youtubeDlGenerators = {
     listVideos: {
         script: function (context) {
@@ -381,6 +384,7 @@ var completionSpec = {
 };
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
 =======
@@ -388,3 +392,6 @@ var completionSpec = {
 =======
 
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+
+>>>>>>> 3879070... feat: re-add built specs and update gitignore

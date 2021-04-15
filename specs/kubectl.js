@@ -25,6 +25,7 @@ var resourceSuggestionsFromResourceType = {
 };
 var completionSpec = {
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: "kubectl",
   description: "",
   subcommands: [
@@ -405,6 +406,8 @@ var completionSpec = {
             'Must be "none", "server", or "client". If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.',
           args: {},
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     name: "kubectl",
     description: "",
     subcommands: [
@@ -471,7 +474,10 @@ var completionSpec = {
                     subcommands: [],
                 },
             ],
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         {
             name: "annotate",

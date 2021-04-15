@@ -4,6 +4,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: "fig",
   description: "Autocomplete for your terminal",
   subcommands: [
@@ -293,6 +294,8 @@ var completionSpec = {
               { name: "false", icon: "fig://icon?type=string" },
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     name: "fig",
     description: "Autocomplete for your terminal",
     subcommands: [
@@ -494,8 +497,11 @@ var completionSpec = {
                     },
                 },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 {
                     name: "pty.rc",
                     icon: "fig://icon?type=commandkey",
@@ -530,6 +536,7 @@ var completionSpec = {
                     },
                 },
                 {
+<<<<<<< HEAD
                     name: "app.hideMenubarIcon",
                     icon: "fig://icon?type=commandkey",
                     description: "Hide Fig's icon ◧ in the mac status bar",
@@ -542,6 +549,8 @@ var completionSpec = {
                     },
                 },
                 {
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     name: "autocomplete.theme",
                     icon: "fig://icon?type=commandkey",
                     description: "Change Fig's theme",
@@ -571,6 +580,7 @@ var completionSpec = {
                         name: "number",
                     },
                 },
+<<<<<<< HEAD
 >>>>>>> 1c4709c... add generator to git merge
             ],
         },
@@ -598,6 +608,11 @@ var completionSpec = {
                                     name: curr.trim().split('.')[0],
                                     icon: 'fig://icon?type=box',
 =======
+=======
+            ],
+        },
+        {
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "uninstall",
             description: "uninstall a completion spec",
             args: {
@@ -619,7 +634,10 @@ var completionSpec = {
                                 acc.push({
                                     name: curr.trim().split(".")[0],
                                     icon: "fig://icon?type=box",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                                 });
                                 return acc;
                             }
@@ -627,6 +645,7 @@ var completionSpec = {
                         return out;
                     },
                 },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
           displayName: "devCompletionsFolder",
@@ -671,6 +690,10 @@ var completionSpec = {
         { name: 'diagnostic', description: 'display diagnostic information' },
 =======
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
+=======
+            },
+        },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         {
             name: "invite",
             description: "share Fig with a teammate ⭐",
@@ -721,6 +744,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 export {};
 >>>>>>> 8ff182e... feat: update folder structure and compiler
 =======
@@ -734,3 +758,6 @@ export {};
 =======
 
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+
+>>>>>>> 3879070... feat: re-add built specs and update gitignore

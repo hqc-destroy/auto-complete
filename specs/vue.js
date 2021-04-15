@@ -1,6 +1,7 @@
 var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: 'vue',
     description: 'vue cli tools',
     subcommands: [
@@ -85,6 +86,8 @@ var completionSpec = {
                     name: ['-h', '--help'],
                     description: 'output usage information',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     name: "vue",
     description: "vue cli tools",
     subcommands: [
@@ -168,11 +171,15 @@ var completionSpec = {
                 {
                     name: ["-h", "--help"],
                     description: "output usage information",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'add',
             description: 'install a plugin and invoke its generator in an already created project',
@@ -191,6 +198,8 @@ var completionSpec = {
                     name: ['-h', '--help'],
                     description: 'output usage information',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "add",
             description: "install a plugin and invoke its generator in an already created project",
             args: {
@@ -207,11 +216,15 @@ var completionSpec = {
                 {
                     name: ["-h", "--help"],
                     description: "output usage information",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'invoke',
             description: 'invoke the generator of a plugin in an already created project',
@@ -230,6 +243,8 @@ var completionSpec = {
                     name: ['-h', '--help'],
                     description: 'output usage information',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "invoke",
             description: "invoke the generator of a plugin in an already created project",
             args: {
@@ -246,11 +261,15 @@ var completionSpec = {
                 {
                     name: ["-h", "--help"],
                     description: "output usage information",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'inspect',
             description: 'inspect the webpack config in a project with vue-cli-service',
@@ -292,6 +311,8 @@ var completionSpec = {
                     name: ['-h', '--help'],
                     description: 'output usage information',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "inspect",
             description: "inspect the webpack config in a project with vue-cli-service",
             args: {},
@@ -331,11 +352,15 @@ var completionSpec = {
                 {
                     name: ["-h", "--help"],
                     description: "output usage information",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'serve',
             description: 'serve a .js or .vue file in development mode with zero config',
@@ -362,6 +387,8 @@ var completionSpec = {
                     name: ['-h', '--help'],
                     description: 'output usage information',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "serve",
             description: "serve a .js or .vue file in development mode with zero config",
             args: {
@@ -386,11 +413,15 @@ var completionSpec = {
                 {
                     name: ["-h", "--help"],
                     description: "output usage information",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'build',
             description: 'build a .js or .vue file in production mode with zero config',
@@ -423,6 +454,8 @@ var completionSpec = {
                     name: ['-h', '--help'],
                     description: 'output usage information',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "build",
             description: "build a .js or .vue file in production mode with zero config",
             args: {
@@ -453,11 +486,15 @@ var completionSpec = {
                 {
                     name: ["-h", "--help"],
                     description: "output usage information",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'ui',
             description: 'start and open the vue-cli ui',
@@ -492,6 +529,8 @@ var completionSpec = {
                     name: ['-h', '--help'],
                     description: 'output usage information',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "ui",
             description: "start and open the vue-cli ui",
             options: [
@@ -524,11 +563,15 @@ var completionSpec = {
                 {
                     name: ["-h", "--help"],
                     description: "output usage information",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'init',
             description: 'generate a project from a remote template (legacy API, requires @vue/cli-init)',
@@ -539,6 +582,8 @@ var completionSpec = {
                 {
                     name: 'app-name',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "init",
             description: "generate a project from a remote template (legacy API, requires @vue/cli-init)",
             args: [
@@ -547,11 +592,15 @@ var completionSpec = {
                 },
                 {
                     name: "app-name",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
                     name: ['-c', '--clone'],
                     description: 'Use git clone when fetching remote template',
@@ -564,6 +613,8 @@ var completionSpec = {
                     name: ['-h', '--help'],
                     description: 'output usage information',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     name: ["-c", "--clone"],
                     description: "Use git clone when fetching remote template",
                 },
@@ -574,11 +625,15 @@ var completionSpec = {
                 {
                     name: ["-h", "--help"],
                     description: "output usage information",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'config',
             description: 'inspect and modify the config',
@@ -619,6 +674,8 @@ var completionSpec = {
                     name: ['-h', '--help'],
                     description: 'output usage information',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "config",
             description: "inspect and modify the config",
             args: {
@@ -657,11 +714,15 @@ var completionSpec = {
                 {
                     name: ["-h", "--help"],
                     description: "output usage information",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'outdated',
             description: '(experimental) check for outdated vue cli service / plugins',
@@ -674,6 +735,8 @@ var completionSpec = {
                     name: ['-h', '--help'],
                     description: 'output usage information',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "outdated",
             description: "(experimental) check for outdated vue cli service / plugins",
             options: [
@@ -684,11 +747,15 @@ var completionSpec = {
                 {
                     name: ["-h", "--help"],
                     description: "output usage information",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'upgrade',
             description: '(experimental) upgrade vue cli service / plugins',
@@ -729,6 +796,8 @@ var completionSpec = {
                     name: ['-h', '--help'],
                     description: 'output usage information',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "upgrade",
             description: "(experimental) upgrade vue cli service / plugins",
             args: {
@@ -767,11 +836,15 @@ var completionSpec = {
                 {
                     name: ["-h", "--help"],
                     description: "output usage information",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'migrate',
             description: '(experimental) run migrator for an already-installed cli plugin',
@@ -790,6 +863,8 @@ var completionSpec = {
                     name: ['-h', '--help'],
                     description: 'output usage information',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "migrate",
             description: "(experimental) run migrator for an already-installed cli plugin",
             args: {
@@ -806,11 +881,15 @@ var completionSpec = {
                 {
                     name: ["-h", "--help"],
                     description: "output usage information",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: 'info',
             description: 'print debugging information about your environment',
@@ -819,19 +898,25 @@ var completionSpec = {
                     name: ['-h', '--help'],
                     description: 'output usage information',
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "info",
             description: "print debugging information about your environment",
             options: [
                 {
                     name: ["-h", "--help"],
                     description: "output usage information",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                 },
             ],
         },
     ],
     options: [
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: ['-V', '--version'],
             description: 'output the version number',
@@ -1316,6 +1401,8 @@ var completionSpec = {
 };
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: ["-V", "--version"],
             description: "output the version number",
         },
@@ -1326,4 +1413,7 @@ var completionSpec = {
     ],
 };
 
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore

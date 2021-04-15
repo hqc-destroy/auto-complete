@@ -2,6 +2,7 @@ var getServices = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     script: "docker-compose config --services",
     splitOn: "\n",
 };
@@ -13,10 +14,13 @@ var getServices = {
 =======
 =======
 >>>>>>> 73a70d9... npm run build
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     script: function (context) {
         if (context.includes("-f")) {
             var index = context.indexOf("-f");
             return "docker-compose -f " + context[index + 1] + " config --services";
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 59955ff... feat: add missing transpiled files
         }
@@ -32,12 +36,17 @@ var getServices = {
 };
 >>>>>>> 59955ff... feat: add missing transpiled files
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         }
         return "docker-compose config --services";
     },
     splitOn: "\n",
 };
+<<<<<<< HEAD
 >>>>>>> 73a70d9... npm run build
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
 var completionSpec = {
     name: "docker-compose",
     description: "",
@@ -48,6 +57,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -110,6 +120,9 @@ var completionSpec = {
 =======
                     name: ["--build-arg"],
 >>>>>>> 73a70d9... npm run build
+=======
+                    name: ["--build-arg"],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     description: "Set build-time variables for services.",
                     args: {},
                 },
@@ -158,6 +171,7 @@ var completionSpec = {
                     description: "Don't print anything to STDOUT",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -169,6 +183,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 73a70d9... npm run build
+=======
+                    args: {},
+                },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -177,6 +195,7 @@ var completionSpec = {
             description: "Validate and view the Compose file.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -219,6 +238,9 @@ var completionSpec = {
 =======
                     name: ["--resolve-image-digests"],
 >>>>>>> 73a70d9... npm run build
+=======
+                    name: ["--resolve-image-digests"],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     description: "Pin image tags to digests.",
                     args: {},
                 },
@@ -245,6 +267,7 @@ var completionSpec = {
                 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     name: [
                         "--hash"
                     ],
@@ -255,14 +278,19 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 73a70d9... npm run build
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     name: ["--hash"],
                     description: 'Print the service config hash, one per line. Set "service1,service2" for a list of specified services or use the wildcard symbol to display all services.',
                     args: {},
                 },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 59955ff... feat: add missing transpiled files
 =======
 >>>>>>> 73a70d9... npm run build
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -272,6 +300,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -304,6 +333,9 @@ var completionSpec = {
 =======
                     name: ["--force-recreate"],
 >>>>>>> 73a70d9... npm run build
+=======
+                    name: ["--force-recreate"],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     description: "Recreate containers even if their configuration and image haven't changed. Incompatible with --no-recreate.",
                     args: {},
                 },
@@ -322,6 +354,7 @@ var completionSpec = {
                     description: "Build images before creating containers.",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -333,6 +366,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 73a70d9... npm run build
+=======
+                    args: {},
+                },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -341,6 +378,7 @@ var completionSpec = {
             description: "Stops containers and removes containers, networks, volumes, and images",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -373,6 +411,9 @@ var completionSpec = {
 =======
                     name: ["--rmi"],
 >>>>>>> 73a70d9... npm run build
+=======
+                    name: ["--rmi"],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     description: "Remove images. Type must be one of: 'all': Remove all images used by any service. 'local': Remove only images that don't have a custom tag set by the `image` field.",
                     args: {},
                 },
@@ -391,6 +432,7 @@ var completionSpec = {
                     description: "Specify a shutdown timeout in seconds. (default: 10)",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -402,6 +444,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 73a70d9... npm run build
+=======
+                    args: {},
+                },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -411,6 +457,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -427,10 +474,13 @@ var completionSpec = {
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     name: ["--json"],
                     description: "Output events as a stream of json objects",
                     args: {},
                 },
+<<<<<<< HEAD
 >>>>>>> 59955ff... feat: add missing transpiled files
 =======
                     name: ["--json"],
@@ -438,6 +488,8 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 73a70d9... npm run build
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -447,6 +499,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -495,6 +548,9 @@ var completionSpec = {
 =======
                     name: ["-d", "--detach"],
 >>>>>>> 73a70d9... npm run build
+=======
+                    name: ["-d", "--detach"],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     description: "Detached mode: Run command in the background.",
                     args: {},
                 },
@@ -528,6 +584,7 @@ var completionSpec = {
                     description: "DIR Path to workdir directory for this command.",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -539,6 +596,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 73a70d9... npm run build
+=======
+                    args: {},
+                },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -557,6 +618,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     name: ["-q", "--quiet"],
                     description: "Only display IDs\n",
                     args: {},
@@ -571,10 +633,13 @@ var completionSpec = {
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     name: ["-q", "--quiet"],
                     description: "Only display IDs",
                     args: {},
                 },
+<<<<<<< HEAD
 >>>>>>> 59955ff... feat: add missing transpiled files
 =======
                     name: ["-q", "--quiet"],
@@ -582,6 +647,8 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 73a70d9... npm run build
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -591,6 +658,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -607,10 +675,13 @@ var completionSpec = {
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     name: ["-s"],
                     description: "SIGNAL to send to the container. Default signal is SIGKILL.",
                     args: {},
                 },
+<<<<<<< HEAD
 >>>>>>> 59955ff... feat: add missing transpiled files
 =======
                     name: ["-s"],
@@ -618,6 +689,8 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 73a70d9... npm run build
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -627,6 +700,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -659,6 +733,9 @@ var completionSpec = {
 =======
                     name: ["--no-color"],
 >>>>>>> 73a70d9... npm run build
+=======
+                    name: ["--no-color"],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     description: "Produce monochrome output.",
                     args: {},
                 },
@@ -677,6 +754,7 @@ var completionSpec = {
                     description: "Number of lines to show from the end of the logs for each container.",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -688,6 +766,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 73a70d9... npm run build
+=======
+                    args: {},
+                },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -703,6 +785,7 @@ var completionSpec = {
             description: "Print the public port for a port binding.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -725,12 +808,16 @@ var completionSpec = {
 =======
                     name: ["--protocol"],
 >>>>>>> 73a70d9... npm run build
+=======
+                    name: ["--protocol"],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     description: "tcp or udp [default: tcp]",
                     args: {},
                 },
                 {
                     name: ["--index"],
                     description: "index of the container if there are multiple instances of a service [default: 1]",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     args: {}
@@ -744,6 +831,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 73a70d9... npm run build
+=======
+                    args: {},
+                },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -753,6 +844,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -786,6 +878,9 @@ var completionSpec = {
 =======
                     name: ["-q", "--quiet"],
 >>>>>>> 73a70d9... npm run build
+=======
+                    name: ["-q", "--quiet"],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     description: "Only display IDs",
                     args: {},
                 },
@@ -804,6 +899,7 @@ var completionSpec = {
                     description: "Show all stopped containers (including those created by the run command)",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -815,6 +911,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 73a70d9... npm run build
+=======
+                    args: {},
+                },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -823,6 +923,7 @@ var completionSpec = {
             description: "Pulls images for services defined in a Compose file, but does not start the containers.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -860,6 +961,9 @@ var completionSpec = {
 =======
                     name: ["--ignore-pull-failures"],
 >>>>>>> 73a70d9... npm run build
+=======
+                    name: ["--ignore-pull-failures"],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     description: "Pull what it can and ignores images with pull failures.",
                     args: {},
                 },
@@ -883,6 +987,7 @@ var completionSpec = {
                     description: "Also pull services declared as dependencies",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -894,6 +999,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 73a70d9... npm run build
+=======
+                    args: {},
+                },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -902,6 +1011,7 @@ var completionSpec = {
             description: "Pushes images for services.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -924,11 +1034,16 @@ var completionSpec = {
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     name: ["--ignore-push-failures"],
                     description: "Push what it can and ignores images with push failures.",
                     args: {},
                 },
+<<<<<<< HEAD
 >>>>>>> 73a70d9... npm run build
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -938,6 +1053,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -961,11 +1077,16 @@ var completionSpec = {
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     name: ["-t", "--timeout"],
                     description: "Specify a shutdown timeout in seconds. (default: 10)",
                     args: {},
                 },
+<<<<<<< HEAD
 >>>>>>> 73a70d9... npm run build
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -975,6 +1096,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1008,6 +1130,9 @@ var completionSpec = {
 =======
                     name: ["-f", "--force"],
 >>>>>>> 73a70d9... npm run build
+=======
+                    name: ["-f", "--force"],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     description: "Don't ask to confirm removal",
                     args: {},
                 },
@@ -1023,6 +1148,7 @@ var completionSpec = {
                 },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 {
                     name: [
                         "-a",
@@ -1036,6 +1162,8 @@ var completionSpec = {
 >>>>>>> 26969c2... feat(docker-compose): --env-file filepaths generator
 =======
 >>>>>>> 73a70d9... npm run build
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -1045,6 +1173,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1128,6 +1257,9 @@ var completionSpec = {
 =======
                     name: ["-d", "--detach"],
 >>>>>>> 73a70d9... npm run build
+=======
+                    name: ["-d", "--detach"],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     description: "Detached mode: Run container in the background, print new container name.",
                     args: {},
                 },
@@ -1196,6 +1328,7 @@ var completionSpec = {
                     description: "Working directory inside the container",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -1207,6 +1340,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 73a70d9... npm run build
+=======
+                    args: {},
+                },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -1215,6 +1352,7 @@ var completionSpec = {
             description: "Set number of containers to run for a service.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1238,11 +1376,16 @@ var completionSpec = {
                 },
 >>>>>>> 59955ff... feat: add missing transpiled files
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     name: ["-t", "--timeout"],
                     description: "Specify a shutdown timeout in seconds. (default: 10)",
                     args: {},
                 },
+<<<<<<< HEAD
 >>>>>>> 73a70d9... npm run build
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -1262,6 +1405,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     name: ["-t", "--timeout"],
                     description: "Specify a shutdown timeout in seconds.\n                             (default: 10)\n",
                     args: {},
@@ -1276,10 +1420,13 @@ var completionSpec = {
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     name: ["-t", "--timeout"],
                     description: "Specify a shutdown timeout in seconds. (default: 10)",
                     args: {},
                 },
+<<<<<<< HEAD
 >>>>>>> 59955ff... feat: add missing transpiled files
 =======
                     name: ["-t", "--timeout"],
@@ -1287,6 +1434,8 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 73a70d9... npm run build
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -1308,6 +1457,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1406,6 +1556,9 @@ var completionSpec = {
 =======
                     name: ["-d", "--detach"],
 >>>>>>> 73a70d9... npm run build
+=======
+                    name: ["-d", "--detach"],
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     description: "Detached mode: Run containers in the background, print new container names. Incompatible with",
                     args: {},
                 },
@@ -1489,6 +1642,7 @@ var completionSpec = {
                     description: "Scale SERVICE to NUM instances. Overrides the `scale` setting in the Compose file if present.",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -1500,6 +1654,10 @@ var completionSpec = {
                     args: {},
                 },
 >>>>>>> 73a70d9... npm run build
+=======
+                    args: {},
+                },
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             ],
             subcommands: [],
         },
@@ -1508,6 +1666,7 @@ var completionSpec = {
             description: "Show version information and quit.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1534,6 +1693,8 @@ var completionSpec = {
             subcommands: []
         }
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     name: ["--short"],
                     description: "Shows only Compose's version number.",
                     args: {},
@@ -1541,6 +1702,7 @@ var completionSpec = {
             ],
             subcommands: [],
         },
+<<<<<<< HEAD
 >>>>>>> 59955ff... feat: add missing transpiled files
 =======
                     name: ["--short"],
@@ -1551,6 +1713,8 @@ var completionSpec = {
             subcommands: [],
         },
 >>>>>>> 73a70d9... npm run build
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
     ],
     options: [
         {
@@ -1675,6 +1839,7 @@ var completionSpec = {
             },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "description": "Specify an alternate environment file",
             "name": [
                 "--env-file"
@@ -1686,6 +1851,8 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 73a70d9... npm run build
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             description: "Specify an alternate environment file",
             name: ["--env-file"],
         },
@@ -1693,6 +1860,9 @@ var completionSpec = {
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 59955ff... feat: add missing transpiled files
 =======
 >>>>>>> 73a70d9... npm run build
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore

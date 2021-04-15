@@ -5,6 +5,7 @@ var completionSpec = {
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             name: 'mode',
             suggestions: [
                 // Some of the most common chmod's (non-exhaustive)
@@ -60,48 +61,66 @@ var completionSpec = {
                     name: ["u+x"],
                     type: "subcommand",
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
             name: "mode",
             suggestions: [
                 // Some of the most common chmod's (non-exhaustive)
                 {
                     name: ["u+x"],
                     type: "arg",
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     description: "give execute permission for the user",
                     icon: "🔐",
                 },
                 {
                     name: ["a+rx"],
 <<<<<<< HEAD
+<<<<<<< HEAD
                     type: "subcommand",
 =======
                     type: "arg",
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+                    type: "arg",
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     description: "adds read and execute permissions for all classes",
                     icon: "🔐",
                 },
                 {
                     name: ["744"],
 <<<<<<< HEAD
+<<<<<<< HEAD
                     type: "subcommand",
 =======
                     type: "arg",
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+                    type: "arg",
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     description: "sets read, write, and execute permissions for user, and sets read permission for Group and Others",
                     icon: "🔐",
                 },
                 {
                     name: ["664"],
 <<<<<<< HEAD
+<<<<<<< HEAD
                     type: "subcommand",
 =======
                     type: "arg",
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+                    type: "arg",
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     description: "sets read and write permissions for user and Group, and provides read to Others.",
                     icon: "🔐",
                 },
                 {
                     name: ["777"],
+<<<<<<< HEAD
 <<<<<<< HEAD
                     type: "subcommand",
                     description: "⚠️ allows all actions for all users",
@@ -121,12 +140,17 @@ var completionSpec = {
           icon: "🔐",
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
                     type: "arg",
                     description: "⚠️ allows all actions for all users",
                     icon: "🔐",
                 },
             ],
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         {
             // Modifying
