@@ -532,6 +532,22 @@ export const completionSpec: Fig.Spec = {
 =======
 >>>>>>> 65036d2... fixed linting and prettier
         {
+          name: "autocomplete.sortMethod",
+          description: "Specify how Fig should sort suggestions",
+          args: {
+            suggestions: [
+              {
+                name: "recency",
+                description: "Sort by recency",
+              },
+              {
+                name: "alphabetical",
+                description: "Sort by alphabetical order",
+              },
+            ],
+          },
+        },
+        {
           name: "pty.path",
           icon: "fig://icon?type=commandkey",
           description: "Specify the $PATH variable in Fig's pseudoterminal",
