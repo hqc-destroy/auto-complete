@@ -1198,7 +1198,16 @@ export const completionSpec: Fig.Spec = {
       name: "config",
       description:
         'Modify kubeconfig files using subcommands like "kubectl config set current-context my-context"',
-      options: [],
+      options: [
+        {
+          name: "--kubeconfig",
+          insertValue: "--kubeconfig=",
+          args: {
+            name: "path",
+            template: "filepaths",
+          },
+        },
+      ],
       subcommands: [
         {
           name: "current-context",
