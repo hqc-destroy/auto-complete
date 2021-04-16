@@ -57,6 +57,7 @@ var generators = {
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
     },
 };
+// fake-change file
 var completionSpec = {
     name: "brew",
     description: "Package manager for macOS",

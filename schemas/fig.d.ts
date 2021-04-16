@@ -168,6 +168,9 @@ declare namespace Fig {
 =======
   export type Spec = Subcommand;
 
+  // Execute shell command function inside generators
+  export type ExecuteShellCommandFunction = (param: String) => Promise<String>;
+
   export interface BaseSuggestion {
     /**
      * The text that is displayed for a given suggestion. It will override what is in the name prop
