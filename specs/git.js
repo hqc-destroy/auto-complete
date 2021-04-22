@@ -5549,7 +5549,6 @@ var completionSpec = {
                 {
                     name: "apply",
                     description: "Like pop, but do not remove the state from the stash list.",
-                    insertValue: "apply {cursor}",
                     options: [
                         {
                             name: "--index",
