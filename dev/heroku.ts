@@ -82,6 +82,7 @@ const getAppGenerator: Fig.Generator = {
     }
   },
 };
+
 export const spec: Fig.Spec = {
   name: "heroku",
 >>>>>>> 7c43a05... feat: add new heroku spec
@@ -296,8 +297,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -325,8 +326,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -370,8 +371,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -398,8 +399,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -413,8 +414,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -437,8 +438,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -472,8 +473,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -505,8 +506,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -528,8 +529,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -556,8 +557,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -577,30 +578,33 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--help",
+          name: ["-h", "--help"],
           description: "Show help for this command",
           args: {},
         },
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--cert",
+          name: ["-c", "--cert"],
           description:
             "the name of the SSL cert you want to use for this domain",
           args: {},
         },
         {
-          name: "--json",
+          name: ["-j", "--json"],
           description: "output in json format",
         },
         {
-          name: "--wait",
+          name: "wait",
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
@@ -611,17 +615,20 @@ export const spec: Fig.Spec = {
       description: "remove all domains from an app",
       options: [
         {
-          name: "--help",
+          name: ["-h", "--help"],
           description: "Show help for this command",
           args: {},
         },
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
@@ -632,22 +639,25 @@ export const spec: Fig.Spec = {
       description: "list domains for an app",
       options: [
         {
-          name: "--help",
+          name: ["-h", "--help"],
           description: "Show help for this command",
           args: {},
         },
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--json",
+          name: ["-j", "--json"],
           description: "output in json format",
         },
       ],
@@ -662,17 +672,20 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--help",
+          name: ["-h", "--help"],
           description: "Show help for this command",
           args: {},
         },
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
@@ -688,17 +701,20 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--help",
+          name: ["-h", "--help"],
           description: "Show help for this command",
           args: {},
         },
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
@@ -716,22 +732,25 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--help",
+          name: ["-h", "--help"],
           description: "Show help for this command",
           args: {},
         },
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--cert",
+          name: "cert",
           description:
             "the name or id of the certificate you want to use for this domain",
           args: {},
@@ -749,17 +768,20 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--help",
+          name: ["-h", "--help"],
           description: "Show help for this command",
           args: {},
         },
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
@@ -844,6 +866,7 @@ export const spec: Fig.Spec = {
       args: [
         {
           name: "app",
+          generators: getAppGenerator,
         },
       ],
     },
@@ -926,6 +949,7 @@ export const spec: Fig.Spec = {
       args: [
         {
           name: "app",
+          generators: getAppGenerator,
         },
       ],
     },
@@ -942,14 +966,15 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
       args: [
         {
           name: "app",
+          generators: getAppGenerator,
         },
       ],
     },
@@ -966,14 +991,15 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
       args: [
         {
           name: "app",
+          generators: getAppGenerator,
         },
       ],
     },
@@ -990,14 +1016,15 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
       args: [
         {
           name: "app",
+          generators: getAppGenerator,
         },
       ],
     },
@@ -1188,14 +1215,15 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
       args: [
         {
           name: "app",
+          generators: getAppGenerator,
         },
       ],
     },
@@ -1218,14 +1246,15 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
       args: [
         {
           name: "app",
+          generators: getAppGenerator,
         },
       ],
     },
@@ -1618,8 +1647,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -1642,8 +1671,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -1661,8 +1690,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -1736,8 +1765,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -2223,17 +2252,17 @@ export const spec: Fig.Spec = {
       description: "login with your Heroku credentials",
       options: [
         {
-          name: "--browser",
+          name: "browser",
           description:
             'browser to open SSO with (example: "firefox", "safari")',
           args: {},
         },
         {
-          name: "--sso",
+          name: ["-s", "--sso"],
           description: "login for enterprise users under SSO",
         },
         {
-          name: "--interactive",
+          name: ["-i", "--interactive"],
           description: "login with username/password",
         },
       ],
@@ -2247,7 +2276,7 @@ export const spec: Fig.Spec = {
       description: "",
       options: [
         {
-          name: "--help",
+          name: ["-h", "--help"],
           description: "Show help for this command",
           args: {},
         },
@@ -2268,17 +2297,20 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--confirm",
+          name: "confirm",
           args: {},
         },
       ],
@@ -2298,17 +2330,20 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--index",
+          name: ["-i", "--index"],
           description: "the 1-based index of the URL in the list of URLs",
           args: {},
         },
@@ -2319,12 +2354,15 @@ export const spec: Fig.Spec = {
       description: "clear all buildpacks set on the app",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
@@ -2335,12 +2373,15 @@ export const spec: Fig.Spec = {
       description: "display the buildpacks for an app",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
@@ -2366,17 +2407,20 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--index",
+          name: ["-i", "--index"],
           description:
             "the 1-based index of the URL to remove from the list of URLs",
           args: {},
@@ -2394,19 +2438,19 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--namespace",
+          name: "namespace",
           description:
             "buildpack namespaces to filter on using a comma separated list",
           args: {},
         },
         {
-          name: "--name",
+          name: "name",
           description:
             "buildpack names to filter on using a comma separated list ",
           args: {},
         },
         {
-          name: "--description",
+          name: "description",
           description: "buildpack description to filter on",
           args: {},
         },
@@ -2422,17 +2466,20 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--index",
+          name: ["-i", "--index"],
           description: "the 1-based index of the URL in the list of URLs",
           args: {},
         },
@@ -2452,7 +2499,7 @@ export const spec: Fig.Spec = {
       description: "waits for the certificate to be activated",
       options: [
         {
-          name: "--help",
+          name: ["-h", "--help"],
           description: "Show help for this command",
           args: {},
         },
@@ -2769,20 +2816,23 @@ export const spec: Fig.Spec = {
       description: "display the most recent CI runs for the given pipeline",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--watch",
+          name: "watch",
           description: "keep running and watch for new and update tests",
         },
         {
-          name: "--pipeline",
+          name: "pipeline",
           args: {},
         },
         {
-          name: "--json",
+          name: "json",
           description: "output in json format",
         },
       ],
@@ -2797,17 +2847,20 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--node",
+          name: "node",
           description: "the node number to show its setup and output",
           args: {},
         },
         {
-          name: "--pipeline",
+          name: "pipeline",
           args: {},
         },
       ],
@@ -2818,17 +2871,20 @@ export const spec: Fig.Spec = {
         "looks for the most recent run and returns the output of that run",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--node",
+          name: "node",
           description: "the node number to show its setup and output",
           args: {},
         },
         {
-          name: "--pipeline",
+          name: "pipeline",
           args: {},
         },
       ],
@@ -2844,12 +2900,15 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--pipeline",
+          name: "pipeline",
           args: {},
         },
       ],
@@ -2859,12 +2918,15 @@ export const spec: Fig.Spec = {
       description: "run tests against current directory",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--pipeline",
+          name: "pipeline",
           args: {},
         },
       ],
@@ -2887,8 +2949,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -2920,8 +2982,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -2940,8 +3002,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -2966,8 +3028,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -3001,8 +3063,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -3027,8 +3089,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -3044,12 +3106,15 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
@@ -3065,17 +3130,20 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--shell",
+          name: ["-s", "--shell"],
           description: "output config vars in shell format",
         },
       ],
@@ -3085,21 +3153,24 @@ export const spec: Fig.Spec = {
       description: "display the config vars for an app",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--shell",
+          name: ["-s", "--shell"],
           description: "output config vars in shell format",
         },
         {
-          name: "--json",
+          name: ["-j", "--json"],
           description: "output config vars in json format",
         },
       ],
@@ -3109,12 +3180,15 @@ export const spec: Fig.Spec = {
       description: "unset one or more config vars",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
@@ -3132,12 +3206,15 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
@@ -3157,12 +3234,15 @@ export const spec: Fig.Spec = {
       description: "",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
@@ -3180,26 +3260,26 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--procfile",
+          name: ["-f", "--procfile"],
           description: "use a different Procfile",
           args: {},
         },
         {
-          name: "--env",
+          name: ["-e", "--env"],
           description: "location of env file (defaults to .env)",
           args: {},
         },
         {
-          name: "--port",
+          name: ["-p", "--port"],
           description: "port to listen on",
           args: {},
         },
         {
-          name: "--restart",
+          name: ["-r", "--restart"],
           description: "restart process if it dies",
         },
         {
-          name: "--concurrency",
+          name: ["-c", "--concurrency"],
           description: "number of processes to start",
           args: {},
         },
@@ -3210,11 +3290,11 @@ export const spec: Fig.Spec = {
       description: "run a one-off command",
       options: [
         {
-          name: "--env",
+          name: ["-e", "--env"],
           args: {},
         },
         {
-          name: "--port",
+          name: ["-p", "--port"],
           args: {},
         },
       ],
@@ -3228,20 +3308,20 @@ export const spec: Fig.Spec = {
       description: "create a new OAuth authorization",
       options: [
         {
-          name: "--description",
+          name: ["-d", "--description"],
           description: "set a custom authorization",
           args: {},
         },
         {
-          name: "--short",
+          name: ["-S", "--short"],
           description: "only output token",
         },
         {
-          name: "--json",
+          name: ["-j", "--json"],
           description: "output in json format",
         },
         {
-          name: "--scope",
+          name: ["-s", "--scope"],
           description: "set custom OAuth scopes",
           args: {},
         },
@@ -3252,7 +3332,7 @@ export const spec: Fig.Spec = {
       description: "list OAuth authorizations",
       options: [
         {
-          name: "--json",
+          name: ["-j", "--json"],
           description: "output in json format",
         },
       ],
@@ -3267,7 +3347,7 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--json",
+          name: ["-j", "--json"],
           description: "output in json format",
         },
       ],
@@ -3300,7 +3380,7 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--description",
+          name: ["-d", "--description"],
           description: "set a custom authorization description",
           args: {},
         },
@@ -3319,11 +3399,11 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--json",
+          name: ["-j", "--json"],
           description: "output in json format",
         },
         {
-          name: "--shell",
+          name: ["-s", "--shell"],
           description: "output in shell format",
         },
       ],
@@ -3342,7 +3422,7 @@ export const spec: Fig.Spec = {
       description: "list your OAuth clients",
       options: [
         {
-          name: "--json",
+          name: ["-j", "--json"],
           description: "output in json format",
         },
       ],
@@ -3357,11 +3437,11 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--json",
+          name: ["-j", "--json"],
           description: "output in json format",
         },
         {
-          name: "--shell",
+          name: ["-s", "--shell"],
           description: "output in shell format",
         },
       ],
@@ -3376,11 +3456,11 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--json",
+          name: ["-j", "--json"],
           description: "output in json format",
         },
         {
-          name: "--shell",
+          name: ["-s", "--shell"],
           description: "output in shell format",
         },
       ],
@@ -3395,12 +3475,12 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--name",
+          name: ["-n", "--name"],
           description: "change the client name",
           args: {},
         },
         {
-          name: "--url",
+          name: "url",
           description: "change the client redirect URL",
           args: {},
         },
@@ -3420,7 +3500,7 @@ export const spec: Fig.Spec = {
       description: "list your OAuth sessions",
       options: [
         {
-          name: "--json",
+          name: ["-j", "--json"],
           description: "output in json format",
         },
       ],
@@ -3871,8 +3951,8 @@ export const spec: Fig.Spec = {
           description: "app to run command against",
           args: {
             name: "app",
-            generators: getAppGenerator,
             isOptional: true,
+            generators: getAppGenerator,
           },
         },
       ],
@@ -5332,17 +5412,20 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--stage",
+          name: ["-s", "--stage"],
           description: "stage of first app in pipeline",
           args: {},
         },
@@ -5358,7 +5441,7 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--repo",
+          name: ["-r", "--repo"],
           description: "the GitHub repository to connect to",
           args: {},
         },
@@ -5375,22 +5458,25 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--stage",
+          name: ["-s", "--stage"],
           description: "stage of first app in pipeline",
           args: {},
         },
         {
-          name: "--team",
+          name: "team",
           description: "the team which will own the apps",
           args: {},
         },
@@ -5411,12 +5497,15 @@ export const spec: Fig.Spec = {
         "compares the latest release of this app to its downstream app(s)",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
@@ -5427,7 +5516,7 @@ export const spec: Fig.Spec = {
       description: "list pipelines you have access to",
       options: [
         {
-          name: "--json",
+          name: "json",
           description: "output in json format",
         },
       ],
@@ -5442,7 +5531,7 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--json",
+          name: "json",
           description: "output in json format",
         },
       ],
@@ -5462,17 +5551,20 @@ export const spec: Fig.Spec = {
         "promote the latest release of this app to its downstream app(s)",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--to",
+          name: ["-t", "--to"],
           description: "comma separated list of apps to promote to",
           args: {},
         },
@@ -5483,12 +5575,15 @@ export const spec: Fig.Spec = {
       description: "remove this app from its pipeline",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
@@ -5522,13 +5617,13 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--team",
+          name: "team",
           description:
             "the team to assign pipeline ownership to (defaults to current user)",
           args: {},
         },
         {
-          name: "--yes",
+          name: ["-y", "--yes"],
           description: "accept all default settings without prompting",
         },
       ],
@@ -5543,11 +5638,11 @@ export const spec: Fig.Spec = {
       ],
       options: [
         {
-          name: "--pipeline",
+          name: "pipeline",
           args: {},
         },
         {
-          name: "--confirm",
+          name: ["-c", "--confirm"],
           args: {},
         },
       ],
@@ -5557,17 +5652,20 @@ export const spec: Fig.Spec = {
       description: "update the app's stage in a pipeline",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--stage",
+          name: ["-s", "--stage"],
           description: "new stage of app",
           args: {},
         },
@@ -5579,25 +5677,28 @@ export const spec: Fig.Spec = {
         "disable review apps and/or settings on an existing pipeline",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--pipeline",
+          name: "pipeline",
           args: {},
         },
         {
-          name: "--autodeploy",
+          name: "autodeploy",
           description: "disable autodeployments",
         },
         {
-          name: "--autodestroy",
+          name: "autodestroy",
           description: "disable automatically destroying review apps",
         },
       ],
@@ -5607,26 +5708,29 @@ export const spec: Fig.Spec = {
       description: "enable review apps and/or settings on an existing pipeline",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--pipeline",
+          name: ["-p", "--pipeline"],
           description: "name of pipeline",
           args: {},
         },
         {
-          name: "--autodeploy",
+          name: "autodeploy",
           description: "autodeploy the review app",
         },
         {
-          name: "--autodestroy",
+          name: "autodestroy",
           description: "autodestroy the review app",
         },
       ],
@@ -5636,12 +5740,15 @@ export const spec: Fig.Spec = {
       description: "disable web dyno autoscaling",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
@@ -5652,32 +5759,35 @@ export const spec: Fig.Spec = {
       description: "enable web dyno autoscaling",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--min",
+          name: "min",
           description: "minimum number of dynos",
           args: {},
         },
         {
-          name: "--max",
+          name: "max",
           description: "maximum number of dynos",
           args: {},
         },
         {
-          name: "--p95",
+          name: "p95",
           description: "desired p95 response time",
           args: {},
         },
         {
-          name: "--notifications",
+          name: "notifications",
           description:
             "receive email notifications when the max dyno limit is reached",
         },
@@ -5689,17 +5799,20 @@ export const spec: Fig.Spec = {
         "wait for all dynos to be running latest version after a release",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--type",
+          name: ["-t", "--type"],
           description: "wait for one specific dyno type",
           args: {},
         },
@@ -5710,15 +5823,15 @@ export const spec: Fig.Spec = {
       description: "list available regions for deployment",
       options: [
         {
-          name: "--json",
+          name: "json",
           description: "output in json format",
         },
         {
-          name: "--private",
+          name: "private",
           description: "show regions for private spaces",
         },
         {
-          name: "--common",
+          name: "common",
           description: "show regions for common runtime",
         },
       ],
@@ -5964,22 +6077,25 @@ export const spec: Fig.Spec = {
       description: "",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--size",
+          name: ["-s", "--size"],
           description: "dyno size",
           args: {},
         },
         {
-          name: "--env",
+          name: ["-e", "--env"],
           description:
             "environment variables to set (use ';' to split multiple vars)",
           args: {},
@@ -5991,39 +6107,42 @@ export const spec: Fig.Spec = {
       description: "",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--num",
+          name: ["-n", "--num"],
           description: "number of lines to display",
           args: {},
         },
         {
-          name: "--ps",
+          name: ["-p", "--ps"],
           description: "hidden alias for dyno",
           args: {},
         },
         {
-          name: "--dyno",
+          name: ["-d", "--dyno"],
           description:
             'only show output from this dyno type (such as "web" or "worker")',
           args: {},
         },
         {
-          name: "--source",
+          name: ["-s", "--source"],
           description:
             'only show output from this source (such as "app" or "heroku")',
           args: {},
         },
         {
-          name: "--tail",
+          name: ["-t", "--tail"],
           description: "continually stream logs",
         },
       ],
@@ -6033,22 +6152,25 @@ export const spec: Fig.Spec = {
       description: "",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--size",
+          name: ["-s", "--size"],
           description: "dyno size",
           args: {},
         },
         {
-          name: "--env",
+          name: ["-e", "--env"],
           description:
             "environment variables to set (use ';' to split multiple vars)",
           args: {},
@@ -6060,32 +6182,35 @@ export const spec: Fig.Spec = {
       description: "run a detached dyno, where output is sent to your logs",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--env",
+          name: ["-e", "--env"],
           description:
             "environment variables to set (use ';' to split multiple vars)",
           args: {},
         },
         {
-          name: "--size",
+          name: ["-s", "--size"],
           description: "dyno size",
           args: {},
         },
         {
-          name: "--tail",
+          name: ["-t", "--tail"],
           description: "continually stream logs",
         },
         {
-          name: "--type",
+          name: "type",
           description: "process type",
           args: {},
         },
@@ -6097,33 +6222,36 @@ export const spec: Fig.Spec = {
         "run a one-off process inside a heroku dyno\nShows a notification if the dyno takes more than 20 seconds to start.",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--size",
+          name: ["-s", "--size"],
           description: "dyno size",
           args: {},
         },
         {
-          name: "--type",
+          name: "type",
           description: "process type",
           args: {},
         },
         {
-          name: "--env",
+          name: ["-e", "--env"],
           description:
             "environment variables to set (use ';' to split multiple vars)",
           args: {},
         },
         {
-          name: "--listen",
+          name: "listen",
           description: "listen on a local port",
         },
       ],
@@ -6133,23 +6261,26 @@ export const spec: Fig.Spec = {
       description: "run a one-off process inside an existing heroku dyno",
       options: [
         {
-          name: "--app",
+          name: ["-a", "--app"],
           description: "app to run command against",
-          args: {},
+          args: {
+            name: "app",
+            generators: getAppGenerator,
+          },
         },
         {
-          name: "--remote",
+          name: ["-r", "--remote"],
           description: 'the git remote to create, default "heroku"',
           args: {},
         },
         {
-          name: "--env",
+          name: ["-e", "--env"],
           description:
             "environment variables to set (use ';' to split multiple vars)",
           args: {},
         },
         {
-          name: "--listen",
+          name: "listen",
           description: "listen on a local port",
         },
       ],
@@ -7078,7 +7209,7 @@ export const spec: Fig.Spec = {
       description: "display current status of the Heroku platform",
       options: [
         {
-          name: "--json",
+          name: "json",
           description: "output in json format",
         },
       ],
