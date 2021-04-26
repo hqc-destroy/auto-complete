@@ -1054,7 +1054,6 @@ var completionSpec = {
                         {
                             name: ["--force"],
                             description: "Update the CSR even if it is already approved.",
-                            args: {},
                         },
                     ],
                 },
@@ -1074,7 +1073,6 @@ var completionSpec = {
                         {
                             name: ["--force"],
                             description: "Update the CSR even if it is already approved.",
-                            args: {},
                         },
                     ],
                 },
@@ -1466,6 +1464,7 @@ var completionSpec = {
             // TODO: Args and generators
             name: "cp",
             description: "Copy files and directories to and from containers.",
+            args: {},
             options: [
                 {
                     name: ["-c", "--container"],
