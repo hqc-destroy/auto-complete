@@ -51,7 +51,7 @@ const scripts = {
 };
 >>>>>>> 405ac0b... feat: (kubectl) All missing arguments, options, subcommands
 
-const sharedArgs = {
+const sharedArgs: Record<string, Fig.Arg> = {
   resourcesArg: {
     name: "Resource Type",
     generators: {
@@ -105,7 +105,6 @@ const sharedArgs = {
     name: "Cluster",
     generators: {
       script: function (context) {
-        console.log(context);
         if (context.includes("--kubeconfig")) {
           const index = context.indexOf("--kubeconfig");
           return `kubectl config --kubeconfig=${
@@ -115,7 +114,12 @@ const sharedArgs = {
         return "kubectl config get-clusters";
       },
       postProcess: function (out) {
-        return out.split("\n").filter((line) => line !== "NAME");
+        return out
+          .split("\n")
+          .filter((line) => line !== "NAME")
+          .map((line) => ({
+            name: line,
+          }));
       },
     },
   },
@@ -151,7 +155,7 @@ const sharedArgs = {
   },
 };
 
-const sharedOpts = {
+const sharedOpts: Record<string, Fig.Option> = {
   filename: {
     name: ["-f", "--filename"],
     description:
@@ -481,7 +485,7 @@ export const completionSpec: Fig.Spec = {
       name: "apply",
       description:
         "Apply a configuration to a resource by filename or stdin. The resource name must be specified. This resource will be created if it doesn't exist yet. To use 'apply', always create the resource initially with either 'apply' or 'create --save-config'.",
-      options: [
+      options: sharedOptsArray.concat([
         {
 <<<<<<< HEAD
           name: ["--all"],
@@ -710,6 +714,7 @@ export const completionSpec: Fig.Spec = {
         },
         {
           name: ["--timeout"],
+          insertValue: "--timeout=",
           description:
             "The length of time to wait before giving up on a delete, zero means determine a timeout from the size of the object",
           args: {
@@ -726,7 +731,7 @@ export const completionSpec: Fig.Spec = {
           description:
             "If true, wait for resources to be gone before returning. This waits for finalizers.",
         },
-      ].concat(sharedOptsArray),
+      ]),
       subcommands: [
         {
           name: "edit-last-applied",
