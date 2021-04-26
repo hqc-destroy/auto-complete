@@ -842,7 +842,8 @@ export const completionSpec: Fig.Spec = {
               name: "VERB",
               suggestions: ["get", "list", "watch", "delete"],
             },
-            sharedArgs.typeOrTypeName,
+            sharedArgs.typeOrTypeSlashName,
+            sharedArgs.resourceSuggestionsFromResourceType,
           ],
           options: [
             {
@@ -3686,7 +3687,7 @@ export const completionSpec: Fig.Spec = {
       description:
         "Set a new size for a Deployment, ReplicaSet, Replication Controller, or StatefulSet.",
       args: [
-        sharedArgs.typetypeOrTypeSlashName,
+        sharedArgs.typeOrTypeSlashName,
         sharedArgs.resourceSuggestionsFromResourceType,
       ],
       options: [

@@ -897,7 +897,8 @@ var completionSpec = {
                             name: "VERB",
                             suggestions: ["get", "list", "watch", "delete"],
                         },
-                        sharedArgs.typeOrTypeName,
+                        sharedArgs.typeOrTypeSlashName,
+                        sharedArgs.resourceSuggestionsFromResourceType,
                     ],
                     options: [
                         {
@@ -3496,7 +3497,7 @@ var completionSpec = {
             name: "scale",
             description: "Set a new size for a Deployment, ReplicaSet, Replication Controller, or StatefulSet.",
             args: [
-                sharedArgs.typetypeOrTypeSlashName,
+                sharedArgs.typeOrTypeSlashName,
                 sharedArgs.resourceSuggestionsFromResourceType,
             ],
             options: [
