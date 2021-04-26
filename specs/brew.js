@@ -21,11 +21,15 @@ var generators = {
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 var generators = {
+<<<<<<< HEAD
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> 6345191... added all options for git push
     servicesgenerators: {
         script: "brew services list | sed -e 's/ .*//' | tail -n +2",
         postProcess: function (out) {
             return out
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 .split('\n')
@@ -58,6 +62,8 @@ var generators = {
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> 6345191... added all options for git push
                 .split("\n")
                 .filter(function (line) { return !line.includes("unbound"); })
                 .map(function (line) { return ({
@@ -66,6 +72,7 @@ var generators = {
             }); });
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
     },
 };
@@ -73,8 +80,9 @@ var generators = {
 =======
 =======
 >>>>>>> 0295764... remove comment
+=======
+>>>>>>> 6345191... added all options for git push
     },
-  },
 };
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -86,98 +94,13 @@ var generators = {
 
 >>>>>>> 0295764... remove comment
 var completionSpec = {
-  name: "brew",
-  description: "Package manager for macOS",
-  subcommands: [
-    { name: "list", description: "List all installed formulae" },
-    {
-      name: "leaves",
-      description:
-        "List installed formulae that are not dependencies of another installed formula",
-    },
-    {
-      name: "doctor",
-      description: "Check your system for potential problems",
-    },
-    {
-      name: "info",
-      description: "Display brief statistics for your Homebrew installation",
-    },
-    {
-      name: "update",
-      description: "Fetch the newest version of Homebrew and all formulae",
-    },
-    { name: "upgrade", description: "Upgrade outdated casks and outdated" },
-    {
-      name: "search",
-      description:
-        "Perform a substring search of cask tokens and formula names",
-    },
-    {
-      name: "config",
-      description: "Show Homebrew and system configuration info",
-    },
-    {
-      name: "install",
-      description: "Install <formula>",
-      insertValue: "install ",
-      args: {
-        variadic: true,
-        name: "formula",
-        description: "Formula or cask to install",
-        generators: {
-          script:
-            "HBPATH=$(brew --repository); ls -1 $HBPATH/Library/Taps/homebrew/homebrew-core/Formula $HBPATH/Library/Taps/homebrew/homebrew-cask/Casks",
-          postProcess: function (out) {
-            return out.split("\n").map(function (formula) {
-              return {
-                name: formula.replace(".rb", ""),
-                description: "formula",
-                icon: "🍺",
-                priority:
-                  (formula[0] >= "0" && formula[0] <= "9") || formula[0] == "/"
-                    ? 0
-                    : 51,
-              };
-            });
-          },
-        },
-      },
-    },
-    {
-      name: "uninstall",
-      description: "Uninstall <formula>",
-      args: {
-        variadic: true,
-        name: "formula",
-        generators: {
-          script: "brew list -1 --formulae",
-          postProcess: function (out) {
-            return out.split("\n").map(function (formula) {
-              return {
-                name: formula,
-                icon: "🍺",
-                description: "Installed formula",
-              };
-            });
-          },
-        },
-      },
-    },
-    {
-      name: "cask",
-      insertValue: "cask ",
-      description:
-        "Homebrew Cask provides a friendly CLI workflow for the administration of macOS applications distributed as binaries.",
-      subcommands: [
+    name: "brew",
+    description: "Package manager for macOS",
+    subcommands: [
+        { name: "list", description: "List all installed formulae" },
         {
-          name: "install",
-          insertValue: "install ",
-          description: "Installs the given cask",
-          args: {
-            name: "cask",
-            description: "Cask to install",
-          },
+            name: "leaves",
+            description: "List installed formulae that are not dependencies of another installed formula",
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -278,6 +201,7 @@ var completionSpec = {
         {
             name: "doctor",
             description: "Check your system for potential problems",
+<<<<<<< HEAD
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
 =======
           name: "uninstall",
@@ -362,23 +286,28 @@ var completionSpec = {
           name: ["-q", "--quiet"],
           description: "Suppress any warnings.",
 >>>>>>> 0295764... remove comment
+=======
         },
         {
-          name: ["-v", "--verbose"],
-          description: "Make some output more verbose.",
+            name: "info",
+            description: "Display brief statistics for your Homebrew installation",
+>>>>>>> 6345191... added all options for git push
         },
         {
-          name: ["-h", "--help"],
-          description: "Get help with services command",
+            name: "update",
+            description: "Fetch the newest version of Homebrew and all formulae",
         },
-      ],
-      subcommands: [
+        { name: "upgrade", description: "Upgrade outdated casks and outdated" },
         {
-          name: "cleanup",
-          insertValue: "cleanup",
-          description: "Remove all unused services.",
+            name: "search",
+            description: "Perform a substring search of cask tokens and formula names",
         },
         {
+            name: "config",
+            description: "Show Homebrew and system configuration info",
+        },
+        {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -403,6 +332,33 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+            name: "install",
+            description: "Install <formula>",
+            insertValue: "install ",
+            args: {
+                variadic: true,
+                name: "formula",
+                description: "Formula or cask to install",
+                generators: {
+                    script: "HBPATH=$(brew --repository); ls -1 $HBPATH/Library/Taps/homebrew/homebrew-core/Formula $HBPATH/Library/Taps/homebrew/homebrew-cask/Casks",
+                    postProcess: function (out) {
+                        return out.split("\n").map(function (formula) {
+                            return {
+                                name: formula.replace(".rb", ""),
+                                description: "formula",
+                                icon: "🍺",
+                                priority: (formula[0] >= "0" && formula[0] <= "9") || formula[0] == "/"
+                                    ? 0
+                                    : 51,
+                            };
+                        });
+                    },
+                },
+            },
+        },
+        {
+>>>>>>> 6345191... added all options for git push
             name: "uninstall",
             description: "Uninstall <formula>",
             args: {
@@ -421,17 +377,16 @@ var completionSpec = {
                     },
                 },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 0295764... remove comment
+=======
+>>>>>>> 6345191... added all options for git push
             },
-          ],
-          args: {
-            variadic: true,
-            generators: generators.servicesGenerator,
-          },
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -477,6 +432,8 @@ var completionSpec = {
         },
         {
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> 6345191... added all options for git push
             name: "cask",
             insertValue: "cask ",
             description: "Homebrew Cask provides a friendly CLI workflow for the administration of macOS applications distributed as binaries.",
@@ -506,15 +463,19 @@ var completionSpec = {
                                         description: "Installed formula",
                                     };
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> 6345191... added all options for git push
                                 });
                             },
                         },
                     },
                 },
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         },
@@ -800,31 +761,113 @@ var completionSpec = {
             generators: generators.servicesGenerator,
           },
 >>>>>>> 0295764... remove comment
+=======
         },
         {
-          name: "restart",
-          insertValue: "restart ",
-          description:
-            "Stop (if necessary) and start the service formula immediately and register it to launch at login (or boot).",
-          options: [
-            {
-              name: "--all",
-              insertValue: "--all",
-              description: "Start all services",
-            },
-          ],
-          args: {
-            variadic: true,
-            generators: generators.servicesGenerator,
-          },
+            name: "services",
+            description: "Manage background services with macOS' launchctl(1) daemon manager.",
+            options: [
+                {
+                    name: ["-d", "--debug"],
+                    description: "Display any debugging information.",
+                },
+                {
+                    name: ["-q", "--quiet"],
+                    description: "Suppress any warnings.",
+                },
+                {
+                    name: ["-v", "--verbose"],
+                    description: "Make some output more verbose.",
+                },
+                {
+                    name: ["-h", "--help"],
+                    description: "Get help with services command",
+                },
+            ],
+            subcommands: [
+                {
+                    name: "cleanup",
+                    insertValue: "cleanup",
+                    description: "Remove all unused services.",
+                },
+                {
+                    name: "list",
+                    insertValue: "list",
+                    description: "List all services.",
+                },
+                {
+                    name: "run",
+                    insertValue: "run ",
+                    description: "Run the service formula without registering to launch at login (or boot).",
+                    options: [
+                        {
+                            name: "--all",
+                            insertValue: "--all",
+                            description: "Start all services",
+                        },
+                    ],
+                    args: {
+                        variadic: true,
+                        generators: generators.servicesGenerator,
+                    },
+                },
+                {
+                    name: "start",
+                    insertValue: "start ",
+                    description: "Start the service formula immediately and register it to launch at login",
+                    options: [
+                        {
+                            name: "--all",
+                            insertValue: "--all",
+                            description: "Start all services",
+                        },
+                    ],
+                    args: {
+                        variadic: true,
+                        generators: generators.servicesGenerator,
+                    },
+                },
+                {
+                    name: "stop",
+                    insertValue: "stop ",
+                    description: "Stop the service formula immediately and unregister it from launching at",
+                    options: [
+                        {
+                            name: "--all",
+                            insertValue: "--all",
+                            description: "Start all services",
+                        },
+                    ],
+                    args: {
+                        variadic: true,
+                        generators: generators.servicesGenerator,
+                    },
+                },
+                {
+                    name: "restart",
+                    insertValue: "restart ",
+                    description: "Stop (if necessary) and start the service formula immediately and register it to launch at login (or boot).",
+                    options: [
+                        {
+                            name: "--all",
+                            insertValue: "--all",
+                            description: "Start all services",
+                        },
+                    ],
+                    args: {
+                        variadic: true,
+                        generators: generators.servicesGenerator,
+                    },
+                },
+            ],
+>>>>>>> 6345191... added all options for git push
         },
-      ],
-    },
-  ],
-  options: [
-    {
-      name: ["--version"],
-      description: "The current Homebrew version",
-    },
-  ],
+    ],
+    options: [
+        {
+            name: ["--version"],
+            description: "The current Homebrew version",
+        },
+    ],
 };
+
