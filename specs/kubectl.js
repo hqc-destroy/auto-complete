@@ -127,7 +127,7 @@ var sharedOpts = {
             template: "filepaths",
         },
     },
-    kuztomize: {
+    kustomize: {
         name: ["-k", "--kustomize"],
         description: "Process the kustomization directory. This flag can't be used together with -f or -R.",
         args: {
@@ -676,44 +676,39 @@ var completionSpec = {
                 },
             ],
             options: sharedOptsArray,
-            subcommands: [],
         },
         {
             name: "api-resources",
             description: "Print the supported API resources on the server",
             options: [
+                sharedOpts.output,
                 {
                     name: ["--api-group"],
+                    insertValue: "--api-group",
                     description: "Limit to resources in the specified API group.",
                     args: {},
                 },
                 {
                     name: ["--cached"],
                     description: "Use the cached list of resources if available.",
-                    args: {},
                 },
                 {
                     name: ["--namespaced"],
                     description: "If false, non-namespaced resources will be returned, otherwise returning namespaced resources by default.",
-                    args: {},
                 },
                 {
                     name: ["--no-headers"],
                     description: "When using the default or custom-column output format, don't print headers (default print headers).",
-                    args: {},
-                },
-                {
-                    name: ["-o", "--output"],
-                    description: "Output format. One of: wide|name.",
-                    args: {},
                 },
                 {
                     name: ["--sort-by"],
+                    insertValue: "--sort-by=",
                     description: "If non-empty, sort nodes list using specified field. The field can be either 'name' or 'kind'.",
                     args: {},
                 },
                 {
                     name: ["--verbs"],
+                    insertValue: "--verbs=",
                     description: "Limit to resources that support the specified verbs.",
                     args: {},
                 },
@@ -732,14 +727,13 @@ var completionSpec = {
             options: sharedOptsArray.concat([
                 {
                     name: ["--cascade"],
-                    description: "If true, cascade the deletion of the resources managed by this resource (e.g. Pods created by a ReplicationController).  Default true.",
+                    description: "If true, cascade the deletion of the resources managed by this resource (e.g. Pods created by a ReplicationController). Default true.",
                 },
                 {
                     name: ["--field-manager"],
+                    insertValue: "--field-manager=",
                     description: "Name of the manager used to track field ownership.",
-                    args: {
-                        name: "Manager Name",
-                    },
+                    args: {},
                 },
                 {
                     name: ["--force"],
@@ -751,6 +745,7 @@ var completionSpec = {
                 },
                 {
                     name: ["--grace-period"],
+                    insertValue: "--grace-period=",
                     description: "Period of time in seconds given to the resource to terminate gracefully. Ignored if negative. Set to 1 for immediate shutdown. Can only be set to 0 when --force is true (force deletion).",
                     args: {
                         name: "INT (seconds)",
@@ -773,7 +768,7 @@ var completionSpec = {
                     insertValue: "--prune-whitelist=",
                     description: "Overwrite the default whitelist with <group/version/kind> for --prune",
                     args: {
-                        name: "<group/version/kind>",
+                        name: "group/version/kind",
                     },
                 },
                 {
@@ -801,12 +796,14 @@ var completionSpec = {
                 {
                     name: "edit-last-applied",
                     description: "Edit the latest last-applied-configuration annotations of resources from the default editor.",
-                    // TODO: List all resources
-                    args: {},
+                    args: [
+                        sharedArgs.typeOrTypeSlashName,
+                        sharedArgs.resourceSuggestionsFromResourceType,
+                    ],
                     options: [
                         sharedOpts.allowMissingTemplateKeys,
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.output,
                         sharedOpts.record,
                         sharedOpts.recursive,
@@ -818,9 +815,7 @@ var completionSpec = {
                         {
                             name: ["--field-manager"],
                             description: "Name of the manager used to track field ownership.",
-                            args: {
-                                name: "Manager Name",
-                            },
+                            args: {},
                         },
                         {
                             name: ["--show-manged-fields"],
@@ -845,21 +840,22 @@ var completionSpec = {
                             description: "Will create 'last-applied-configuration' annotations if current objects doesn't have one",
                         },
                     ],
-                    subcommands: [],
                 },
                 {
                     name: "view-last-applied",
                     description: "View the latest last-applied-configuration annotations by type/name or file.",
-                    args: {},
+                    args: [
+                        sharedArgs.typeOrTypeSlashName,
+                        sharedArgs.resourceSuggestionsFromResourceType,
+                    ],
                     options: [
                         sharedOpts.allResources,
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.output,
                         sharedOpts.recursive,
                         sharedOpts.selector,
                     ],
-                    subcommands: [],
                 },
             ],
         },
@@ -938,7 +934,7 @@ var completionSpec = {
                         sharedOpts.allowMissingTemplateKeys,
                         sharedOpts.dryRun,
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.output,
                         sharedOpts.recursive,
                         sharedOpts.template,
@@ -972,7 +968,7 @@ var completionSpec = {
                 sharedOpts.recursive,
                 sharedOpts.dryRun,
                 sharedOpts.filename,
-                sharedOpts.kuztomize,
+                sharedOpts.kustomize,
                 sharedOpts.template,
                 {
                     name: ["--cpu-percent"],
@@ -1029,7 +1025,7 @@ var completionSpec = {
                     options: [
                         sharedOpts.allowMissingTemplateKeys,
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.output,
                         sharedOpts.recursive,
                         sharedOpts.template,
@@ -1049,7 +1045,7 @@ var completionSpec = {
                     options: [
                         sharedOpts.allowMissingTemplateKeys,
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.output,
                         sharedOpts.recursive,
                         sharedOpts.template,
@@ -1418,7 +1414,7 @@ var completionSpec = {
             options: [
                 sharedOpts.allowMissingTemplateKeys,
                 sharedOpts.filename,
-                sharedOpts.kuztomize,
+                sharedOpts.kustomize,
                 sharedOpts.output,
                 sharedOpts.recursive,
                 sharedOpts.template,
@@ -1469,7 +1465,7 @@ var completionSpec = {
                 sharedOpts.allowMissingTemplateKeys,
                 sharedOpts.dryRun,
                 sharedOpts.filename,
-                sharedOpts.kuztomize,
+                sharedOpts.kustomize,
                 sharedOpts.output,
                 sharedOpts.recursive,
                 sharedOpts.selector,
@@ -2435,7 +2431,7 @@ var completionSpec = {
             options: [
                 sharedOpts.dryRun,
                 sharedOpts.filename,
-                sharedOpts.kuztomize,
+                sharedOpts.kustomize,
                 sharedOpts.output,
                 sharedOpts.recursive,
                 sharedOpts.selector,
@@ -2495,7 +2491,7 @@ var completionSpec = {
             ],
             options: [
                 sharedOpts.filename,
-                sharedOpts.kuztomize,
+                sharedOpts.kustomize,
                 sharedOpts.recursive,
                 sharedOpts.selector,
                 {
@@ -2513,7 +2509,7 @@ var completionSpec = {
             description: "Diff configurations specified by filename or stdin between the current online configuration, and the configuration as it would be if applied.",
             options: [
                 sharedOpts.filename,
-                sharedOpts.kuztomize,
+                sharedOpts.kustomize,
                 sharedOpts.recursive,
                 {
                     name: ["--field-manager"],
@@ -2594,7 +2590,7 @@ var completionSpec = {
             ],
             options: [
                 sharedOpts.filename,
-                sharedOpts.kuztomize,
+                sharedOpts.kustomize,
                 sharedOpts.output,
                 sharedOpts.recursive,
                 sharedOpts.allowMissingTemplateKeys,
@@ -2679,7 +2675,7 @@ var completionSpec = {
                 sharedOpts.allowMissingTemplateKeys,
                 sharedOpts.dryRun,
                 sharedOpts.filename,
-                sharedOpts.kuztomize,
+                sharedOpts.kustomize,
                 sharedOpts.output,
                 sharedOpts.record,
                 sharedOpts.recursive,
@@ -2783,7 +2779,7 @@ var completionSpec = {
                 sharedOpts.allowMissingTemplateKeys,
                 sharedOpts.fieldSelector,
                 sharedOpts.filename,
-                sharedOpts.kuztomize,
+                sharedOpts.kustomize,
                 sharedOpts.output,
                 sharedOpts.recursive,
                 sharedOpts.selector,
@@ -2919,7 +2915,7 @@ var completionSpec = {
                 sharedOpts.dryRun,
                 sharedOpts.fieldSelector,
                 sharedOpts.filename,
-                sharedOpts.kuztomize,
+                sharedOpts.kustomize,
                 sharedOpts.local,
                 sharedOpts.output,
                 sharedOpts.record,
@@ -3034,7 +3030,7 @@ var completionSpec = {
                 sharedOpts.allowMissingTemplateKeys,
                 sharedOpts.dryRun,
                 sharedOpts.filename,
-                sharedOpts.kuztomize,
+                sharedOpts.kustomize,
                 sharedOpts.local,
                 sharedOpts.output,
                 sharedOpts.record,
@@ -3172,7 +3168,7 @@ var completionSpec = {
                 sharedOpts.allowMissingTemplateKeys,
                 sharedOpts.dryRun,
                 sharedOpts.filename,
-                sharedOpts.kuztomize,
+                sharedOpts.kustomize,
                 sharedOpts.output,
                 sharedOpts.recursive,
                 sharedOpts.template,
@@ -3229,7 +3225,7 @@ var completionSpec = {
                     options: [
                         sharedOpts.allowMissingTemplateKeys,
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.output,
                         sharedOpts.recursive,
                         sharedOpts.template,
@@ -3250,7 +3246,7 @@ var completionSpec = {
                     options: [
                         sharedOpts.allowMissingTemplateKeys,
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.output,
                         sharedOpts.recursive,
                         sharedOpts.template,
@@ -3264,7 +3260,7 @@ var completionSpec = {
                     options: [
                         sharedOpts.allowMissingTemplateKeys,
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.output,
                         sharedOpts.recursive,
                         sharedOpts.template,
@@ -3278,7 +3274,7 @@ var completionSpec = {
                     options: [
                         sharedOpts.allowMissingTemplateKeys,
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.output,
                         sharedOpts.recursive,
                         sharedOpts.template,
@@ -3291,7 +3287,7 @@ var completionSpec = {
                     args: sharedArgs.listDeployments,
                     options: [
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.recursive,
                         {
                             name: ["--revision"],
@@ -3319,7 +3315,7 @@ var completionSpec = {
                     options: [
                         sharedOpts.allowMissingTemplateKeys,
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.recursive,
                         sharedOpts.dryRun,
                         {
@@ -3348,7 +3344,7 @@ var completionSpec = {
                 sharedOpts.allowMissingTemplateKeys,
                 sharedOpts.filename,
                 sharedOpts.dryRun,
-                sharedOpts.kuztomize,
+                sharedOpts.kustomize,
                 sharedOpts.recursive,
                 sharedOpts.output,
                 sharedOpts.record,
@@ -3508,7 +3504,7 @@ var completionSpec = {
             options: [
                 sharedOpts.allowMissingTemplateKeys,
                 sharedOpts.filename,
-                sharedOpts.kuztomize,
+                sharedOpts.kustomize,
                 sharedOpts.output,
                 sharedOpts.recursive,
                 sharedOpts.record,
@@ -3560,7 +3556,7 @@ var completionSpec = {
                         sharedOpts.allowMissingTemplateKeys,
                         sharedOpts.dryRun,
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.output,
                         sharedOpts.local,
                         sharedOpts.recursive,
@@ -3629,7 +3625,7 @@ var completionSpec = {
                         sharedOpts.allowMissingTemplateKeys,
                         sharedOpts.dryRun,
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.output,
                         sharedOpts.local,
                         sharedOpts.recursive,
@@ -3654,7 +3650,7 @@ var completionSpec = {
                         sharedOpts.allowMissingTemplateKeys,
                         sharedOpts.dryRun,
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.output,
                         sharedOpts.local,
                         sharedOpts.recursive,
@@ -3699,7 +3695,7 @@ var completionSpec = {
                         sharedOpts.allowMissingTemplateKeys,
                         sharedOpts.dryRun,
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.output,
                         sharedOpts.local,
                         sharedOpts.recursive,
@@ -3724,7 +3720,7 @@ var completionSpec = {
                         sharedOpts.allowMissingTemplateKeys,
                         sharedOpts.dryRun,
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.output,
                         sharedOpts.local,
                         sharedOpts.recursive,
@@ -3748,7 +3744,7 @@ var completionSpec = {
                         sharedOpts.allowMissingTemplateKeys,
                         sharedOpts.dryRun,
                         sharedOpts.filename,
-                        sharedOpts.kuztomize,
+                        sharedOpts.kustomize,
                         sharedOpts.output,
                         sharedOpts.local,
                         sharedOpts.recursive,
