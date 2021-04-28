@@ -563,7 +563,7 @@ var completionSpec = {
                             { name: "false", icon: "fig://icon?type=string" },
                         ],
                     },
-                    priority: 0
+                    priority: 0,
                 },
                 {
 <<<<<<< HEAD
