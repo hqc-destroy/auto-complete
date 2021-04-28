@@ -555,7 +555,7 @@ var completionSpec = {
                 {
                     name: "app.disableTelemetry",
                     icon: "fig://icon?type=commandkey",
-                    description: "Opt-out of all telemetry collection",
+                    description: "Opt-out of all non-essential telemetry collection",
                     args: {
                         name: "bool",
                         suggestions: [
@@ -563,6 +563,7 @@ var completionSpec = {
                             { name: "false", icon: "fig://icon?type=string" },
                         ],
                     },
+                    priority: 0
                 },
                 {
 <<<<<<< HEAD
