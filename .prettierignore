@@ -1,0 +1,7 @@
+.github/*
+specs/*
+eslintrc.js
+*.md
+*.json
+scripts/*
+dangerfile*
