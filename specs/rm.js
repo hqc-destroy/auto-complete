@@ -5,9 +5,13 @@ var completionSpec = {
         {
 <<<<<<< HEAD
             variadic: true,
+<<<<<<< HEAD
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
             template: "filepaths",
+=======
+            template: ["folders", "filepaths"],
+>>>>>>> ca3647a... fix: update subl and rm to accept both files and folders as arguments
         },
     ],
     subcommands: [],
