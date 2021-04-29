@@ -33,6 +33,7 @@ module.exports = {
   extends: [
     "plugin:@typescript-eslint/recommended",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "prettier",
     "plugin:prettier/recommended",
 <<<<<<< HEAD
@@ -42,20 +43,14 @@ module.exports = {
     // "prettier",
     // "plugin:prettier/recommended",
 >>>>>>> bc446da... add prettier config
+=======
+>>>>>>> a11a468... feat: remove comments from eslint file
     "plugin:fig-linter/recommended",
   ],
   plugins: ["fig-linter"],
 >>>>>>> 4b2d2b1... changed lint from ** to *, renamed fig linter plugin for eslint
   rules: {
     "@typescript-eslint/explicit-module-boundary-types": 0,
-    // "prettier/prettier": [
-    //   "error",
-    //   {
-    //     // Optional Prettier config changes
-    //     trailingComma: "es5",
-    //     printWidth: 80,
-    //   },
-    // ],
     "no-unused-vars": ["off"],
     "no-var": ["off"],
     "@typescript-eslint/no-unused-vars": ["off"],
