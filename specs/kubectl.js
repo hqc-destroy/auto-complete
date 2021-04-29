@@ -9,8 +9,7 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-// TODO: Handle if not connected to a k8s cluster
-// TODO: Handle if no resources found
+// Internal scripts for this spec, not to be confused with the script property
 var scripts = {
     types: "kubectl api-resources -o name",
     typeWithName: function (type) {
@@ -20,19 +19,34 @@ var scripts = {
         return "kubectl get " + type + " -o custom-columns=:.metadata.name";
     },
 };
+var sharedPostProcessChecks = {
+    connectedToCluster: function (out) {
+        return out.includes("The connection to the server");
+    },
+    generalError: function (out) {
+        return out.includes("error:");
+    },
+};
+var sharedPostProcess = function (out) {
+    if (sharedPostProcessChecks.connectedToCluster(out) ||
+        sharedPostProcessChecks.generalError(out)) {
+        return [];
+    }
+    return out.split("\n");
+};
 var sharedArgs = {
     resourcesArg: {
         name: "Resource Type",
         generators: {
             script: scripts.types,
-            splitOn: "\n",
+            postProcess: sharedPostProcess,
         },
     },
     runningPodsArg: {
         name: "Running Pods",
         generators: {
             script: "kubectl get pods --field-selector=status.phase=Running -o name",
-            splitOn: "\n",
+            postProcess: sharedPostProcess,
         },
     },
     resourceSuggestionsFromResourceType: {
@@ -42,7 +56,7 @@ var sharedArgs = {
                 var resourceType = context[context.length - 2];
                 return scripts.typeWithoutName(resourceType);
             },
-            splitOn: "\n",
+            postProcess: sharedPostProcess,
         },
         isOptional: true,
     },
@@ -56,14 +70,14 @@ var sharedArgs = {
                 }
                 return "kubectl config get-contexts -o name";
             },
-            splitOn: "\n",
+            postProcess: sharedPostProcess,
         },
     },
     listDeployments: {
         name: "Deployments",
         generators: {
             script: function () { return scripts.typeWithoutName("deployments"); },
-            splitOn: "\n",
+            postProcess: sharedPostProcess,
         },
     },
     listClusters: {
@@ -77,6 +91,10 @@ var sharedArgs = {
                 return "kubectl config get-clusters";
             },
             postProcess: function (out) {
+                if (sharedPostProcessChecks.connectedToCluster(out) ||
+                    sharedPostProcessChecks.generalError(out)) {
+                    return [];
+                }
                 return out
                     .split("\n")
                     .filter(function (line) { return line !== "NAME"; })
@@ -96,24 +114,22 @@ var sharedArgs = {
                 }
                 return scripts.types;
             },
-            splitOn: "\n",
-            trigger: function () {
-                return true;
-            },
+            postProcess: sharedPostProcess,
+            trigger: "/",
         },
     },
     listNodes: {
         name: "Node",
         generators: {
             script: function () { return scripts.typeWithoutName("nodes"); },
-            splitOn: "\n",
+            postProcess: sharedPostProcess,
         },
     },
     listClusterRoles: {
         name: "Cluster Role",
         generators: {
             script: function () { return scripts.typeWithoutName("clusterroles"); },
-            splitOn: "\n",
+            postProcess: sharedPostProcess,
         },
     },
     listContainersFromPod: {
@@ -132,6 +148,10 @@ var sharedArgs = {
                 return "kubectl get " + podName + " -o json";
             },
             postProcess: function (out) {
+                if (sharedPostProcessChecks.connectedToCluster(out) ||
+                    sharedPostProcessChecks.generalError(out)) {
+                    return [];
+                }
                 return JSON.parse(out).spec.containers.map(function (item) { return ({
                     name: item.name,
                     description: item.image,
@@ -142,7 +162,8 @@ var sharedArgs = {
 };
 var sharedOpts = {
     filename: {
-        name: ["-f", "--filename"], description: "Filename, directory, or URL to files identifying the resource",
+        name: ["-f", "--filename"],
+        description: "Filename, directory, or URL to files identifying the resource",
         args: {
             name: "File",
             template: "filepaths",
@@ -1266,8 +1287,9 @@ var completionSpec = {
                         {
                             name: ["--cluster"],
                             insertValue: "--cluster=",
+                            displayName: "--cluster=cluster_nickname",
                             args: {
-                                name: "cluster_nickname",
+                            // name: "cluster_nickname",
                             },
                         },
                         {
@@ -1825,7 +1847,7 @@ var completionSpec = {
                                 name: "Cronjob",
                                 generators: {
                                     script: function () { return scripts.typeWithName("cronjob"); },
-                                    splitOn: "\n",
+                                    postProcess: sharedPostProcess,
                                 },
                             },
                         },
@@ -2071,7 +2093,7 @@ var completionSpec = {
                                 name: "Role",
                                 generators: {
                                     script: function () { return scripts.typeWithoutName("roles"); },
-                                    splitOn: "\n",
+                                    postProcess: sharedPostProcess,
                                 },
                             },
                         },
