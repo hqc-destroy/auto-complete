@@ -30,6 +30,7 @@ declare namespace Fig {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     /**
      * A simple completion object, which does not have a required
      * name by default. Use NamedCompletion to get a required name.
@@ -168,6 +169,18 @@ declare namespace Fig {
         name: string;
 =======
   export type Spec = Subcommand;
+=======
+  export interface Spec extends Subcommand {
+    /**
+     * This flag allows options to have multiple characters
+     * even though they only have one hyphen
+     *
+     * @example
+     * -mod
+     */
+    posixNoncompliantFlags?: boolean;
+  }
+>>>>>>> 2e8d984... feat: add posixNoncompliantFlags to Spec
 
   // Execute shell command function inside generators
   export type ExecuteShellCommandFunction = (param: String) => Promise<String>;
