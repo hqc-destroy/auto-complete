@@ -71,6 +71,7 @@ npm run copy <spec-name>
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 ## Can I create autocomplete specs for myself / my team's internal scripts?
@@ -93,6 +94,18 @@ fig settings autocomplete.devCompletionsFolder path/to/folder
 >>>>>>> 8f1e4b8... Update Readme
 =======
 >>>>>>> fc8e4dd... feat: update badge
+=======
+## Need Help?
+
+<p align="center">
+    Join our community
+<br/>
+<a href="https://fig.io/community">
+    <img src="http://fig.io/icons/discord-logo-square.png" width="80px" height="80px" /> 
+</a>
+</p>
+
+>>>>>>> 0279af9... Added discord logo to readme
 ## FAQ
 
 <<<<<<< HEAD

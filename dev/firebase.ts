@@ -1,9 +1,38 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 export const firebaseCompletionSpec: Fig.Spec = {
     name: 'firebase',
     description: 'CLI Interface for Google Firebase',
     //   args: {},
 =======
+=======
+const firestoreGenerators: Record<string, Fig.Generator> = {
+  projectAliases: {
+    script: "firebase projects:list", // this calls to a firebase server and is therefore slow
+    postProcess: (out) => {
+      var getAliasRegex = /^│ (\w.*?)│/gm;
+      var aliasesRaw = Array.from(out.matchAll(getAliasRegex));
+      aliasesRaw.shift(); // first element is the table header
+      return aliasesRaw.map((raw) => {
+        return { name: raw[1].trim(), description: "projectAlias" };
+      });
+    },
+=======
+const projectAliasesGenerator: Fig.Generator = {
+  script: "firebase projects:list", // this calls to a firebase server and is therefore slow
+  postProcess: (out) => {
+    const getAliasRegex = /^│ (\w.*?)│/gm;
+    const aliasesRaw = Array.from(out.matchAll(getAliasRegex));
+    aliasesRaw.shift(); // first element is the table header
+    return aliasesRaw.map((alias) => {
+      return { name: alias[1].trim(), description: "projectAlias" };
+    });
+>>>>>>> 14ad877... feat: implement code feedback
+  },
+};
+
+>>>>>>> a96ca57... created ts version
 export const completionSpec: Fig.Spec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1721,6 +1750,7 @@ export const completionSpec: Fig.Spec = {
       description: "set an active Firebase project for your working directory",
       args: {
         name: "alias or project id",
+        generators: projectAliasesGenerator,
       },
       options: [
         {
