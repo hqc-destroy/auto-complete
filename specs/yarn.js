@@ -1,14 +1,29 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+>>>>>>> de30ae2... feat: clean up code
 var __spreadArray = (this && this.__spreadArray) || function (to, from) {
     for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
         to[j] = from[i];
     return to;
 };
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 99e7ece... feat: migrate to typescript
 =======
@@ -38,8 +53,51 @@ var yarnGenerators = {
                 }
             }
             catch (e) { }
+=======
+var searchGenerator = {
+    script: function (context) {
+        if (context[context.length - 1] === "")
+            return "";
+        var searchTerm = context[context.length - 1];
+        return "curl -s -H \"Accept: application/json\" \"https://api.npms.io/v2/search?q=" + searchTerm + "&size=20\"";
+    },
+    postProcess: function (out) {
+        try {
+            var results = JSON.parse(out).results;
+            return results.map(function (item) { return ({
+                name: item.package.name,
+                description: item.package.description,
+            }); });
+        }
+        catch (e) {
+>>>>>>> 0ef9e17... feat: add search and scripting to yarn
             return [];
-        },
+        }
+    },
+};
+var getScriptsGenerator = {
+    script: "until [[ -f package.json ]] || [[ $PWD = '/' ]]; do cd ..; done; cat package.json",
+    // splitOn: "\n",
+    postProcess: function (out) {
+        if (out.trim() == "") {
+            return [];
+        }
+        try {
+            var packageContent = JSON.parse(out);
+            var scripts = packageContent["scripts"];
+            var figCompletions_1 = packageContent["fig"] || {};
+            if (scripts) {
+                return Object.keys(scripts).map(function (key) {
+                    var icon = "fig://icon?type=npm";
+                    var customScripts = figCompletions_1[key];
+                    return __assign({ name: key, icon: icon }, (customScripts !== undefined && customScripts));
+                });
+            }
+        }
+        catch (e) {
+            console.error(e);
+        }
+        return [];
     },
 };
 <<<<<<< HEAD
@@ -50,8 +108,6 @@ var yarnGenerators = {
 var packageList = {
     script: "cat package.json",
     postProcess: function (out) {
-        console.log("THIS IS A TEST");
-        console.log(out);
         if (out.trim() == "") {
             return [];
         }
@@ -104,6 +160,7 @@ var completionSpec = {
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             generators: {
                 script: "cat package.json",
                 postProcess: function (out) {
@@ -131,6 +188,10 @@ var completionSpec = {
 =======
             generators: yarnGenerators.getScripts,
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+            generators: getScriptsGenerator,
+            isOptional: true,
+>>>>>>> 0ef9e17... feat: add search and scripting to yarn
         },
     ],
     options: [
@@ -395,6 +456,12 @@ var completionSpec = {
         {
             name: "add",
             description: "Installs a package and any packages that it depends on.",
+            args: {
+                name: "package",
+                generators: searchGenerator,
+                debounce: true,
+                variadic: true,
+            },
             options: [
                 {
                     name: ["-W", "--ignore-workspace-root-check"],
@@ -673,6 +740,12 @@ var completionSpec = {
         {
             name: "global",
             description: "Install packages globally on your operating system",
+            args: {
+                name: "package",
+                generators: searchGenerator,
+                debounce: true,
+                variadic: true,
+            },
             options: [
                 {
                     name: "--prefix",
@@ -1053,7 +1126,7 @@ var completionSpec = {
                 //           }
                 //     },
                 {
-                    generators: yarnGenerators.getScripts,
+                    generators: getScriptsGenerator,
                 },
             ],
         },
