@@ -183,7 +183,7 @@ declare namespace Fig {
 >>>>>>> 2e8d984... feat: add posixNoncompliantFlags to Spec
 
   // Execute shell command function inside generators
-  export type ExecuteShellCommandFunction = (param: String) => Promise<String>;
+  export type ExecuteShellCommandFunction = (param: string) => Promise<string>;
 
   export interface BaseSuggestion {
     /**
@@ -305,7 +305,7 @@ declare namespace Fig {
      * @example:
      * `commit -m '{cursor}'` is a shortcut for git
      */
-    additionalSuggestions?: Suggestion[] | String[];
+    additionalSuggestions?: Suggestion[] | string[];
     /**
      * Allows Fig to refer to another completion spec in the `~/.fig/autocomplete` folder.
      * Specify the spec name without `js`. This is simiar but different to isCommand in the Arg object so read both carefully
@@ -333,7 +333,7 @@ declare namespace Fig {
      * Laravel artisan has its own subcommands but also lets you define your own completion spec.
      */
     generateSpec?: (
-      context: String[],
+      context: string[],
       executeShellCommand: ExecuteShellCommandFunction
     ) => Promise<Spec>;
 
@@ -348,7 +348,7 @@ declare namespace Fig {
      * @example
      * For git commit -m, the option name is `["-m", "--message"]`
      */
-    name: SingleOrArray<String>;
+    name: SingleOrArray<string>;
 
     /**
      * An array of args or a single arg object.
@@ -551,7 +551,7 @@ declare namespace Fig {
      * ```
      */
     custom?: (
-      context: String[],
+      context: string[],
       executeShellCommand: ExecuteShellCommandFunction
     ) => Promise<Suggestion[]>;
     /**
