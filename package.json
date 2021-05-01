@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "name": "linter",
     "version": "1.0.0",
     "description": "Fig Autocomplete Spec Linter",
@@ -91,11 +92,35 @@
         "prepare": {
             "description": "Install husky"
         }
+=======
+  "name": "linter",
+  "version": "1.0.0",
+  "description": "Fig Autocomplete Spec Linter",
+  "scripts": {
+    "dev": "source scripts/dev.sh",
+    "test": "tsc --noEmit && echo 'All specs passed validation. You are ready to push!'",
+    "copy": "func() { mkdir -p ~/.fig/autocomplete/$(dirname ${1}.js); cp \"$(pwd)\"/specs/${1}.js ~/.fig/autocomplete/${1}.js; }; func",
+    "copy:all": "rsync -a --include '*/' --include '*.js' --exclude '*' $(pwd)/specs/ ~/.fig/autocomplete/",
+    "create-boilerplate": "./scripts/create-boilerplate.sh",
+    "build": "ts-node-script scripts/compiler.ts",
+    "lint": "eslint '**/*.ts' && npx prettier --check '**/*.ts'",
+    "lint:fix": "eslint '**/*.ts' --fix && npx prettier --write '**/*.ts'",
+    "prepare": "husky install"
+  },
+  "fig": {
+    "dev": {
+      "description": "Watching and compile .ts files in ./dev",
+      "icon": "fig://template?badge=🛠",
+      "priority": 100
     },
-    "prettier": {
-        "trailingComma": "es5",
-        "printWidth": 80
+    "create-boilerplate": {
+      "description": "Create a new completion spec"
+>>>>>>> 40b3e10... feat: add pretty quick
     },
+    "test": {
+      "description": "Typecheck all .ts files in /dev"
+    },
+<<<<<<< HEAD
     "lint-staged": {
 <<<<<<< HEAD
         "*.{ts,js}": [
@@ -161,6 +186,36 @@
     "copy:all": "cp ./specs/*.js ~/.fig/autocomplete/",
     "watch": "ts-node-dev --respawn -s --watch ./dev/ compiler/compiler.ts",
     "create-boilerplate": "ts-node-script compiler/cli.ts"
+=======
+    "copy": {
+      "description": "Copy a CLI completion spec to ~/.fig/autocomplete"
+    },
+    "copy:all": {
+      "description": "Copy all files from /specs to ~/.fig/autocomplete"
+    },
+    "build": {
+      "description": "Compile all files in /dev"
+    },
+    "lint": {
+      "description": "Check for linting issues"
+    },
+    "lint:fix": {
+      "description": "Fix linting issues"
+    },
+    "prepare": {
+      "description": "Install husky"
+    }
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "printWidth": 80
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "pretty-quick --staged"
+    ]
+>>>>>>> 40b3e10... feat: add pretty quick
   },
   "author": "",
   "license": "ISC",
@@ -168,6 +223,7 @@
     "@types/inquirer": "^7.3.1",
     "@types/node": "^14.14.33",
     "@types/progress": "^2.0.3",
+<<<<<<< HEAD
     "chalk": "^4.1.0",
     "inquirer": "^8.0.0",
     "progress": "^2.0.3",
@@ -189,3 +245,23 @@
 =======
 }
 >>>>>>> 43ede29... fix: add prettier to lint-staged
+=======
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "chalk": "^4.1.0",
+    "chokidar": "^3.5.1",
+    "danger": "^10.6.4",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-fig-linter": "file:scripts/eslint-plugin-fig-linter",
+    "eslint-plugin-prettier": "^3.3.1",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "2.2.1",
+    "pretty-quick": "^3.1.0",
+    "progress": "^2.0.3",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  }
+}
+>>>>>>> 40b3e10... feat: add pretty quick

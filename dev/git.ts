@@ -4487,8 +4487,12 @@ export const completionSpec: Fig.Spec = {
     },
   ],
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 65036d2... fixed linting and prettier
 =======
+=======
+>>>>>>> 880aa33... feat: update prettierignore
   additionalSuggestions: [
     {
       name: "commit -m 'msg'",
@@ -4498,5 +4502,10 @@ export const completionSpec: Fig.Spec = {
       // type: "shortcut",
     },
   ],
+<<<<<<< HEAD
 >>>>>>> 7dc0cf6... added shortcuts to git
+=======
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+>>>>>>> c80c604... Revert "feat: update prettierignore"
 };

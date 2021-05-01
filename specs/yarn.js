@@ -2,6 +2,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
@@ -58,15 +60,42 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 >>>>>>> 771e538... feat: Load specs of cli that exists in current package
 var __spreadArray = (this && this.__spreadArray) || function (to, from) {
+=======
+var __assign =
+  (this && this.__assign) ||
+  function () {
+    __assign =
+      Object.assign ||
+      function (t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+          for (var p in s)
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+      };
+    return __assign.apply(this, arguments);
+  };
+var __spreadArray =
+  (this && this.__spreadArray) ||
+  function (to, from) {
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+var __spreadArray = (this && this.__spreadArray) || function (to, from) {
+>>>>>>> c80c604... Revert "feat: update prettierignore"
     for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
         to[j] = from[i];
     return to;
 };
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 99e7ece... feat: migrate to typescript
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> c80c604... Revert "feat: update prettierignore"
 var yarnGenerators = {
     getScripts: {
         script: "cat package.json",
@@ -82,6 +111,7 @@ var yarnGenerators = {
                         name: scriptName,
                         icon: "https://yarnpkg.com/favicon-32x32.png",
                     }); });
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -113,6 +143,35 @@ var searchGenerator = {
             return [];
         }
     },
+=======
+var getScriptsGenerator = {
+  script:
+    "until [[ -f package.json ]] || [[ $PWD = '/' ]]; do cd ..; done; cat package.json",
+  // splitOn: "\n",
+  postProcess: function (out) {
+    if (out.trim() == "") {
+      return [];
+    }
+    try {
+      var packageContent = JSON.parse(out);
+      var scripts = packageContent["scripts"];
+      var figCompletions_1 = packageContent["fig"] || {};
+      if (scripts) {
+        return Object.keys(scripts).map(function (key) {
+          var icon = "fig://icon?type=yarn";
+          var customScripts = figCompletions_1[key];
+          return __assign(
+            { name: key, icon: icon },
+            customScripts !== undefined && customScripts
+          );
+        });
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    return [];
+  },
+>>>>>>> 880aa33... feat: update prettierignore
 };
 var getScriptsGenerator = {
     script: "until [[ -f package.json ]] || [[ $PWD = '/' ]]; do cd ..; done; cat package.json",
@@ -137,6 +196,13 @@ var getScriptsGenerator = {
             console.error(e);
         }
         return [];
+=======
+                }
+            }
+            catch (e) { }
+            return [];
+        },
+>>>>>>> c80c604... Revert "feat: update prettierignore"
     },
 };
 <<<<<<< HEAD
@@ -145,8 +211,16 @@ var getScriptsGenerator = {
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
 // generate package list from package.json file
 var packageList = {
+<<<<<<< HEAD
+<<<<<<< HEAD
     script: "cat package.json",
     postProcess: function (out) {
+=======
+    script: "cat package.json",
+    postProcess: function (out) {
+        console.log("THIS IS A TEST");
+        console.log(out);
+>>>>>>> c80c604... Revert "feat: update prettierignore"
         if (out.trim() == "") {
             return [];
         }
@@ -166,6 +240,36 @@ var packageList = {
         }
         return [];
     },
+<<<<<<< HEAD
+=======
+  script: "cat package.json",
+  postProcess: function (out) {
+    if (out.trim() == "") {
+      return [];
+    }
+    try {
+      var packageContent = JSON.parse(out);
+      var dependencyScripts = packageContent["dependencies"] || {};
+      var devDependencyScripts = packageContent["devDependencies"] || {};
+      if (dependencyScripts || devDependencyScripts) {
+        return __spreadArray(
+          __spreadArray([], Object.keys(dependencyScripts)),
+          Object.keys(devDependencyScripts)
+        ).map(function (dependencyName) {
+          return {
+            name: dependencyName,
+            icon: "📦",
+          };
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }
+    return [];
+  },
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+>>>>>>> c80c604... Revert "feat: update prettierignore"
 };
 var configList = {
     script: "yarn config list",
@@ -193,6 +297,8 @@ var configList = {
     },
 };
 var completionSpec = {
+<<<<<<< HEAD
+<<<<<<< HEAD
     name: "yarn",
     description: "Manage packages and run scripts",
     generateSpec: function (_context, executeShellCommand) { return __awaiter(void 0, void 0, void 0, function () {
@@ -259,6 +365,177 @@ var completionSpec = {
             generators: getScriptsGenerator,
             isOptional: true,
 >>>>>>> 0ef9e17... feat: add search and scripting to yarn
+        },
+    ],
+    options: [
+        {
+            name: "--cache-folder",
+            description: "specify a custom folder that must be used to store the yarn cache",
+            args: {
+                template: "folders",
+            },
+        },
+        {
+            name: "--check-files",
+            description: "install will verify file tree of packages for consistency",
+        },
+        {
+            name: "--cwd",
+            description: "working directory to use (default: .)",
+            args: {
+                template: "folders",
+            },
+        },
+        {
+            name: "--disable-pnp",
+            description: "disable the Plug'n'Play installation",
+        },
+        {
+            name: "--emoji",
+            description: "enable emoji in output (default: true)",
+            args: {
+                name: "bool",
+                suggestions: [{ name: "true" }, { name: "false" }],
+            },
+        },
+        {
+            name: ["--enable-pnp", "--pnp"],
+            description: "enable the Plug'n'Play installation",
+        },
+=======
+  name: "yarn",
+  description: "Manage packages and run scripts",
+  args: [
+    {
+      generators: getScriptsGenerator,
+      isOptional: true,
+    },
+  ],
+  options: [
+    {
+      name: "--cache-folder",
+      description:
+        "specify a custom folder that must be used to store the yarn cache",
+      args: {
+        template: "folders",
+      },
+    },
+    {
+      name: "--check-files",
+      description: "install will verify file tree of packages for consistency",
+    },
+    {
+      name: "--cwd",
+      description: "working directory to use (default: .)",
+      args: {
+        template: "folders",
+      },
+    },
+    {
+      name: "--disable-pnp",
+      description: "disable the Plug'n'Play installation",
+    },
+    {
+      name: "--emoji",
+      description: "enable emoji in output (default: true)",
+      args: {
+        name: "bool",
+        suggestions: [{ name: "true" }, { name: "false" }],
+      },
+    },
+    {
+      name: ["--enable-pnp", "--pnp"],
+      description: "enable the Plug'n'Play installation",
+    },
+    {
+      name: "--flat",
+      description: "only allow one version of a package",
+    },
+    {
+      name: "--focus",
+      description:
+        "Focus on a single workspace by installing remote copies of its sibling workspaces.",
+    },
+    {
+      name: "--force",
+      description:
+        " install and build packages even if they were built before, overwrite lockfile",
+    },
+    {
+      name: "--frozen-lockfile",
+      description: "don't generate a lockfile and fail if an update is needed",
+    },
+    {
+      name: "--global-folder",
+      description: "specify a custom folder to store global packages",
+      args: {
+        template: "folders",
+      },
+    },
+    {
+      name: "--har",
+      description: "save HAR output of network traffic",
+    },
+    {
+      name: "--https-proxy",
+      description: "",
+      args: {
+        name: "path",
+        suggestions: [{ name: "https://" }],
+      },
+    },
+    {
+      name: "--ignore-engines",
+      description: "ignore engines check",
+    },
+    {
+      name: "--ignore-optional",
+      description: "ignore optional dependencies",
+    },
+    {
+      name: "--ignore-platform",
+      description: "ignore platform checks",
+    },
+    {
+      name: "--ignore-scripts",
+      description: "don't run lifecycle scripts",
+    },
+    {
+      name: "--json",
+      description:
+        "format Yarn log messages as lines of JSON (see jsonlines.org)",
+    },
+    {
+      name: "--link-duplicates",
+      description: "create hardlinks to the repeated modules in node_modules",
+    },
+    {
+      name: "--link-folder",
+      description: "specify a custom folder to store global links",
+      args: {
+        template: "folders",
+      },
+    },
+    {
+      name: "--modules-folder",
+      description:
+        "rather than installing modules into the node_modules folder relative to the cwd, output them here",
+      args: {
+        template: "folders",
+      },
+    },
+    {
+      name: "--mutex",
+      description: "use a mutex to ensure only one yarn instance is executing",
+      args: [
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+    name: "yarn",
+    description: "Manage packages and run scripts",
+    args: [
+>>>>>>> c80c604... Revert "feat: update prettierignore"
+        {
+            generators: yarnGenerators.getScripts,
         },
     ],
     options: [
@@ -521,6 +798,8 @@ var completionSpec = {
     ],
     subcommands: [
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
             name: "add",
             description: "Installs a package and any packages that it depends on.",
             args: {
@@ -529,6 +808,10 @@ var completionSpec = {
                 debounce: true,
                 variadic: true,
             },
+=======
+            name: "add",
+            description: "Installs a package and any packages that it depends on.",
+>>>>>>> c80c604... Revert "feat: update prettierignore"
             options: [
                 {
                     name: ["-W", "--ignore-workspace-root-check"],
@@ -563,6 +846,13 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
+<<<<<<< HEAD
+=======
+          name: "--latest",
+          description: "bin prefix to use to install binaries",
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+>>>>>>> c80c604... Revert "feat: update prettierignore"
         },
         {
             name: "audit",
@@ -601,6 +891,10 @@ var completionSpec = {
             ],
         },
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c80c604... Revert "feat: update prettierignore"
             name: "autoclean",
             description: "Cleans and removes unnecessary files from package dependencies",
             options: [
@@ -610,10 +904,13 @@ var completionSpec = {
                 },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ],
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> c80c604... Revert "feat: update prettierignore"
                 {
                     name: ["-i", "--init"],
                     description: "Creates the .yarnclean file if it does not exist, and adds the default entries",
@@ -624,6 +921,7 @@ var completionSpec = {
                 },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ]
 >>>>>>> 7245588... Updates Yarn specs
 =======
@@ -632,6 +930,13 @@ var completionSpec = {
 =======
             ],
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+          name: ["-y", "--yes"],
+          description: "use default options",
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+            ],
+>>>>>>> c80c604... Revert "feat: update prettierignore"
         },
         {
             name: "bin",
@@ -644,10 +949,15 @@ var completionSpec = {
             ],
         },
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c80c604... Revert "feat: update prettierignore"
             name: "cache",
             description: "",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: "--pattern",
@@ -663,15 +973,20 @@ var completionSpec = {
 >>>>>>> 7245588... Updates Yarn specs
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> c80c604... Revert "feat: update prettierignore"
                     name: ["-h", "--help"],
                     description: "output usage information",
                 },
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> c80c604... Revert "feat: update prettierignore"
             subcommands: [
                 {
                     name: "clean",
@@ -696,6 +1011,7 @@ var completionSpec = {
                         },
                     ],
                 },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             ]
@@ -759,6 +1075,66 @@ var completionSpec = {
 >>>>>>> 7245588... Updates Yarn specs
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+          name: ["-i", "--install"],
+          description: "install a specific Yarn release",
+          args: [
+            {
+              name: "version",
+            },
+          ],
+        },
+        {
+          name: ["-2"],
+          description: "generates the project using Yarn 2",
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+            ],
+        },
+        {
+            name: "config",
+            description: "configure yarn",
+            options: [
+                {
+                    name: ["-h", "--help"],
+                    description: "output usage information",
+                },
+            ],
+            subcommands: [
+                {
+                    name: "set",
+                    description: "Sets the config key to a certain value",
+                    options: [
+                        {
+                            name: ["-g", "--global"],
+                            description: "set global config",
+                        },
+                    ],
+                },
+                {
+                    name: "get",
+                    description: "Print the value for a given key",
+                    args: [
+                        {
+                            generators: configList,
+                        },
+                    ],
+                },
+                {
+                    name: "delete",
+                    description: "Deletes a given key from the config",
+                    args: [
+                        {
+                            generators: configList,
+                        },
+                    ],
+                },
+                {
+                    name: "list",
+                    description: "Displays the current configuration",
+                },
+            ],
+>>>>>>> c80c604... Revert "feat: update prettierignore"
         },
         {
             name: "create",
@@ -805,6 +1181,8 @@ var completionSpec = {
             ],
         },
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
             name: "global",
             description: "Install packages globally on your operating system",
             args: {
@@ -813,6 +1191,10 @@ var completionSpec = {
                 debounce: true,
                 variadic: true,
             },
+=======
+            name: "global",
+            description: "Install packages globally on your operating system",
+>>>>>>> c80c604... Revert "feat: update prettierignore"
             options: [
                 {
                     name: "--prefix",
@@ -830,6 +1212,14 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
+<<<<<<< HEAD
+=======
+          name: "--focus",
+          description:
+            "Focus on a single workspace by installing remote copies of its sibling workspaces.",
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+>>>>>>> c80c604... Revert "feat: update prettierignore"
         },
         {
             name: "help",
@@ -837,6 +1227,8 @@ var completionSpec = {
             options: [],
         },
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
             name: "import",
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -867,6 +1259,25 @@ var completionSpec = {
 =======
             options: [],
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+          name: "--frozen-lockfile",
+          description:
+            "don't generate a lockfile and fail if an update is needed",
+        },
+        {
+          name: "--har",
+          description: "save HAR output of network traffic",
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+            name: "import",
+            description: "Generates yarn.lock from an npm package-lock.json file",
+            options: [],
+        },
+        {
+            name: "info",
+            description: "Show information about a package",
+            options: [],
+>>>>>>> c80c604... Revert "feat: update prettierignore"
         },
         {
             name: "init",
@@ -900,6 +1311,8 @@ var completionSpec = {
             ],
         },
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
             name: "install",
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -908,6 +1321,9 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+            name: "install",
+>>>>>>> c80c604... Revert "feat: update prettierignore"
             description: "Install all the dependencies listed within package.json",
             options: [
                 {
@@ -984,6 +1400,7 @@ var completionSpec = {
                 },
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 7245588... Updates Yarn specs
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
@@ -1034,6 +1451,31 @@ var completionSpec = {
                     description: "List of licenses from all the packages",
                 },
             ],
+=======
+          name: "--ignore-optional",
+          description: "ignore optional dependencies",
+        },
+        {
+          name: "--ignore-scripts",
+          description: "don't run lifecycle scripts",
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+        },
+        {
+            name: "licenses",
+            description: "",
+            options: [],
+            subcommands: [
+                {
+                    name: "list",
+                    description: "List licenses for installed packages",
+                },
+                {
+                    name: "generate-disclaimer",
+                    description: "List of licenses from all the packages",
+                },
+            ],
+>>>>>>> c80c604... Revert "feat: update prettierignore"
         },
         {
             name: "link",
@@ -1063,6 +1505,8 @@ var completionSpec = {
             options: [],
         },
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
             name: "logout",
             description: "Clear registry username and email",
 <<<<<<< HEAD
@@ -1076,6 +1520,16 @@ var completionSpec = {
 =======
             options: [],
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+          name: "--offline",
+          description:
+            "trigger an error if any required dependencies are not available in local cache",
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+            name: "logout",
+            description: "Clear registry username and email",
+            options: [],
+>>>>>>> c80c604... Revert "feat: update prettierignore"
         },
         {
             name: "node",
@@ -1083,6 +1537,8 @@ var completionSpec = {
             options: [],
         },
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
             name: "outdated",
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1118,6 +1574,15 @@ var completionSpec = {
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
             description: "Checks for outdated package dependencies",
             options: [],
+=======
+          name: "--pure-lockfile",
+          description: "don't generate a lockfile",
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+            name: "outdated",
+            description: "Checks for outdated package dependencies",
+            options: [],
+>>>>>>> c80c604... Revert "feat: update prettierignore"
         },
         {
             name: "owner",
@@ -1159,6 +1624,10 @@ var completionSpec = {
             options: [],
         },
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c80c604... Revert "feat: update prettierignore"
             name: "remove",
             description: "remove installed package",
             options: [],
@@ -1167,6 +1636,7 @@ var completionSpec = {
                     generators: packageList,
                 },
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 7245588... Updates Yarn specs
 =======
@@ -1196,8 +1666,45 @@ var completionSpec = {
                     generators: getScriptsGenerator,
                 },
             ],
+=======
+          name: "--depth",
+          description: "restrict the depth of the dependencies",
         },
         {
+          name: "--pattern",
+          description: "filter the list of dependencies by the pattern",
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+        },
+        {
+            name: "run",
+            description: "",
+            options: [],
+            args: [
+                // TODO get this generator to work and combine the logic of both of these
+                //     {
+                //         generators: {
+                //            script: "ls -1 $(yarn bin)", // ISSUE: this runs in /bin/sh, yarn may not be defined in sh PATH
+                //            splitOn: "\n",
+                //            postProcess: function (out) {
+                //                try {
+                //                    if (out) {
+                //                        return out
+                //                    }
+                //                } catch(e) { }
+                //                return []
+                //            }
+                //           }
+                //     },
+                {
+                    generators: yarnGenerators.getScripts,
+                },
+            ],
+>>>>>>> c80c604... Revert "feat: update prettierignore"
+        },
+        {
+<<<<<<< HEAD
+<<<<<<< HEAD
             name: "tag",
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1218,6 +1725,15 @@ var completionSpec = {
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
             description: "Add, remove, or list tags on a package",
             options: [],
+=======
+          name: "list",
+          description: "Lists all of the owners of a package",
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+            name: "tag",
+            description: "Add, remove, or list tags on a package",
+            options: [],
+>>>>>>> c80c604... Revert "feat: update prettierignore"
         },
         {
             name: "team",
@@ -1225,6 +1741,8 @@ var completionSpec = {
             options: [],
         },
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
             name: "unlink",
             description: "Unlink a previously created symlink for a package",
 <<<<<<< HEAD
@@ -1238,6 +1756,15 @@ var completionSpec = {
 =======
             options: [],
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+          name: "add",
+          description: "Removes the user as an owner of the package",
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+            name: "unlink",
+            description: "Unlink a previously created symlink for a package",
+            options: [],
+>>>>>>> c80c604... Revert "feat: update prettierignore"
         },
         {
             name: "unplug",
@@ -1245,6 +1772,8 @@ var completionSpec = {
             options: [],
         },
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
             name: "upgrade",
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1285,6 +1814,14 @@ var completionSpec = {
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
             description: "Upgrades packages to their latest version based on the specified range",
             options: [],
+=======
+          generators: packageList,
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+            name: "upgrade",
+            description: "Upgrades packages to their latest version based on the specified range",
+            options: [],
+>>>>>>> c80c604... Revert "feat: update prettierignore"
         },
         {
             name: "upgrade-interactive",
@@ -1320,6 +1857,8 @@ var completionSpec = {
             options: [],
         },
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
             name: "workspace",
             description: "Manage workspace",
 <<<<<<< HEAD
@@ -1333,6 +1872,11 @@ var completionSpec = {
 =======
             options: [],
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+            name: "workspace",
+            description: "Manage workspace",
+            options: [],
+>>>>>>> c80c604... Revert "feat: update prettierignore"
             args: [
                 {
                     name: "name",
@@ -1356,6 +1900,16 @@ var completionSpec = {
                 },
                 // TODO arg 1 is script suggestion from the workspace specified in arg 0.
             ],
+<<<<<<< HEAD
+=======
+          name: "subcommand",
+          description: "",
+          args: {
+            suggestions: [{ name: "info" }, { name: "run" }],
+          },
+>>>>>>> 880aa33... feat: update prettierignore
+=======
+>>>>>>> c80c604... Revert "feat: update prettierignore"
         },
         {
             name: "workspaces",
