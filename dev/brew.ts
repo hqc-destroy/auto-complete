@@ -491,7 +491,7 @@ export const completionSpec: Fig.Spec = {
   description: "Package manager for macOS",
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
   subcommands: [
-    { name: "list", description: "List all installed formulae test" },
+    { name: "list", description: "List all installed formulae" },
     {
       name: "leaves",
       description:
