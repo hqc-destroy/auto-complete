@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-types */
-
 declare namespace Fig {
   // All the available templates
   export type TemplateStrings = "filepaths" | "folders";
@@ -273,8 +272,12 @@ declare namespace Fig {
      * @example
      * For npm, the subcommand is `npm install` would have "name: install" (no extra spaces or characters, exactly like this)
      */
+<<<<<<< HEAD
     name: string;
 >>>>>>> 65036d2... fixed linting and prettier
+=======
+    name: string | string[];
+>>>>>>> 6dcc5e4... added dbt and changed subcommands so they can be an array
 
     /**
      * A list of subcommands for this spec.
