@@ -4271,5 +4271,17 @@ export const completionSpec: Fig.Spec = {
       },
     },
   ],
+<<<<<<< HEAD
 >>>>>>> 65036d2... fixed linting and prettier
+=======
+  additionalSuggestions: [
+    {
+      name: "commit -m 'msg'",
+      description: "Git commit shortcut",
+      insertValue: "commit -m '{cursor}'",
+      icon: "fig://template?color=2ecc71&badge=🔥",
+      // type: "shortcut",
+    },
+  ],
+>>>>>>> 7dc0cf6... added shortcuts to git
 };
