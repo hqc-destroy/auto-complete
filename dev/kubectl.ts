@@ -6,6 +6,7 @@ export const kubectlCompletionSpec: Fig.Spec = {
 =======
 =======
 // TODO: Handle if not connected to a k8s cluster
+<<<<<<< HEAD
 >>>>>>> 98e4fbf... feat: (kubectl) Explain args + generator
 const resourcesArg = {
   name: "Resource Type",
@@ -35,8 +36,33 @@ const resourceSuggestionsFromResourceType = {
     script: function (context) {
       const resourceType = context[context.length - 2];
       return `kubectl get ${resourceType} -o custom-columns=:.metadata.name`;
+=======
+
+const sharedArgs = {
+  resourcesArg: {
+    name: "Resource Type",
+    generators: {
+      script: "kubectl api-resources -o name",
+      splitOn: "\n",
     },
-    splitOn: "\n",
+  },
+  runningPodsArg: {
+    name: "Running Pods",
+    generators: {
+      script: "kubectl get pods --field-selector=status.phase=Running -o name",
+      splitOn: "\n",
+    },
+  },
+  resourceSuggestionsFromResourceType: {
+    name: "Resource",
+    generators: {
+      script: function (context) {
+        const resourceType = context[context.length - 2];
+        return `kubectl get ${resourceType} -o custom-columns=:.metadata.name`;
+      },
+      splitOn: "\n",
+>>>>>>> 721108a... style: Move args into sharedArgs
+    },
   },
 };
 
@@ -195,7 +221,7 @@ export const completionSpec: Fig.Spec = {
       name: "annotate",
       description: "Update the annotations on one or more resources",
       args: [
-        resourcesArg,
+        sharedArgs.resourcesArg,
         {
           name: "KEY=VAL",
           variadic: true,
@@ -736,7 +762,7 @@ export const completionSpec: Fig.Spec = {
       name: "attach",
       description:
         "Attach to a process that is already running inside an existing container.",
-      args: runningPodsArg,
+      args: sharedArgs.runningPodsArg,
       options: [
         {
           name: ["-c", "--container"],
@@ -2877,7 +2903,10 @@ export const completionSpec: Fig.Spec = {
     {
       name: "describe",
       description: "Show details of a specific resource or group of resources",
-      args: [resourcesArg, resourceSuggestionsFromResourceType],
+      args: [
+        sharedArgs.resourcesArg,
+        sharedArgs.resourceSuggestionsFromResourceType,
+      ],
       options: [
         {
           name: ["-A", "--all-namespaces"],
@@ -3099,7 +3128,7 @@ export const completionSpec: Fig.Spec = {
     {
       name: "exec",
       description: "Execute a command in a container.",
-      args: runningPodsArg,
+      args: sharedArgs.runningPodsArg,
       options: [
         {
           name: ["-c", "--container"],
@@ -3134,7 +3163,7 @@ export const completionSpec: Fig.Spec = {
     {
       name: "explain",
       description: "List the fields for supported resources",
-      args: resourcesArg,
+      args: sharedArgs.resourcesArg,
       options: [
         {
           name: ["--api-version"],
@@ -3290,7 +3319,7 @@ export const completionSpec: Fig.Spec = {
     {
       name: "get",
       description: "Display one or many resources",
-      args: resourcesArg,
+      args: sharedArgs.resourcesArg,
       options: [
         {
           name: ["-A", "--all-namespaces"],
