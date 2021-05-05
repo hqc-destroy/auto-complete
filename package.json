@@ -87,6 +87,10 @@
             "description": "Install husky"
         }
     },
+    "prettier": {
+        "trailingComma": "es5",
+        "printWidth": 80
+    },
     "lint-staged": {
 <<<<<<< HEAD
         "*.{ts,js}": [
@@ -123,7 +127,7 @@
 =======
 >>>>>>> a1524da... feat: remove inquirer and create cli in bash
         "lint-staged": "^10.5.4",
-        "prettier": "^2.2.1",
+        "prettier": "2.2.1",
         "progress": "^2.0.3",
         "ts-node": "^9.1.1",
         "typescript": "^4.2.3"
