@@ -818,14 +818,14 @@ export const jestCompletionSpec: Fig.Spec = {
         "The path to a Jest config file specifying how to find and execute tests",
       args: {
         name: "path",
+        template: "filepaths",
       },
     },
     {
       name: ["--coverage"],
       displayName: "--coverage=<boolean>",
       insertValue: "--coverage=",
-      description:
-        "The path to a Jest config file specifying how to find and execute tests",
+      description: "Enable or disable coverage, disabled by default",
       args: {
         name: "true|false",
         suggestions: [
@@ -865,6 +865,7 @@ export const jestCompletionSpec: Fig.Spec = {
       description: "The test environment used for all tests",
       args: {
         name: "jsdom|node|path/to/env.js",
+        template: "filepaths",
         suggestions: [{ name: "jsdom" }, { name: "node" }],
       },
     },
@@ -975,6 +976,8 @@ export const jestCompletionSpec: Fig.Spec = {
         "Run tests from one or more projects, found in the specified paths; also takes path globs",
       args: {
         name: "<path1> ... <pathN>",
+        variadic: true,
+        template: "filepaths",
       },
     },
     {
@@ -993,6 +996,8 @@ export const jestCompletionSpec: Fig.Spec = {
         "A list of paths to directories that Jest should use to search for files in",
       args: {
         name: "<path1> ... <pathN>",
+        variadic: true,
+        template: "folders",
       },
     },
     {
@@ -1021,6 +1026,7 @@ export const jestCompletionSpec: Fig.Spec = {
         "The path to a module that runs some code to configure or set up the testing framework before each test",
       args: {
         name: "file",
+        template: "filepaths",
       },
     },
     {
@@ -1071,6 +1077,7 @@ export const jestCompletionSpec: Fig.Spec = {
       description: "Lets you specify a custom test runner",
       args: {
         name: "path",
+        template: "filepaths",
       },
     },
     {
@@ -1080,6 +1087,7 @@ export const jestCompletionSpec: Fig.Spec = {
       description: "Lets you specify a custom test sequencer",
       args: {
         name: "path",
+        template: "filepaths",
       },
     },
     {
