@@ -1100,6 +1100,22 @@ var completionSpec = {
             ],
 >>>>>>> b6489a5... feat: update specs formatting
         },
+        {
+            name: "analytics",
+            description: "Manages analytics preferences",
+            subcommands: [
+                {
+                    name: "on",
+                    insertValue: "on",
+                    description: "Turns on analytics",
+                },
+                {
+                    name: "off",
+                    insertValue: "off",
+                    description: "Turns off analytics",
+                },
+            ],
+        },
     ],
     options: [
         {
