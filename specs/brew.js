@@ -25,6 +25,7 @@ var generators = {
 var generators = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
 =======
 >>>>>>> 6345191... added all options for git push
@@ -32,10 +33,13 @@ var generators = {
 >>>>>>> b6489a5... feat: update specs formatting
 =======
 >>>>>>> 8601a08... feat: add built files
+=======
+>>>>>>> a6e15c2... remove a.ts aaa.ts and abc.ts, commit specs files, and update package.json so that we build the specs when npm run dev is called and postinstall
     servicesgenerators: {
         script: "brew services list | sed -e 's/ .*//' | tail -n +2",
         postProcess: function (out) {
             return out
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -80,6 +84,8 @@ var generators = {
 >>>>>>> b6489a5... feat: update specs formatting
 =======
 >>>>>>> 8601a08... feat: add built files
+=======
+>>>>>>> a6e15c2... remove a.ts aaa.ts and abc.ts, commit specs files, and update package.json so that we build the specs when npm run dev is called and postinstall
                 .split("\n")
                 .filter(function (line) { return !line.includes("unbound"); })
                 .map(function (line) { return ({
@@ -87,6 +93,7 @@ var generators = {
                 type: "option",
             }); });
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -122,11 +129,16 @@ var generators = {
     },
 };
 >>>>>>> 8601a08... feat: add built files
+=======
+    },
+};
+>>>>>>> a6e15c2... remove a.ts aaa.ts and abc.ts, commit specs files, and update package.json so that we build the specs when npm run dev is called and postinstall
 var completionSpec = {
     name: "brew",
     description: "Package manager for macOS",
     subcommands: [
         { name: "list", description: "List all installed formulae" },
+<<<<<<< HEAD
 <<<<<<< HEAD
         {
             name: "leaves",
@@ -332,8 +344,27 @@ var completionSpec = {
         {
             name: "doctor",
             description: "Check your system for potential problems",
+=======
+        {
+            name: "leaves",
+            description: "List installed formulae that are not dependencies of another installed formula",
         },
         {
+            name: "doctor",
+            description: "Check your system for potential problems",
+        },
+        {
+            name: "info",
+            description: "Display brief statistics for your Homebrew installation",
+        },
+        {
+            name: "update",
+            description: "Fetch the newest version of Homebrew and all formulae",
+>>>>>>> a6e15c2... remove a.ts aaa.ts and abc.ts, commit specs files, and update package.json so that we build the specs when npm run dev is called and postinstall
+        },
+        { name: "upgrade", description: "Upgrade outdated casks and outdated" },
+        {
+<<<<<<< HEAD
             name: "info",
             description: "Display brief statistics for your Homebrew installation",
 >>>>>>> 8601a08... feat: add built files
@@ -363,9 +394,18 @@ var completionSpec = {
             name: "update",
             description: "Fetch the newest version of Homebrew and all formulae",
 >>>>>>> 8601a08... feat: add built files
+=======
+            name: "search",
+            description: "Perform a substring search of cask tokens and formula names",
+        },
+        {
+            name: "config",
+            description: "Show Homebrew and system configuration info",
+>>>>>>> a6e15c2... remove a.ts aaa.ts and abc.ts, commit specs files, and update package.json so that we build the specs when npm run dev is called and postinstall
         },
         { name: "upgrade", description: "Upgrade outdated casks and outdated" },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             name: "info",
             description: "Display brief statistics for your Homebrew installation",
@@ -408,6 +448,8 @@ var completionSpec = {
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
 =======
+=======
+>>>>>>> a6e15c2... remove a.ts aaa.ts and abc.ts, commit specs files, and update package.json so that we build the specs when npm run dev is called and postinstall
             name: "install",
             description: "Install <formula>",
             insertValue: "install ",
@@ -430,6 +472,7 @@ var completionSpec = {
                         });
                     },
                 },
+<<<<<<< HEAD
             },
         },
         {
@@ -1091,6 +1134,67 @@ var completionSpec = {
     options: [
         {
 <<<<<<< HEAD
+=======
+            },
+        },
+        {
+            name: "uninstall",
+            description: "Uninstall <formula>",
+            args: {
+                variadic: true,
+                name: "formula",
+                generators: {
+                    script: "brew list -1 --formulae",
+                    postProcess: function (out) {
+                        return out.split("\n").map(function (formula) {
+                            return {
+                                name: formula,
+                                icon: "🍺",
+                                description: "Installed formula",
+                            };
+                        });
+                    },
+                },
+            },
+        },
+        {
+            name: "cask",
+            insertValue: "cask ",
+            description: "Homebrew Cask provides a friendly CLI workflow for the administration of macOS applications distributed as binaries.",
+            subcommands: [
+                {
+                    name: "install",
+                    insertValue: "install ",
+                    description: "Installs the given cask",
+                    args: {
+                        name: "cask",
+                        description: "Cask to install",
+                    },
+                },
+                {
+                    name: "uninstall",
+                    insertValue: "uninstall ",
+                    description: "Uninstalls the given cask",
+                    args: {
+                        variadic: true,
+                        generators: {
+                            script: "brew list -1 --cask",
+                            postProcess: function (out) {
+                                return out.split("\n").map(function (formula) {
+                                    return {
+                                        name: formula,
+                                        icon: "🍺",
+                                        description: "Installed formula",
+                                    };
+                                });
+                            },
+                        },
+                    },
+                },
+            ],
+        },
+        {
+>>>>>>> a6e15c2... remove a.ts aaa.ts and abc.ts, commit specs files, and update package.json so that we build the specs when npm run dev is called and postinstall
             name: "services",
             description: "Manage background services with macOS' launchctl(1) daemon manager.",
             options: [
@@ -1187,6 +1291,7 @@ var completionSpec = {
                     },
                 },
             ],
+<<<<<<< HEAD
 >>>>>>> 6345191... added all options for git push
 =======
         },
@@ -1334,5 +1439,29 @@ var completionSpec = {
         },
 >>>>>>> 8601a08... feat: add built files
     ],
+=======
+        },
+        {
+            name: "analytics",
+            description: "Manages analytics preferences",
+            subcommands: [
+                {
+                    name: "on",
+                    description: "Turns on analytics",
+                },
+                {
+                    name: "off",
+                    description: "Turns off analytics",
+                },
+            ],
+        },
+    ],
+    options: [
+        {
+            name: ["--version"],
+            description: "The current Homebrew version",
+        },
+    ],
+>>>>>>> a6e15c2... remove a.ts aaa.ts and abc.ts, commit specs files, and update package.json so that we build the specs when npm run dev is called and postinstall
 };
 

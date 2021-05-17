@@ -2,8 +2,13 @@ var sourceDestArgs = [
     {
         name: "source_file",
         template: ["filepaths", "folders"],
+<<<<<<< HEAD
         // variadic: true, 
         // source_file is variadic but usability wise having it is less useful 
+=======
+        // variadic: true,
+        // source_file is variadic but usability wise having it is less useful
+>>>>>>> a6e15c2... remove a.ts aaa.ts and abc.ts, commit specs files, and update package.json so that we build the specs when npm run dev is called and postinstall
         // because it keeps recommending "source_file" repeatedly and not "link_name or link_dirname"
         // and since most people won't need multiple files and those who do can look it up
     },
