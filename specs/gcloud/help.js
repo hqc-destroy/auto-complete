@@ -1,7 +1,10 @@
 var completionSpec = {
     name: "help",
     description: "Search gcloud help text.",
+<<<<<<< HEAD
     subcommands: [],
+=======
+>>>>>>> 8601a08... feat: add built files
     options: [
         {
             name: "--account",

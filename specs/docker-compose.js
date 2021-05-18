@@ -4,6 +4,8 @@ var getServices = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     script: "docker-compose config --services",
     splitOn: "\n",
 };
@@ -49,6 +51,8 @@ var getServices = {
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
 =======
+=======
+>>>>>>> 8601a08... feat: add built files
     script: function (context) {
         if (context.includes("-f")) {
             var index = context.indexOf("-f");
@@ -57,9 +61,26 @@ var getServices = {
         return "docker-compose config --services";
     },
     splitOn: "\n",
+<<<<<<< HEAD
+=======
+  script: function (context) {
+    if (context.includes("-f")) {
+      var index = context.indexOf("-f");
+      return "docker-compose -f " + context[index + 1] + " config --services";
+    }
+    return "docker-compose config --services";
+  },
+  splitOn: "\n",
+>>>>>>> 39a91f1... feat: apply new rule to files
+=======
+>>>>>>> 8601a08... feat: add built files
 };
 >>>>>>> d0857f4... feat: update formatting
 var completionSpec = {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8601a08... feat: add built files
     name: "docker-compose",
     description: "",
     subcommands: [
@@ -69,6 +90,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -139,6 +161,9 @@ var completionSpec = {
 =======
                     name: ["--build-arg"],
 >>>>>>> d0857f4... feat: update formatting
+=======
+                    name: ["--build-arg"],
+>>>>>>> 8601a08... feat: add built files
                     description: "Set build-time variables for services.",
                     args: {},
                 },
@@ -189,6 +214,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -210,12 +236,18 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+                    args: {},
+                },
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "config",
             description: "Validate and view the Compose file.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -266,6 +298,9 @@ var completionSpec = {
 =======
                     name: ["--resolve-image-digests"],
 >>>>>>> d0857f4... feat: update formatting
+=======
+                    name: ["--resolve-image-digests"],
+>>>>>>> 8601a08... feat: add built files
                     description: "Pin image tags to digests.",
                     args: {},
                 },
@@ -294,6 +329,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     name: [
                         "--hash"
                     ],
@@ -308,10 +344,13 @@ var completionSpec = {
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
 =======
 >>>>>>> d0857f4... feat: update formatting
+=======
+>>>>>>> 8601a08... feat: add built files
                     name: ["--hash"],
                     description: 'Print the service config hash, one per line. Set "service1,service2" for a list of specified services or use the wildcard symbol to display all services.',
                     args: {},
                 },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -324,6 +363,9 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "create",
@@ -331,6 +373,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -371,6 +414,9 @@ var completionSpec = {
 =======
                     name: ["--force-recreate"],
 >>>>>>> d0857f4... feat: update formatting
+=======
+                    name: ["--force-recreate"],
+>>>>>>> 8601a08... feat: add built files
                     description: "Recreate containers even if their configuration and image haven't changed. Incompatible with --no-recreate.",
                     args: {},
                 },
@@ -387,6 +433,7 @@ var completionSpec = {
                 {
                     name: ["--build"],
                     description: "Build images before creating containers.",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -412,12 +459,18 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+                    args: {},
+                },
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "down",
             description: "Stops containers and removes containers, networks, volumes, and images",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -458,6 +511,9 @@ var completionSpec = {
 =======
                     name: ["--rmi"],
 >>>>>>> d0857f4... feat: update formatting
+=======
+                    name: ["--rmi"],
+>>>>>>> 8601a08... feat: add built files
                     description: "Remove images. Type must be one of: 'all': Remove all images used by any service. 'local': Remove only images that don't have a custom tag set by the `image` field.",
                     args: {},
                 },
@@ -474,6 +530,7 @@ var completionSpec = {
                 {
                     name: ["-t", "--timeout"],
                     description: "Specify a shutdown timeout in seconds. (default: 10)",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -499,6 +556,11 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+                    args: {},
+                },
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "events",
@@ -506,6 +568,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -535,10 +598,13 @@ var completionSpec = {
 =======
 =======
 >>>>>>> d0857f4... feat: update formatting
+=======
+>>>>>>> 8601a08... feat: add built files
                     name: ["--json"],
                     description: "Output events as a stream of json objects",
                     args: {},
                 },
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 73a70d9... npm run build
 =======
@@ -547,6 +613,9 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "exec",
@@ -554,6 +623,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -610,6 +680,9 @@ var completionSpec = {
 =======
                     name: ["-d", "--detach"],
 >>>>>>> d0857f4... feat: update formatting
+=======
+                    name: ["-d", "--detach"],
+>>>>>>> 8601a08... feat: add built files
                     description: "Detached mode: Run command in the background.",
                     args: {},
                 },
@@ -645,6 +718,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -666,12 +740,20 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+                    args: {},
+                },
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "help",
             description: "Get help on a command.",
+<<<<<<< HEAD
             options: [],
             subcommands: [],
+=======
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "images",
@@ -679,6 +761,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -700,10 +783,13 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> 8601a08... feat: add built files
                     name: ["-q", "--quiet"],
                     description: "Only display IDs",
                     args: {},
                 },
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 59955ff... feat: add missing transpiled files
 =======
@@ -721,6 +807,9 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "kill",
@@ -728,6 +817,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -748,10 +838,13 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> 8601a08... feat: add built files
                     name: ["-s"],
                     description: "SIGNAL to send to the container. Default signal is SIGKILL.",
                     args: {},
                 },
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 59955ff... feat: add missing transpiled files
 =======
@@ -769,6 +862,9 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "logs",
@@ -776,6 +872,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -816,6 +913,9 @@ var completionSpec = {
 =======
                     name: ["--no-color"],
 >>>>>>> d0857f4... feat: update formatting
+=======
+                    name: ["--no-color"],
+>>>>>>> 8601a08... feat: add built files
                     description: "Produce monochrome output.",
                     args: {},
                 },
@@ -832,6 +932,7 @@ var completionSpec = {
                 {
                     name: ["--tail"],
                     description: "Number of lines to show from the end of the logs for each container.",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -857,19 +958,28 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+                    args: {},
+                },
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "pause",
             description: "Pause services.",
             args: [getServices],
+<<<<<<< HEAD
             options: [],
             subcommands: [],
+=======
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "port",
             description: "Print the public port for a port binding.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -900,12 +1010,16 @@ var completionSpec = {
 =======
                     name: ["--protocol"],
 >>>>>>> d0857f4... feat: update formatting
+=======
+                    name: ["--protocol"],
+>>>>>>> 8601a08... feat: add built files
                     description: "tcp or udp [default: tcp]",
                     args: {},
                 },
                 {
                     name: ["--index"],
                     description: "index of the container if there are multiple instances of a service [default: 1]",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -931,6 +1045,11 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+                    args: {},
+                },
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "ps",
@@ -938,6 +1057,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -979,6 +1099,9 @@ var completionSpec = {
 =======
                     name: ["-q", "--quiet"],
 >>>>>>> d0857f4... feat: update formatting
+=======
+                    name: ["-q", "--quiet"],
+>>>>>>> 8601a08... feat: add built files
                     description: "Only display IDs",
                     args: {},
                 },
@@ -995,6 +1118,7 @@ var completionSpec = {
                 {
                     name: ["-a", "--all"],
                     description: "Show all stopped containers (including those created by the run command)",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1020,12 +1144,18 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+                    args: {},
+                },
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "pull",
             description: "Pulls images for services defined in a Compose file, but does not start the containers.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1071,6 +1201,9 @@ var completionSpec = {
 =======
                     name: ["--ignore-pull-failures"],
 >>>>>>> d0857f4... feat: update formatting
+=======
+                    name: ["--ignore-pull-failures"],
+>>>>>>> 8601a08... feat: add built files
                     description: "Pull what it can and ignores images with pull failures.",
                     args: {},
                 },
@@ -1096,6 +1229,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -1117,12 +1251,18 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+                    args: {},
+                },
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "push",
             description: "Pushes images for services.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1143,10 +1283,13 @@ var completionSpec = {
 =======
 =======
 >>>>>>> d0857f4... feat: update formatting
+=======
+>>>>>>> 8601a08... feat: add built files
                     name: ["--ignore-push-failures"],
                     description: "Push what it can and ignores images with push failures.",
                     args: {},
                 },
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 59955ff... feat: add missing transpiled files
 =======
@@ -1164,6 +1307,9 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "restart",
@@ -1171,6 +1317,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1201,10 +1348,13 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> 8601a08... feat: add built files
                     name: ["-t", "--timeout"],
                     description: "Specify a shutdown timeout in seconds. (default: 10)",
                     args: {},
                 },
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 73a70d9... npm run build
 =======
@@ -1213,6 +1363,9 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "rm",
@@ -1220,6 +1373,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1261,6 +1415,9 @@ var completionSpec = {
 =======
                     name: ["-f", "--force"],
 >>>>>>> d0857f4... feat: update formatting
+=======
+                    name: ["-f", "--force"],
+>>>>>>> 8601a08... feat: add built files
                     description: "Don't ask to confirm removal",
                     args: {},
                 },
@@ -1274,6 +1431,7 @@ var completionSpec = {
                     description: "Remove any anonymous volumes attached to containers",
                     args: {},
                 },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1297,6 +1455,9 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "run",
@@ -1304,6 +1465,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1395,6 +1557,9 @@ var completionSpec = {
 =======
                     name: ["-d", "--detach"],
 >>>>>>> d0857f4... feat: update formatting
+=======
+                    name: ["-d", "--detach"],
+>>>>>>> 8601a08... feat: add built files
                     description: "Detached mode: Run container in the background, print new container name.",
                     args: {},
                 },
@@ -1465,6 +1630,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -1486,12 +1652,18 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+                    args: {},
+                },
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "scale",
             description: "Set number of containers to run for a service.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1521,10 +1693,13 @@ var completionSpec = {
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
 =======
 >>>>>>> d0857f4... feat: update formatting
+=======
+>>>>>>> 8601a08... feat: add built files
                     name: ["-t", "--timeout"],
                     description: "Specify a shutdown timeout in seconds. (default: 10)",
                     args: {},
                 },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 73a70d9... npm run build
@@ -1534,13 +1709,19 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "start",
             description: "Start existing containers.",
             args: [getServices],
+<<<<<<< HEAD
             options: [],
             subcommands: [],
+=======
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "stop",
@@ -1553,6 +1734,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     name: ["-t", "--timeout"],
                     description: "Specify a shutdown timeout in seconds.\n                             (default: 10)\n",
                     args: {},
@@ -1578,10 +1760,13 @@ var completionSpec = {
 =======
 =======
 >>>>>>> d0857f4... feat: update formatting
+=======
+>>>>>>> 8601a08... feat: add built files
                     name: ["-t", "--timeout"],
                     description: "Specify a shutdown timeout in seconds. (default: 10)",
                     args: {},
                 },
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 73a70d9... npm run build
 =======
@@ -1590,18 +1775,27 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "top",
             description: "Display the running processes",
+<<<<<<< HEAD
             options: [],
             subcommands: [],
+=======
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "unpause",
             description: "Unpause services.",
+<<<<<<< HEAD
             options: [],
             subcommands: [],
+=======
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "up",
@@ -1609,6 +1803,7 @@ var completionSpec = {
             args: [getServices],
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1715,6 +1910,9 @@ var completionSpec = {
 =======
                     name: ["-d", "--detach"],
 >>>>>>> d0857f4... feat: update formatting
+=======
+                    name: ["-d", "--detach"],
+>>>>>>> 8601a08... feat: add built files
                     description: "Detached mode: Run containers in the background, print new container names. Incompatible with",
                     args: {},
                 },
@@ -1800,6 +1998,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     args: {}
                 }
 >>>>>>> 188445b... style(docker-compose): Clean up whitespace
@@ -1821,12 +2020,18 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             ],
             subcommands: [],
+=======
+                    args: {},
+                },
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "version",
             description: "Show version information and quit.",
             options: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1869,11 +2074,14 @@ var completionSpec = {
 =======
 =======
 >>>>>>> d0857f4... feat: update formatting
+=======
+>>>>>>> 8601a08... feat: add built files
                     name: ["--short"],
                     description: "Shows only Compose's version number.",
                     args: {},
                 },
             ],
+<<<<<<< HEAD
             subcommands: [],
         },
 <<<<<<< HEAD
@@ -1882,6 +2090,9 @@ var completionSpec = {
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
 =======
 >>>>>>> d0857f4... feat: update formatting
+=======
+        },
+>>>>>>> 8601a08... feat: add built files
     ],
     options: [
         {
@@ -1943,6 +2154,82 @@ var completionSpec = {
         {
             description: "Do not print ANSI control characters (DEPRECATED)",
             name: ["--no-ansi"],
+<<<<<<< HEAD
+=======
+  name: "docker-compose",
+  description: "",
+  subcommands: [
+    {
+      name: "build",
+      description: "Build or rebuild services.",
+      args: [getServices],
+      options: [
+        {
+          name: ["--build-arg"],
+          description: "Set build-time variables for services.",
+          args: {},
+        },
+        {
+          name: ["--compress"],
+          description: "Compress the build context using gzip.",
+          args: {},
+        },
+        {
+          name: ["--force-rm"],
+          description: "Always remove intermediate containers.",
+          args: {},
+        },
+        {
+          name: ["-m", "--memory"],
+          description: "Set memory limit for the build container.",
+          args: {},
+        },
+        {
+          name: ["--no-cache"],
+          description: "Do not use cache when building the image.",
+          args: {},
+        },
+        {
+          name: ["--no-rm"],
+          description:
+            "Do not remove intermediate containers after a successful build.",
+          args: {},
+        },
+        {
+          name: ["--parallel"],
+          description: "Build images in parallel.",
+          args: {},
+        },
+        {
+          name: ["--progress"],
+          description:
+            "Set type of progress output (auto, plain, tty). EXPERIMENTAL flag for native builder. To enable, run with COMPOSE_DOCKER_CLI_BUILD=1)",
+          args: {},
+        },
+        {
+          name: ["--pull"],
+          description: "Always attempt to pull a newer version of the image.",
+          args: {},
+        },
+        {
+          name: ["-q", "--quiet"],
+          description: "Don't print anything to STDOUT",
+          args: {},
+        },
+      ],
+      subcommands: [],
+    },
+    {
+      name: "config",
+      description: "Validate and view the Compose file.",
+      options: [
+        {
+          name: ["--resolve-image-digests"],
+          description: "Pin image tags to digests.",
+          args: {},
+>>>>>>> 39a91f1... feat: apply new rule to files
+=======
+>>>>>>> 8601a08... feat: add built files
         },
         {
             description: "Print version and exit",
@@ -2000,10 +2287,15 @@ var completionSpec = {
             name: ["--compatibility"],
         },
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8601a08... feat: add built files
             args: {
                 name: "PATH",
                 template: "filepaths",
             },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2025,9 +2317,21 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
             description: "Specify an alternate environment file",
             name: ["--env-file"],
+=======
+          name: ["-v", "--volumes"],
+          description:
+            "Remove named volumes declared in the `volumes` section of the Compose file and anonymous volumes attached to containers.",
+          args: {},
+>>>>>>> 39a91f1... feat: apply new rule to files
+=======
+            description: "Specify an alternate environment file",
+            name: ["--env-file"],
+>>>>>>> 8601a08... feat: add built files
         },
     ],
 };
+<<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2039,3 +2343,8 @@ var completionSpec = {
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
 =======
 >>>>>>> d0857f4... feat: update formatting
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
+=======
+
+>>>>>>> 8601a08... feat: add built files

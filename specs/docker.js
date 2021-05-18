@@ -6,6 +6,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 var generators = {
     runningDockerContainers: {
         script: "docker ps --format '{{ json . }}'",
@@ -28,12 +30,15 @@ var generators = {
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
 =======
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
 var __assign =
   (this && this.__assign) ||
   function () {
     __assign =
       Object.assign ||
       function (t) {
+<<<<<<< HEAD
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
 var __assign = (this && this.__assign) || function () {
@@ -3254,6 +3259,12 @@ var completionSpec = {
 =======
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
+=======
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+>>>>>>> 8601a08... feat: add built files
         for (var s, i = 1, n = arguments.length; i < n; i++) {
             s = arguments[i];
             for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
@@ -3302,6 +3313,10 @@ var dockerGenerators = {
             }); });
         },
     },
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8601a08... feat: add built files
     dockerHubSearch: {
         script: function (context) {
             if (context[context.length - 1] === "")
@@ -3309,7 +3324,10 @@ var dockerGenerators = {
             var searchTerm = context[context.length - 1];
             return "docker search " + searchTerm + " --format '{{ json . }}'";
         },
+<<<<<<< HEAD
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> 8601a08... feat: add built files
         postProcess: function (out) {
             var allLines = out
                 .split("\n")
@@ -3318,6 +3336,7 @@ var dockerGenerators = {
                 name: "" + i.Name,
                 icon: "fig://icon?type=docker",
             }); });
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> d8e6cde...  added docker icon
         },
@@ -3511,11 +3530,20 @@ var dockerGenerators = {
 =======
 >>>>>>> 73a70d9... npm run build
 =======
+=======
+>>>>>>> 8601a08... feat: add built files
         },
         trigger: function () {
             return true;
         },
+<<<<<<< HEAD
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+    trigger: function () {
+      return true;
+>>>>>>> 39a91f1... feat: apply new rule to files
+=======
+>>>>>>> 8601a08... feat: add built files
     },
 };
 var containersArg = {
@@ -3527,6 +3555,8 @@ var imagesArg = {
     generators: [dockerGenerators.allLocalImages],
 };
 var containerAndCommandArgs = [
+<<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 59955ff... feat: add missing transpiled files
 =======
@@ -3789,6 +3819,261 @@ var completionSpec = {
 =======
 >>>>>>> d0857f4... feat: update formatting
             ],
+=======
+  containersArg,
+  {
+    name: "command",
+    isCommand: true,
+  },
+];
+var completionSpec = {
+  name: "docker",
+  description: "A self-sufficient runtime for containers",
+  subcommands: [
+    {
+      name: "attach",
+      description:
+        "Attach local standard input, output, and error streams to a running container,",
+      args: containersArg,
+      options: [
+        {
+          name: ["--detach-keys"],
+          description: "Override the key sequence for detaching a container",
+          args: {
+            name: "string",
+          },
+>>>>>>> 39a91f1... feat: apply new rule to files
+        },
+        {
+          name: ["--no-stdin"],
+          description: "Do not attach STDIN",
+          args: {},
+        },
+        {
+          name: ["--sig-proxy"],
+          description:
+            "Proxy all received signals to the process (default true)",
+          args: {},
+        },
+      ],
+      subcommands: [],
+=======
+    containersArg,
+    {
+        name: "command",
+        isCommand: true,
+>>>>>>> 8601a08... feat: add built files
+    },
+];
+var completionSpec = {
+    name: "docker",
+    description: "A self-sufficient runtime for containers",
+    subcommands: [
+        {
+            name: "attach",
+            description: "Attach local standard input, output, and error streams to a running container,",
+            args: containersArg,
+            options: [
+                {
+                    name: ["--detach-keys"],
+                    description: "Override the key sequence for detaching a container",
+                    args: {
+                        name: "string",
+                    },
+                },
+                {
+                    name: ["--no-stdin"],
+                    description: "Do not attach STDIN",
+                    args: {},
+                },
+                {
+                    name: ["--sig-proxy"],
+                    description: "Proxy all received signals to the process (default true)",
+                    args: {},
+                },
+            ],
+        },
+        {
+            name: "build",
+            description: "Build an image from a Dockerfile",
+            args: {
+                name: "path",
+                generators: [
+                    {
+                        template: "folders",
+                    },
+                ],
+            },
+            options: [
+                {
+                    name: "--add-host",
+                    args: {
+                        name: "list",
+                        description: "Add a custom host-to-IP mapping (host:ip)",
+                    },
+                },
+                {
+                    name: "--build-arg",
+                    args: {
+                        name: "list",
+                        description: "Set build-time variables",
+                    },
+                },
+                {
+                    name: "--cache-from",
+                    args: {
+                        name: "strings",
+                        description: "Images to consider as cache sources",
+                    },
+                },
+                {
+                    name: "--disable-content-trust",
+                    description: "Skip image verification (default true)",
+                },
+                {
+                    name: ["-f", "--file"],
+                    description: "Name of the Dockerfile (Default is 'PATH/Dockerfile')",
+                    args: {
+                        name: "string",
+                        generators: [
+                            {
+                                template: "filepaths",
+                            },
+                        ],
+                    },
+                },
+                {
+                    name: "--iidfile",
+                    description: "Write the image ID to the file",
+                    args: {
+                        name: "string",
+                    },
+                },
+                {
+                    name: "--isolation",
+                    description: "Container isolation technology",
+                    args: {
+                        name: "string",
+                    },
+                },
+                {
+                    name: "--label",
+                    description: "Set metadata for an image",
+                    args: {
+                        name: "list",
+                    },
+                },
+                {
+                    name: "--network",
+                    description: 'Set the networking mode for the RUN instructions during build (default "default")',
+                    args: {
+                        name: "string",
+                    },
+                },
+                {
+                    name: "--no-cache",
+                    description: "Do not use cache when building the image",
+                },
+                {
+                    name: ["-o", "--output"],
+                    description: "Output destination (format: type=local,dest=path)",
+                    args: {
+                        name: "stringArray",
+                    },
+                },
+                {
+                    name: "--platform",
+                    description: "Set platform if server is multi-platform capable",
+                    args: {
+                        name: "string",
+                    },
+                },
+                {
+                    name: "--progress",
+                    description: "Set type of progress output (auto, plain, tty). Use plain to show container output",
+                    args: {
+                        name: "string",
+                        suggestions: ["auto", "plain", "tty"].map(function (i) { return ({ name: i }); }),
+                    },
+                },
+                {
+                    name: "--pull",
+                    description: "Always attempt to pull a newer version of the image",
+                },
+                {
+                    name: ["-q", "--quiet"],
+                    description: "Suppress the build output and print image ID on success",
+                },
+                {
+                    name: "--secret",
+                    description: "Secret file to expose to the build (only if BuildKit enabled): id=mysecret,src=/local/secret",
+                    args: {
+                        name: "stringArray",
+                    },
+                },
+                {
+                    name: "--squash",
+                    description: "Squash newly built layers into a single new layer",
+                },
+                {
+                    name: "--ssh",
+                    description: "SSH agent socket or keys to expose to the build (only if BuildKit enabled) (format: default|<id>[=<socket>|<key>[,<key>]])",
+                    args: {
+                        name: "stringArray",
+                    },
+                },
+                {
+                    name: ["-t", "--tag"],
+                    description: "Name and optionally a tag in the 'name:tag' format",
+                },
+                {
+                    name: "--target",
+                    description: "Set the target build stage to build",
+                    args: {
+                        name: "target build stage",
+                        generators: [
+                            {
+                                trigger: function () {
+                                    return true;
+                                },
+                                script: function (context) {
+                                    var fileFlagIndex, dockerfilePath;
+                                    if (context.includes("-f")) {
+                                        fileFlagIndex = context.indexOf("-f");
+                                        dockerfilePath = context[fileFlagIndex + 1];
+                                    }
+                                    else if (context.includes("--file")) {
+                                        fileFlagIndex = context.indexOf("--file");
+                                        dockerfilePath = context[fileFlagIndex + 1];
+                                    }
+                                    else {
+                                        dockerfilePath = "$PWD/Dockerfile";
+                                    }
+                                    return "grep -iE 'FROM.*AS' \"" + dockerfilePath + "\"";
+                                },
+                                postProcess: function (out) {
+                                    // This just searches the Dockerfile for the alias name after AS,
+                                    // and due to the grep above, will only match lines where FROM and AS
+                                    // are on the same line. This could certainly be made more robust
+                                    // down the line.
+                                    var imageNameRegexp = /(?:[aA][sS]\s+)([\w:.-]+)/;
+                                    return out
+                                        .split("\n")
+                                        .map(function (i) {
+                                        var result = imageNameRegexp.exec(i);
+                                        if (result) {
+                                            return {
+                                                name: result[1],
+                                            };
+                                        }
+                                    })
+                                        .filter(function (i) { return i !== undefined; });
+                                },
+                            },
+                        ],
+                    },
+                },
+            ],
         },
         {
             name: "commit",
@@ -3826,7 +4111,6 @@ var completionSpec = {
                     name: ["-p", "--pause"],
                 },
             ],
-            subcommands: [],
         },
         {
             name: "cp",
@@ -3834,6 +4118,607 @@ var completionSpec = {
             args: {
                 name: "CONTAINER:SRC_PATH DEST_PATH|- OR SRC_PATH|- CONTAINER:DEST_PATH",
             },
+<<<<<<< HEAD
+          },
+          {
+            script: "docker images -a --format '{{ json . }}'",
+            postProcess: function (out) {
+              var allLines = out.split("\n").map(function (line) {
+                return JSON.parse(line);
+              });
+              return allLines.map(function (i) {
+                var displayName;
+                if (i.Repository === "\u003cnone\u003e") {
+                  displayName = i.ID;
+                } else {
+                  displayName = i.Repository;
+                  if (i.Tag !== "\u003cnone\u003e") {
+                    displayName += ":" + i.Tag;
+                  }
+                }
+                return {
+                  name: i.ID,
+                  displayName: "[img] " + displayName,
+                };
+              });
+            },
+          },
+          {
+            script: "docker volume ls --format '{{ json . }}'",
+            postProcess: function (out) {
+              var allLines = out.split("\n").map(function (line) {
+                return JSON.parse(line);
+              });
+              return allLines.map(function (i) {
+                return {
+                  name: i.Name,
+                  displayName: "[vol] " + i.Name,
+                };
+              });
+            },
+          },
+        ],
+      },
+      options: [
+        {
+          name: ["-f", "--format"],
+          description: "Format the output using the given Go template",
+          args: {
+            name: "string",
+          },
+        },
+        {
+          name: ["-s", "--size"],
+          description: "Display total file sizes if the type is container",
+        },
+        {
+          name: "--type",
+          description: "Return JSON for specified type",
+          args: {
+            name: "string",
+          },
+        },
+      ],
+    },
+    {
+      name: "kill",
+      description: "Kill one or more running containers",
+      args: __assign(__assign({}, containersArg), { variadic: true }),
+      subcommands: [],
+    },
+    {
+      name: "load",
+      description: "Load an image from a tar archive or STDIN",
+      args: {},
+      options: [
+        {
+          description: 'Signal to send to the container (default "KILL")',
+          name: ["-s", "--signal"],
+          args: {
+            name: "string",
+          },
+        },
+      ],
+      subcommands: [],
+    },
+    {
+      name: "login",
+      description: "Log in to a Docker registry",
+      args: {
+        name: "server",
+      },
+      options: [
+        {
+          description: "password",
+          name: ["-p", "--password"],
+          args: {
+            name: "string",
+          },
+        },
+        {
+          description: "Take the password from stdin",
+          name: ["--password-stdin"],
+        },
+        {
+          description: "username",
+          name: ["-u", "--username"],
+          args: {
+            name: "string",
+          },
+        },
+      ],
+      subcommands: [],
+    },
+    {
+      name: "logout",
+      description: "Log out from a Docker registry",
+      args: {
+        name: "server",
+      },
+      subcommands: [],
+    },
+    {
+      name: "logs",
+      description: "Fetch the logs of a container",
+      args: containersArg,
+      options: [
+        {
+          description: "Show extra details provided to logs",
+          name: ["--details"],
+        },
+        {
+          description: "Follow log output",
+          name: ["-f", "--follow"],
+        },
+        {
+          description:
+            "Show logs since timestamp (e.g. 2013-01-02T13:23:37Z) or relative (e.g. 42m for 42 minutes)",
+          name: ["--since"],
+          args: {
+            name: "string",
+          },
+        },
+        {
+          description:
+            'Number of lines to show from the end of the logs (default "all")',
+          name: ["-n", "--tail"],
+          args: {
+            name: "string",
+          },
+        },
+        {
+          description: "Show timestamps",
+          name: ["-t", "--timestamps"],
+        },
+        {
+          description:
+            "Show logs before a timestamp (e.g. 2013-01-02T13:23:37Z) or relative (e.g. 42m for 42 minutes)",
+          name: ["--until"],
+          args: {
+            name: "string",
+          },
+        },
+      ],
+      subcommands: [],
+    },
+    {
+      name: "pause",
+      description: "Pause all processes within one or more containers",
+      args: containersArg,
+      subcommands: [],
+    },
+    {
+      name: "port",
+      description: "List port mappings or a specific mapping for the container",
+      args: [
+        containersArg,
+        {
+          name: "[PRIVATE_PORT[/PROTO]]",
+        },
+      ],
+      subcommands: [],
+    },
+    {
+      name: "ps",
+      description: "List containers",
+      args: {},
+      options: [
+        {
+          description: "Show all containers (default shows just running)",
+          name: ["-a", "--all"],
+        },
+        {
+          args: {
+            name: "filter",
+          },
+          description: "Filter output based on conditions provided",
+          name: ["-f", "--filter"],
+        },
+        {
+          args: {
+            name: "string",
+          },
+          description: "Pretty-print containers using a Go template",
+          name: ["--format"],
+        },
+        {
+          args: {
+            name: "int",
+          },
+          description:
+            "Show n last created containers (includes all states) (default -1)",
+          name: ["-n", "--last"],
+        },
+        {
+<<<<<<< HEAD
+            name: "import",
+            description: "Import the contents from a tarball to create a filesystem image",
+            args: {
+                name: "file|URL|- [REPOSITORY[:TAG]]",
+            },
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+          },
+        },
+        {
+          name: "command",
+          // description: "The command to run in the container"
+        },
+      ],
+    },
+    {
+      name: "save",
+      description:
+        "Save one or more images to a tar archive (streamed to STDOUT by default)",
+      args: imagesArg,
+      options: [
+        {
+<<<<<<< HEAD
+            name: 'builder',
+            description: 'Manage builds',
+            // TODO Subcommands
+            args: {},
+            options: [],
+            subcommands: [],
+        },
+        {
+            name: 'config',
+            description: 'Manage Docker configs',
+            // TODO Subcommands
+            args: {},
+            options: [],
+            subcommands: [],
+        },
+        {
+            name: 'container',
+            description: 'Manage containers',
+            args: {},
+            options: [],
+            subcommands: [],
+        },
+        {
+            name: 'context',
+            description: 'Manage contexts',
+            args: {},
+            options: [],
+            subcommands: [],
+        },
+        {
+            name: 'image',
+            description: 'Manage images',
+            args: {},
+            options: [],
+            subcommands: [],
+        },
+        {
+            name: 'network',
+            description: 'Manage networks',
+            args: {},
+            options: [],
+            subcommands: [],
+        },
+        {
+            name: 'node',
+            description: 'Manage Swarm nodes',
+            args: {},
+            options: [],
+            subcommands: [],
+        },
+        {
+            name: 'plugin',
+            description: 'Manage plugins',
+            args: {},
+            options: [],
+            subcommands: [],
+        },
+        {
+            name: 'secret',
+            description: 'Manage Docker secrets',
+            args: {},
+            options: [],
+            subcommands: [],
+        },
+        {
+            name: 'service',
+            description: 'Manage services',
+            args: {},
+            options: [],
+            subcommands: [],
+        },
+        {
+            name: 'stack',
+            description: 'Manage Docker stacks',
+            args: {},
+            options: [],
+            subcommands: [],
+        },
+        {
+            name: 'swarm',
+            description: 'Manage Swarm',
+            args: {},
+            options: [],
+            subcommands: [],
+        },
+>>>>>>> e321ca1... feat: update all scripts and  move to ts
+        {
+            name: 'system',
+            description: 'Manage Docker',
+            subcommands: [
+                {
+                    name: 'prune',
+                    description: 'Remove unused data',
+                    options: [
+                        {
+                            name: ['-a', '--all'],
+                            description: 'Remove all unused images not just dangling ones',
+                        },
+                        {
+                            name: '--filter',
+                            description: "Provide filter values (e.g. 'label=<key>=<value')",
+                            args: {
+                                name: 'filter',
+                            },
+                        },
+                        {
+                            name: ['-f', '--force'],
+                            description: 'Do not prompt for confirmation',
+                        },
+                        {
+                            name: '--volumes',
+                            description: 'Prune volumes',
+                        },
+                    ],
+                },
+            ],
+=======
+          description: "Write to a file, instead of STDOUT",
+          name: ["-o", "--output"],
+          args: {
+            name: "string",
+          },
+        },
+      ],
+      subcommands: [],
+    },
+    {
+      name: "search",
+      description: "Search the Docker Hub for images",
+      args: [
+        {
+          name: "TERM",
+          description: "Search term",
+        },
+      ],
+      options: [
+        {
+          args: {
+            name: "filter",
+          },
+          description: "Filter output based on conditions provided",
+          name: ["-f", "--filter"],
+=======
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
+            options: [
+                {
+                    args: {
+                        name: "list",
+                    },
+                    description: "Apply Dockerfile instruction to the created image",
+                    name: ["-c", "--change"],
+                },
+                {
+                    args: {
+                        name: "string",
+                    },
+                    description: "Set commit message for imported image",
+                    name: ["-m", "--message"],
+                },
+                {
+                    args: {
+                        name: "string",
+                    },
+                    description: "Set platform if server is multi-platform capable",
+                    name: ["--platform"],
+                },
+            ],
+            subcommands: [],
+        },
+        {
+            name: "info",
+            description: "Display system-wide information",
+            args: {},
+            options: [
+                {
+                    args: {
+                        name: "string",
+                    },
+                    description: "Format the output using the given Go template",
+                    name: ["-f", "--format"],
+                },
+            ],
+            subcommands: [],
+        },
+        {
+            name: "inspect",
+            description: "Return low-level information on Docker objects",
+            args: {
+                // TODO: There are more types of docker objects beyond running containers
+                // that can be inspected
+                name: "Name or ID",
+                generators: [
+                    {
+                        script: "docker ps -a --format '{{ json . }}'",
+                        postProcess: function (out) {
+                            var allLines = out.split("\n").map(function (line) { return JSON.parse(line); });
+                            return allLines.map(function (i) { return ({
+                                name: i.ID,
+                                displayName: "[con] " + i.ID + " (" + i.Image + ")",
+                            }); });
+                        },
+                    },
+                    {
+                        script: "docker images -a --format '{{ json . }}'",
+                        postProcess: function (out) {
+                            var allLines = out.split("\n").map(function (line) { return JSON.parse(line); });
+                            return allLines.map(function (i) {
+                                var displayName;
+                                if (i.Repository === "\u003cnone\u003e") {
+                                    displayName = i.ID;
+                                }
+                                else {
+                                    displayName = i.Repository;
+                                    if (i.Tag !== "\u003cnone\u003e") {
+                                        displayName += ":" + i.Tag;
+                                    }
+                                }
+                                return {
+                                    name: i.ID,
+                                    displayName: "[img] " + displayName,
+                                };
+                            });
+                        },
+                    },
+                    {
+                        script: "docker volume ls --format '{{ json . }}'",
+                        postProcess: function (out) {
+                            var allLines = out.split("\n").map(function (line) { return JSON.parse(line); });
+                            return allLines.map(function (i) { return ({
+                                name: i.Name,
+                                displayName: "[vol] " + i.Name,
+                            }); });
+                        },
+                    },
+                ],
+            },
+            options: [
+                {
+                    name: ["-f", "--format"],
+                    description: "Format the output using the given Go template",
+                    args: {
+                        name: "string",
+                    },
+                },
+                {
+                    name: ["-s", "--size"],
+                    description: "Display total file sizes if the type is container",
+                },
+                {
+                    name: "--type",
+                    description: "Return JSON for specified type",
+                    args: {
+                        name: "string",
+                    },
+                },
+            ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> 3879070... feat: re-add built specs and update gitignore
+        },
+        {
+            name: "kill",
+            description: "Kill one or more running containers",
+            args: __assign(__assign({}, containersArg), { variadic: true }),
+            options: [],
+            subcommands: [],
+        },
+        {
+            name: "load",
+            description: "Load an image from a tar archive or STDIN",
+            args: {},
+            options: [
+                {
+                    description: 'Signal to send to the container (default "KILL")',
+                    name: ["-s", "--signal"],
+                    args: {
+                        name: "string",
+                    },
+                },
+            ],
+            subcommands: [],
+        },
+        {
+=======
+=======
+          description:
+            "Show the latest created container (includes all states)",
+          name: ["-l", "--latest"],
+>>>>>>> 39a91f1... feat: apply new rule to files
+        },
+        {
+          description: "Don't truncate output",
+          name: ["--no-trunc"],
+        },
+        {
+          description: "Only display container IDs",
+          name: ["-q", "--quiet"],
+        },
+        {
+<<<<<<< HEAD
+>>>>>>> d0857f4... feat: update formatting
+            name: "login",
+            description: "Log in to a Docker registry",
+            args: {
+                name: "server",
+            },
+            options: [
+                {
+                    description: "password",
+                    name: ["-p", "--password"],
+                    args: {
+                        name: "string",
+                    },
+                },
+                {
+                    description: "Take the password from stdin",
+                    name: ["--password-stdin"],
+                },
+                {
+                    description: "username",
+                    name: ["-u", "--username"],
+                    args: {
+                        name: "string",
+                    },
+                },
+            ],
+            subcommands: [],
+=======
+          description: "Display total file sizes",
+          name: ["-s", "--size"],
+>>>>>>> 39a91f1... feat: apply new rule to files
+        },
+      ],
+      subcommands: [],
+    },
+    {
+      name: "pull",
+      description: "Pull an image or a repository from a registry",
+      args: {
+        name: "NAME[:TAG|@DIGEST]",
+        generators: dockerGenerators.dockerHubSearch,
+        debounce: true,
+      },
+      options: [
+        {
+          description: "Download all tagged images in the repository",
+          name: ["-a", "--all-tags"],
+        },
+        {
+          description: "Skip image verification (default true)",
+          name: ["--disable-content-trust"],
+        },
+        {
+          description: "Set platform if server is multi-platform capable",
+          name: ["--platform"],
+          args: {
+            name: "string",
+          },
+=======
             options: [
                 {
                     description: "Archive mode (copy all uid/gid information)",
@@ -3844,7 +4729,7 @@ var completionSpec = {
                     name: ["-L", "--follow-link"],
                 },
             ],
-            subcommands: [],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "create",
@@ -4479,14 +5364,11 @@ var completionSpec = {
                     name: ["-w", "--workdir"],
                 },
             ],
-            subcommands: [],
         },
         {
             name: "diff",
             description: "Inspect changes to files or directories on a container's filesystem",
             args: containersArg,
-            options: [],
-            subcommands: [],
         },
         {
             name: "events",
@@ -4522,7 +5404,6 @@ var completionSpec = {
                     name: ["--until"],
                 },
             ],
-            subcommands: [],
         },
         {
             name: "exec",
@@ -4587,7 +5468,6 @@ var completionSpec = {
                 },
             ],
             args: containerAndCommandArgs,
-            subcommands: [],
         },
         {
             name: "export",
@@ -4602,7 +5482,6 @@ var completionSpec = {
                     },
                 },
             ],
-            subcommands: [],
         },
         {
             name: "history",
@@ -4629,7 +5508,6 @@ var completionSpec = {
                     name: ["-q", "--quiet"],
                 },
             ],
-            subcommands: [],
         },
         {
             name: "images",
@@ -4676,172 +5554,6 @@ var completionSpec = {
             args: {
                 name: "file|URL|- [REPOSITORY[:TAG]]",
             },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          },
-        },
-        {
-          name: "command",
-          // description: "The command to run in the container"
-        },
-      ],
-    },
-    {
-      name: "save",
-      description:
-        "Save one or more images to a tar archive (streamed to STDOUT by default)",
-      args: imagesArg,
-      options: [
-        {
-<<<<<<< HEAD
-            name: 'builder',
-            description: 'Manage builds',
-            // TODO Subcommands
-            args: {},
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: 'config',
-            description: 'Manage Docker configs',
-            // TODO Subcommands
-            args: {},
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: 'container',
-            description: 'Manage containers',
-            args: {},
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: 'context',
-            description: 'Manage contexts',
-            args: {},
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: 'image',
-            description: 'Manage images',
-            args: {},
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: 'network',
-            description: 'Manage networks',
-            args: {},
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: 'node',
-            description: 'Manage Swarm nodes',
-            args: {},
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: 'plugin',
-            description: 'Manage plugins',
-            args: {},
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: 'secret',
-            description: 'Manage Docker secrets',
-            args: {},
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: 'service',
-            description: 'Manage services',
-            args: {},
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: 'stack',
-            description: 'Manage Docker stacks',
-            args: {},
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: 'swarm',
-            description: 'Manage Swarm',
-            args: {},
-            options: [],
-            subcommands: [],
-        },
->>>>>>> e321ca1... feat: update all scripts and  move to ts
-        {
-            name: 'system',
-            description: 'Manage Docker',
-            subcommands: [
-                {
-                    name: 'prune',
-                    description: 'Remove unused data',
-                    options: [
-                        {
-                            name: ['-a', '--all'],
-                            description: 'Remove all unused images not just dangling ones',
-                        },
-                        {
-                            name: '--filter',
-                            description: "Provide filter values (e.g. 'label=<key>=<value')",
-                            args: {
-                                name: 'filter',
-                            },
-                        },
-                        {
-                            name: ['-f', '--force'],
-                            description: 'Do not prompt for confirmation',
-                        },
-                        {
-                            name: '--volumes',
-                            description: 'Prune volumes',
-                        },
-                    ],
-                },
-            ],
-=======
-          description: "Write to a file, instead of STDOUT",
-          name: ["-o", "--output"],
-          args: {
-            name: "string",
-          },
-        },
-      ],
-      subcommands: [],
-    },
-    {
-      name: "search",
-      description: "Search the Docker Hub for images",
-      args: [
-        {
-          name: "TERM",
-          description: "Search term",
-        },
-      ],
-      options: [
-        {
-          args: {
-            name: "filter",
-          },
-          description: "Filter output based on conditions provided",
-          name: ["-f", "--filter"],
-=======
-=======
->>>>>>> 3879070... feat: re-add built specs and update gitignore
-=======
->>>>>>> d0857f4... feat: update formatting
             options: [
                 {
                     args: {
@@ -4865,7 +5577,6 @@ var completionSpec = {
                     name: ["--platform"],
                 },
             ],
-            subcommands: [],
         },
         {
             name: "info",
@@ -4880,7 +5591,6 @@ var completionSpec = {
                     name: ["-f", "--format"],
                 },
             ],
-            subcommands: [],
         },
         {
             name: "inspect",
@@ -4954,18 +5664,11 @@ var completionSpec = {
                     },
                 },
             ],
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> a09fa69... removed linting from all js specs in specs folder
-=======
->>>>>>> 3879070... feat: re-add built specs and update gitignore
         },
         {
             name: "kill",
             description: "Kill one or more running containers",
             args: __assign(__assign({}, containersArg), { variadic: true }),
-            options: [],
-            subcommands: [],
         },
         {
             name: "load",
@@ -4980,35 +5683,8 @@ var completionSpec = {
                     },
                 },
             ],
-            subcommands: [],
         },
         {
-=======
-        },
-        {
-            name: "kill",
-            description: "Kill one or more running containers",
-            args: __assign(__assign({}, containersArg), { variadic: true }),
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: "load",
-            description: "Load an image from a tar archive or STDIN",
-            args: {},
-            options: [
-                {
-                    description: 'Signal to send to the container (default "KILL")',
-                    name: ["-s", "--signal"],
-                    args: {
-                        name: "string",
-                    },
-                },
-            ],
-            subcommands: [],
-        },
-        {
->>>>>>> d0857f4... feat: update formatting
             name: "login",
             description: "Log in to a Docker registry",
             args: {
@@ -5034,7 +5710,6 @@ var completionSpec = {
                     },
                 },
             ],
-            subcommands: [],
         },
         {
             name: "logout",
@@ -5042,8 +5717,6 @@ var completionSpec = {
             args: {
                 name: "server",
             },
-            options: [],
-            subcommands: [],
         },
         {
             name: "logs",
@@ -5084,14 +5757,11 @@ var completionSpec = {
                     },
                 },
             ],
-            subcommands: [],
         },
         {
             name: "pause",
             description: "Pause all processes within one or more containers",
             args: containersArg,
-            options: [],
-            subcommands: [],
         },
         {
             name: "port",
@@ -5102,8 +5772,6 @@ var completionSpec = {
                     name: "[PRIVATE_PORT[/PROTO]]",
                 },
             ],
-            options: [],
-            subcommands: [],
         },
         {
             name: "ps",
@@ -5152,7 +5820,6 @@ var completionSpec = {
                     name: ["-s", "--size"],
                 },
             ],
-            subcommands: [],
         },
         {
             name: "pull",
@@ -5183,7 +5850,6 @@ var completionSpec = {
                     name: ["-q", "--quiet"],
                 },
             ],
-            subcommands: [],
         },
         {
             name: "push",
@@ -5206,7 +5872,6 @@ var completionSpec = {
                     name: ["-q", "--quiet"],
                 },
             ],
-            subcommands: [],
         },
         {
             name: "rename",
@@ -5217,482 +5882,10 @@ var completionSpec = {
                     name: "NEW_NAME",
                 },
             ],
-            options: [],
-            subcommands: [],
         },
         {
-            name: "restart",
-            description: "Restart one or more containers",
-            args: containersArg,
-            options: [
-                {
-                    description: "Seconds to wait for stop before killing the container (default 10)",
-                    name: ["-t", "--time"],
-                    args: {
-                        name: "int",
-                    },
-                },
-            ],
-            subcommands: [],
-        },
-        {
-            name: "rm",
-            description: "Remove one or more containers",
-            args: {
-                variadic: true,
-                name: "containers",
-                suggestions: [
-                    {
-                        name: "$(docker ps -aq)",
-                        insertValue: "$(docker ps -aq)",
-                        description: "All containers, running and exited",
-                    },
-                    {
-                        name: "$(docker ps -q)",
-                        insertValue: "$(docker ps -q)",
-                        description: "All running containers",
-                    },
-                ],
-                generators: [dockerGenerators.allDockerContainers],
-            },
-            options: [
-                {
-                    name: ["-f", "--force"],
-                    description: "Force the removal of a running container (uses SIGKILL)",
-                },
-                {
-                    name: ["-l", "--link"],
-                    description: "Remove the specified link",
-                },
-                {
-                    name: ["-v", "--volumes"],
-                    description: "Remove the anonymous volumes associated with the container",
-                },
-            ],
-        },
-        {
-            name: "rmi",
-            description: "Remove one or more images",
-            args: {
-                variadic: true,
-                name: "image",
-                suggestions: [
-                    {
-                        name: "$(docker images -aq)",
-                        insertValue: "$(docker images -aq)",
-                        description: "All images (including intermediate images)",
-                    },
-                    {
-                        name: "$(docker images -q)",
-                        insertValue: "$(docker images -q)",
-                        description: "All non-intermediate images",
-                    },
-                ],
-                generators: [
-                    {
-                        script: "docker images -aq --format '{{ json . }}'",
-                        postProcess: function (out) {
-                            var allLines = out.split("\n").map(function (line) { return JSON.parse(line); });
-                            return allLines.map(function (i) {
-                                var displayName;
-                                if (i.Repository === "\u003cnone\u003e") {
-                                    displayName = i.ID;
-                                }
-                                else {
-                                    displayName = i.Repository;
-                                    if (i.Tag !== "\u003cnone\u003e") {
-                                        displayName += ":" + i.Tag;
-                                    }
-                                }
-                                return {
-                                    name: i.ID,
-                                    displayName: displayName + " (" + i.Size + ")",
-                                };
-                            });
-                        },
-                    },
-                ],
-            },
-            options: [
-                {
-                    name: ["-f", "--force"],
-                    description: "Force removal of the image",
-                },
-                {
-                    name: "--no-prune",
-                    description: "Do not delete untagged parents",
-                },
-            ],
-        },
-        {
-            name: "run",
-            description: "Run a command in a new container",
-            options: [
-                {
-                    name: ["-i", "--interactive"],
-                    description: "Keep STDIN open even if not attached",
-                },
-                { name: ["-t", "--tty"], description: "Allocate a pseudo-TTY" },
-                {
-                    name: ["-it"],
-                    insertValue: "-it ",
-                    description: "Launch an interactive session",
-                    icon: "fig://icon?type=commandkey",
-                },
-            ],
-            args: [
-                {
-                    name: "image",
-                    description: "the Docker image to use",
-                    generators: {
-                        script: "docker images --format '{{.Repository}} {{.Size}} {{.Tag}} {{.ID}}'",
-                        postProcess: function (out) {
-                            return out.split("\n").map(function (image) {
-                                var _a = image.split(" "), repo = _a[0], size = _a[1], tag = _a[2], id = _a[3];
-                                return {
-                                    name: repo,
-                                    description: id + "@" + tag + " - " + size,
-                                    icon: "fig://icon?type=docker",
-                                };
-                            });
-                        },
-                    },
-                },
-                {
-                    name: "command",
-                    // description: "The command to run in the container"
-                },
-            ],
-        },
-        {
-            name: "save",
-            description: "Save one or more images to a tar archive (streamed to STDOUT by default)",
-            args: imagesArg,
-            options: [
-                {
-                    description: "Write to a file, instead of STDOUT",
-                    name: ["-o", "--output"],
-                    args: {
-                        name: "string",
-                    },
-                },
-            ],
-            subcommands: [],
-        },
-        {
-            name: "search",
-            description: "Search the Docker Hub for images",
-            args: [
-                {
-                    name: "TERM",
-                    description: "Search term",
-                },
-            ],
-            options: [
-                {
-                    args: {
-                        name: "filter",
-                    },
-                    description: "Filter output based on conditions provided",
-                    name: ["-f", "--filter"],
-                },
-                {
-                    args: {
-                        name: "string",
-                    },
-                    description: "Pretty-print search using a Go template",
-                    name: ["--format"],
-                },
-                {
-                    args: {
-                        name: "int",
-                    },
-                    description: "Max number of search results (default 25)",
-                    name: ["--limit"],
-                },
-                {
-                    description: "Don't truncate output",
-                    name: ["--no-trunc"],
-                },
-            ],
-            subcommands: [],
-        },
-        {
-            name: "start",
-            description: "Start one or more stopped containers",
-            args: {
-                name: "container",
-                generators: [dockerGenerators.allDockerContainers],
-            },
-            options: [
-                {
-                    description: "Attach STDOUT/STDERR and forward signals",
-                    name: ["-a", "--attach"],
-                },
-                {
-                    description: "Override the key sequence for detaching a container",
-                    name: ["--detach-keys"],
-                    args: {
-                        name: "string",
-                    },
-                },
-                {
-                    description: "Attach container's STDIN",
-                    name: ["-i", "--interactive"],
-                },
-            ],
-            subcommands: [],
-        },
-        {
-            name: "stats",
-            description: "Display a live stream of container(s) resource usage statistics",
-            args: containersArg,
-            options: [
-                {
-                    description: "Show all containers (default shows just running)",
-                    name: ["-a", "--all"],
-                },
-                {
-                    description: "Pretty-print images using a Go template",
-                    name: ["--format"],
-                    args: {
-                        name: "string",
-                    },
-                },
-                {
-                    description: "Disable streaming stats and only pull the first result",
-                    name: ["--no-stream"],
-                },
-                {
-                    description: "Do not truncate output",
-                    name: ["--no-trunc"],
-                },
-            ],
-            subcommands: [],
-        },
-        {
-            name: "stop",
-            description: "Stop one or more running containers",
-            args: containersArg,
-            options: [
-                {
-                    name: ["-t", "--t"],
-                    description: "Seconds to wait for stop before killing it (default 10)",
-                    args: {
-                        name: "int",
-                    },
-                },
-            ],
-        },
-        {
-            name: "tag",
-            description: "Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE",
-            args: {
-                name: "SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]",
-            },
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: "top",
-            description: "Display the running processes of a container",
-            // TODO: You can pass in psOptions?
-            args: containersArg,
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: "unpause",
-            description: "Unpause all processes within one or more containers",
-            args: {
-                name: "container",
-                generators: [dockerGenerators.pausedDockerContainers],
-            },
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: "update",
-            description: "Update configuration of one or more containers",
-            // INFO: You can do this on any container, even if it's not running - Is that useful though?
-            // INFO: For now, only displaying running containers
-            args: containersArg,
-            options: [
-                {
-                    args: {
-                        name: "uint16",
-                    },
-                    description: "Block IO (relative weight), between 10 and 1000, or 0 to disable (default 0)",
-                    name: ["--blkio-weight"],
-                },
-                {
-                    args: {
-                        name: "int",
-                    },
-                    description: "Limit CPU CFS (Completely Fair Scheduler) period",
-                    name: ["--cpu-period"],
-                },
-                {
-                    args: {
-                        name: "int",
-                    },
-                    description: "Limit CPU CFS (Completely Fair Scheduler) quota",
-                    name: ["--cpu-quota"],
-                },
-                {
-                    args: {
-                        name: "int",
-                    },
-                    description: "Limit the CPU real-time period in microseconds",
-                    name: ["--cpu-rt-period"],
-                },
-                {
-                    args: {
-                        name: "int",
-                    },
-                    description: "Limit the CPU real-time runtime in microseconds",
-                    name: ["--cpu-rt-runtime"],
-                },
-                {
-                    args: {
-                        name: "int",
-                    },
-                    description: "CPU shares (relative weight)",
-                    name: ["-c", "--cpu-shares"],
-                },
-                {
-                    args: {
-                        name: "decimal",
-                    },
-                    description: "Number of CPUs",
-                    name: ["--cpus"],
-                },
-                {
-                    args: {
-                        name: "string",
-                    },
-                    description: "CPUs in which to allow execution (0-3, 0,1)",
-                    name: ["--cpuset-cpus"],
-                },
-                {
-                    args: {
-                        name: "string",
-                    },
-                    description: "MEMs in which to allow execution (0-3, 0,1)",
-                    name: ["--cpuset-mems"],
-                },
-                {
-                    args: {
-                        name: "bytes",
-                    },
-                    description: "Kernel memory limit",
-                    name: ["--kernel-memory"],
-                },
-                {
-                    args: {
-                        name: "bytes",
-                    },
-                    description: "Memory limit",
-                    name: ["-m", "--memory"],
-                },
-                {
-                    args: {
-                        name: "bytes",
-                    },
-                    description: "Memory soft limit",
-                    name: ["--memory-reservation"],
-                },
-                {
-                    args: {
-                        name: "bytes",
-                    },
-                    description: "Swap limit equal to memory plus swap: '-1' to enable unlimited swap",
-                    name: ["--memory-swap"],
-                },
-                {
-                    args: {
-                        name: "int",
-                    },
-                    description: "Tune container pids limit (set -1 for unlimited)",
-                    name: ["--pids-limit"],
-                },
-                {
-                    args: {
-                        name: "string",
-                    },
-                    description: "Restart policy to apply when a container exits",
-                    name: ["--restart"],
-                },
-            ],
-            subcommands: [],
-        },
-        {
-            name: "version",
-            description: "Show the Docker version information",
-            args: {},
-            options: [
-                {
-                    description: "Format the output. Values: [pretty | json]. (Default: pretty)",
-                    name: ["-f", "--format"],
-                    args: {
-                        name: "string",
-                    },
-                },
-                {
-                    description: "Kubernetes config file",
-                    name: ["--kubeconfig"],
-                    args: {
-                        name: "string",
-                    },
-                },
-            ],
-            subcommands: [],
-        },
-        {
-            name: "wait",
-            description: "Block until one or more containers stop, then print their exit codes",
-            args: containersArg,
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: "builder",
-            description: "Manage builds",
-            // TODO Subcommands
-            args: {},
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: "config",
-            description: "Manage Docker configs",
-            // TODO Subcommands
-            args: {},
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: "container",
-            description: "Manage containers",
-            args: {},
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: "context",
-            description: "Manage contexts",
-            args: {},
-            options: [],
-            subcommands: [],
-        },
-        {
-            name: "image",
-            description: "Manage images",
-            args: {},
-            options: [],
-            subcommands: [],
-        },
-        {
+<<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6319,6 +6512,532 @@ var completionSpec = {
                     ],
                 },
             ],
+=======
+          description: "Show all containers (default shows just running)",
+          name: ["-a", "--all"],
+=======
+            name: "restart",
+            description: "Restart one or more containers",
+            args: containersArg,
+            options: [
+                {
+                    description: "Seconds to wait for stop before killing the container (default 10)",
+                    name: ["-t", "--time"],
+                    args: {
+                        name: "int",
+                    },
+                },
+            ],
+>>>>>>> 8601a08... feat: add built files
+        },
+        {
+            name: "rm",
+            description: "Remove one or more containers",
+            args: {
+                variadic: true,
+                name: "containers",
+                suggestions: [
+                    {
+                        name: "$(docker ps -aq)",
+                        insertValue: "$(docker ps -aq)",
+                        description: "All containers, running and exited",
+                    },
+                    {
+                        name: "$(docker ps -q)",
+                        insertValue: "$(docker ps -q)",
+                        description: "All running containers",
+                    },
+                ],
+                generators: [dockerGenerators.allDockerContainers],
+            },
+            options: [
+                {
+                    name: ["-f", "--force"],
+                    description: "Force the removal of a running container (uses SIGKILL)",
+                },
+                {
+                    name: ["-l", "--link"],
+                    description: "Remove the specified link",
+                },
+                {
+                    name: ["-v", "--volumes"],
+                    description: "Remove the anonymous volumes associated with the container",
+                },
+            ],
+        },
+        {
+            name: "rmi",
+            description: "Remove one or more images",
+            args: {
+                variadic: true,
+                name: "image",
+                suggestions: [
+                    {
+                        name: "$(docker images -aq)",
+                        insertValue: "$(docker images -aq)",
+                        description: "All images (including intermediate images)",
+                    },
+                    {
+                        name: "$(docker images -q)",
+                        insertValue: "$(docker images -q)",
+                        description: "All non-intermediate images",
+                    },
+                ],
+                generators: [
+                    {
+                        script: "docker images -aq --format '{{ json . }}'",
+                        postProcess: function (out) {
+                            var allLines = out.split("\n").map(function (line) { return JSON.parse(line); });
+                            return allLines.map(function (i) {
+                                var displayName;
+                                if (i.Repository === "\u003cnone\u003e") {
+                                    displayName = i.ID;
+                                }
+                                else {
+                                    displayName = i.Repository;
+                                    if (i.Tag !== "\u003cnone\u003e") {
+                                        displayName += ":" + i.Tag;
+                                    }
+                                }
+                                return {
+                                    name: i.ID,
+                                    displayName: displayName + " (" + i.Size + ")",
+                                };
+                            });
+                        },
+                    },
+                ],
+            },
+            options: [
+                {
+                    name: ["-f", "--force"],
+                    description: "Force removal of the image",
+                },
+                {
+                    name: "--no-prune",
+                    description: "Do not delete untagged parents",
+                },
+            ],
+        },
+        {
+            name: "run",
+            description: "Run a command in a new container",
+            options: [
+                {
+                    name: ["-i", "--interactive"],
+                    description: "Keep STDIN open even if not attached",
+                },
+                { name: ["-t", "--tty"], description: "Allocate a pseudo-TTY" },
+                {
+                    name: ["-it"],
+                    insertValue: "-it ",
+                    description: "Launch an interactive session",
+                    icon: "fig://icon?type=commandkey",
+                },
+            ],
+            args: [
+                {
+                    name: "image",
+                    description: "the Docker image to use",
+                    generators: {
+                        script: "docker images --format '{{.Repository}} {{.Size}} {{.Tag}} {{.ID}}'",
+                        postProcess: function (out) {
+                            return out.split("\n").map(function (image) {
+                                var _a = image.split(" "), repo = _a[0], size = _a[1], tag = _a[2], id = _a[3];
+                                return {
+                                    name: repo,
+                                    description: id + "@" + tag + " - " + size,
+                                    icon: "fig://icon?type=docker",
+                                };
+                            });
+                        },
+                    },
+                },
+                {
+                    name: "command",
+                    // description: "The command to run in the container"
+                },
+            ],
+        },
+        {
+            name: "save",
+            description: "Save one or more images to a tar archive (streamed to STDOUT by default)",
+            args: imagesArg,
+            options: [
+                {
+                    description: "Write to a file, instead of STDOUT",
+                    name: ["-o", "--output"],
+                    args: {
+                        name: "string",
+                    },
+                },
+            ],
+        },
+        {
+            name: "search",
+            description: "Search the Docker Hub for images",
+            args: [
+                {
+                    name: "TERM",
+                    description: "Search term",
+                },
+            ],
+            options: [
+                {
+                    args: {
+                        name: "filter",
+                    },
+                    description: "Filter output based on conditions provided",
+                    name: ["-f", "--filter"],
+                },
+                {
+                    args: {
+                        name: "string",
+                    },
+                    description: "Pretty-print search using a Go template",
+                    name: ["--format"],
+                },
+                {
+                    args: {
+                        name: "int",
+                    },
+                    description: "Max number of search results (default 25)",
+                    name: ["--limit"],
+                },
+                {
+                    description: "Don't truncate output",
+                    name: ["--no-trunc"],
+                },
+            ],
+        },
+        {
+            name: "start",
+            description: "Start one or more stopped containers",
+            args: {
+                name: "container",
+                generators: [dockerGenerators.allDockerContainers],
+            },
+            options: [
+                {
+                    description: "Attach STDOUT/STDERR and forward signals",
+                    name: ["-a", "--attach"],
+                },
+                {
+                    description: "Override the key sequence for detaching a container",
+                    name: ["--detach-keys"],
+                    args: {
+                        name: "string",
+                    },
+                },
+                {
+                    description: "Attach container's STDIN",
+                    name: ["-i", "--interactive"],
+                },
+            ],
+        },
+        {
+            name: "stats",
+            description: "Display a live stream of container(s) resource usage statistics",
+            args: containersArg,
+            options: [
+                {
+                    description: "Show all containers (default shows just running)",
+                    name: ["-a", "--all"],
+                },
+                {
+                    description: "Pretty-print images using a Go template",
+                    name: ["--format"],
+                    args: {
+                        name: "string",
+                    },
+                },
+                {
+                    description: "Disable streaming stats and only pull the first result",
+                    name: ["--no-stream"],
+                },
+                {
+                    description: "Do not truncate output",
+                    name: ["--no-trunc"],
+                },
+            ],
+        },
+        {
+            name: "stop",
+            description: "Stop one or more running containers",
+            args: containersArg,
+            options: [
+                {
+                    name: ["-t", "--t"],
+                    description: "Seconds to wait for stop before killing it (default 10)",
+                    args: {
+                        name: "int",
+                    },
+                },
+            ],
+        },
+        {
+            name: "tag",
+            description: "Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE",
+            args: {
+                name: "SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]",
+            },
+        },
+        {
+            name: "top",
+            description: "Display the running processes of a container",
+            // TODO: You can pass in psOptions?
+            args: containersArg,
+        },
+        {
+            name: "unpause",
+            description: "Unpause all processes within one or more containers",
+            args: {
+                name: "container",
+                generators: [dockerGenerators.pausedDockerContainers],
+            },
+        },
+        {
+            name: "update",
+            description: "Update configuration of one or more containers",
+            // INFO: You can do this on any container, even if it's not running - Is that useful though?
+            // INFO: For now, only displaying running containers
+            args: containersArg,
+            options: [
+                {
+                    args: {
+                        name: "uint16",
+                    },
+                    description: "Block IO (relative weight), between 10 and 1000, or 0 to disable (default 0)",
+                    name: ["--blkio-weight"],
+                },
+                {
+                    args: {
+                        name: "int",
+                    },
+                    description: "Limit CPU CFS (Completely Fair Scheduler) period",
+                    name: ["--cpu-period"],
+                },
+                {
+                    args: {
+                        name: "int",
+                    },
+                    description: "Limit CPU CFS (Completely Fair Scheduler) quota",
+                    name: ["--cpu-quota"],
+                },
+                {
+                    args: {
+                        name: "int",
+                    },
+                    description: "Limit the CPU real-time period in microseconds",
+                    name: ["--cpu-rt-period"],
+                },
+                {
+                    args: {
+                        name: "int",
+                    },
+                    description: "Limit the CPU real-time runtime in microseconds",
+                    name: ["--cpu-rt-runtime"],
+                },
+                {
+                    args: {
+                        name: "int",
+                    },
+                    description: "CPU shares (relative weight)",
+                    name: ["-c", "--cpu-shares"],
+                },
+                {
+                    args: {
+                        name: "decimal",
+                    },
+                    description: "Number of CPUs",
+                    name: ["--cpus"],
+                },
+                {
+                    args: {
+                        name: "string",
+                    },
+                    description: "CPUs in which to allow execution (0-3, 0,1)",
+                    name: ["--cpuset-cpus"],
+                },
+                {
+                    args: {
+                        name: "string",
+                    },
+                    description: "MEMs in which to allow execution (0-3, 0,1)",
+                    name: ["--cpuset-mems"],
+                },
+                {
+                    args: {
+                        name: "bytes",
+                    },
+                    description: "Kernel memory limit",
+                    name: ["--kernel-memory"],
+                },
+                {
+                    args: {
+                        name: "bytes",
+                    },
+                    description: "Memory limit",
+                    name: ["-m", "--memory"],
+                },
+                {
+                    args: {
+                        name: "bytes",
+                    },
+                    description: "Memory soft limit",
+                    name: ["--memory-reservation"],
+                },
+                {
+                    args: {
+                        name: "bytes",
+                    },
+                    description: "Swap limit equal to memory plus swap: '-1' to enable unlimited swap",
+                    name: ["--memory-swap"],
+                },
+                {
+                    args: {
+                        name: "int",
+                    },
+                    description: "Tune container pids limit (set -1 for unlimited)",
+                    name: ["--pids-limit"],
+                },
+                {
+                    args: {
+                        name: "string",
+                    },
+                    description: "Restart policy to apply when a container exits",
+                    name: ["--restart"],
+                },
+            ],
+        },
+        {
+            name: "version",
+            description: "Show the Docker version information",
+            args: {},
+            options: [
+                {
+                    description: "Format the output. Values: [pretty | json]. (Default: pretty)",
+                    name: ["-f", "--format"],
+                    args: {
+                        name: "string",
+                    },
+                },
+                {
+                    description: "Kubernetes config file",
+                    name: ["--kubeconfig"],
+                    args: {
+                        name: "string",
+                    },
+                },
+            ],
+        },
+        {
+            name: "wait",
+            description: "Block until one or more containers stop, then print their exit codes",
+            args: containersArg,
+        },
+        {
+            name: "builder",
+            description: "Manage builds",
+            // TODO Subcommands
+            args: {},
+        },
+        {
+            name: "config",
+            description: "Manage Docker configs",
+            // TODO Subcommands
+            args: {},
+        },
+        {
+            name: "container",
+            description: "Manage containers",
+            args: {},
+        },
+        {
+            name: "context",
+            description: "Manage contexts",
+            args: {},
+        },
+        {
+            name: "image",
+            description: "Manage images",
+            args: {},
+        },
+        {
+<<<<<<< HEAD
+          description:
+            "Format the output. Values: [pretty | json]. (Default: pretty)",
+          name: ["-f", "--format"],
+          args: {
+            name: "string",
+          },
+>>>>>>> 39a91f1... feat: apply new rule to files
+=======
+            name: "network",
+            description: "Manage networks",
+            args: {},
+        },
+        {
+            name: "node",
+            description: "Manage Swarm nodes",
+            args: {},
+        },
+        {
+            name: "plugin",
+            description: "Manage plugins",
+            args: {},
+        },
+        {
+            name: "secret",
+            description: "Manage Docker secrets",
+            args: {},
+        },
+        {
+            name: "service",
+            description: "Manage services",
+            args: {},
+        },
+        {
+            name: "stack",
+            description: "Manage Docker stacks",
+            args: {},
+        },
+        {
+            name: "swarm",
+            description: "Manage Swarm",
+            args: {},
+        },
+        {
+            name: "system",
+            description: "Manage Docker",
+            subcommands: [
+                {
+                    name: "prune",
+                    description: "Remove unused data",
+                    options: [
+                        {
+                            name: ["-a", "--all"],
+                            description: "Remove all unused images not just dangling ones",
+                        },
+                        {
+                            name: "--filter",
+                            description: "Provide filter values (e.g. 'label=<key>=<value')",
+                            args: {
+                                name: "filter",
+                            },
+                        },
+                        {
+                            name: ["-f", "--force"],
+                            description: "Do not prompt for confirmation",
+                        },
+                        {
+                            name: "--volumes",
+                            description: "Prune volumes",
+                        },
+                    ],
+                },
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6331,16 +7050,14 @@ var completionSpec = {
             name: "trust",
             description: "Manage trust on Docker images",
             args: {},
-            options: [],
-            subcommands: [],
         },
         {
             name: "volume",
             description: "Manage volumes",
             args: {},
-            options: [],
-            subcommands: [],
         },
+<<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6348,19 +7065,25 @@ var completionSpec = {
     ],
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
 =======
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
       ],
     },
     {
       name: "trust",
       description: "Manage trust on Docker images",
       args: {},
+<<<<<<< HEAD
       options: [],
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
       subcommands: [],
     },
     {
       name: "volume",
       description: "Manage volumes",
       args: {},
+<<<<<<< HEAD
       options: [],
       subcommands: [],
     },
@@ -6375,5 +7098,13 @@ var completionSpec = {
 =======
     ],
 >>>>>>> d0857f4... feat: update formatting
+=======
+      subcommands: [],
+    },
+  ],
+>>>>>>> 39a91f1... feat: apply new rule to files
+=======
+    ],
+>>>>>>> 8601a08... feat: add built files
 };
 

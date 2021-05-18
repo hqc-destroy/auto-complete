@@ -157,7 +157,6 @@ var completionSpec = {
             template: "filepaths",
         },
     ],
-    subcommands: [],
     options: [
         {
             name: "-f",

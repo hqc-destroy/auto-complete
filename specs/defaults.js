@@ -2,6 +2,8 @@ var domain = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     name: 'domain',
     generators: {
         script: 'defaults domains',
@@ -17,6 +19,8 @@ var domain = {
             });
         },
 =======
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
   name: "domain",
   generators: {
     script: "defaults domains",
@@ -26,6 +30,7 @@ var domain = {
           name: domain.trim(),
         };
       });
+<<<<<<< HEAD
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
     },
   },
@@ -41,6 +46,8 @@ var domain = {
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> 8601a08... feat: add built files
     name: "domain",
     generators: {
         script: "defaults domains",
@@ -52,9 +59,25 @@ var domain = {
             });
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
+    },
+  },
+  suggestions: [
+    {
+      name: "-globalDomain",
+      description: "Global domain",
+    },
+    {
+      name: "-app",
+      insertValue: "-app '{cursor}'",
+      description: "Application name",
+=======
+>>>>>>> 8601a08... feat: add built files
     },
     suggestions: [
         {
@@ -107,25 +130,8 @@ var valueArgs = [
         },
     },
     {
-        name: ["-bool", "-boolean"],
-        args: {
-            suggestions: [
-                {
-                    name: "true",
-                },
-                {
-                    name: "false",
-                },
-                {
-                    name: "yes",
-                },
-                {
-                    name: "no",
-                },
-            ],
-        },
-    },
-    {
+<<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -243,6 +249,35 @@ var completionSpec = {
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+      name: "domains",
+      description: "lists all domains",
+>>>>>>> 39a91f1... feat: apply new rule to files
+=======
+        name: ["-bool", "-boolean"],
+        args: {
+            suggestions: [
+                {
+                    name: "true",
+                },
+                {
+                    name: "false",
+                },
+                {
+                    name: "yes",
+                },
+                {
+                    name: "no",
+                },
+            ],
+        },
+>>>>>>> 8601a08... feat: add built files
+    },
+    {
+        name: "-date",
+        args: {
+            name: "date_rep",
+        },
     },
     {
         name: "-array",
@@ -251,13 +286,7 @@ var completionSpec = {
             name: "array_item",
         },
     },
-    {
-        name: "-array-add",
-        args: {
-            variadic: true,
-            name: "array_item",
-        },
-    },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   ],
@@ -327,6 +356,75 @@ var completionSpec = {
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+    {
+        name: "-array-add",
+        args: {
+            variadic: true,
+            name: "array_item",
+        },
+    },
+<<<<<<< HEAD
+  ],
+>>>>>>> 39a91f1... feat: apply new rule to files
+=======
+];
+var completionSpec = {
+    name: "defaults",
+    description: "Command line interface to a user's defaults.",
+    subcommands: [
+        {
+            name: "read",
+            description: "shows defaults",
+            args: [domain, key],
+        },
+        {
+            name: "write",
+            insertValue: "write ",
+            description: "writes key for domain",
+            args: [domain, key, value],
+        },
+        {
+            name: "delete",
+            description: "deletes domain or key in domain",
+            args: [domain, key],
+        },
+        {
+            name: "rename",
+            description: "renames old_key to new_key",
+            args: [
+                domain,
+                {
+                    name: "old_key",
+                },
+                {
+                    name: "new_key",
+                },
+            ],
+        },
+        {
+            name: "domains",
+            description: "lists all domains",
+        },
+        {
+            name: "find",
+            description: "lists all entries containing word",
+            args: {
+                name: "word",
+                description: "The word to search for...",
+            },
+        },
+        {
+            name: "help",
+            description: "show help text",
+        },
+        {
+            name: "read-type",
+            description: "shows the type for the given domain, key",
+            args: [domain, key],
+        },
+    ],
+>>>>>>> 8601a08... feat: add built files
 };
 
 // Command line interface to a user's defaults.

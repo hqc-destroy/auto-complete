@@ -1,7 +1,10 @@
 var completionSpec = {
     name: "init",
     description: "Initialize or reinitialize gcloud.",
+<<<<<<< HEAD
     subcommands: [],
+=======
+>>>>>>> 8601a08... feat: add built files
     options: [
         {
             name: "--account",

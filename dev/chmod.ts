@@ -144,7 +144,7 @@ export const completionSpec: Fig.Spec = {
       template: "filepaths",
     },
   ],
-  subcommands: [],
+
   options: [
     {
       name: "-f",

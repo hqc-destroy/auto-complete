@@ -1867,8 +1867,7 @@ export const completionSpec: Fig.Spec = {
     {
       name: "build",
       description: "",
-      subcommands: [],
-      options: [],
+
       args: {},
     },
     {
@@ -1951,71 +1950,61 @@ export const completionSpec: Fig.Spec = {
     {
       name: "debug",
       description: "",
-      subcommands: [],
-      options: [],
+
       args: {},
     },
     {
       name: "develop",
       description: "",
-      subcommands: [],
-      options: [],
+
       args: {},
     },
     {
       name: "env",
       description: "",
-      subcommands: [],
-      options: [],
+
       args: {},
     },
     {
       name: "index",
       description: "",
-      subcommands: [],
-      options: [],
+
       args: {},
     },
     {
       name: "inspect",
       description: "",
-      subcommands: [],
-      options: [],
+
       args: {},
     },
     {
       name: "metapackage",
       description: "",
-      subcommands: [],
-      options: [],
+
       args: {},
     },
     {
       name: "render",
       description: "",
-      subcommands: [],
-      options: [],
+
       args: {},
     },
     {
       name: "server",
       description: "",
-      subcommands: [],
-      options: [],
+
       args: {},
     },
     {
       name: "skeleton",
       description: "",
-      subcommands: [],
-      options: [],
+
       args: {},
     },
     {
       name: "verify",
       description: "",
-      subcommands: [],
-      options: [],
+
       args: {},
     },
   ],

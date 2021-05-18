@@ -2,8 +2,12 @@
 var getAppGenerator = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d0857f4... feat: update formatting
+=======
+>>>>>>> 8601a08... feat: add built files
     script: "heroku apps --all --json",
     postProcess: function (out) {
         try {
@@ -19,6 +23,7 @@ var getAppGenerator = {
             return [];
         }
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 };
 var completionSpec = {
@@ -7017,6 +7022,24 @@ var completionSpec = {
   },
 };
 var completionSpec = {
+=======
+  script: "heroku apps --all --json",
+  postProcess: function (out) {
+    try {
+      return JSON.parse(out).map(function (app) {
+        return {
+          name: app.name,
+          description: app.name,
+          icon: "https://www.herokucdn.com/favicon.ico",
+        };
+      });
+    } catch (e) {
+      return [];
+    }
+  },
+};
+var completionSpec = {
+>>>>>>> 39a91f1... feat: apply new rule to files
   name: "heroku",
   subcommands: [
     {
@@ -8302,7 +8325,10 @@ var completionSpec = {
     {
       name: "dashboard",
       description: "display information about favorite apps",
+<<<<<<< HEAD
       options: [],
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
     },
     {
       name: "drains:add",
@@ -8463,7 +8489,10 @@ var completionSpec = {
     {
       name: "keys:clear",
       description: "remove all SSH keys for current user",
+<<<<<<< HEAD
       options: [],
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
     },
     {
       name: "keys",
@@ -8482,7 +8511,10 @@ var completionSpec = {
     {
       name: "keys:remove",
       description: "remove an SSH key from the user",
+<<<<<<< HEAD
       options: [],
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
       args: [
         {
           name: "key",
@@ -9922,7 +9954,10 @@ var completionSpec = {
       name: "ci:migrate-manifest",
       description:
         "app-ci.json is deprecated. Run this command to migrate to app.json with an environments key.",
+<<<<<<< HEAD
       options: [],
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
     },
     {
       name: "ci:open",
@@ -10411,7 +10446,10 @@ var completionSpec = {
     {
       name: "authorizations:revoke",
       description: "revoke OAuth authorization",
+<<<<<<< HEAD
       options: [],
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
       args: [
         {
           name: "id",
@@ -10421,7 +10459,10 @@ var completionSpec = {
     {
       name: "authorizations:rotate",
       description: "updates an OAuth authorization token",
+<<<<<<< HEAD
       options: [],
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
       args: [
         {
           name: "id",
@@ -10479,7 +10520,10 @@ var completionSpec = {
     {
       name: "clients:destroy",
       description: "delete client by ID",
+<<<<<<< HEAD
       options: [],
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
       args: [
         {
           name: "id",
@@ -10558,7 +10602,10 @@ var completionSpec = {
     {
       name: "sessions:destroy",
       description: "delete (logout) OAuth session by ID",
+<<<<<<< HEAD
       options: [],
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
       args: [
         {
           name: "id",
@@ -10605,7 +10652,10 @@ var completionSpec = {
     },
     {
       name: "sharing:add",
+<<<<<<< HEAD
       options: [],
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
       args: [
         {
           name: "sharin",
@@ -10633,7 +10683,10 @@ var completionSpec = {
     },
     {
       name: "sharing:access",
+<<<<<<< HEAD
       options: [],
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
       args: [
         {
           name: "sharin",
@@ -10662,7 +10715,10 @@ var completionSpec = {
     },
     {
       name: "sharing:remove",
+<<<<<<< HEAD
       options: [],
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
       args: [
         {
           name: "sharin",
@@ -10813,7 +10869,10 @@ var completionSpec = {
     },
     {
       name: "sharing:transfer",
+<<<<<<< HEAD
       options: [],
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
       args: [
         {
           name: "sharin",
@@ -10891,7 +10950,10 @@ var completionSpec = {
     },
     {
       name: "orgs:default",
+<<<<<<< HEAD
       options: [],
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
     },
     {
       name: "orgs",
@@ -13568,7 +13630,10 @@ var completionSpec = {
           args: {},
         },
       ],
+<<<<<<< HEAD
       args: [],
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
     },
     {
       name: "outbound-rules",
@@ -14068,6 +14133,7 @@ var completionSpec = {
       description: "",
     },
   ],
+<<<<<<< HEAD
 >>>>>>> 880aa33... feat: update prettierignore
 =======
 var completionSpec = {
@@ -14105,6 +14171,10 @@ var completionSpec = {
 =======
 };
 var completionSpec = {
+=======
+};
+var completionSpec = {
+>>>>>>> 8601a08... feat: add built files
     name: "heroku",
     subcommands: [
         {
@@ -15380,7 +15450,10 @@ var completionSpec = {
         {
             name: "dashboard",
             description: "display information about favorite apps",
+<<<<<<< HEAD
             options: [],
+=======
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "drains:add",
@@ -15541,7 +15614,10 @@ var completionSpec = {
         {
             name: "keys:clear",
             description: "remove all SSH keys for current user",
+<<<<<<< HEAD
             options: [],
+=======
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "keys",
@@ -15560,7 +15636,10 @@ var completionSpec = {
         {
             name: "keys:remove",
             description: "remove an SSH key from the user",
+<<<<<<< HEAD
             options: [],
+=======
+>>>>>>> 8601a08... feat: add built files
             args: [
                 {
                     name: "key",
@@ -16991,7 +17070,10 @@ var completionSpec = {
         {
             name: "ci:migrate-manifest",
             description: "app-ci.json is deprecated. Run this command to migrate to app.json with an environments key.",
+<<<<<<< HEAD
             options: [],
+=======
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "ci:open",
@@ -17478,7 +17560,10 @@ var completionSpec = {
         {
             name: "authorizations:revoke",
             description: "revoke OAuth authorization",
+<<<<<<< HEAD
             options: [],
+=======
+>>>>>>> 8601a08... feat: add built files
             args: [
                 {
                     name: "id",
@@ -17488,7 +17573,10 @@ var completionSpec = {
         {
             name: "authorizations:rotate",
             description: "updates an OAuth authorization token",
+<<<<<<< HEAD
             options: [],
+=======
+>>>>>>> 8601a08... feat: add built files
             args: [
                 {
                     name: "id",
@@ -17546,7 +17634,10 @@ var completionSpec = {
         {
             name: "clients:destroy",
             description: "delete client by ID",
+<<<<<<< HEAD
             options: [],
+=======
+>>>>>>> 8601a08... feat: add built files
             args: [
                 {
                     name: "id",
@@ -17625,7 +17716,10 @@ var completionSpec = {
         {
             name: "sessions:destroy",
             description: "delete (logout) OAuth session by ID",
+<<<<<<< HEAD
             options: [],
+=======
+>>>>>>> 8601a08... feat: add built files
             args: [
                 {
                     name: "id",
@@ -17672,7 +17766,10 @@ var completionSpec = {
         },
         {
             name: "sharing:add",
+<<<<<<< HEAD
             options: [],
+=======
+>>>>>>> 8601a08... feat: add built files
             args: [
                 {
                     name: "sharin",
@@ -17700,7 +17797,10 @@ var completionSpec = {
         },
         {
             name: "sharing:access",
+<<<<<<< HEAD
             options: [],
+=======
+>>>>>>> 8601a08... feat: add built files
             args: [
                 {
                     name: "sharin",
@@ -17729,7 +17829,10 @@ var completionSpec = {
         },
         {
             name: "sharing:remove",
+<<<<<<< HEAD
             options: [],
+=======
+>>>>>>> 8601a08... feat: add built files
             args: [
                 {
                     name: "sharin",
@@ -17879,7 +17982,10 @@ var completionSpec = {
         },
         {
             name: "sharing:transfer",
+<<<<<<< HEAD
             options: [],
+=======
+>>>>>>> 8601a08... feat: add built files
             args: [
                 {
                     name: "sharin",
@@ -17957,7 +18063,10 @@ var completionSpec = {
         },
         {
             name: "orgs:default",
+<<<<<<< HEAD
             options: [],
+=======
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "orgs",
@@ -20586,7 +20695,10 @@ var completionSpec = {
                     args: {},
                 },
             ],
+<<<<<<< HEAD
             args: [],
+=======
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "outbound-rules",
@@ -21035,6 +21147,7 @@ var completionSpec = {
             args: [
                 {
                     name: "name",
+<<<<<<< HEAD
 >>>>>>> d0857f4... feat: update formatting
                 },
             ],
@@ -21129,6 +21242,12 @@ var completionSpec = {
     ],
 >>>>>>> c80c604... Revert "feat: update prettierignore"
 =======
+=======
+                },
+            ],
+        },
+        {
+>>>>>>> 8601a08... feat: add built files
             name: "spaces:wait",
             description: "wait for a space to be created",
             options: [
@@ -21173,6 +21292,11 @@ var completionSpec = {
             description: "",
         },
     ],
+<<<<<<< HEAD
 >>>>>>> d0857f4... feat: update formatting
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
+=======
+>>>>>>> 8601a08... feat: add built files
 };
 

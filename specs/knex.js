@@ -3,6 +3,8 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   name: 'knex',
   description: 'SQL query builder for JavaScript',
   subcommands: [
@@ -10,12 +12,15 @@ var completionSpec = {
       name: 'init',
       description: 'Create a fresh knexfile.',
 =======
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
   name: "knex",
   description: "SQL query builder for JavaScript",
   subcommands: [
     {
       name: "init",
       description: "Create a fresh knexfile.",
+<<<<<<< HEAD
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
       args: {},
       options: [],
@@ -35,10 +40,19 @@ var completionSpec = {
       description: "Create a named migration file.",
       args: { name: "migration name" },
       options: [],
+=======
+      args: {},
+    },
+    {
+      name: "migrate:make",
+      description: "Create a named migration file.",
+      args: { name: "migration name" },
+>>>>>>> 39a91f1... feat: apply new rule to files
     },
     {
       name: "migrate:latest",
       description: "Run all migrations that have not yet been run.",
+<<<<<<< HEAD
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
       args: {},
       options: [],
@@ -120,10 +134,48 @@ var completionSpec = {
       args: {
         name: 'seed name',
 =======
+=======
+      args: {},
+    },
+    {
+      name: "migrate:up",
+      description:
+        "Run the next or the specified migration that has not yet been run.",
+      args: {},
+    },
+    {
+      name: "migrate:rollback",
+      description: "Rollback the last batch of migrations performed.",
+      args: {},
+    },
+    {
+      name: "migrate:down",
+      description:
+        "Undo the last or the specified migration that was already run.",
+      args: {},
+    },
+    {
+      name: "migrate:currentVersion",
+      description: "View the current version for the  migration.",
+      args: {},
+    },
+    {
+      name: "migrate:list|migrate:status",
+      description: "List all migrations files with status.",
+      args: {},
+    },
+    {
+      name: "migrate:unlock",
+      description: "Forcibly unlocks the migrations lock table.",
+      args: {},
+    },
+    {
+>>>>>>> 39a91f1... feat: apply new rule to files
       name: "seed:make",
       description: "Create a named seed file.",
       args: {
         name: "seed name",
+<<<<<<< HEAD
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
       },
       options: [],
@@ -149,10 +201,24 @@ var completionSpec = {
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
       args: {},
       options: [],
+=======
+      },
+    },
+    {
+      name: "seed:run",
+      description: "Run seed files.",
+      args: {},
+    },
+    {
+      name: "help",
+      description: "display help for command",
+      args: {},
+>>>>>>> 39a91f1... feat: apply new rule to files
     },
   ],
   options: [
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
       name: ['--version'],
       description: 'output the version number',
@@ -237,12 +303,15 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> 8601a08... feat: add built files
     name: "knex",
     description: "SQL query builder for JavaScript",
     subcommands: [
         {
             name: "init",
             description: "Create a fresh knexfile.",
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
@@ -268,10 +337,19 @@ var completionSpec = {
             description: "Create a named migration file.",
             args: { name: "migration name" },
             options: [],
+=======
+            args: {},
+        },
+        {
+            name: "migrate:make",
+            description: "Create a named migration file.",
+            args: { name: "migration name" },
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "migrate:latest",
             description: "Run all migrations that have not yet been run.",
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
@@ -385,10 +463,46 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+            args: {},
+        },
+        {
+            name: "migrate:up",
+            description: "Run the next or the specified migration that has not yet been run.",
+            args: {},
+        },
+        {
+            name: "migrate:rollback",
+            description: "Rollback the last batch of migrations performed.",
+            args: {},
+        },
+        {
+            name: "migrate:down",
+            description: "Undo the last or the specified migration that was already run.",
+            args: {},
+        },
+        {
+            name: "migrate:currentVersion",
+            description: "View the current version for the  migration.",
+            args: {},
+        },
+        {
+            name: "migrate:list|migrate:status",
+            description: "List all migrations files with status.",
+            args: {},
+        },
+        {
+            name: "migrate:unlock",
+            description: "Forcibly unlocks the migrations lock table.",
+            args: {},
+        },
+        {
+>>>>>>> 8601a08... feat: add built files
             name: "seed:make",
             description: "Create a named seed file.",
             args: {
                 name: "seed name",
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
@@ -427,10 +541,24 @@ var completionSpec = {
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
             args: {},
             options: [],
+=======
+            },
+        },
+        {
+            name: "seed:run",
+            description: "Run seed files.",
+            args: {},
+        },
+        {
+            name: "help",
+            description: "display help for command",
+            args: {},
+>>>>>>> 8601a08... feat: add built files
         },
     ],
     options: [
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             name: ['--version'],
@@ -509,6 +637,8 @@ var completionSpec = {
 
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
 =======
+=======
+>>>>>>> 39a91f1... feat: apply new rule to files
       name: ["--version"],
       description: "output the version number",
       args: {},
@@ -581,11 +711,14 @@ var completionSpec = {
       args: {},
     },
   ],
+<<<<<<< HEAD
 };
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> 8601a08... feat: add built files
             name: ["--version"],
             description: "output the version number",
             args: {},
@@ -658,9 +791,17 @@ var completionSpec = {
             args: {},
         },
     ],
+<<<<<<< HEAD
 };
 
 <<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+};
+>>>>>>> 39a91f1... feat: apply new rule to files
+=======
+};
+
+>>>>>>> 8601a08... feat: add built files

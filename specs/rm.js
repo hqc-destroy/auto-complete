@@ -19,7 +19,6 @@ var completionSpec = {
 >>>>>>> d0857f4... feat: update formatting
         },
     ],
-    subcommands: [],
     options: [
         {
             name: ["-r", "-R"],

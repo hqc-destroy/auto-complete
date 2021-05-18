@@ -64,6 +64,7 @@ var completionSpec = {
                 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     name: ["--no-localhost"],
                     description: "copy and paste a code instead of starting a local server for authentication",
 <<<<<<< HEAD
@@ -135,6 +136,8 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 07e737b... feat: update firebase.js formatting
+=======
+>>>>>>> 8601a08... feat: add built files
                     name: ["--release-notes-file"],
                     description: "path to file with release notes to include with this distribution",
                     args: {},
@@ -147,9 +150,12 @@ var completionSpec = {
                     },
                 },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 65956fb... complete firebase spec
 =======
 >>>>>>> 07e737b... feat: update firebase.js formatting
+=======
+>>>>>>> 8601a08... feat: add built files
                 {
                     name: ["--testers-file"],
                     description: "path to file with a comma separated list of tester emails to distribute to",
@@ -174,6 +180,7 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
+<<<<<<< HEAD
             subcommands: [],
         },
         {
@@ -3163,6 +3170,26 @@ var completionSpec = {
         {
           name: ["-h", "--help"],
           description: "output usage information",
+=======
+        },
+        {
+            name: "apps:android:sha:create",
+            description: "add a SHA certificate hash for a given app id.",
+            args: [
+                {
+                    name: "appId",
+                },
+                {
+                    name: "shaHash",
+                },
+            ],
+            options: [
+                {
+                    name: ["-h", "--help"],
+                    description: "output usage information",
+                },
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
       ],
       subcommands: [],
@@ -3172,8 +3199,27 @@ var completionSpec = {
       description: "list all Firebase projects you have access to",
       options: [
         {
+<<<<<<< HEAD
           name: ["-h", "--help"],
           description: "output usage information",
+=======
+            name: "apps:android:sha:delete",
+            description: "delete a SHA certificate hash for a given app id.",
+            args: [
+                {
+                    name: "appId",
+                },
+                {
+                    name: "shaId",
+                },
+            ],
+            options: [
+                {
+                    name: ["-h", "--help"],
+                    description: "output usage information",
+                },
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
       ],
       subcommands: [],
@@ -3183,6 +3229,7 @@ var completionSpec = {
       description: "get a Firebase project's Remote Config template",
       options: [
         {
+<<<<<<< HEAD
           name: ["-v", "--version-number"],
           description: "grabs the specified version of the template",
         },
@@ -3195,6 +3242,126 @@ var completionSpec = {
         {
           name: ["-h", "--help"],
           description: "output usage information",
+=======
+            name: "apps:create",
+            description: "create a new Firebase app.",
+            args: [
+                {
+                    name: "platform",
+                },
+                {
+                    name: "displayName",
+                },
+            ],
+            options: [
+                {
+                    name: ["-a", "--package-name"],
+                    description: "required package name for the Android app",
+                    args: {},
+                },
+                {
+                    name: ["-b", "--bundle-id"],
+                    description: "required bundle id for the iOS app",
+                    args: {},
+                },
+                {
+                    name: ["-s", "--app-store-id"],
+                    description: "(optional) app store id for the iOS app",
+                    args: {},
+                },
+                {
+                    name: ["-h", "--help"],
+                    description: "output usage information",
+                },
+            ],
+        },
+        {
+            name: "auth:export",
+            description: "Export accounts from your Firebase project into a data file",
+            args: {
+                name: "dataFile",
+                template: "filepaths",
+            },
+            options: [
+                {
+                    name: ["--format"],
+                    description: "Format of exported data (csv, json). Ignored if [dataFile] has format extension.",
+                    args: {
+                        suggestions: [
+                            {
+                                name: "csv",
+                            },
+                            {
+                                name: "json",
+                            },
+                        ],
+                    },
+                },
+                {
+                    name: ["-h", "--help"],
+                    description: "output usage information",
+                },
+            ],
+        },
+        {
+            name: "auth:import",
+            description: "import users into your Firebase project from a data file(.csv or .json)",
+            args: {
+                name: "dataFile",
+                template: "filepaths",
+            },
+            options: [
+                {
+                    name: ["--hash-algo"],
+                    description: "specify the hash algorithm used in password for these accounts",
+                    args: {},
+                },
+                {
+                    name: ["--hash-key"],
+                    description: "specify the key used in hash algorithm",
+                    args: {},
+                },
+                {
+                    name: ["--salt-separator"],
+                    description: "specify the salt separator which will be appended to salt when verifying password. only used by SCRYPT now.",
+                    args: {},
+                },
+                {
+                    name: ["--rounds"],
+                    description: "specify how many rounds for hash calculation.",
+                    args: {},
+                },
+                {
+                    name: ["--mem-cost"],
+                    description: "specify the memory cost for firebase scrypt, or cpu/memory cost for standard scrypt",
+                    args: {},
+                },
+                {
+                    name: ["--parallelization"],
+                    description: "specify the parallelization for standard scrypt.",
+                    args: {},
+                },
+                {
+                    name: ["--block-size"],
+                    description: "specify the block size (normally is 8) for standard scrypt.",
+                    args: {},
+                },
+                {
+                    name: ["--dk-len"],
+                    description: "specify derived key length for standard scrypt.",
+                    args: {},
+                },
+                {
+                    name: ["--hash-input-order"],
+                    description: "specify the order of password and salt. Possible values are SALT_FIRST and PASSWORD_FIRST. MD5, SHA1, SHA256, SHA512, HMAC_MD5, HMAC_SHA1, HMAC_SHA256, HMAC_SHA512 support this flag.",
+                    args: {},
+                },
+                {
+                    name: ["-h", "--help"],
+                    description: "output usage information",
+                },
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
       ],
       subcommands: [],
@@ -3210,6 +3377,7 @@ var completionSpec = {
           args: {},
         },
         {
+<<<<<<< HEAD
           name: ["--force"],
           description:
             "rollback template to the specified version without confirmation",
@@ -3340,6 +3508,24 @@ var completionSpec = {
           name: "name",
 =======
 >>>>>>> 07e737b... feat: update firebase.js formatting
+=======
+            name: "database:instances:create",
+            description: "create a realtime database instance",
+            args: {
+                name: "instanceName",
+            },
+            options: [
+                {
+                    name: ["-l", "--location"],
+                    description: "(optional) location for the database instance, defaults to us-central1",
+                    args: {},
+                },
+                {
+                    name: ["-h", "--help"],
+                    description: "output usage information",
+                },
+            ],
+>>>>>>> 8601a08... feat: add built files
         },
         {
             name: "database:instances:list",
@@ -3350,7 +3536,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "database:profile",
@@ -3390,7 +3575,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "database:push",
@@ -3415,7 +3599,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "database:remove",
@@ -3439,7 +3622,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "database:set",
@@ -3468,7 +3650,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "database:settings:get",
@@ -3488,7 +3669,6 @@ var completionSpec = {
                     description: "output usage information ",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "database:settings:set",
@@ -3512,7 +3692,6 @@ var completionSpec = {
                     description: "output usage information ",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "database:update",
@@ -3541,7 +3720,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "deploy",
@@ -3574,7 +3752,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "emulators:exec",
@@ -3610,7 +3787,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "emulators:export",
@@ -3634,7 +3810,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "emulators:start",
@@ -3663,7 +3838,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "experimental:functions:shell",
@@ -3679,7 +3853,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "ext:configure",
@@ -3698,7 +3871,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "ext:info",
@@ -3716,7 +3888,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "ext:uninstall",
@@ -3734,7 +3905,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "ext:update",
@@ -3750,7 +3920,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "firestore:delete",
@@ -3780,7 +3949,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "firestore:indexes",
@@ -3795,7 +3963,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "functions:config:clone",
@@ -3821,7 +3988,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "functions:config:get",
@@ -3835,7 +4001,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "functions:config:set",
@@ -3851,7 +4016,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "functions:log",
@@ -3876,7 +4040,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "functions:shell",
@@ -3897,7 +4060,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "help",
@@ -3908,7 +4070,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "hosting:channel:create",
@@ -3932,7 +4093,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "hosting:channel:delete",
@@ -3955,7 +4115,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "hosting:channel:deploy",
@@ -3986,7 +4145,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "hosting:channel:list",
@@ -4002,7 +4160,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "hosting:channel:open",
@@ -4021,7 +4178,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "hosting:clone",
@@ -4040,7 +4196,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "hosting:disable",
@@ -4060,7 +4215,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "hosting:sites:create",
@@ -4079,7 +4233,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "hosting:sites:delete",
@@ -4097,7 +4250,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "hosting:sites:get",
@@ -4111,7 +4263,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "hosting:sites:list",
@@ -4122,7 +4273,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "init",
@@ -4133,7 +4283,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "login",
@@ -4152,7 +4301,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "login:add",
@@ -4168,7 +4316,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "login:ci",
@@ -4183,7 +4330,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "login:list",
@@ -4194,7 +4340,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "login:use",
@@ -4208,7 +4353,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "logout",
@@ -4222,7 +4366,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "open",
@@ -4236,7 +4379,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "projects:addfirebase",
@@ -4248,7 +4390,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "projects:create",
@@ -4275,7 +4416,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "projects:list",
@@ -4286,7 +4426,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "remoteconfig:get",
@@ -4306,7 +4445,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "remoteconfig:rollback",
@@ -4326,7 +4464,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "remoteconfig:versions:list",
@@ -4342,7 +4479,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "serve",
@@ -4372,7 +4508,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "setup:emulators:database",
@@ -4383,7 +4518,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "setup:emulators:firestore",
@@ -4394,7 +4528,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "setup:emulators:pubsub",
@@ -4405,7 +4538,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "setup:emulators:ui",
@@ -4416,7 +4548,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "target",
@@ -4428,7 +4559,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "target:apply",
@@ -4451,7 +4581,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "target:clear",
@@ -4470,7 +4599,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "target:remove",
@@ -4489,7 +4617,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
         {
             name: "use",
@@ -4523,7 +4650,6 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
-            subcommands: [],
         },
 <<<<<<< HEAD
 <<<<<<< HEAD

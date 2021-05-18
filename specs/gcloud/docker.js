@@ -1,7 +1,10 @@
 var completionSpec = {
     name: "docker",
     description: "*(DEPRECATED)*  Enable Docker CLI access to Google Container Registry.",
+<<<<<<< HEAD
     subcommands: [],
+=======
+>>>>>>> 8601a08... feat: add built files
     options: [
         {
             name: "--account",

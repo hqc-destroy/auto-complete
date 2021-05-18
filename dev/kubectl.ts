@@ -431,7 +431,7 @@ export const completionSpec: Fig.Spec = {
       name: "alpha",
       description:
         "These commands correspond to alpha features that are not enabled in Kubernetes clusters by default.",
-      options: [],
+
       subcommands: [
         {
           name: "debug",
@@ -491,8 +491,11 @@ export const completionSpec: Fig.Spec = {
               args: {},
             },
           ],
+<<<<<<< HEAD
           subcommands: [],
 >>>>>>> 65036d2... fixed linting and prettier
+=======
+>>>>>>> f4105a0... fix: subcommand prop name
         },
       ],
     },
@@ -549,14 +552,11 @@ export const completionSpec: Fig.Spec = {
           args: {},
         },
       ],
-      subcommands: [],
     },
     {
       name: "api-versions",
       description:
         'Print the supported API versions on the server, in the form of "group/version"',
-      options: [],
-      subcommands: [],
     },
     {
       name: "apply",
@@ -1145,7 +1145,6 @@ export const completionSpec: Fig.Spec = {
                 "If true, keep the managedFields when printing objects in JSON or YAML format.",
             },
           ],
-          subcommands: [],
         },
       ],
     },
@@ -1153,8 +1152,6 @@ export const completionSpec: Fig.Spec = {
       name: "completion",
       description:
         "Output shell completion code for the specified shell (bash or zsh). The shell code must be evaluated to provide interactive completion of kubectl commands.  This can be done by sourcing it from the .bash_profile.",
-      options: [],
-      subcommands: [],
     },
     {
       name: "config",
@@ -1203,7 +1200,6 @@ export const completionSpec: Fig.Spec = {
               args: {},
             },
           ],
-          subcommands: [],
         },
         {
           name: "get-users",
@@ -1238,7 +1234,6 @@ export const completionSpec: Fig.Spec = {
               args: {},
             },
           ],
-          subcommands: [],
         },
         {
           name: "set-cluster",
@@ -1314,7 +1309,6 @@ export const completionSpec: Fig.Spec = {
               },
             },
           ],
-          subcommands: [],
         },
         {
           name: "set-credentials",
@@ -1419,7 +1413,6 @@ export const completionSpec: Fig.Spec = {
               },
             },
           ],
-          subcommands: [],
         },
         {
           name: "unset",
@@ -1523,7 +1516,6 @@ export const completionSpec: Fig.Spec = {
           args: {},
         },
       ],
-      subcommands: [],
     },
     {
       name: "create",
@@ -1622,7 +1614,6 @@ export const completionSpec: Fig.Spec = {
               },
             },
           ],
-          subcommands: [],
         },
         {
           name: "clusterrolebinding",
@@ -1676,7 +1667,6 @@ export const completionSpec: Fig.Spec = {
                 "If true, use a schema to validate the input before sending it",
             },
           ],
-          subcommands: [],
         },
         {
           name: "configmap",
@@ -1732,7 +1722,6 @@ export const completionSpec: Fig.Spec = {
                 "If true, use a schema to validate the input before sending it",
             },
           ],
-          subcommands: [],
         },
         {
           name: "cronjob",
@@ -1781,7 +1770,6 @@ export const completionSpec: Fig.Spec = {
                 "If true, use a schema to validate the input before sending it",
             },
           ],
-          subcommands: [],
         },
         {
           name: "deployment",
@@ -1929,7 +1917,6 @@ export const completionSpec: Fig.Spec = {
                 "If true, use a schema to validate the input before sending it",
             },
           ],
-          subcommands: [],
         },
         {
           name: "namespace",
@@ -2049,7 +2036,6 @@ export const completionSpec: Fig.Spec = {
               },
             },
           ],
-          subcommands: [],
         },
         {
           name: "quota",
@@ -2096,7 +2082,6 @@ export const completionSpec: Fig.Spec = {
                 "If true, use a schema to validate the input before sending it",
             },
           ],
-          subcommands: [],
         },
         {
           name: "role",
@@ -2143,7 +2128,6 @@ export const completionSpec: Fig.Spec = {
               },
             },
           ],
-          subcommands: [],
         },
         {
           name: "rolebinding",
@@ -2208,7 +2192,6 @@ export const completionSpec: Fig.Spec = {
                 "If true, use a schema to validate the input before sending it",
             },
           ],
-          subcommands: [],
         },
         {
           name: "secret",
@@ -2282,7 +2265,6 @@ export const completionSpec: Fig.Spec = {
                     "If true, use a schema to validate the input before sending it",
                 },
               ],
-              subcommands: [],
             },
             {
               name: "generic",
@@ -2344,7 +2326,6 @@ export const completionSpec: Fig.Spec = {
                     "If true, use a schema to validate the input before sending it",
                 },
               ],
-              subcommands: [],
             },
             {
               name: "tls",
@@ -2396,7 +2377,7 @@ export const completionSpec: Fig.Spec = {
         {
           name: "service",
           description: "Create a service using specified subcommand.",
-          options: [],
+
           subcommands: [
             {
               name: "clusterip",
@@ -2440,7 +2421,6 @@ export const completionSpec: Fig.Spec = {
                     "If true, use a schema to validate the input before sending it",
                 },
               ],
-              subcommands: [],
             },
             {
               name: "externalname",
@@ -2481,7 +2461,6 @@ export const completionSpec: Fig.Spec = {
                     "If true, use a schema to validate the input before sending it",
                 },
               ],
-              subcommands: [],
             },
             {
               name: "loadbalancer",
@@ -2515,7 +2494,6 @@ export const completionSpec: Fig.Spec = {
                     "If true, use a schema to validate the input before sending it",
                 },
               ],
-              subcommands: [],
             },
             {
               name: "nodeport",
@@ -2556,7 +2534,6 @@ export const completionSpec: Fig.Spec = {
                     "If true, use a schema to validate the input before sending it",
                 },
               ],
-              subcommands: [],
             },
           ],
         },
@@ -2582,7 +2559,6 @@ export const completionSpec: Fig.Spec = {
                 "If true, use a schema to validate the input before sending it",
             },
           ],
-          subcommands: [],
         },
       ],
     },
@@ -2655,7 +2631,6 @@ export const completionSpec: Fig.Spec = {
             "If true, wait for resources to be gone before returning. This waits for finalizers.",
         },
       ],
-      subcommands: [],
     },
     {
       name: "describe",
@@ -2707,7 +2682,6 @@ export const completionSpec: Fig.Spec = {
             "If true, apply runs in the server instead of the client.",
         },
       ],
-      subcommands: [],
     },
     {
       name: "drain",
@@ -2967,7 +2941,6 @@ export const completionSpec: Fig.Spec = {
           },
         },
       ],
-      subcommands: [],
     },
     {
       name: "get",
@@ -3057,7 +3030,6 @@ export const completionSpec: Fig.Spec = {
             "Watch for changes to the requested object(s), without listing/getting first.",
         },
       ],
-      subcommands: [],
     },
     {
       name: "kustomize",
@@ -3156,7 +3128,6 @@ export const completionSpec: Fig.Spec = {
             "If true, allow labels to be overwritten, otherwise reject label updates that overwrite existing labels.",
         },
       ],
-      subcommands: [],
     },
     {
       name: "logs",
@@ -3247,7 +3218,6 @@ export const completionSpec: Fig.Spec = {
           description: "Include timestamps on each line in the log output",
         },
       ],
-      subcommands: [],
     },
     {
       name: "patch",
@@ -3282,13 +3252,10 @@ export const completionSpec: Fig.Spec = {
           },
         },
       ],
-      subcommands: [],
     },
     {
       name: "plugin",
       description: "Provides utilities for interacting with plugins.",
-      options: [],
-      subcommands: [],
     },
     {
       name: "port-forward",
@@ -3317,7 +3284,6 @@ export const completionSpec: Fig.Spec = {
           args: {},
         },
       ],
-      subcommands: [],
     },
     {
       name: "proxy",
@@ -3404,7 +3370,6 @@ export const completionSpec: Fig.Spec = {
           args: {},
         },
       ],
-      subcommands: [],
     },
     {
       name: "replace",
@@ -3464,7 +3429,6 @@ export const completionSpec: Fig.Spec = {
             "If true, wait for resources to be gone before returning. This waits for finalizers.",
         },
       ],
-      subcommands: [],
     },
     {
       name: "rollout",
@@ -3491,7 +3455,6 @@ export const completionSpec: Fig.Spec = {
               args: {},
             },
           ],
-          subcommands: [],
         },
         {
           name: "pause",
@@ -3505,7 +3468,6 @@ export const completionSpec: Fig.Spec = {
             sharedOpts.recursive,
             sharedOpts.template,
           ],
-          subcommands: [],
         },
         {
           name: "restart",
@@ -3519,7 +3481,6 @@ export const completionSpec: Fig.Spec = {
             sharedOpts.recursive,
             sharedOpts.template,
           ],
-          subcommands: [],
         },
         {
           name: "resume",
@@ -3533,7 +3494,6 @@ export const completionSpec: Fig.Spec = {
             sharedOpts.recursive,
             sharedOpts.template,
           ],
-          subcommands: [],
         },
         {
           name: "status",
@@ -3562,7 +3522,6 @@ export const completionSpec: Fig.Spec = {
               description: "Watch the status of the rollout until it's done.",
             },
           ],
-          subcommands: [],
         },
         {
           name: "undo",
@@ -3587,7 +3546,6 @@ export const completionSpec: Fig.Spec = {
               args: {},
             },
           ],
-          subcommands: [],
         },
       ],
     },
@@ -3816,7 +3774,6 @@ export const completionSpec: Fig.Spec = {
           args: {},
         },
       ],
-      subcommands: [],
     },
     {
       name: "set",
@@ -3927,7 +3884,6 @@ export const completionSpec: Fig.Spec = {
                 "Select all resources, including uninitialized ones, in the namespace of the specified resource types",
             },
           ],
-          subcommands: [],
         },
         {
           name: "resources",
@@ -4067,7 +4023,6 @@ export const completionSpec: Fig.Spec = {
               args: {},
             },
           ],
-          subcommands: [],
         },
       ],
     },
@@ -4096,7 +4051,6 @@ export const completionSpec: Fig.Spec = {
             "If true, use a schema to validate the input before sending it",
         },
       ],
-      subcommands: [],
     },
     {
       name: "top",
@@ -4107,7 +4061,6 @@ export const completionSpec: Fig.Spec = {
       description: "Mark node as schedulable.",
       args: sharedArgs.listNodes,
       options: [sharedOpts.dryRun, sharedOpts.selector],
-      subcommands: [],
     },
     {
       name: "version",
@@ -4127,7 +4080,6 @@ export const completionSpec: Fig.Spec = {
           args: {},
         },
       ],
-      subcommands: [],
     },
     {
       name: "wait",
@@ -4170,7 +4122,6 @@ export const completionSpec: Fig.Spec = {
           args: {},
         },
       ],
-      subcommands: [],
     },
   ],
 };

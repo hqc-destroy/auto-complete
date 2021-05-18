@@ -126,7 +126,7 @@ const valueArgs = [
 export const completionSpec: Fig.Spec = {
   name: "defaults",
   description: "Command line interface to a user's defaults.",
-  options: [],
+
   subcommands: [
     {
       name: "read",
@@ -160,7 +160,6 @@ export const completionSpec: Fig.Spec = {
     {
       name: "domains",
       description: "lists all domains",
-      args: [],
     },
     {
 <<<<<<< HEAD
