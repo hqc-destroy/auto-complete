@@ -314,7 +314,6 @@ const gitGenerators: Record<string, Fig.Generator> = {
 =======
         return {
           name: file,
-          insertValue: file.includes(" ") ? `'${file}'` : file,
           icon: `fig://icon?type=${ext}&color=ff0000&badge=${item.working}`,
           description: "Changed file",
           priority: 100,
@@ -2869,9 +2868,7 @@ export const completionSpec: Fig.Spec = {
           description:
             "Show the changes recorded in the stash entry as a diff.",
           insertValue: "show {cursor}",
-          options: [
-            // TODO: All log options can be options from list. Needs to be added.
-          ],
+
           args: [
             {
               name: "stash",
@@ -3496,9 +3493,6 @@ export const completionSpec: Fig.Spec = {
           name: "list",
           description: "Lists all stashed changesets",
           insertValue: "list {cursor}",
-          options: [
-            // TODO: All log options can be options from list. Needs to be added.
-          ],
         },
         {
           name: "drop",
