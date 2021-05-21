@@ -6,5 +6,10 @@ dist
 build
 npm-debug.log
 .env
+<<<<<<< HEAD
 .idea/
 .vscode
+specs
+=======
+.idea/
+>>>>>>> c05ebaa... feat: remove .vscode folder from gitignore
