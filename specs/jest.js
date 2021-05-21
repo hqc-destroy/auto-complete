@@ -5,6 +5,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
     name: 'jest',
@@ -175,6 +176,8 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
     name: "jest",
     description: "A delightful JavaScript Testing Framework with a focus on simplicity",
     args: {},
@@ -253,14 +256,18 @@ var completionSpec = {
                     {
                         name: "false",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
                     },
                 ],
             },
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -542,10 +549,13 @@ var completionSpec = {
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
             name: ["--coverageProvider"],
             displayName: "--coverageProvider=<provider>",
             insertValue: "--coverageProvider=",
             description: "Indicates which provider should be used to instrument code for coverage",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -1211,6 +1221,8 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
             args: {
                 name: "babel|v8",
                 suggestions: [{ name: "babel" }, { name: "v8" }],
@@ -1483,8 +1495,11 @@ var completionSpec = {
         },
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
 };
 

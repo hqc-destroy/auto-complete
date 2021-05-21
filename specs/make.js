@@ -1,8 +1,11 @@
 var listTargets = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c80c604... Revert "feat: update prettierignore"
+=======
+>>>>>>> d0857f4... feat: update formatting
     script: "make -qp | awk -F':' '/^[a-zA-Z0-9][^$#\\/\\t=]*:([^=]|$)/ {split($1,A,/ /);for(i in A)print A[i]}' | sort -u",
     postProcess: function (out) {
         var lines = out.split("\n");
@@ -10,10 +13,14 @@ var listTargets = {
         for (var i = 1; i < lines.length; i++) {
             targets.push({
 <<<<<<< HEAD
+<<<<<<< HEAD
                 name: lines[i].trim(),
 =======
                 name: lines[i],
 >>>>>>> c80c604... Revert "feat: update prettierignore"
+=======
+                name: lines[i].trim(),
+>>>>>>> d0857f4... feat: update formatting
                 description: "make target",
                 icon: "🎯",
                 priority: 80,
@@ -21,6 +28,7 @@ var listTargets = {
         }
         return targets;
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   script:
@@ -41,6 +49,8 @@ var listTargets = {
 >>>>>>> 880aa33... feat: update prettierignore
 =======
 >>>>>>> c80c604... Revert "feat: update prettierignore"
+=======
+>>>>>>> d0857f4... feat: update formatting
 };
 var completionSpec = {
     name: "make",

@@ -62,10 +62,14 @@ var completionSpec = {
         {
             name: "run",
 <<<<<<< HEAD
+<<<<<<< HEAD
             description: "run arbitrary package scripts",
 =======
             description: "",
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+            description: "run arbitrary package scripts",
+>>>>>>> d0857f4... feat: update formatting
             args: [
                 {
                     generators: {
@@ -79,11 +83,15 @@ var completionSpec = {
                                 var packageContent = JSON.parse(out);
                                 var scripts = packageContent["scripts"];
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d0857f4... feat: update formatting
                                 var figCompletions = packageContent["fig"];
                                 if (scripts) {
                                     var keys = Object.keys(scripts).map(function (key) {
                                         return Object.assign({}, { icon: "fig://icon?type=npm" }, (figCompletions || {})[key], // need the || {} otherwise it errors
                                         { name: key, insertValue: key }); // ensure that name and insertValue are defined by "scripts" dict
+<<<<<<< HEAD
 =======
                                 if (scripts) {
                                     var keys = Object.keys(scripts).map(function (key) {
@@ -92,10 +100,13 @@ var completionSpec = {
                                             icon: "fig://icon?type=npm",
                                         };
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
                                     });
                                     return keys;
                                 }
                             }
+<<<<<<< HEAD
 <<<<<<< HEAD
                             catch (e) {
                                 console.error(e);
@@ -103,6 +114,11 @@ var completionSpec = {
 =======
                             catch (e) { }
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+                            catch (e) {
+                                console.error(e);
+                            }
+>>>>>>> d0857f4... feat: update formatting
                             return [];
                         },
                     },

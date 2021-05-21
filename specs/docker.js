@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var generators = {
     runningDockerContainers: {
         script: "docker ps --format '{{ json . }}'",
@@ -38,6 +39,10 @@ var __assign =
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+>>>>>>> d0857f4... feat: update formatting
         for (var s, i = 1, n = arguments.length; i < n; i++) {
             s = arguments[i];
             for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
@@ -65,8 +70,11 @@ var postProcessDockerPs = function (out) {
 var dockerGenerators = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
+=======
+>>>>>>> d0857f4... feat: update formatting
     runningDockerContainers: {
         script: "docker ps --format '{{ json . }}'",
         postProcess: postProcessDockerPs,
@@ -74,6 +82,7 @@ var dockerGenerators = {
     allDockerContainers: {
         script: "docker ps -a --format '{{ json . }}'",
         postProcess: postProcessDockerPs,
+<<<<<<< HEAD
     },
     pausedDockerContainers: {
         script: "docker ps --filter status=paused --format '{{ json . }}'",
@@ -266,6 +275,44 @@ const containerAndCommandArgs = [
         },
         debounce: true
     }
+=======
+    },
+    pausedDockerContainers: {
+        script: "docker ps --filter status=paused --format '{{ json . }}'",
+        postProcess: postProcessDockerPs,
+    },
+    allLocalImages: {
+        script: "docker image ls --format '{{ json . }}'",
+        postProcess: function (out) {
+            var allLines = out
+                .split("\n")
+                .map(function (line) { return JSON.parse(line); });
+            return allLines.map(function (i) { return ({
+                name: "" + i.Repository,
+            }); });
+        },
+    },
+    dockerHubSearch: {
+        script: function (context) {
+            if (context[context.length - 1] === "")
+                return "";
+            var searchTerm = context[context.length - 1];
+            return "docker search " + searchTerm + " --format '{{ json . }}'";
+        },
+        postProcess: function (out) {
+            var allLines = out
+                .split("\n")
+                .map(function (line) { return JSON.parse(line); });
+            return allLines.map(function (i) { return ({
+                name: "" + i.Name,
+                icon: "fig://icon?type=docker",
+            }); });
+        },
+        trigger: function () {
+            return true;
+        },
+    },
+>>>>>>> d0857f4... feat: update formatting
 };
 >>>>>>> ee31762... feat: docker pull searches dockerhub
 var containersArg = {
@@ -277,6 +324,7 @@ var imagesArg = {
     generators: [dockerGenerators.allLocalImages],
 };
 var containerAndCommandArgs = [
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   containersArg,
@@ -3516,6 +3564,41 @@ var completionSpec = {
                     args: {},
                 },
             ],
+=======
+    containersArg,
+    {
+        name: "command",
+        isCommand: true,
+    },
+];
+var completionSpec = {
+    name: "docker",
+    description: "A self-sufficient runtime for containers",
+    subcommands: [
+        {
+            name: "attach",
+            description: "Attach local standard input, output, and error streams to a running container,",
+            args: containersArg,
+            options: [
+                {
+                    name: ["--detach-keys"],
+                    description: "Override the key sequence for detaching a container",
+                    args: {
+                        name: "string",
+                    },
+                },
+                {
+                    name: ["--no-stdin"],
+                    description: "Do not attach STDIN",
+                    args: {},
+                },
+                {
+                    name: ["--sig-proxy"],
+                    description: "Proxy all received signals to the process (default true)",
+                    args: {},
+                },
+            ],
+>>>>>>> d0857f4... feat: update formatting
             subcommands: [],
         },
         {
@@ -3699,9 +3782,12 @@ var completionSpec = {
                     },
                 },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
             ],
         },
         {
@@ -4592,6 +4678,7 @@ var completionSpec = {
             },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           },
         },
         {
@@ -4753,6 +4840,8 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
             options: [
                 {
                     args: {
@@ -4866,6 +4955,7 @@ var completionSpec = {
                 },
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
@@ -4893,6 +4983,32 @@ var completionSpec = {
             subcommands: [],
         },
         {
+=======
+        },
+        {
+            name: "kill",
+            description: "Kill one or more running containers",
+            args: __assign(__assign({}, containersArg), { variadic: true }),
+            options: [],
+            subcommands: [],
+        },
+        {
+            name: "load",
+            description: "Load an image from a tar archive or STDIN",
+            args: {},
+            options: [
+                {
+                    description: 'Signal to send to the container (default "KILL")',
+                    name: ["-s", "--signal"],
+                    args: {
+                        name: "string",
+                    },
+                },
+            ],
+            subcommands: [],
+        },
+        {
+>>>>>>> d0857f4... feat: update formatting
             name: "login",
             description: "Log in to a Docker registry",
             args: {
@@ -5579,6 +5695,7 @@ var completionSpec = {
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           description:
             "Format the output. Values: [pretty | json]. (Default: pretty)",
           name: ["-f", "--format"],
@@ -6058,6 +6175,8 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
             name: "network",
             description: "Manage networks",
             args: {},
@@ -6107,14 +6226,18 @@ var completionSpec = {
             subcommands: [],
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
         {
             name: "system",
             description: "Manage Docker",
             subcommands: [
                 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     name: 'prune',
@@ -6169,6 +6292,8 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
                     name: "prune",
                     description: "Remove unused data",
                     options: [
@@ -6196,9 +6321,12 @@ var completionSpec = {
             ],
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
         {
             name: "trust",
             description: "Manage trust on Docker images",
@@ -6213,6 +6341,7 @@ var completionSpec = {
             options: [],
             subcommands: [],
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6243,5 +6372,8 @@ var completionSpec = {
 =======
     ],
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+    ],
+>>>>>>> d0857f4... feat: update formatting
 };
 

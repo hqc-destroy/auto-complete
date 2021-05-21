@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
@@ -67,14 +68,19 @@ var __assign =
     __assign =
       Object.assign ||
       function (t) {
+=======
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+>>>>>>> d0857f4... feat: update formatting
         for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s)
-            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
         }
         return t;
-      };
+    };
     return __assign.apply(this, arguments);
+<<<<<<< HEAD
   };
 var __spreadArray =
   (this && this.__spreadArray) ||
@@ -86,6 +92,69 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
     for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
         to[j] = from[i];
     return to;
+=======
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+var __spreadArray = (this && this.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
+var searchGenerator = {
+    script: function (context) {
+        if (context[context.length - 1] === "")
+            return "";
+        var searchTerm = context[context.length - 1];
+        return "curl -s -H \"Accept: application/json\" \"https://api.npms.io/v2/search?q=" + searchTerm + "&size=20\"";
+    },
+    postProcess: function (out) {
+        try {
+            var results = JSON.parse(out).results;
+            return results.map(function (item) { return ({
+                name: item.package.name,
+                description: item.package.description,
+            }); });
+        }
+        catch (e) {
+            return [];
+        }
+    },
+>>>>>>> d0857f4... feat: update formatting
 };
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -145,6 +214,7 @@ var searchGenerator = {
     },
 =======
 var getScriptsGenerator = {
+<<<<<<< HEAD
   script:
     "until [[ -f package.json ]] || [[ $PWD = '/' ]]; do cd ..; done; cat package.json",
   // splitOn: "\n",
@@ -174,6 +244,8 @@ var getScriptsGenerator = {
 >>>>>>> 880aa33... feat: update prettierignore
 };
 var getScriptsGenerator = {
+=======
+>>>>>>> d0857f4... feat: update formatting
     script: "until [[ -f package.json ]] || [[ $PWD = '/' ]]; do cd ..; done; cat package.json",
     // splitOn: "\n",
     postProcess: function (out) {
@@ -196,6 +268,7 @@ var getScriptsGenerator = {
             console.error(e);
         }
         return [];
+<<<<<<< HEAD
 =======
                 }
             }
@@ -203,6 +276,8 @@ var getScriptsGenerator = {
             return [];
         },
 >>>>>>> c80c604... Revert "feat: update prettierignore"
+=======
+>>>>>>> d0857f4... feat: update formatting
     },
 };
 <<<<<<< HEAD
@@ -213,6 +288,7 @@ var getScriptsGenerator = {
 var packageList = {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     script: "cat package.json",
     postProcess: function (out) {
 =======
@@ -221,6 +297,10 @@ var packageList = {
         console.log("THIS IS A TEST");
         console.log(out);
 >>>>>>> c80c604... Revert "feat: update prettierignore"
+=======
+    script: "cat package.json",
+    postProcess: function (out) {
+>>>>>>> d0857f4... feat: update formatting
         if (out.trim() == "") {
             return [];
         }
@@ -240,6 +320,7 @@ var packageList = {
         }
         return [];
     },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   script: "cat package.json",
@@ -270,6 +351,8 @@ var packageList = {
 >>>>>>> 880aa33... feat: update prettierignore
 =======
 >>>>>>> c80c604... Revert "feat: update prettierignore"
+=======
+>>>>>>> d0857f4... feat: update formatting
 };
 var configList = {
     script: "yarn config list",
@@ -294,6 +377,7 @@ var configList = {
         }
         catch (e) { }
         return [];
+<<<<<<< HEAD
     },
 };
 var completionSpec = {
@@ -549,6 +633,132 @@ var completionSpec = {
         {
             name: "--check-files",
             description: "install will verify file tree of packages for consistency",
+=======
+    },
+};
+var completionSpec = {
+    name: "yarn",
+    description: "Manage packages and run scripts",
+    generateSpec: function (_context, executeShellCommand) { return __awaiter(void 0, void 0, void 0, function () {
+        var script, postProcess, packages, _a, cli, subcommands;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    script = packageList.script, postProcess = packageList.postProcess;
+                    _a = postProcess;
+                    return [4 /*yield*/, executeShellCommand(script)];
+                case 1:
+                    packages = _a.apply(void 0, [_b.sent()]).map(function (_a) {
+                        var name = _a.name;
+                        return name;
+                    });
+                    cli = ["vue", "nuxt", "expo", "jest", "next"];
+                    subcommands = packages
+                        .filter(function (name) { return cli.includes(name); })
+                        .map(function (name) { return ({
+                        name: name,
+                        loadSpec: name,
+                        icon: "fig://icon?type=package",
+                    }); });
+                    return [2 /*return*/, {
+                            name: "yarn",
+                            subcommands: subcommands,
+                        }];
+            }
+        });
+    }); },
+    args: [
+        {
+            generators: getScriptsGenerator,
+            isOptional: true,
+>>>>>>> d0857f4... feat: update formatting
+        },
+    ],
+    options: [
+        {
+<<<<<<< HEAD
+            name: "--cwd",
+            description: "working directory to use (default: .)",
+=======
+            name: "--cache-folder",
+            description: "specify a custom folder that must be used to store the yarn cache",
+>>>>>>> d0857f4... feat: update formatting
+            args: {
+                template: "folders",
+            },
+        },
+        {
+<<<<<<< HEAD
+            name: "--disable-pnp",
+            description: "disable the Plug'n'Play installation",
+        },
+        {
+            name: "--emoji",
+            description: "enable emoji in output (default: true)",
+            args: {
+                name: "bool",
+                suggestions: [{ name: "true" }, { name: "false" }],
+            },
+        },
+        {
+            name: ["--enable-pnp", "--pnp"],
+            description: "enable the Plug'n'Play installation",
+        },
+        {
+            name: "--flat",
+            description: "only allow one version of a package",
+        },
+        {
+            name: "--focus",
+            description: "Focus on a single workspace by installing remote copies of its sibling workspaces.",
+        },
+        {
+            name: "--force",
+            description: " install and build packages even if they were built before, overwrite lockfile",
+        },
+        {
+            name: "--frozen-lockfile",
+            description: "don't generate a lockfile and fail if an update is needed",
+        },
+        {
+            name: "--global-folder",
+            description: "specify a custom folder to store global packages",
+            args: {
+                template: "folders",
+            },
+        },
+        {
+            name: "--har",
+            description: "save HAR output of network traffic",
+        },
+        {
+            name: "--https-proxy",
+            description: "",
+            args: {
+                name: "path",
+                suggestions: [{ name: "https://" }],
+            },
+        },
+        {
+            name: "--ignore-engines",
+            description: "ignore engines check",
+        },
+        {
+            name: "--ignore-optional",
+            description: "ignore optional dependencies",
+        },
+        {
+            name: "--ignore-platform",
+            description: "ignore platform checks",
+        },
+        {
+            name: "--ignore-scripts",
+            description: "don't run lifecycle scripts",
+        },
+        {
+=======
+            name: "--check-files",
+            description: "install will verify file tree of packages for consistency",
         },
         {
             name: "--cwd",
@@ -625,6 +835,7 @@ var completionSpec = {
             description: "don't run lifecycle scripts",
         },
         {
+>>>>>>> d0857f4... feat: update formatting
             name: "--json",
             description: "format Yarn log messages as lines of JSON (see jsonlines.org)",
         },
@@ -718,6 +929,7 @@ var completionSpec = {
         {
             name: "--prefer-offline",
             description: "use network only if dependencies are not available in local cache",
+<<<<<<< HEAD
         },
         {
             name: "--preferred-cache-folder",
@@ -754,6 +966,44 @@ var completionSpec = {
             ],
         },
         {
+=======
+        },
+        {
+            name: "--preferred-cache-folder",
+            description: "specify a custom folder to store the yarn cache if possible",
+            args: {
+                template: "folders",
+            },
+        },
+        {
+            name: ["--prod", "--production"],
+            description: "",
+            args: {},
+        },
+        {
+            name: "--proxy",
+            description: "",
+            args: [
+                {
+                    name: "host",
+                },
+            ],
+        },
+        {
+            name: "--pure-lockfile",
+            description: "don't generate a lockfile",
+        },
+        {
+            name: "--registry",
+            description: "override configuration registry",
+            args: [
+                {
+                    name: "url",
+                },
+            ],
+        },
+        {
+>>>>>>> d0857f4... feat: update formatting
             name: ["-s", "--silent"],
             description: "skip Yarn console logs, other types of logs (script output) will be printed",
         },
@@ -775,6 +1025,7 @@ var completionSpec = {
         {
             name: "--update-checksums",
             description: "update package checksums from current repository",
+<<<<<<< HEAD
         },
         {
             name: "--use-yarnrc",
@@ -947,8 +1198,32 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
+=======
         },
         {
+            name: "--use-yarnrc",
+            description: "specifies a yarnrc file that Yarn should use (.yarnrc only, not .npmrc)",
+            args: {
+                template: "filepaths",
+            },
+        },
+        {
+            name: ["-v", "--version"],
+            description: "output the version number",
+        },
+        {
+            name: "--verbose",
+            description: "output verbose messages on internal operations",
+        },
+        {
+            name: ["-h", "--help"],
+            description: "output usage information",
+>>>>>>> d0857f4... feat: update formatting
+        },
+    ],
+    subcommands: [
+        {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -1081,10 +1356,89 @@ var completionSpec = {
           args: [
             {
               name: "version",
+=======
+            name: "add",
+            description: "Installs a package and any packages that it depends on.",
+            args: {
+                name: "package",
+                generators: searchGenerator,
+                debounce: true,
+                variadic: true,
+>>>>>>> d0857f4... feat: update formatting
             },
-          ],
+            options: [
+                {
+                    name: ["-W", "--ignore-workspace-root-check"],
+                    description: "required to run yarn add inside a workspace root",
+                },
+                {
+                    name: ["-D", "--dev"],
+                    description: "save package to your `devDependencies`",
+                },
+                {
+                    name: ["-P", "--peer"],
+                    description: "save package to your `peerDependencies`",
+                },
+                {
+                    name: ["-O", "--optional"],
+                    description: "save package to your `optionalDependencies`",
+                },
+                {
+                    name: ["-E", "--exact"],
+                    description: "install exact version",
+                },
+                {
+                    name: ["-T", "--tilde"],
+                    description: "install most recent release with the same minor version",
+                },
+                {
+                    name: ["-A", "--audit"],
+                    description: "Run vulnerability audit on installed packages",
+                },
+                {
+                    name: ["-h", "--help"],
+                    description: "output usage information",
+                },
+            ],
         },
         {
+            name: "audit",
+            description: "Perform a vulnerability audit against the installed packages",
+            options: [
+                {
+                    name: "--summary",
+                    description: "Only print the summary.",
+                },
+                {
+                    name: "--groups",
+                    description: "Only audit dependencies from listed groups. Default: devDependencies, dependencies, optionalDependencies",
+                    args: {
+                        name: "group_name",
+                        variadic: true,
+                    },
+                },
+                {
+                    name: "--level",
+                    description: "Only print advisories with severity greater than or equal to one of the following: info|low|moderate|high|critical. Default: info",
+                    args: {
+                        name: "severity",
+                        suggestions: [
+                            { name: "info" },
+                            { name: "low" },
+                            { name: "moderate" },
+                            { name: "high" },
+                            { name: "critical" },
+                        ],
+                    },
+                },
+                {
+                    name: ["-h", "--help"],
+                    description: "output usage information",
+                },
+            ],
+        },
+        {
+<<<<<<< HEAD
           name: ["-2"],
           description: "generates the project using Yarn 2",
 >>>>>>> 880aa33... feat: update prettierignore
@@ -1094,12 +1448,35 @@ var completionSpec = {
         {
             name: "config",
             description: "configure yarn",
+=======
+            name: "autoclean",
+            description: "Cleans and removes unnecessary files from package dependencies",
+            options: [
+                {
+                    name: ["-h", "--help"],
+                    description: "output usage information",
+                },
+                {
+                    name: ["-i", "--init"],
+                    description: "Creates the .yarnclean file if it does not exist, and adds the default entries",
+                },
+                {
+                    name: ["-f", "--force"],
+                    description: "if a .yarnclean file exists, run the clean process",
+                },
+            ],
+        },
+        {
+            name: "bin",
+            description: "Displays the location of the yarn bin folder",
+>>>>>>> d0857f4... feat: update formatting
             options: [
                 {
                     name: ["-h", "--help"],
                     description: "output usage information",
                 },
             ],
+<<<<<<< HEAD
             subcommands: [
                 {
                     name: "set",
@@ -1139,14 +1516,133 @@ var completionSpec = {
         {
             name: "create",
             description: "Creates new projects from any create-* starter kits",
+=======
+        },
+        {
+            name: "cache",
+            description: "",
+>>>>>>> d0857f4... feat: update formatting
             options: [
                 {
                     name: ["-h", "--help"],
                     description: "output usage information",
                 },
             ],
+<<<<<<< HEAD
         },
         {
+            name: "exec",
+            description: "",
+=======
+            subcommands: [
+                {
+                    name: "clean",
+                    description: "clear global cache",
+                },
+                {
+                    name: "dir",
+                    description: "print yarn’s global cache path",
+                },
+                {
+                    name: "list",
+                    description: "print out every cached package",
+                    options: [
+                        {
+                            name: "--pattern",
+                            description: "filter cached packages by pattern",
+                            args: [
+                                {
+                                    name: "pattern",
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        },
+        {
+            name: "config",
+            description: "configure yarn",
+>>>>>>> d0857f4... feat: update formatting
+            options: [
+                {
+                    name: ["-h", "--help"],
+                    description: "output usage information",
+                },
+            ],
+<<<<<<< HEAD
+        },
+        {
+            name: "generate-lock-entry",
+            description: "Generates a lock file entry",
+            options: [
+                {
+                    name: "--use-manifest",
+                    description: "Specify which manifest file to use for generating lock entry",
+                    args: {
+                        template: "filepaths",
+                    },
+                },
+                {
+                    name: "--resolved",
+                    description: "Generate from <*.tgz>#<hash>",
+                    args: {
+                        template: "filepaths",
+                    },
+                },
+                {
+=======
+            subcommands: [
+                {
+                    name: "set",
+                    description: "Sets the config key to a certain value",
+                    options: [
+                        {
+                            name: ["-g", "--global"],
+                            description: "set global config",
+                        },
+                    ],
+                },
+                {
+                    name: "get",
+                    description: "Print the value for a given key",
+                    args: [
+                        {
+                            generators: configList,
+                        },
+                    ],
+                },
+                {
+                    name: "delete",
+                    description: "Deletes a given key from the config",
+                    args: [
+                        {
+                            generators: configList,
+                        },
+                    ],
+                },
+                {
+                    name: "list",
+                    description: "Displays the current configuration",
+                },
+            ],
+        },
+        {
+            name: "create",
+            description: "Creates new projects from any create-* starter kits",
+            options: [
+                {
+>>>>>>> d0857f4... feat: update formatting
+                    name: ["-h", "--help"],
+                    description: "output usage information",
+                },
+            ],
+        },
+        {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
             name: "exec",
             description: "",
             options: [
@@ -1181,8 +1677,7 @@ var completionSpec = {
             ],
         },
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
+>>>>>>> d0857f4... feat: update formatting
             name: "global",
             description: "Install packages globally on your operating system",
             args: {
@@ -1191,10 +1686,13 @@ var completionSpec = {
                 debounce: true,
                 variadic: true,
             },
+<<<<<<< HEAD
 =======
             name: "global",
             description: "Install packages globally on your operating system",
 >>>>>>> c80c604... Revert "feat: update prettierignore"
+=======
+>>>>>>> d0857f4... feat: update formatting
             options: [
                 {
                     name: "--prefix",
@@ -1212,6 +1710,7 @@ var completionSpec = {
                     description: "output usage information",
                 },
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
           name: "--focus",
@@ -1530,6 +2029,179 @@ var completionSpec = {
             description: "Clear registry username and email",
             options: [],
 >>>>>>> c80c604... Revert "feat: update prettierignore"
+=======
+        },
+        {
+            name: "help",
+            description: "output usage information",
+            options: [],
+        },
+        {
+            name: "import",
+            description: "Generates yarn.lock from an npm package-lock.json file",
+            options: [],
+        },
+        {
+            name: "info",
+            description: "Show information about a package",
+            options: [],
+        },
+        {
+            name: "init",
+            description: "Interactively creates or updates a package.json file",
+            options: [
+                {
+                    name: ["-y", "--yes"],
+                    description: "use default options",
+                },
+                {
+                    name: ["-p", "--private"],
+                    description: "use default options and private true",
+                },
+                {
+                    name: ["-i", "--install"],
+                    description: "install a specific Yarn release",
+                    args: [
+                        {
+                            name: "version",
+                        },
+                    ],
+                },
+                {
+                    name: ["-2"],
+                    description: "generates the project using Yarn 2",
+                },
+                {
+                    name: ["-h", "--help"],
+                    description: "output usage information",
+                },
+            ],
+        },
+        {
+            name: "install",
+            description: "Install all the dependencies listed within package.json",
+            options: [
+                {
+                    name: "--check-files",
+                    description: "install will verify file tree of packages for consistency",
+                },
+                {
+                    name: "--flat",
+                    description: "only allow one version of a package",
+                },
+                {
+                    name: "--focus",
+                    description: "Focus on a single workspace by installing remote copies of its sibling workspaces.",
+                },
+                {
+                    name: "--force",
+                    description: " install and build packages even if they were built before, overwrite lockfile",
+                },
+                {
+                    name: "--frozen-lockfile",
+                    description: "don't generate a lockfile and fail if an update is needed",
+                },
+                {
+                    name: "--har",
+                    description: "save HAR output of network traffic",
+                },
+                {
+                    name: "--ignore-engines",
+                    description: "ignore engines check",
+                },
+                {
+                    name: "--ignore-optional",
+                    description: "ignore optional dependencies",
+                },
+                {
+                    name: "--ignore-scripts",
+                    description: "don't run lifecycle scripts",
+                },
+                {
+                    name: "--modules-folder",
+                    description: "rather than installing modules into the node_modules folder relative to the cwd, output them here",
+                    args: {
+                        template: "folders",
+                    },
+                },
+                {
+                    name: "--no-lockfile",
+                    description: "don't read or generate a lockfile",
+                },
+                {
+                    name: "--non-interactive",
+                    description: "do not show interactive prompts",
+                },
+                {
+                    name: "--offline",
+                    description: "trigger an error if any required dependencies are not available in local cache",
+                },
+                {
+                    name: ["--prod", "--production"],
+                    description: "",
+                    args: {},
+                },
+                {
+                    name: "--pure-lockfile",
+                    description: "don't generate a lockfile",
+                },
+                {
+                    name: ["-s", "--silent"],
+                    description: "skip Yarn console logs, other types of logs (script output) will be printed",
+                },
+                {
+                    name: "--verbose",
+                    description: "output verbose messages on internal operations",
+                },
+            ],
+        },
+        {
+            name: "licenses",
+            description: "",
+            options: [],
+            subcommands: [
+                {
+                    name: "list",
+                    description: "List licenses for installed packages",
+                },
+                {
+                    name: "generate-disclaimer",
+                    description: "List of licenses from all the packages",
+                },
+            ],
+        },
+        {
+            name: "link",
+            description: "Symlink a package folder during development",
+            options: [],
+            args: {
+                name: "package",
+            },
+        },
+        {
+            name: "list",
+            description: "lists all dependencies for the current working directory",
+            options: [
+                {
+                    name: "--depth",
+                    description: "restrict the depth of the dependencies",
+                },
+                {
+                    name: "--pattern",
+                    description: "filter the list of dependencies by the pattern",
+                },
+            ],
+        },
+        {
+            name: "login",
+            description: "Store registry username and email",
+            options: [],
+        },
+        {
+            name: "logout",
+            description: "Clear registry username and email",
+            options: [],
+>>>>>>> d0857f4... feat: update formatting
         },
         {
             name: "node",
@@ -1539,14 +2211,20 @@ var completionSpec = {
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             name: "outdated",
 <<<<<<< HEAD
 <<<<<<< HEAD
             description: "",
+=======
+            name: "outdated",
+            description: "Checks for outdated package dependencies",
+>>>>>>> d0857f4... feat: update formatting
             options: [],
         },
         {
             name: "owner",
+<<<<<<< HEAD
             description: "",
             options: [],
         },
@@ -1558,10 +2236,43 @@ var completionSpec = {
         {
             name: "policies",
             description: "",
+=======
+            description: "Manage package owners",
+            options: [],
+            subcommands: [
+                {
+                    name: "list",
+                    description: "Lists all of the owners of a package",
+                },
+                {
+                    name: "add",
+                    description: "Adds the user as an owner of the package",
+                },
+                {
+                    name: "add",
+                    description: "Removes the user as an owner of the package",
+                },
+            ],
+        },
+        {
+            name: "pack",
+            description: "Creates a compressed gzip archive of package dependencies",
+            options: [
+                {
+                    name: "--filename",
+                    description: "Creates a compressed gzip archive of package dependencies and names the file filename",
+                },
+            ],
+        },
+        {
+            name: "policies",
+            description: "Defines project-wide policies for your project",
+>>>>>>> d0857f4... feat: update formatting
             options: [],
         },
         {
             name: "publish",
+<<<<<<< HEAD
             description: "",
             options: [],
         },
@@ -1628,6 +2339,12 @@ var completionSpec = {
 <<<<<<< HEAD
 =======
 >>>>>>> c80c604... Revert "feat: update prettierignore"
+=======
+            description: "Publishes a package to the npm registry",
+            options: [],
+        },
+        {
+>>>>>>> d0857f4... feat: update formatting
             name: "remove",
             description: "remove installed package",
             options: [],
@@ -1636,6 +2353,7 @@ var completionSpec = {
                     generators: packageList,
                 },
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 7245588... Updates Yarn specs
@@ -1677,6 +2395,10 @@ var completionSpec = {
 =======
         },
         {
+=======
+        },
+        {
+>>>>>>> d0857f4... feat: update formatting
             name: "run",
             description: "",
             options: [],
@@ -1697,6 +2419,7 @@ var completionSpec = {
                 //           }
                 //     },
                 {
+<<<<<<< HEAD
                     generators: yarnGenerators.getScripts,
                 },
             ],
@@ -1709,15 +2432,29 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
             description: "",
+=======
+                    generators: getScriptsGenerator,
+                },
+            ],
+        },
+        {
+            name: "tag",
+            description: "Add, remove, or list tags on a package",
+>>>>>>> d0857f4... feat: update formatting
             options: [],
         },
         {
             name: "team",
+<<<<<<< HEAD
             description: "",
+=======
+            description: "Maintain team memberships",
+>>>>>>> d0857f4... feat: update formatting
             options: [],
         },
         {
             name: "unlink",
+<<<<<<< HEAD
             description: "",
             options: [],
 =======
@@ -1765,6 +2502,10 @@ var completionSpec = {
             description: "Unlink a previously created symlink for a package",
             options: [],
 >>>>>>> c80c604... Revert "feat: update prettierignore"
+=======
+            description: "Unlink a previously created symlink for a package",
+            options: [],
+>>>>>>> d0857f4... feat: update formatting
         },
         {
             name: "unplug",
@@ -1772,6 +2513,7 @@ var completionSpec = {
             options: [],
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             name: "upgrade",
@@ -1822,6 +2564,11 @@ var completionSpec = {
             description: "Upgrades packages to their latest version based on the specified range",
             options: [],
 >>>>>>> c80c604... Revert "feat: update prettierignore"
+=======
+            name: "upgrade",
+            description: "Upgrades packages to their latest version based on the specified range",
+            options: [],
+>>>>>>> d0857f4... feat: update formatting
         },
         {
             name: "upgrade-interactive",
@@ -1859,6 +2606,7 @@ var completionSpec = {
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             name: "workspace",
             description: "Manage workspace",
 <<<<<<< HEAD
@@ -1877,6 +2625,11 @@ var completionSpec = {
             description: "Manage workspace",
             options: [],
 >>>>>>> c80c604... Revert "feat: update prettierignore"
+=======
+            name: "workspace",
+            description: "Manage workspace",
+            options: [],
+>>>>>>> d0857f4... feat: update formatting
             args: [
                 {
                     name: "name",
@@ -1901,6 +2654,7 @@ var completionSpec = {
                 // TODO arg 1 is script suggestion from the workspace specified in arg 0.
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           name: "subcommand",
           description: "",
@@ -1910,6 +2664,8 @@ var completionSpec = {
 >>>>>>> 880aa33... feat: update prettierignore
 =======
 >>>>>>> c80c604... Revert "feat: update prettierignore"
+=======
+>>>>>>> d0857f4... feat: update formatting
         },
         {
             name: "workspaces",

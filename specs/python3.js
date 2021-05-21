@@ -41,7 +41,11 @@ var completionSpec = {
         },
         {
             name: ["-V", "--version"],
+<<<<<<< HEAD
             description: "Print the Python version number and exit."
+=======
+            description: "Print the Python version number and exit.",
+>>>>>>> d0857f4... feat: update formatting
         },
         {
             name: ["-b"],
@@ -58,9 +62,15 @@ var completionSpec = {
                 suggestions: [
                     { name: "default" },
                     { name: "always" },
+<<<<<<< HEAD
                     { name: "never" }
                 ],
             }
+=======
+                    { name: "never" },
+                ],
+            },
+>>>>>>> d0857f4... feat: update formatting
         },
         {
             name: ["-d"],
@@ -96,7 +106,11 @@ var completionSpec = {
         },
         {
             name: ["-s"],
+<<<<<<< HEAD
             description: "Don’t add the user site-packages directory to sys.path."
+=======
+            description: "Don’t add the user site-packages directory to sys.path.",
+>>>>>>> d0857f4... feat: update formatting
         },
         {
             name: ["-S"],
@@ -113,7 +127,11 @@ var completionSpec = {
         {
             name: ["-W"],
             description: "Warning control. Python’s warning machinery by default prints warning messages to sys.stderr.",
+<<<<<<< HEAD
             args: {}
+=======
+            args: {},
+>>>>>>> d0857f4... feat: update formatting
         },
         {
             name: ["-x"],
@@ -132,9 +150,15 @@ var completionSpec = {
                     { name: "dev" },
                     { name: "utf8" },
                     { name: "pycache_prefix=PATH" },
+<<<<<<< HEAD
                 ]
             },
         }
+=======
+                ],
+            },
+        },
+>>>>>>> d0857f4... feat: update formatting
     ],
 };
 

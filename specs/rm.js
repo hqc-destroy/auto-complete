@@ -4,6 +4,7 @@ var completionSpec = {
     args: [
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             variadic: true,
 <<<<<<< HEAD
 =======
@@ -12,6 +13,10 @@ var completionSpec = {
 =======
             template: ["folders", "filepaths"],
 >>>>>>> ca3647a... fix: update subl and rm to accept both files and folders as arguments
+=======
+            variadic: true,
+            template: ["folders", "filepaths"],
+>>>>>>> d0857f4... feat: update formatting
         },
     ],
     subcommands: [],

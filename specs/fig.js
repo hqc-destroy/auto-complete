@@ -5,6 +5,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   name: "fig",
   description: "Autocomplete for your terminal",
   subcommands: [
@@ -296,6 +297,8 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
     name: "fig",
     description: "Autocomplete for your terminal",
     subcommands: [
@@ -540,10 +543,13 @@ var completionSpec = {
                 },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
                 {
                     name: "pty.rc",
                     icon: "fig://icon?type=commandkey",
@@ -580,6 +586,9 @@ var completionSpec = {
                 },
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d0857f4... feat: update formatting
                     name: "app.hideMenubarIcon",
                     icon: "fig://icon?type=commandkey",
                     description: "Hide Fig's icon ◧ in the mac status bar",
@@ -592,8 +601,11 @@ var completionSpec = {
                     },
                 },
                 {
+<<<<<<< HEAD
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
                     name: "autocomplete.theme",
                     icon: "fig://icon?type=commandkey",
                     description: "Change Fig's theme",
@@ -623,6 +635,7 @@ var completionSpec = {
                         name: "number",
                     },
                 },
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 1c4709c... add generator to git merge
             ],
@@ -656,6 +669,11 @@ var completionSpec = {
         },
         {
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+            ],
+        },
+        {
+>>>>>>> d0857f4... feat: update formatting
             name: "uninstall",
             description: "uninstall a completion spec",
             args: {
@@ -678,9 +696,12 @@ var completionSpec = {
                                     name: curr.trim().split(".")[0],
                                     icon: "fig://icon?type=box",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
                                 });
                                 return acc;
                             }
@@ -688,6 +709,7 @@ var completionSpec = {
                         return out;
                     },
                 },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -753,6 +775,26 @@ var completionSpec = {
         { name: "onboarding", description: "re-run Fig's onboarding" },
         { name: "diagnostic", description: "display diagnostic information" },
         {
+=======
+            },
+        },
+        {
+            name: "invite",
+            description: "share Fig with a teammate ⭐",
+            icon: "fig://icon?type=invite",
+        },
+        { name: "report", description: "report an issue" },
+        {
+            name: "tweet",
+            description: "tweet about Fig",
+            icon: "fig://icon?type=twitter",
+        },
+        { name: "docs", description: "view docs in browser" },
+        { name: "list", description: "list all available completion specs" },
+        { name: "onboarding", description: "re-run Fig's onboarding" },
+        { name: "diagnostic", description: "display diagnostic information" },
+        {
+>>>>>>> d0857f4... feat: update formatting
             name: "issue",
             description: "create a new Github issue in withfig/fig",
             icon: "fig://icon?type=github",
@@ -788,6 +830,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 export {};
 >>>>>>> 8ff182e... feat: update folder structure and compiler
 =======
@@ -804,3 +847,6 @@ export {};
 =======
 
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+
+>>>>>>> d0857f4... feat: update formatting

@@ -3,6 +3,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: "open",
     description: "open files using default application",
     args: {
@@ -40,3 +41,12 @@ var completionSpec = {
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+    name: "open",
+    description: "open files using default application",
+    args: {
+        template: ["filepaths", "folders"],
+    },
+};
+
+>>>>>>> d0857f4... feat: update formatting

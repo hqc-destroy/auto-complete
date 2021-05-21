@@ -3,10 +3,13 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
     name: "node",
     description: "Run the node interpretor",
     args: {
@@ -15,6 +18,7 @@ var completionSpec = {
         generators: {
             template: "filepaths",
             filterTemplateSuggestions: function (paths) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 return paths.filter(file => {
@@ -69,11 +73,17 @@ var completionSpec = {
                     if (typeof file.name === "string") {
                         return file.name.endsWith(".js") || file.name.endsWith("/");
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+                return paths.filter(function (file) {
+                    if (typeof file.name === "string") {
+                        return file.name.endsWith(".js") || file.name.endsWith("/");
+>>>>>>> d0857f4... feat: update formatting
                     }
                     return false;
                 });
             },
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -95,6 +105,8 @@ var completionSpec = {
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> d0857f4... feat: update formatting
     },
     options: [
         {
@@ -124,6 +136,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
 =======
@@ -134,3 +147,6 @@ var completionSpec = {
 =======
 
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+
+>>>>>>> d0857f4... feat: update formatting
