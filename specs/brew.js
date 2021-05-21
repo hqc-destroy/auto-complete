@@ -1106,12 +1106,10 @@ var completionSpec = {
             subcommands: [
                 {
                     name: "on",
-                    insertValue: "on",
                     description: "Turns on analytics",
                 },
                 {
                     name: "off",
-                    insertValue: "off",
                     description: "Turns off analytics",
                 },
             ],
