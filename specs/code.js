@@ -257,44 +257,47 @@ var completionSpec = {
   ),
 =======
 var completionSpec = {
-    name: "code",
-    description: "Visual Studio Code",
-    args: {
-        template: ["filepaths", "folders"],
+  name: "code",
+  description: "Visual Studio Code",
+  args: {
+    template: ["filepaths", "folders"],
+  },
+  options: [
+    {
+      name: ["-d", "--diff"],
+      description: "Compare two files with each other.",
+      args: [
+        {
+          template: "filepaths",
+        },
+        {
+          template: "filepaths",
+        },
+      ],
     },
-    options: [
+    {
+      name: ["-a", "--add"],
+      description: "Add folder(s) to the last active window",
+      args: {
+        template: "folders",
+      },
+    },
+    {
+      name: ["-n", "--new-window"],
+      description: "Force to open a new window.",
+      args: [
         {
-            name: ["-d", "--diff"],
-            description: "Compare two files with each other.",
-            args: [
-                {
-                    template: "filepaths",
-                },
-                {
-                    template: "filepaths",
-                },
-            ],
+          template: "filepaths",
         },
         {
-            name: ["-a", "--add"],
-            description: "Add folder(s) to the last active window",
-            args: {
-                template: "folders",
-            },
+          template: "filepaths",
         },
-        {
-            name: ["-n", "--new-window"],
-            description: "Force to open a new window.",
-            args: [
-                {
-                    template: "filepaths",
-                },
-                {
-                    template: "filepaths",
-                },
-            ],
-        },
+<<<<<<< HEAD
     ],
 >>>>>>> d0857f4... feat: update formatting
+=======
+      ],
+    },
+  ],
+>>>>>>> e9dbf55... feat: update formatting
 };
-

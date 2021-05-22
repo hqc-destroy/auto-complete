@@ -2,6 +2,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: 'vue',
     description: 'vue cli tools',
     subcommands: [
@@ -948,6 +949,8 @@ var completionSpec = {
 
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
 =======
+=======
+>>>>>>> e9dbf55... feat: update formatting
   name: "vue",
   description: "vue cli tools",
   subcommands: [
@@ -1398,6 +1401,7 @@ var completionSpec = {
       description: "output usage information",
     },
   ],
+<<<<<<< HEAD
 };
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
@@ -1417,3 +1421,6 @@ var completionSpec = {
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+};
+>>>>>>> e9dbf55... feat: update formatting

@@ -2,6 +2,7 @@ var listTargets = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c80c604... Revert "feat: update prettierignore"
 =======
@@ -31,6 +32,8 @@ var listTargets = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> e9dbf55... feat: update formatting
   script:
     "make -qp | awk -F':' '/^[a-zA-Z0-9][^$#\\/\\t=]*:([^=]|$)/ {split($1,A,/ /);for(i in A)print A[i]}' | sort -u",
   postProcess: function (out) {
@@ -46,51 +49,53 @@ var listTargets = {
     }
     return targets;
   },
+<<<<<<< HEAD
 >>>>>>> 880aa33... feat: update prettierignore
 =======
 >>>>>>> c80c604... Revert "feat: update prettierignore"
 =======
 >>>>>>> d0857f4... feat: update formatting
+=======
+>>>>>>> e9dbf55... feat: update formatting
 };
 var completionSpec = {
-    name: "make",
-    args: {
+  name: "make",
+  args: {
+    name: "target",
+    generators: listTargets,
+  },
+  options: [
+    {
+      name: ["-j"],
+      args: [{ name: "number" }, { name: "target", generators: listTargets }],
+    },
+    {
+      name: ["--file"],
+      args: {
+        name: "file",
+        template: "filepaths",
+      },
+    },
+    {
+      name: ["--directory"],
+      args: {
+        name: "directory",
+        template: "folders",
+      },
+    },
+    {
+      name: ["--always-make"],
+      args: {
         name: "target",
         generators: listTargets,
+      },
     },
-    options: [
-        {
-            name: ["-j"],
-            args: [{ name: "number" }, { name: "target", generators: listTargets }],
-        },
-        {
-            name: ["--file"],
-            args: {
-                name: "file",
-                template: "filepaths",
-            },
-        },
-        {
-            name: ["--directory"],
-            args: {
-                name: "directory",
-                template: "folders",
-            },
-        },
-        {
-            name: ["--always-make"],
-            args: {
-                name: "target",
-                generators: listTargets,
-            },
-        },
-        {
-            name: ["--environment-overrides"],
-            args: {
-                name: "target",
-                generators: listTargets,
-            },
-        },
-    ],
+    {
+      name: ["--environment-overrides"],
+      args: {
+        name: "target",
+        generators: listTargets,
+      },
+    },
+  ],
 };
-

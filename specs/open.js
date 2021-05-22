@@ -4,6 +4,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: "open",
     description: "open files using default application",
     args: {
@@ -50,3 +51,11 @@ var completionSpec = {
 };
 
 >>>>>>> d0857f4... feat: update formatting
+=======
+  name: "open",
+  description: "open files using default application",
+  args: {
+    template: ["filepaths", "folders"],
+  },
+};
+>>>>>>> e9dbf55... feat: update formatting

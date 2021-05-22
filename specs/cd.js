@@ -5,6 +5,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: 'cd',
     description: 'Change the shell working directory',
     args: {
@@ -36,10 +37,13 @@ var completionSpec = {
 =======
 =======
 >>>>>>> 880aa33... feat: update prettierignore
+=======
+>>>>>>> e9dbf55... feat: update formatting
   name: "cd",
   description: "Change the shell working directory.",
   args: {
     template: "folders",
+<<<<<<< HEAD
 <<<<<<< HEAD
   },
 };
@@ -76,6 +80,8 @@ var completionSpec = {
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
 =======
+=======
+>>>>>>> e9dbf55... feat: update formatting
     // Add an additional hidden suggestion so users can execute on it if they want to
     suggestions: [
       {
@@ -85,6 +91,7 @@ var completionSpec = {
       },
     ],
   },
+<<<<<<< HEAD
 };
 >>>>>>> 880aa33... feat: update prettierignore
 =======
@@ -97,3 +104,6 @@ var completionSpec = {
 };
 
 >>>>>>> d0857f4... feat: update formatting
+=======
+};
+>>>>>>> e9dbf55... feat: update formatting

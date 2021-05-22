@@ -6,6 +6,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
     name: 'jest',
@@ -837,6 +838,8 @@ var completionSpec = {
         },
     ],
 =======
+=======
+>>>>>>> e9dbf55... feat: update formatting
   name: "jest",
   description:
     "A delightful JavaScript Testing Framework with a focus on simplicity",
@@ -907,14 +910,22 @@ var completionSpec = {
         "The path to a Jest config file specifying how to find and execute tests",
       args: {
         name: "path",
+<<<<<<< HEAD
+=======
+        template: "filepaths",
+>>>>>>> e9dbf55... feat: update formatting
       },
     },
     {
       name: ["--coverage"],
       displayName: "--coverage=<boolean>",
       insertValue: "--coverage=",
+<<<<<<< HEAD
       description:
         "The path to a Jest config file specifying how to find and execute tests",
+=======
+      description: "Enable or disable coverage, disabled by default",
+>>>>>>> e9dbf55... feat: update formatting
       args: {
         name: "true|false",
         suggestions: [
@@ -954,6 +965,10 @@ var completionSpec = {
       description: "The test environment used for all tests",
       args: {
         name: "jsdom|node|path/to/env.js",
+<<<<<<< HEAD
+=======
+        template: "filepaths",
+>>>>>>> e9dbf55... feat: update formatting
         suggestions: [{ name: "jsdom" }, { name: "node" }],
       },
     },
@@ -1064,6 +1079,11 @@ var completionSpec = {
         "Run tests from one or more projects, found in the specified paths; also takes path globs",
       args: {
         name: "<path1> ... <pathN>",
+<<<<<<< HEAD
+=======
+        variadic: true,
+        template: "filepaths",
+>>>>>>> e9dbf55... feat: update formatting
       },
     },
     {
@@ -1082,6 +1102,11 @@ var completionSpec = {
         "A list of paths to directories that Jest should use to search for files in",
       args: {
         name: "<path1> ... <pathN>",
+<<<<<<< HEAD
+=======
+        variadic: true,
+        template: "folders",
+>>>>>>> e9dbf55... feat: update formatting
       },
     },
     {
@@ -1110,6 +1135,10 @@ var completionSpec = {
         "The path to a module that runs some code to configure or set up the testing framework before each test",
       args: {
         name: "file",
+<<<<<<< HEAD
+=======
+        template: "filepaths",
+>>>>>>> e9dbf55... feat: update formatting
       },
     },
     {
@@ -1160,6 +1189,10 @@ var completionSpec = {
       description: "Lets you specify a custom test runner",
       args: {
         name: "path",
+<<<<<<< HEAD
+=======
+        template: "filepaths",
+>>>>>>> e9dbf55... feat: update formatting
       },
     },
     {
@@ -1169,6 +1202,10 @@ var completionSpec = {
       description: "Lets you specify a custom test sequencer",
       args: {
         name: "path",
+<<<<<<< HEAD
+=======
+        template: "filepaths",
+>>>>>>> e9dbf55... feat: update formatting
       },
     },
     {
@@ -1217,6 +1254,7 @@ var completionSpec = {
       description: "Whether to use watchman for file crawling",
     },
   ],
+<<<<<<< HEAD
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
 =======
@@ -1501,5 +1539,6 @@ var completionSpec = {
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
 =======
 >>>>>>> d0857f4... feat: update formatting
+=======
+>>>>>>> e9dbf55... feat: update formatting
 };
-

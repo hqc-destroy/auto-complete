@@ -3,6 +3,7 @@ var completionSpec = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: "wrk",
     description: "wrk - a HTTP benchmarking tool",
     args: {
@@ -118,6 +119,8 @@ var completionSpec = {
 
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
 =======
+=======
+>>>>>>> e9dbf55... feat: update formatting
   name: "wrk",
   description: "wrk - a HTTP benchmarking tool",
   args: {
@@ -130,6 +133,7 @@ var completionSpec = {
       args: {
         name: "Number",
       },
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
@@ -141,64 +145,59 @@ var completionSpec = {
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> e9dbf55... feat: update formatting
     },
-    options: [
-        {
-            name: ["-c", "--c"],
-            description: "Connections to keep open",
-            args: {
-                name: "Number",
-            },
-        },
-        {
-            name: ["-d", "--duration"],
-            description: "Duration of test",
-            args: {
-                name: "Time",
-            },
-        },
-        {
-            name: ["-t", "--threads"],
-            description: "Number of threads",
-            args: {
-                name: "Number",
-            },
-        },
-        {
-            name: ["-s", "--script"],
-            description: "Load Lua script file",
-            args: {
-                name: "Script",
-            },
-        },
-        {
-            name: ["-H", "--header"],
-            description: "Add header to request",
-            args: {
-                name: "Header",
-            },
-        },
-        {
-            name: "--latency",
-            description: "Print latency statistics",
-        },
-        {
-            name: "--timeout",
-            description: "Socket/request timeout",
-            args: {
-                name: "Time",
-            },
-        },
-        {
-            name: ["-v", "--version"],
-            description: "Print version details",
-        },
-        {
-            name: ["-h", "--help"],
-            description: "output usage information",
-        },
-    ],
+    {
+      name: ["-d", "--duration"],
+      description: "Duration of test",
+      args: {
+        name: "Time",
+      },
+    },
+    {
+      name: ["-t", "--threads"],
+      description: "Number of threads",
+      args: {
+        name: "Number",
+      },
+    },
+    {
+      name: ["-s", "--script"],
+      description: "Load Lua script file",
+      args: {
+        name: "Script",
+      },
+    },
+    {
+      name: ["-H", "--header"],
+      description: "Add header to request",
+      args: {
+        name: "Header",
+      },
+    },
+    {
+      name: "--latency",
+      description: "Print latency statistics",
+    },
+    {
+      name: "--timeout",
+      description: "Socket/request timeout",
+      args: {
+        name: "Time",
+      },
+    },
+    {
+      name: ["-v", "--version"],
+      description: "Print version details",
+    },
+    {
+      name: ["-h", "--help"],
+      description: "output usage information",
+    },
+  ],
 };
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
@@ -208,3 +207,5 @@ var completionSpec = {
 =======
 
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
+=======
+>>>>>>> e9dbf55... feat: update formatting
