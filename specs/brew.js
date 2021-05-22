@@ -19,6 +19,7 @@ var generators = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a09fa69... removed linting from all js specs in specs folder
 =======
@@ -58,6 +59,8 @@ var generators = {
 >>>>>>> 0295764... remove comment
 =======
 >>>>>>> 91aa784... fix: pull new dependencies
+=======
+>>>>>>> c3e1353... feat: update formatting
   servicesgenerators: {
     script: "brew services list | sed -e 's/ .*//' | tail -n +2",
     postProcess: function (out) {
@@ -72,6 +75,7 @@ var generators = {
             type: "option",
           };
         });
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
@@ -130,10 +134,14 @@ var generators = {
 };
 >>>>>>> 8601a08... feat: add built files
 =======
+=======
+>>>>>>> c3e1353... feat: update formatting
     },
+  },
 };
 >>>>>>> a6e15c2... remove a.ts aaa.ts and abc.ts, commit specs files, and update package.json so that we build the specs when npm run dev is called and postinstall
 var completionSpec = {
+<<<<<<< HEAD
     name: "brew",
     description: "Package manager for macOS",
     subcommands: [
@@ -345,19 +353,170 @@ var completionSpec = {
             name: "doctor",
             description: "Check your system for potential problems",
 =======
+=======
+  name: "brew",
+  description: "Package manager for macOS",
+  subcommands: [
+    { name: "list", description: "List all installed formulae" },
+    {
+      name: "leaves",
+      description:
+        "List installed formulae that are not dependencies of another installed formula",
+    },
+    {
+      name: "doctor",
+      description: "Check your system for potential problems",
+    },
+    {
+      name: "info",
+      description: "Display brief statistics for your Homebrew installation",
+    },
+    {
+      name: "update",
+      description: "Fetch the newest version of Homebrew and all formulae",
+    },
+    {
+      name: "outdated",
+      description:
+        "List installed casks and formulae that have an updated version available",
+      options: [
         {
-            name: "leaves",
-            description: "List installed formulae that are not dependencies of another installed formula",
+          name: ["-d", "--debug"],
+          description: "Display any debugging information.",
         },
         {
-            name: "doctor",
-            description: "Check your system for potential problems",
+          name: ["-q", "--quiet"],
+          description: "List only the names of outdated kegs.",
         },
         {
-            name: "info",
-            description: "Display brief statistics for your Homebrew installation",
+          name: ["-v", "--verbose"],
+          description: "Include detailed version information.",
         },
         {
+          name: ["-h", "--help"],
+          description: "Show help message for the outdated command.",
+        },
+        { name: "--cask", description: "List only outdated casks." },
+        {
+          name: "--fetch-HEAD",
+          description:
+            "Fetch the upstream repository to detect if the HEAD installation of the formula is outdated.",
+        },
+        { name: "--formula", description: "List only outdated formulae." },
+        {
+          name: "--greedy",
+          description:
+            "Print outdated casks with auto_updates or version :latest.",
+        },
+        { name: "--json", description: "Print output in JSON format." },
+      ],
+    },
+    { name: "upgrade", description: "Upgrade outdated casks and outdated" },
+    {
+      name: "search",
+      description:
+        "Perform a substring search of cask tokens and formula names",
+    },
+    {
+      name: "config",
+      description: "Show Homebrew and system configuration info",
+    },
+    {
+      name: "install",
+      description: "Install <formula>",
+      insertValue: "install ",
+      args: {
+        variadic: true,
+        name: "formula",
+        description: "Formula or cask to install",
+        generators: {
+          script:
+            "HBPATH=$(brew --repository); ls -1 $HBPATH/Library/Taps/homebrew/homebrew-core/Formula $HBPATH/Library/Taps/homebrew/homebrew-cask/Casks",
+          postProcess: function (out) {
+            return out.split("\n").map(function (formula) {
+              return {
+                name: formula.replace(".rb", ""),
+                description: "formula",
+                icon: "🍺",
+                priority:
+                  (formula[0] >= "0" && formula[0] <= "9") || formula[0] == "/"
+                    ? 0
+                    : 51,
+              };
+            });
+          },
+        },
+      },
+    },
+    {
+      name: "uninstall",
+      description: "Uninstall <formula>",
+      args: {
+        variadic: true,
+        name: "formula",
+        generators: {
+          script: "brew list -1 --formulae",
+          postProcess: function (out) {
+            return out.split("\n").map(function (formula) {
+              return {
+                name: formula,
+                icon: "🍺",
+                description: "Installed formula",
+              };
+            });
+          },
+        },
+      },
+    },
+    {
+      name: "cask",
+      insertValue: "cask ",
+      description:
+        "Homebrew Cask provides a friendly CLI workflow for the administration of macOS applications distributed as binaries.",
+      subcommands: [
+>>>>>>> c3e1353... feat: update formatting
+        {
+          name: "install",
+          insertValue: "install ",
+          description: "Installs the given cask",
+          args: {
+            name: "cask",
+            description: "Cask to install",
+          },
+        },
+        {
+          name: "uninstall",
+          insertValue: "uninstall ",
+          description: "Uninstalls the given cask",
+          args: {
+            variadic: true,
+            generators: {
+              script: "brew list -1 --cask",
+              postProcess: function (out) {
+                return out.split("\n").map(function (formula) {
+                  return {
+                    name: formula,
+                    icon: "🍺",
+                    description: "Installed formula",
+                  };
+                });
+              },
+            },
+          },
+        },
+      ],
+    },
+    {
+      name: "services",
+      description:
+        "Manage background services with macOS' launchctl(1) daemon manager.",
+      options: [
+        {
+          name: ["-d", "--debug"],
+          description: "Display any debugging information.",
+        },
+        {
+<<<<<<< HEAD
             name: "update",
             description: "Fetch the newest version of Homebrew and all formulae",
 >>>>>>> a6e15c2... remove a.ts aaa.ts and abc.ts, commit specs files, and update package.json so that we build the specs when npm run dev is called and postinstall
@@ -413,13 +572,17 @@ var completionSpec = {
         {
             name: "update",
             description: "Fetch the newest version of Homebrew and all formulae",
+=======
+          name: ["-q", "--quiet"],
+          description: "Suppress any warnings.",
+>>>>>>> c3e1353... feat: update formatting
         },
-        { name: "upgrade", description: "Upgrade outdated casks and outdated" },
         {
-            name: "search",
-            description: "Perform a substring search of cask tokens and formula names",
+          name: ["-v", "--verbose"],
+          description: "Make some output more verbose.",
         },
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -555,33 +718,42 @@ var completionSpec = {
         {
             name: "config",
             description: "Show Homebrew and system configuration info",
+=======
+          name: ["-h", "--help"],
+          description: "Get help with services command",
+>>>>>>> c3e1353... feat: update formatting
+        },
+      ],
+      subcommands: [
+        {
+          name: "cleanup",
+          insertValue: "cleanup",
+          description: "Remove all unused services.",
         },
         {
-            name: "install",
-            description: "Install <formula>",
-            insertValue: "install ",
-            args: {
-                variadic: true,
-                name: "formula",
-                description: "Formula or cask to install",
-                generators: {
-                    script: "HBPATH=$(brew --repository); ls -1 $HBPATH/Library/Taps/homebrew/homebrew-core/Formula $HBPATH/Library/Taps/homebrew/homebrew-cask/Casks",
-                    postProcess: function (out) {
-                        return out.split("\n").map(function (formula) {
-                            return {
-                                name: formula.replace(".rb", ""),
-                                description: "formula",
-                                icon: "🍺",
-                                priority: (formula[0] >= "0" && formula[0] <= "9") || formula[0] == "/"
-                                    ? 0
-                                    : 51,
-                            };
-                        });
-                    },
-                },
+          name: "list",
+          insertValue: "list",
+          description: "List all services.",
+        },
+        {
+          name: "run",
+          insertValue: "run ",
+          description:
+            "Run the service formula without registering to launch at login (or boot).",
+          options: [
+            {
+              name: "--all",
+              insertValue: "--all",
+              description: "Start all services",
             },
+          ],
+          args: {
+            variadic: true,
+            generators: generators.servicesGenerator,
+          },
         },
         {
+<<<<<<< HEAD
 >>>>>>> 8601a08... feat: add built files
             name: "uninstall",
             description: "Uninstall <formula>",
@@ -649,9 +821,26 @@ var completionSpec = {
 >>>>>>> e321ca1... feat: update all scripts and  move to ts
 =======
 =======
+=======
+          name: "start",
+          insertValue: "start ",
+          description:
+            "Start the service formula immediately and register it to launch at login",
+          options: [
+            {
+              name: "--all",
+              insertValue: "--all",
+              description: "Start all services",
+>>>>>>> c3e1353... feat: update formatting
             },
+          ],
+          args: {
+            variadic: true,
+            generators: generators.servicesGenerator,
+          },
         },
         {
+<<<<<<< HEAD
 >>>>>>> 3879070... feat: re-add built specs and update gitignore
 =======
 >>>>>>> 6345191... added all options for git push
@@ -851,6 +1040,8 @@ var completionSpec = {
 <<<<<<< HEAD
         },
         {
+=======
+>>>>>>> c3e1353... feat: update formatting
           name: "stop",
           insertValue: "stop ",
           description:
@@ -866,6 +1057,7 @@ var completionSpec = {
             variadic: true,
             generators: generators.servicesGenerator,
           },
+<<<<<<< HEAD
 >>>>>>> 02ea794... added some more logic to eslint and changed the glob so we only lint files in the dev/ specs/ and scripts/ folders
 =======
 =======
@@ -979,6 +1171,14 @@ var completionSpec = {
           insertValue: "stop ",
           description:
             "Stop the service formula immediately and unregister it from launching at",
+=======
+        },
+        {
+          name: "restart",
+          insertValue: "restart ",
+          description:
+            "Stop (if necessary) and start the service formula immediately and register it to launch at login (or boot).",
+>>>>>>> c3e1353... feat: update formatting
           options: [
             {
               name: "--all",
@@ -990,6 +1190,7 @@ var completionSpec = {
             variadic: true,
             generators: generators.servicesGenerator,
           },
+<<<<<<< HEAD
 >>>>>>> 0295764... remove comment
 =======
 =======
@@ -1463,5 +1664,30 @@ var completionSpec = {
         },
     ],
 >>>>>>> a6e15c2... remove a.ts aaa.ts and abc.ts, commit specs files, and update package.json so that we build the specs when npm run dev is called and postinstall
+=======
+        },
+      ],
+    },
+    {
+      name: "analytics",
+      description: "Manages analytics preferences",
+      subcommands: [
+        {
+          name: "on",
+          description: "Turns on analytics",
+        },
+        {
+          name: "off",
+          description: "Turns off analytics",
+        },
+      ],
+    },
+  ],
+  options: [
+    {
+      name: ["--version"],
+      description: "The current Homebrew version",
+    },
+  ],
+>>>>>>> c3e1353... feat: update formatting
 };
-

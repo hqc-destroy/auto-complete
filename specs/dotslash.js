@@ -10,5 +10,8 @@ var completionSpec = {
   args: {
     template: "filepaths",
   },
+<<<<<<< HEAD
 >>>>>>> e9dbf55... feat: update formatting
+=======
+>>>>>>> c3e1353... feat: update formatting
 };

@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c3e1353... feat: update formatting
 var __spreadArray =
   (this && this.__spreadArray) ||
   function (to, from) {
@@ -182,6 +185,7 @@ var troubleshootingOptions = [
         "trace",
         "off",
       ],
+<<<<<<< HEAD
     },
   },
   {
@@ -300,4 +304,79 @@ var completionSpec = {
     },
   ],
 >>>>>>> e9dbf55... feat: update formatting
+=======
+    },
+  },
+  {
+    name: ["-s", "--status"],
+    description: "Print process usage and diagnostics information.",
+  },
+  {
+    name: "--prof-startup",
+    description: "Run CPU profiler during startup.",
+  },
+  {
+    name: "--disable-extensions",
+    description: "Disable all installed extensions.",
+  },
+  {
+    name: "--disable-extension",
+    description: "Disable an extension.",
+    args: {
+      // TODO: Create extension ID generator
+      name: "extension-id",
+    },
+  },
+  {
+    name: "--sync",
+    description: "Turn sync on or off.",
+    args: {
+      name: "Whether to enable sync",
+      suggestions: ["on", "off"],
+    },
+  },
+  {
+    name: "--inspect-extensions",
+    description:
+      "Allow debugging and profiling of extensions. Check the developer tools for the connection URI.",
+    args: {
+      name: "port",
+    },
+  },
+  {
+    name: "--inspect-brk-extensions",
+    description:
+      "Allow debugging and profiling of extensions with the extension host being paused after start. Check the developer tools for the connection URI.",
+    args: {
+      name: "port",
+    },
+  },
+  {
+    name: "--disable-gpu",
+    description: "Disable GPU hardware acceleration.",
+  },
+  {
+    name: "--max-memory",
+    description: "Max memory size for a window (in Mbytes).",
+    args: {
+      name: "memory",
+      description: "Memory in megabytes",
+    },
+  },
+  {
+    name: "--telemetry",
+    description: "Shows all telemetry events which VS code collects.",
+  },
+];
+var completionSpec = {
+  name: "code",
+  description: "Visual Studio Code",
+  args: {
+    template: ["filepaths", "folders"],
+  },
+  options: __spreadArray(
+    __spreadArray(__spreadArray([], commonOptions), extensionManagementOptions),
+    troubleshootingOptions
+  ),
+>>>>>>> c3e1353... feat: update formatting
 };
