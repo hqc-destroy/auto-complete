@@ -6,25 +6,38 @@
 
 ![os](https://img.shields.io/badge/os-%20macOS-light)
 [![Signup](https://img.shields.io/badge/signup-private%20beta-blueviolet)](https://fig.io?ref=github_autocomplete)
-[![Documentation](https://img.shields.io/badge/documentation-black)](https://fig.io/docs/autocomplete/getting-started)
-[![All-Contributors](https://img.shields.io/github/all-contributors/withfig/autocomplete)](#Contributors)
+[![Documentation](https://img.shields.io/badge/documentation-black)](https://fig.io/docs/)
+[![All-Contributors](https://img.shields.io/github/contributors/withfig/autocomplete)](#Contributors)
 ![Discord](https://img.shields.io/discord/837809111248535583?color=768ad4&label=discord)
 [![Twitter](https://img.shields.io/twitter/follow/fig.svg?style=social&label=Follow)](https://twitter.com/intent/follow?screen_name=fig)
 
-**[Fig](https://fig.io?ref=github_autocomplete) adds autocomplete to the terminal.** As you type, Fig pops up subcommands, options, and contextually relevant arguments in your existing terminal on macOS.
+**[Fig](https://fig.io?ref=github_autocomplete) adds autocomplete to your terminal.** 
+
+As you type, Fig pops up subcommands, options, and contextually relevant arguments in your existing terminal on macOS.
 
 ![Fig Visual Autocomplete For Your Terminal Demo](https://fig.io/gifs/demo-with-header.gif)
 
-## Add a completion spec for a CLI tool
+<br/>
 
-Looking to improve autocomplete functionality or add support for your favorite CLI tool? We welcome contributions for new specs!
+## 👋 Add a completion spec for a CLI tool
 
-Completion specs are defined in a _declarative_ schema that specifies `subcommands`, `options` and `arguments`. Suggestions can be generated dynamically by running shell commands or reading local files, in addition to the information in the spec itself.
+Want to add autocomplete to a CLI tool (or make changes to an existing autocomplete spec)? We welcome contributions for new specs!
 
-**For more documentation and tutorials**, visit [fig.io/docs](https://fig.io/docs/autocomplete/getting-started)
+Completion specs are defined in a _declarative_ schema that specifies `subcommands`, `options` and `arguments`. Suggestions are generated from information in the spec or can be generated dynamically by running shell commands or reading local files.
 
-**To request completions for a CLI tool**, open an [issue](https://github.com/withfig/autocomplete/issues/new/choose).
+**For documentation and tutorials**, visit [fig.io/docs](https://fig.io/docs/autocomplete/getting-started)
 
+**To request autocomplete for a CLI tool**, open an [issue](https://github.com/withfig/autocomplete/issues/new/choose).
+
+<br/>
+
+
+## 😎 Get Started
+
+Build your first spec in < 3 min: [fig.io/docs/getting-started](fig.io/docs/getting-started)
+
+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -32,25 +45,39 @@ Completion specs are defined in a _declarative_ schema that specifies `subcomman
 =======
 >>>>>>> fc8e4dd... feat: update badge
 ## Get Started
+=======
+1. Fork this repo
+[![GitHub forks](https://img.shields.io/github/forks/withfig/autocomplete.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/withfig/autocomplete/fork/)
+>>>>>>> 0e498a5... Added some flare to readme
 
+2. Clone your forked repo and create an example spec
 ```bash
-git clone https://github.com/withfig/autocomplete.git fig-autocomplete
+# Replace `YOUR_GITHUB_USERNAME` with your own github username 
+git clone https://github.com/YOUR_GITHUB_USERNAME/autocomplete.git fig-autocomplete
 cd fig-autocomplete
+
+# Add withfig/autocomplete as a remote
+git remote add upstream https://github.com/withfig/autocomplete.git
 
 # Install packages
 npm install
 
-# Go into testing mode
+# Create an example spec (call it "abc")
+npm run create-example
+
+# Turn on "dev mode"
 npm run dev
 ```
+3. Now go to your terminal and type `abc[space]`. Your example spec will appear 😊 
 
-Edit your spec in the `dev/` folder. It will compile to the `specs/` folder on save. Start testing your spec immediately in your terminal.
-
-**Note**: Fig usually looks for completion specs in your `~/.fig/autocomplete` folder. When in testing mode, we check your cloned repo's `specs/` folder
+#### Other things to know
+* Edit your spec in typescript in the `dev/` folder
+* On save, specs are compiled to the `specs/` folder
+* In **dev mode** specs are read from the `specs` folders. Otherwise they are read from `~/.fig/autocomplete`
 
 <br/>
 
-## Other available commands
+## 📦 Other available package.json commands
 
 ```bash
 
@@ -70,6 +97,7 @@ npm run copy:all
 npm run copy <spec-name>
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -96,6 +124,9 @@ fig settings autocomplete.devCompletionsFolder path/to/folder
 >>>>>>> fc8e4dd... feat: update badge
 =======
 ## Need Help?
+=======
+## 😊 Need Help?
+>>>>>>> 0e498a5... Added some flare to readme
 
 <p align="center">
     Join our community
@@ -105,8 +136,13 @@ fig settings autocomplete.devCompletionsFolder path/to/folder
 </a>
 </p>
 
+<<<<<<< HEAD
 >>>>>>> 0279af9... Added discord logo to readme
 ## FAQ
+=======
+
+## 🙋‍♀️ FAQ
+>>>>>>> 0e498a5... Added some flare to readme
 
 <<<<<<< HEAD
 #### What terminals does Fig work with?
@@ -115,7 +151,7 @@ Fig works with iTerm, the native MacOS Terminal app, Hyper and the integrated te
 
 #### How does Fig work?
 
-Fig uses the Accessibility API on Mac to insert text on your behalf and read the current keybuffer.
+Fig uses the Accessibility API on Mac to position the window, insert text on your behalf, and read what you've typed in your terminal.
 
 #### Does Fig work on Windows or Linux?
 
@@ -158,6 +194,7 @@ Get in touch at hello@fig.io or chat with us on [Slack](https://fig.io/community
 Get in touch at hello@fig.io or chat with us on [Discord](https://fig.io/community)
 >>>>>>> 5d64cab... updated links to discord
 
+<<<<<<< HEAD
 ## Contributors ✨
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
@@ -209,3 +246,14 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 >>>>>>> fc8e4dd... feat: update badge
 =======
 >>>>>>> e8786b1... feat: update readme
+=======
+<br/>
+
+## ✨ Contributors 
+
+
+<a href="https://github.com/withfig/autocomplete/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=withfig/autocomplete" />
+</a>
+<!--  https://contrib.rocks -->
+>>>>>>> 0e498a5... Added some flare to readme
