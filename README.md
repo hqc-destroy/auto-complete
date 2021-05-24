@@ -21,7 +21,7 @@ As you type, Fig pops up subcommands, options, and contextually relevant argumen
 
 ## 👋 Add a completion spec for a CLI tool
 
-Want to add autocomplete to a CLI tool (or make changes to an existing autocomplete spec)? We welcome contributions for new specs!
+Want to add autocomplete to a CLI tool (or make changes to an existing autocomplete spec)? We welcome contributions!
 
 Completion specs are defined in a _declarative_ schema that specifies `subcommands`, `options` and `arguments`. Suggestions are generated from information in the spec or can be generated dynamically by running shell commands or reading local files.
 
@@ -68,7 +68,12 @@ npm run create-example
 # Turn on "dev mode"
 npm run dev
 ```
+<<<<<<< HEAD
 3. Now go to your terminal and type `abc[space]`. Your example spec will appear 😊 
+=======
+
+3. Now go to your terminal and type `abc[space]`. Your example spec will appear. 😊
+>>>>>>> 1114a10... Update README.md
 
 #### Other things to know
 * Edit your spec in typescript in the `dev/` folder
@@ -169,6 +174,7 @@ Yes! Check out our guide on how to [get started building autocomplete specs](htt
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Get in touch at hello@withfig.com or chat with us on [Slack](https://withfig.com/community)
 <<<<<<< HEAD
 =======
@@ -247,6 +253,10 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 =======
 >>>>>>> e8786b1... feat: update readme
 =======
+=======
+Get in touch at hello@fig.io or chat with us on [Discord](https://fig.io/community).
+
+>>>>>>> 1114a10... Update README.md
 <br/>
 
 ## ✨ Contributors 
