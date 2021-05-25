@@ -21,7 +21,7 @@ jobs:
 
           curl https://fig.io/api/docs/parseDocs -o newDocs.zip
 
-          unzip -o newDocs.zip -d docs/autocomplete/schemas/
+          unzip -o newDocs.zip -d docs/reference/
 
           rm -f newDocs.zip
 
@@ -32,7 +32,7 @@ jobs:
           git add autocomplete/api.md
 =======
 
-          git add docs/autocomplete/schemas/
+          git add docs/reference/
 
 <<<<<<< HEAD
 >>>>>>> 4f57af5... feat: update docs action

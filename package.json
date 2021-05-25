@@ -115,7 +115,13 @@
     },
     "create-boilerplate": {
       "description": "Create a new completion spec"
+<<<<<<< HEAD
 >>>>>>> 40b3e10... feat: add pretty quick
+=======
+    },
+    "create-example": {
+      "description": "Create an example completion spec"
+>>>>>>> 1b823f8... Update package.json and tweak priority
     },
     "test": {
       "description": "Typecheck all .ts files in /dev"
