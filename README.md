@@ -25,7 +25,7 @@ Want to add autocomplete to a CLI tool (or make changes to an existing autocompl
 
 Completion specs are defined in a _declarative_ schema that specifies `subcommands`, `options` and `arguments`. Suggestions are generated from information in the spec or can be generated dynamically by running shell commands or reading local files.
 
-**For documentation and tutorials**, visit [fig.io/docs](https://fig.io/docs/autocomplete/getting-started)
+**For documentation and tutorials**, visit [fig.io/docs](https://fig.io/docs)
 
 **To request autocomplete for a CLI tool**, open an [issue](https://github.com/withfig/autocomplete/issues/new/choose).
 
@@ -34,7 +34,7 @@ Completion specs are defined in a _declarative_ schema that specifies `subcomman
 
 ## 😎 Get Started
 
-Build your first spec in < 3 min: [fig.io/docs/getting-started](fig.io/docs/getting-started)
+Build your first spec in < 3 min: [fig.io/docs/getting-started](https://fig.io/docs/getting-started)
 
 
 <<<<<<< HEAD
@@ -168,7 +168,7 @@ Sign up for the waitlist at [fig.io](https://fig.io?ref=github-autocomplete). Fi
 
 #### Can I use Fig to build autocomplete for my team's internal scripts and CLI tools?
 
-Yes! Check out our guide on how to [get started building autocomplete specs](https://fig.io/docs/autocomplete/getting-started).
+Yes! Check out our guide on how to [get started building autocomplete specs](https://fig.io/docs/getting-started).
 
 #### Did we miss something?
 
