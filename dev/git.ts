@@ -331,6 +331,10 @@ const gitGenerators: Record<string, Fig.Generator> = {
 >>>>>>> 65036d2... fixed linting and prettier
     },
   },
+  getStagedFiles: {
+    script: "git diff --name-only --cached",
+    splitOn: "\n",
+  },
   getUnstagedFiles: {
     script: "git diff --name-only",
     splitOn: "\n",
@@ -2164,10 +2168,14 @@ export const completionSpec: Fig.Spec = {
         },
       ],
       args: {
-        name: "commit",
+        name: "file|commit",
         isOptional: true,
         suggestions: [{ name: "HEAD" }],
-        generators: [gitGenerators.commits, gitGenerators.getUnstagedFiles],
+        generators: [
+          gitGenerators.commits,
+          gitGenerators.getUnstagedFiles,
+          gitGenerators.getStagedFiles,
+        ],
       },
     },
     {
