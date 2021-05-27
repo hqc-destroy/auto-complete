@@ -34,8 +34,9 @@ Completion specs are defined in a _declarative_ schema that specifies `subcomman
 
 ## 😎 Get Started
 
-Build your first spec in < 3 min: [fig.io/docs/getting-started](https://fig.io/docs/getting-started)
+Build your first spec in 3 or less min: [fig.io/docs/getting-started](https://fig.io/docs/getting-started)
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -49,6 +50,18 @@ Build your first spec in < 3 min: [fig.io/docs/getting-started](https://fig.io/d
 1. Fork this repo
 [![GitHub forks](https://img.shields.io/github/forks/withfig/autocomplete.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/withfig/autocomplete/fork/)
 >>>>>>> 0e498a5... Added some flare to readme
+=======
+**Prerequisites:**
+- Early access to the Fig macOS app. 
+> If you don't have access yet, sign up for the [waitlist](https://fig.io) and say you're interested in building completions!
+- Node and NPM (or Yarn).
+
+<br/>
+
+**Setup:**
+
+1. Click [here](https://GitHub.com/withfig/autocomplete/fork/) to fork this repo. 
+>>>>>>> 4fa1c15... Update README.md
 
 2. Clone your forked repo and create an example spec
 ```bash
